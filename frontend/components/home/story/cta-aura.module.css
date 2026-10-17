@@ -1,0 +1,45 @@
+/**
+ * Hạt sáng bay lên trong lòng vòng tròn của lời mời cuối. Thuần CSS — không
+ * thêm timeline GSAP nào cho một thứ chỉ trôi đều.
+ */
+
+.field {
+  position: absolute;
+  /* Chỉ trong lòng vòng tròn, không tràn ra mép section. */
+  inset: 18%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mote {
+  position: absolute;
+  bottom: -3%;
+  width: 2px;
+  height: 2px;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--primary) 85%, transparent);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mote {
+    animation: rise linear infinite;
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: var(--mote-opacity);
+  }
+  80% {
+    opacity: var(--mote-opacity);
+  }
+  100% {
+    transform: translate3d(8px, -100%, 0);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,82 @@
+.playground {
+  margin-top: 32px;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+.controls label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  font-size: var(--text-small);
+}
+.controls select {
+  min-height: 44px;
+  max-width: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+}
+.controls .check {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  cursor: pointer;
+}
+.controls input {
+  width: 20px;
+  height: 20px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 32px;
+}
+.example,
+.wide {
+  min-width: 0;
+}
+.example header,
+.wide header {
+  margin-bottom: 16px;
+}
+.example h2,
+.wide h2 {
+  font-size: var(--text-h4);
+}
+.example code {
+  color: var(--muted-foreground);
+}
+.canvas {
+  container-type: inline-size;
+  padding: 32px 16px;
+  background: #fafaf8;
+  color: #394530;
+  border: 1px solid #dce0d4;
+  border-radius: 12px;
+}
+.wide {
+  margin-top: 48px;
+}
+.empty {
+  text-align: center;
+  font-size: var(--tpl-small);
+}
+@media (max-width: 480px) {
+  .controls {
+    padding: 16px;
+  }
+  .controls label {
+    width: 100%;
+  }
+}

@@ -1,0 +1,34 @@
+/* Khung một cột chiếm toàn màn hình; chỉ phần nội dung cuộn, CTA giữ ở đáy. */
+@media (width < 48rem) {
+  /* Fullscreen không giữ dải trống dành cho scrollbar của trang phía sau. */
+  :global(html):has(.dialog) {
+    scrollbar-gutter: auto;
+  }
+
+  .dialog {
+    inset: 0;
+    translate: none;
+    width: 100dvw;
+    max-width: none;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+  }
+
+  .body {
+    padding-top: calc(1.5rem + env(safe-area-inset-top, 0px));
+  }
+
+  .actions {
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .dialog > :global([data-slot="dialog-close"]) {
+    top: calc(0.75rem + env(safe-area-inset-top, 0px));
+    right: 0.75rem;
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}

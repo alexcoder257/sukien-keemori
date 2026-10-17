@@ -1,0 +1,52 @@
+/*
+ * Ngăn kéo điều hướng trên mobile. `<dialog>` mặc định nằm giữa màn hình; ở
+ * đây ghim nó vào mép trái và trượt vào. `@starting-style` cho trạng thái lúc
+ * vừa mở — trình duyệt chưa hỗ trợ thì ngăn kéo hiện ngay, không vỡ gì.
+ */
+.drawer {
+  inset: 0 auto 0 0;
+  transform: translateX(-100%);
+  transition:
+    transform 260ms cubic-bezier(0.32, 0.72, 0, 1),
+    overlay 260ms allow-discrete,
+    display 260ms allow-discrete;
+}
+
+.drawer[open] {
+  transform: translateX(0);
+}
+
+@starting-style {
+  .drawer[open] {
+    transform: translateX(-100%);
+  }
+}
+
+.drawer::backdrop {
+  background: rgb(0 0 0 / 0);
+  backdrop-filter: blur(0);
+  transition:
+    background 260ms ease,
+    backdrop-filter 260ms ease,
+    overlay 260ms allow-discrete,
+    display 260ms allow-discrete;
+}
+
+.drawer[open]::backdrop {
+  background: rgb(0 0 0 / 0.45);
+  backdrop-filter: blur(2px);
+}
+
+@starting-style {
+  .drawer[open]::backdrop {
+    background: rgb(0 0 0 / 0);
+    backdrop-filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer,
+  .drawer::backdrop {
+    transition: none;
+  }
+}

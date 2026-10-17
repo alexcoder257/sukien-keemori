@@ -1,0 +1,61 @@
+/**
+ * Khung trưng bày cho `InvitationDetails`. Mỗi ô là một **bản sao thu nhỏ của
+ * gốc mẫu thiệp**: bề mặt giấy sáng cố định và `container-type: inline-size`,
+ * vì `--tpl-*` đo theo bề rộng tấm thiệp chứ không theo màn hình.
+ */
+
+.page {
+  padding-block: 3rem 6rem;
+}
+
+.intro {
+  max-width: 68ch;
+}
+
+.group {
+  margin-block-start: 3rem;
+}
+
+.groupHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-block-end: 0.75rem;
+  border-block-end: 1px solid var(--border);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+  margin-block-start: 1.5rem;
+  align-items: start;
+}
+
+.cellLabel {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-block-end: 0.5rem;
+}
+
+.canvas {
+  container-type: inline-size;
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius-2xl, 1rem);
+  border: 1px solid rgb(0 0 0 / 0.1);
+}
+
+/* Một bề mặt giấy duy nhất: khối nghi lễ không có bảng màu riêng như details,
+   nó lấy tông của chương bao quanh. */
+.canvas {
+  background: #f7f5ee;
+  color: #3c4a3a;
+  /* Đo trên nền #f7f5ee: muted 5.63:1, accent 6.28:1 — đều vượt AA 4.5.
+     Bản trước muted 4.13 và faint 2.96, tức chữ thật nằm dưới ngưỡng. */
+  --ceremony-muted: #5a6553;
+  --ceremony-accent: #4d6042;
+  --ceremony-rule: #b9c0ac;
+  --ceremony-surface: #fdfcf7;
+}

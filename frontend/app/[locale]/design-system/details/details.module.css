@@ -1,0 +1,74 @@
+/**
+ * Khung trưng bày cho `InvitationDetails`. Mỗi ô là một **bản sao thu nhỏ của
+ * gốc mẫu thiệp**: bề mặt giấy sáng cố định và `container-type: inline-size`,
+ * vì `--tpl-*` đo theo bề rộng tấm thiệp chứ không theo màn hình.
+ */
+
+.page {
+  padding-block: 3rem 6rem;
+}
+
+.intro {
+  max-width: 68ch;
+}
+
+.group {
+  margin-block-start: 3rem;
+}
+
+.groupHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-block-end: 0.75rem;
+  border-block-end: 1px solid var(--border);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+  margin-block-start: 1.5rem;
+  align-items: start;
+}
+
+.cellLabel {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-block-end: 0.5rem;
+}
+
+.canvas {
+  container-type: inline-size;
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius-2xl, 1rem);
+  border: 1px solid rgb(0 0 0 / 0.1);
+}
+
+/* Ba bảng màu, đặt đúng cách một mẫu thiệp sẽ đặt: chỉ khai `--details-*`, và
+   không đụng gì tới component. */
+.classic {
+  background: #f7f5ee;
+  --details-ink: #3c4a3a;
+  --details-muted: #6f7a68;
+  --details-accent: #5d7052;
+  --details-rule: #b9bfae;
+}
+
+.formal {
+  background: #5b1420;
+  --details-ink: #f3e4d2;
+  --details-muted: #cdaa9c;
+  --details-accent: #e8d3b0;
+  --details-rule: #96626a;
+}
+
+.modern {
+  background: #ffffff;
+  --details-ink: #1c1c1c;
+  --details-muted: #6b6b6b;
+  --details-accent: #8c2230;
+  --details-rule: #d4d4d4;
+}

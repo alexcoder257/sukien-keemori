@@ -1,0 +1,152 @@
+/**
+ * Trang đối chiếu font đặt tên cô dâu chú rể.
+ *
+ * Mỗi thẻ xem trước là một **bản sao thu nhỏ của gốc mẫu thiệp**: bề mặt giấy
+ * sáng cố định (thiệp không có chế độ tối) và `container-type: inline-size` để
+ * `--tpl-*` đo theo bề rộng thẻ đúng như nó đo theo bề rộng tấm thiệp thật.
+ * Thiếu `container-type` thì `cqi` rơi về viewport và bảng đối chiếu nói dối về
+ * cỡ chữ.
+ */
+
+.page {
+  padding-block: 3rem 6rem;
+}
+
+.intro {
+  max-width: 68ch;
+}
+
+.demoString {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  background: color-mix(in oklab, var(--foreground) 8%, transparent);
+  border-radius: var(--radius-sm, 0.25rem);
+  padding: 0.125em 0.5em;
+}
+
+.group {
+  margin-block-start: 3rem;
+}
+
+.groupHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding-block-end: 0.75rem;
+  border-block-end: 1px solid var(--border);
+}
+
+.groupNote {
+  color: var(--muted-foreground);
+  max-width: 60ch;
+  margin-block-start: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-block-start: 1.5rem;
+}
+
+/* Bề mặt giấy tuyệt đối: mẫu thiệp bị chốt ở nền sáng, nên thẻ xem trước cũng
+   phải sáng ở cả hai chế độ — nếu không thì thứ đang so sánh không còn là thứ
+   khách mời nhìn thấy. Giá trị đặt thẳng ở đây thay vì gọi token nền trang. */
+.card {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-2xl, 1rem);
+  border: 1px solid rgb(0 0 0 / 0.1);
+  background: #f7f4ec;
+  color: #2b2b26;
+}
+
+.cardUnusable {
+  border-color: color-mix(in oklab, var(--destructive) 45%, transparent);
+}
+
+.cardHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-block-end: 1px solid rgb(0 0 0 / 0.08);
+  background: rgb(255 255 255 / 0.5);
+}
+
+.fontName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.fontId {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.75rem;
+  color: rgb(43 43 38 / 0.55);
+}
+
+.flag {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--destructive) 18%, #f7f4ec);
+  color: color-mix(in oklab, var(--destructive) 80%, #2b2b26);
+}
+
+.preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15em;
+  padding: 2.25rem 1.25rem;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* Cỡ lấy thẳng từ thang mẫu thiệp; `--preview-scale` bù chênh lệch x-height
+   giữa chữ thư pháp và serif để bảng so sánh phản ánh đúng tương quan. */
+.name {
+  font-family: var(--preview-family);
+  font-size: calc(var(--tpl-h1) * var(--preview-scale, 1));
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.ampersand {
+  font-family: var(--preview-family);
+  font-size: calc(var(--tpl-h3) * var(--preview-scale, 1));
+  line-height: 1;
+  color: rgb(43 43 38 / 0.5);
+}
+
+.stress {
+  font-family: var(--preview-family);
+  font-size: var(--tpl-small);
+  line-height: 1.6;
+  padding: 0.75rem 1.25rem 1rem;
+  text-align: center;
+  color: rgb(43 43 38 / 0.7);
+  border-block-start: 1px solid rgb(0 0 0 / 0.08);
+  text-wrap: pretty;
+}
+
+/* Chỉ số độ nhô của dấu — dữ liệu đo được, nên trình bày như số liệu chứ không
+   như nhãn trang trí. */
+.headroom {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: rgb(43 43 38 / 0.55);
+  white-space: nowrap;
+}

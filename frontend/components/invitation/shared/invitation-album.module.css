@@ -1,0 +1,261 @@
+.mosaicGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mosaicItem {
+  min-width: 0;
+  flex-basis: 0;
+  flex-grow: var(--album-ratio);
+}
+
+.mosaicItem:nth-child(3n + 1) {
+  flex-basis: 100%;
+}
+
+.mosaicButton,
+.swiperPhotoButton {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+
+.mosaicButton:focus-visible,
+.swiperPhotoButton:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.mosaicPhoto {
+  border: 0;
+  border-radius: 0;
+}
+
+.swiper {
+  /* Control nổi trên ảnh không thể dựa vào foreground/background của template:
+     hai token đó có thể cùng sáng (như section xanh của Trầu Cau). Glass ngà
+     đủ đục để giữ icon mực rõ trên cả ảnh sáng lẫn tối, nhưng vẫn nhìn xuyên
+     thấy chất liệu của mẫu phía sau.
+
+     Giá trị mặc định đặt bằng fallback của `var()` chứ không khai lại token ở
+     đây: khai trên `.swiper` thì token mẫu đặt ở phần tử bao ngoài bị đè. */
+  --album-control-surface-resolved: var(
+    --album-control-surface,
+    rgb(255 253 247 / 74%)
+  );
+  --album-control-surface-hover-resolved: var(
+    --album-control-surface-hover,
+    rgb(255 253 247 / 88%)
+  );
+  --album-control-ink-resolved: var(--album-control-ink, #1c211b);
+  --album-control-outline-resolved: var(
+    --album-control-outline,
+    rgb(255 255 255 / 86%)
+  );
+  position: relative;
+}
+
+.swiperRail {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0 max(9%, 20px) 8px;
+  overflow-x: auto;
+  list-style: none;
+  scroll-behavior: smooth;
+  scroll-padding-inline: max(9%, 20px);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y;
+  outline: none;
+}
+
+.swiperRail::-webkit-scrollbar {
+  display: none;
+}
+
+.swiperRail:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--ring);
+}
+
+.swiperSlide {
+  flex: 0 0 82%;
+  min-width: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.swiperPhoto {
+  border-color: color-mix(in srgb, currentColor 14%, transparent);
+  box-shadow: 0 14px 36px color-mix(in srgb, currentColor 16%, transparent);
+}
+
+.swiperNav {
+  position: absolute;
+  top: calc(50% - 26px);
+  z-index: 2;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--album-control-outline-resolved);
+  border-radius: 999px;
+  background: var(--album-control-surface-resolved);
+  color: var(--album-control-ink-resolved);
+  box-shadow:
+    0 6px 20px rgb(0 0 0 / 18%),
+    inset 0 1px 0 rgb(255 255 255 / 52%);
+  cursor: pointer;
+  backdrop-filter: blur(14px) saturate(115%);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  transition:
+    opacity 180ms ease-out,
+    background-color 180ms ease-out,
+    transform 180ms ease-out;
+}
+
+.swiperNav:hover {
+  background: var(--album-control-surface-hover-resolved);
+}
+
+.swiperNav:active {
+  transform: scale(0.94);
+}
+
+.swiperNav:focus-visible {
+  outline: 2px solid var(--album-control-ink-resolved);
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 4px var(--album-control-surface-resolved),
+    0 6px 20px rgb(0 0 0 / 18%);
+}
+
+.swiperNav:disabled {
+  cursor: default;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.swiperNav svg {
+  width: 22px;
+  height: 22px;
+}
+
+.swiperPrev {
+  left: 8px;
+}
+
+.swiperNext {
+  right: 8px;
+}
+
+/*
+ * Coverflow: cùng ruột và hành vi với swiper, nhưng ảnh đang xem đứng giữa lớn
+ * hẳn, hai ảnh kề thu nhỏ và mờ đi ló ra hai bên. Ảnh phẳng, không viền, không
+ * bóng — khung là nền giấy của mẫu chứ không phải tấm thẻ.
+ *
+ * Mẫu chỉnh nút bằng cùng bộ token `--album-control-*` của swiper, cộng
+ * `--album-control-outline-hover` và `--album-control-shadow`.
+ */
+.coverflow .swiperRail {
+  /* Bề rộng slide là một độ dài tuyệt đối (đo theo bề rộng tấm thiệp) chứ không
+     phải phần trăm: phần trăm của `flex-basis` tính theo vùng nội dung của băng
+     ảnh, còn phần trăm của `padding` tính theo bề rộng ngoài — hai mốc khác
+     nhau thì không bao giờ canh giữa được. */
+  --album-slide: min(72cqi, 440px);
+  align-items: center;
+  gap: 0;
+  padding-inline: calc((100% - var(--album-slide)) / 2);
+  scroll-padding-inline: calc((100% - var(--album-slide)) / 2);
+}
+
+.coverflow .swiperSlide {
+  flex: 0 0 var(--album-slide);
+  transform: scale(0.74);
+  transform-origin: center;
+  opacity: 0.55;
+  transition:
+    transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Ảnh chưa xem thu nhỏ nên tự lùi vào trong ô của nó; kéo các ô lại gần nhau
+   để hai bên vẫn ló ra thấy được, kể cả trên màn hẹp. */
+.coverflow .swiperSlide + .swiperSlide {
+  margin-left: calc(var(--album-slide) * -0.08);
+}
+
+.coverflow .swiperSlide[data-selected="true"] {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.coverflow .swiperPhoto {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Nút chuyển ảnh: huy hiệu tròn đặt ngay mép ảnh đang xem. */
+.coverflow .swiperNav {
+  width: 46px;
+  height: 46px;
+  box-shadow: var(
+    --album-control-shadow,
+    0 10px 26px rgb(0 0 0 / 14%),
+    inset 0 1px 0 rgb(255 255 255 / 70%)
+  );
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+
+.coverflow .swiperNav:hover {
+  border-color: var(
+    --album-control-outline-hover,
+    var(--album-control-outline-resolved)
+  );
+}
+
+.coverflow .swiperNav:focus-visible {
+  outline-offset: 3px;
+}
+
+.coverflow .swiperNav svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.4;
+}
+
+.coverflow .swiperPrev {
+  left: 4%;
+}
+
+.coverflow .swiperNext {
+  right: 4%;
+}
+
+/* Trên thiết bị chạm thì cú vuốt là cách chuyển ảnh chính; hai nút lùi lại
+   thành gợi ý nhỏ chứ không che ảnh. */
+@media (hover: none) {
+  .coverflow .swiperNav {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* `:not(:disabled)`: không thì rule này đè `opacity: 0` của nút đã hết ảnh. */
+  .coverflow .swiperNav:not(:disabled) {
+    opacity: 0.86;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swiperRail {
+    scroll-behavior: auto;
+  }
+
+  .swiperNav,
+  .coverflow .swiperSlide {
+    transition: none;
+  }
+}

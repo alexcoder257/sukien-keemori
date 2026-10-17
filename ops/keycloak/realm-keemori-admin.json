@@ -1,0 +1,286 @@
+{
+  "realm": "keemori-admin",
+  "displayName": "Keemori CMS",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": false,
+  "registrationEmailAsUsername": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "rememberMe": false,
+  "verifyEmail": false,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "permanentLockout": false,
+  "failureFactor": 5,
+  "waitIncrementSeconds": 60,
+  "maxFailureWaitSeconds": 900,
+  "maxDeltaTimeSeconds": 43200,
+  "minimumQuickLoginWaitSeconds": 60,
+  "quickLoginCheckMilliSeconds": 1000,
+  "accessTokenLifespan": 900,
+  "ssoSessionIdleTimeout": 7200,
+  "ssoSessionMaxLifespan": 36000,
+  "revokeRefreshToken": false,
+  "passwordPolicy": "length(10) and upperCase(1) and lowerCase(1) and digits(1) and notUsername and notEmail and passwordHistory(3)",
+  "otpPolicyType": "totp",
+  "otpPolicyAlgorithm": "HmacSHA1",
+  "otpPolicyDigits": 6,
+  "otpPolicyPeriod": 30,
+  "internationalizationEnabled": true,
+  "supportedLocales": [
+    "vi",
+    "en"
+  ],
+  "defaultLocale": "vi",
+  "clients": [
+    {
+      "clientId": "keemori-api",
+      "name": "Keemori API",
+      "description": "Backend NestJS. Không đăng nhập được — chỉ giữ client role (quyền CMS) và làm audience của access token.",
+      "enabled": true,
+      "bearerOnly": true,
+      "publicClient": false,
+      "standardFlowEnabled": false,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "protocol": "openid-connect"
+    },
+    {
+      "clientId": "keemori-dashboard",
+      "name": "Keemori CMS",
+      "description": "Dashboard Next.js — Authorization Code + PKCE, đổi code ở server.",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "${KEYCLOAK_DASHBOARD_CLIENT_SECRET}",
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "frontchannelLogout": true,
+      "fullScopeAllowed": true,
+      "rootUrl": "${DASHBOARD_URL:http://localhost:3002}",
+      "baseUrl": "${DASHBOARD_URL:http://localhost:3002}",
+      "redirectUris": [
+        "${DASHBOARD_URL:http://localhost:3002}/api/auth/callback"
+      ],
+      "webOrigins": [
+        "${DASHBOARD_URL:http://localhost:3002}"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "${DASHBOARD_URL:http://localhost:3002}/*"
+      },
+      "protocolMappers": [
+        {
+          "name": "audience keemori-api",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {
+            "included.client.audience": "keemori-api",
+            "access.token.claim": "true",
+            "id.token.claim": "false",
+            "introspection.token.claim": "true"
+          }
+        }
+      ]
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "name": "cms-super-admin",
+        "description": "Toàn quyền CMS.",
+        "composite": true,
+        "composites": {
+          "client": {
+            "keemori-api": [
+              "dashboard:view",
+              "users:view",
+              "users:delete",
+              "partners:manage",
+              "cards:manage",
+              "payments:manage",
+              "content:manage",
+              "reviews:manage",
+              "templates:manage",
+              "settings:manage",
+              "pricing:manage",
+              "vouchers:manage",
+              "revenue:manage",
+              "analytics:view",
+              "audit:view"
+            ]
+          }
+        }
+      },
+      {
+        "name": "cms-admin",
+        "description": "Vận hành hằng ngày — tương đương quyền admin cũ: không thấy tiền, không xoá tài khoản, không đọc nhật ký.",
+        "composite": true,
+        "composites": {
+          "client": {
+            "keemori-api": [
+              "dashboard:view",
+              "users:view",
+              "partners:manage",
+              "cards:manage",
+              "payments:manage",
+              "content:manage",
+              "reviews:manage",
+              "templates:manage",
+              "settings:manage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "cms-editor",
+        "description": "Biên tập nội dung và kho mẫu.",
+        "composite": true,
+        "composites": {
+          "client": {
+            "keemori-api": [
+              "dashboard:view",
+              "content:manage",
+              "reviews:manage",
+              "templates:manage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "cms-support",
+        "description": "Chăm sóc khách hàng: tra tài khoản, thiệp, đối tác, giao dịch.",
+        "composite": true,
+        "composites": {
+          "client": {
+            "keemori-api": [
+              "dashboard:view",
+              "users:view",
+              "cards:manage",
+              "partners:manage",
+              "payments:manage"
+            ]
+          }
+        }
+      },
+      {
+        "name": "cms-accountant",
+        "description": "Kế toán: giao dịch, doanh thu, bảng giá, mã giảm giá, phân tích.",
+        "composite": true,
+        "composites": {
+          "client": {
+            "keemori-api": [
+              "dashboard:view",
+              "payments:manage",
+              "revenue:manage",
+              "pricing:manage",
+              "vouchers:manage",
+              "analytics:view"
+            ]
+          }
+        }
+      }
+    ],
+    "client": {
+      "keemori-api": [
+        {
+          "name": "dashboard:view",
+          "description": "Xem trang tổng quan",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "users:view",
+          "description": "Xem bảng người dùng và số liệu từng tài khoản",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "users:delete",
+          "description": "Vô hiệu hoá tài khoản khách",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "partners:manage",
+          "description": "Duyệt, thu hồi và sửa hồ sơ đối tác",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "cards:manage",
+          "description": "Danh sách thiệp, trưng bày, mở khoá sửa tên",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "payments:manage",
+          "description": "Tra soát giao dịch, xác nhận thanh toán tay",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "content:manage",
+          "description": "Blog, FAQ, lời chứng thực, cặp đôi trang chủ, số liệu, ảnh biên tập",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "reviews:manage",
+          "description": "Kiểm duyệt đánh giá mẫu thiệp",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "templates:manage",
+          "description": "Kho mẫu, tag, dải mẫu trang chủ",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "settings:manage",
+          "description": "Cấu hình vận hành và thiệp demo của hero",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "pricing:manage",
+          "description": "Sửa bảng giá",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "vouchers:manage",
+          "description": "Mã giảm giá",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "revenue:manage",
+          "description": "Doanh thu và chi phí",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "analytics:view",
+          "description": "Phân tích lượt truy cập",
+          "composite": false,
+          "clientRole": true
+        },
+        {
+          "name": "audit:view",
+          "description": "Nhật ký thao tác của người vận hành",
+          "composite": false,
+          "clientRole": true
+        }
+      ]
+    }
+  }
+}

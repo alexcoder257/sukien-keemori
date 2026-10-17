@@ -1,0 +1,172 @@
+/**
+ * Nút nhạc dùng chung **trục dọc** với hàng nút nổi của website (`ScrollToTop`,
+ * `MessengerButton`): chúng là hình tròn 3rem đặt cách mép phải 1.5rem, tức tâm
+ * nằm trên trục cách mép 3rem. Nút nhạc to hơn (3.25rem), nên lấy đúng cùng một
+ * `right` là hai đường tròn lệch trục 2px — nhìn thấy ngay khi chúng xếp chồng
+ * nhau ở góc phải. Trừ nửa phần chênh lệch đường kính để hai tâm trùng trục.
+ *
+ * Viết bằng `calc` chứ không phải một con số đã tính sẵn: đổi cỡ nút — của nút
+ * nhạc hay của hàng nút website — thì trục tự đúng lại, không phải nhớ có một
+ * phép trừ nằm ở đây.
+ */
+.player {
+  --chrome-size: 3rem;
+  --chrome-gutter: 1.5rem;
+  --axis-shift: calc((3.25rem - var(--chrome-size)) / 2);
+
+  position: fixed;
+  right: max(
+    calc(var(--chrome-gutter) - var(--axis-shift)),
+    env(safe-area-inset-right)
+  );
+  /* Chừa hàng nút hệ thống ở sát đáy (lên đầu trang/devtools khi phát triển). */
+  bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 4rem);
+  z-index: 30;
+}
+
+/* Khung Mobile trong editor rộng 24rem nhưng viewport vẫn là desktop. Neo nút
+   theo mép phải khung giả lập để vị trí giống hệt khi xem trên điện thoại. */
+.player[data-placement="mobile-preview"] {
+  right: max(
+    calc(var(--chrome-gutter) - var(--axis-shift)),
+    calc((100vw - 24rem) / 2 + var(--chrome-gutter) - var(--axis-shift))
+  );
+}
+
+.player audio {
+  display: none;
+}
+
+/* Hợp đồng trình bày của nút nhạc. Trạng thái nghỉ vốn đã ăn theo token của mẫu
+   bọc ngoài (`--foreground`, `--background`), nhưng trạng thái ĐANG PHÁT trước
+   đây khoá cứng hai mã màu xanh mực — nghĩa là mọi mẫu, kể cả mẫu đỏ mận hay
+   ngọc lục bảo, đều nhảy về xanh mực ngay khi bật nhạc.
+   Bốn biến dưới đây giữ nguyên hành vi cũ làm mặc định; mẫu nào coi nhạc nền là
+   một phần của concept (Mận Chín) thì khai lại chúng ở CSS Module của chính
+   mình. Không mẫu nào phải sửa component này, và không prop riêng cho mẫu nào. */
+.button {
+  /* Hai lớp biến: `--music-*` là biến *nội bộ* của nút (trạng thái đang phát ghi
+     đè chúng), còn `--music-rest-*` / `--music-playing-*` là các nút xoay mà mẫu
+     bọc ngoài khai ở scope của nó. Gộp một lớp thì khai báo trên `.button` luôn
+     thắng khai báo của mẫu ở tổ tiên và mọi ghi đè trở thành vô hiệu. */
+  --music-surface: var(
+    --music-rest-surface,
+    color-mix(in srgb, var(--background) 88%, transparent)
+  );
+  --music-foreground: var(--music-rest-foreground, var(--foreground));
+  --music-border: var(
+    --music-rest-border,
+    color-mix(in srgb, var(--foreground) 18%, transparent)
+  );
+  --music-radius: var(--music-rest-radius, 999px);
+
+  display: grid;
+  width: 3.25rem;
+  height: 3.25rem;
+  cursor: pointer;
+  place-items: center;
+  color: var(--music-foreground);
+  background: var(--music-surface);
+  border: 1px solid var(--music-border);
+  border-radius: var(--music-radius);
+  box-shadow: 0 0.5rem 1.75rem rgb(26 35 52 / 16%);
+  backdrop-filter: blur(12px);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+  touch-action: manipulation;
+}
+
+.player[data-playing="true"] .button {
+  --music-surface: var(
+    --music-playing-surface,
+    color-mix(in srgb, #27364e 92%, transparent)
+  );
+  --music-foreground: var(--music-playing-foreground, #f8fafc);
+  --music-border: var(--music-playing-border, rgb(255 255 255 / 34%));
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:active {
+  transform: scale(0.96);
+}
+
+.button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--foreground) 35%, transparent);
+  outline-offset: 3px;
+}
+
+.playIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.125rem;
+  fill: currentColor;
+  stroke-width: 1.5;
+}
+
+.equalizer {
+  display: flex;
+  height: 1.25rem;
+  align-items: center;
+  gap: 0.16rem;
+}
+
+.equalizer span {
+  width: 0.15rem;
+  height: 100%;
+  background: currentColor;
+  border-radius: 999px;
+  animation: sound-wave 820ms ease-in-out infinite alternate;
+  transform: scaleY(0.35);
+  transform-origin: center;
+}
+
+.equalizer span:nth-child(2) {
+  animation-delay: -540ms;
+}
+
+.equalizer span:nth-child(3) {
+  animation-delay: -180ms;
+}
+
+.equalizer span:nth-child(4) {
+  animation-delay: -690ms;
+}
+
+.equalizer span:nth-child(5) {
+  animation-delay: -320ms;
+}
+
+@keyframes sound-wave {
+  0% {
+    transform: scaleY(0.25);
+  }
+
+  45% {
+    transform: scaleY(0.95);
+  }
+
+  100% {
+    transform: scaleY(0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+
+  .equalizer span {
+    animation: none;
+    transform: scaleY(0.65);
+  }
+}

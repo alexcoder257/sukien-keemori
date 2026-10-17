@@ -1,0 +1,525 @@
+.hero {
+  color: var(--reveal-ivory);
+  background: var(--reveal-black);
+}
+.scene {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  /* Dưới 1024px ảnh tiệc nằm dưới khối chữ; nền phía trên là đen ấm với hai
+     quầng champagne thật nhạt — một ở góc trên, một ngay chỗ mép ảnh tan vào
+     để dây đèn và bóng bay không bị cắt thành một đường ngang. */
+  background:
+    radial-gradient(
+      ellipse 120% 40% at 50% 62%,
+      color-mix(in oklab, var(--reveal-champagne) 14%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70% 30% at 88% 0%,
+      color-mix(in oklab, var(--reveal-champagne) 10%, transparent),
+      transparent 70%
+    ),
+    var(--reveal-black);
+}
+.copy {
+  position: relative;
+  z-index: 2;
+  padding: 104px 6.2% 0;
+}
+.headline {
+  margin: 0;
+  font-family: var(--font-be-vietnam-pro), sans-serif;
+  font-size: clamp(28px, 6.6vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-wrap: initial;
+}
+.keyword {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--reveal-champagne);
+  font-family: var(--font-inter), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.line {
+  display: block;
+}
+.accent {
+  display: block;
+  color: var(--reveal-champagne);
+  font-style: normal;
+}
+.lead {
+  max-width: 32em;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.primaryCta,
+.secondaryCta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 12px 18px;
+  border: 1px solid color-mix(in oklab, var(--reveal-ivory) 55%, transparent);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  transition:
+    background-color 180ms,
+    box-shadow 180ms;
+}
+.primaryCta {
+  background: linear-gradient(
+    105deg,
+    var(--reveal-champagne),
+    color-mix(in oklab, var(--reveal-champagne) 70%, var(--reveal-ivory))
+  );
+  color: var(--reveal-black);
+  border-color: transparent;
+}
+.secondaryCta {
+  background: rgb(0 0 0 / 0.12);
+}
+.primaryCta:hover {
+  box-shadow: 0 0 24px
+    color-mix(in oklab, var(--reveal-champagne) 30%, transparent);
+}
+.secondaryCta:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+.primaryCta:focus-visible,
+.secondaryCta:focus-visible {
+  outline: 2px solid var(--reveal-ivory);
+  outline-offset: 5px;
+}
+.trust {
+  display: none;
+}
+.portrait {
+  position: relative;
+  z-index: 0;
+  margin-top: 20px;
+}
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.portrait::before,
+.portrait::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: auto 0 0;
+  height: 26%;
+  background: linear-gradient(transparent, var(--reveal-black));
+  pointer-events: none;
+}
+.portrait::before {
+  inset: 0 0 auto;
+  height: 10%;
+  background: linear-gradient(rgb(0 0 0 / 0.2), transparent);
+}
+.scrim {
+  display: none;
+}
+.saveDate {
+  position: relative;
+  z-index: 2;
+  width: max-content;
+  margin: -12px 7% -34px auto;
+  font-family: var(--font-hurricane), cursive;
+  font-size: 36px;
+  line-height: 0.74;
+  transform: rotate(-9deg);
+  color: var(--reveal-ivory);
+  display: none;
+}
+.saveDate span {
+  display: block;
+}
+.saveDate span:nth-child(2) {
+  padding-left: 24px;
+}
+.saveDate span:nth-child(3) {
+  padding-left: 40px;
+}
+.saveDate svg {
+  position: absolute;
+  width: 125px;
+  right: 65%;
+  top: 85%;
+}
+.stationery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7%;
+  padding: 32px 9% 0;
+}
+.cardSlot {
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  flex: none;
+  transform: rotate(-2deg);
+  perspective: 1400px;
+}
+.cardWrap {
+  transform-style: preserve-3d;
+}
+.signature {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  text-align: center;
+}
+.signature::before {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 1px;
+  margin: 0 auto 16px;
+  background: var(--reveal-champagne);
+  opacity: 0.6;
+}
+.signature p {
+  font-family: var(--font-hurricane), cursive;
+  font-size: clamp(25px, 5vw, 40px);
+  line-height: 1;
+  transform: rotate(-8deg);
+}
+.signature span {
+  display: block;
+  margin-top: 16px;
+  font-size: 8px;
+  letter-spacing: 0.45em;
+  white-space: nowrap;
+}
+.scrollCue {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 24px;
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .copy {
+    padding-top: 128px;
+  }
+  .lead {
+    font-size: 18px;
+  }
+  .primaryCta,
+  .secondaryCta {
+    font-size: 16px;
+    padding-inline: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  .scene {
+    min-height: max(760px, 100svh);
+    background: var(--reveal-black);
+  }
+  .portrait {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+  }
+  .photo {
+    height: 100%;
+    object-fit: cover;
+    object-position: center 26%;
+  }
+  .portrait::before,
+  .portrait::after {
+    display: none;
+  }
+  .scrim {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        90deg,
+        rgb(0 0 0 / 0.65),
+        rgb(0 0 0 / 0.4) 22%,
+        transparent 43%
+      ),
+      linear-gradient(
+        180deg,
+        rgb(0 0 0 / 0.25),
+        transparent 18%,
+        transparent 73%,
+        rgb(0 0 0 / 0.32)
+      );
+  }
+  .copy {
+    width: 33%;
+    padding: max(140px, 18svh) 0 0;
+    margin-left: 5.2%;
+  }
+  .headline {
+    font-family: var(--font-be-vietnam-pro), sans-serif;
+    font-size: clamp(34px, 3.15vw, 64px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+  }
+  .keyword {
+    margin-bottom: 24px;
+    font-size: 11px;
+    letter-spacing: 0.27em;
+  }
+  .accent {
+    margin: 0;
+    font-family: inherit;
+    font-size: 1em;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+  .lead {
+    max-width: 90%;
+    margin-top: 24px;
+    font-family: var(--font-be-vietnam-pro), sans-serif;
+    font-size: clamp(14px, 1.02vw, 19px);
+    line-height: 1.9;
+  }
+  .actions {
+    margin-top: 26px;
+    gap: 12px;
+  }
+  .primaryCta,
+  .secondaryCta {
+    min-height: 48px;
+    padding: 13px 24px;
+    font-size: 14px;
+  }
+  .trust {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: color-mix(in oklab, var(--reveal-ivory) 65%, transparent);
+  }
+  .stationery {
+    position: static;
+    padding: 0;
+  }
+  .cardSlot {
+    position: absolute;
+    right: 5%;
+    bottom: 12%;
+    width: min(16vw, 31svh);
+  }
+  .signature {
+    position: absolute;
+    bottom: 7%;
+    left: 5.2%;
+    text-align: left;
+  }
+  .signature p {
+    display: inline-block;
+    font-size: 30px;
+    transform: none;
+  }
+  .signature::before {
+    position: absolute;
+    width: 110px;
+    top: 16px;
+    left: calc(100% + 16px);
+    margin: 0;
+  }
+  .signature span {
+    font-size: 10px;
+    margin-top: 12px;
+    letter-spacing: 0.65em;
+  }
+  .saveDate {
+    display: block;
+    position: absolute;
+    top: 28%;
+    right: 5%;
+    margin: 0;
+    font-size: clamp(40px, 3.7vw, 64px);
+  }
+  .scrollCue {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 24px;
+    padding: 0;
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primaryCta,
+  .secondaryCta {
+    transition: none;
+  }
+}
+/* The generated scene reserves the left side for copy and the right for stationery. */
+@media (min-width: 1024px) {
+  .portrait {
+    inset: 0;
+  }
+  .photo {
+    object-position: 58% center;
+  }
+  .copy {
+    width: 30%;
+  }
+  .headline {
+    font-size: clamp(28px, 2.6vw, 52px);
+  }
+  .lead {
+    max-width: min(90%, 390px);
+  }
+}
+@media (max-width: 1023px) {
+  .copy {
+    padding-top: 96px;
+  }
+  .headline {
+    font-size: clamp(26px, 6.6vw, 48px);
+  }
+  .keyword {
+    margin-bottom: 16px;
+  }
+  .lead {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .actions {
+    margin-top: 16px;
+  }
+  .primaryCta,
+  .secondaryCta {
+    padding-inline: 14px;
+  }
+  .portrait {
+    margin-top: 24px;
+    mask-image: linear-gradient(transparent, black 30%, black 82%, transparent);
+  }
+  .portrait::before,
+  .portrait::after {
+    display: none;
+  }
+  .stationery {
+    align-items: flex-start;
+    padding-top: 32px;
+    /* Follow the card's aspect ratio; leave room for its scroll transform. */
+    padding-bottom: max(48px, 8vw);
+  }
+  .signature {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .lead {
+    font-size: 16px;
+  }
+}
+.visual .saveDate {
+  display: block;
+  position: absolute;
+  top: -28px;
+  right: 6%;
+  margin: 0;
+  font-size: 32px;
+}
+.visual .saveDate svg {
+  width: 100px;
+}
+@media (min-width: 1024px) {
+  .visual .saveDate {
+    top: 28%;
+    right: -1.5%;
+    font-size: clamp(40px, 3.7vw, 64px);
+  }
+  .visual .saveDate svg {
+    width: 125px;
+  }
+}
+
+.visual {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .visual {
+    position: static;
+  }
+  .visual .saveDate {
+    right: 5%;
+  }
+}
+@media (min-width: 1024px) {
+  .photo {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+}
+
+/* Ba điểm mạnh: nhãn nhỏ có biểu tượng. Cột chữ ở điện thoại và desktop hẹp
+   nên xếp dọc — xếp ngang ở đó là gãy 2 + 1; tablet đủ rộng cho một hàng.
+   Từng là khung số liệu ba cột chữ lớn — dồn vào cột chữ 30% của desktop thì
+   "Thiết kế riêng" và "Mọi thiết bị" gãy đôi. */
+.highlights {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: -4px 6.2% 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-be-vietnam-pro), sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  color: color-mix(in oklab, var(--reveal-ivory) 88%, transparent);
+}
+.highlights li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+.highlights svg {
+  flex-shrink: 0;
+  color: var(--reveal-champagne);
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .highlights {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    font-size: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .highlights {
+    width: min(36%, 480px);
+    gap: 10px;
+    margin: 36px 0 140px 5.2%;
+    font-size: 14px;
+  }
+}

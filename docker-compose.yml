@@ -1,0 +1,198 @@
+# Compose chỉ phục vụ production của **sukien.keemori.com**: Postgres, backend
+# NestJS, trang khách và CMS. Local development chạy trực tiếp bằng npm trong
+# từng thư mục.
+#
+# Stack này chạy CHUNG VPS với thiep-cuoi-online (keemori.com) nhưng tách hẳn:
+#   - thư mục server: /opt/sukien-keemori (chỉ chứa file này + .env)
+#   - project name `sukien-keemori` → container, network, volume riêng.
+#     Đổi `name:` là Compose trỏ sang volume khác, tức một database rỗng.
+#   - image repo riêng (IMAGE_REPO) — dùng chung repo với keemori thì push đè
+#     tag `backend`/`frontend`/`dashboard` của production keemori.
+#   - cổng host 3110/3111/3112 (keemori giữ 3000/3001/3002, keemori-tools giữ 3100).
+#
+#   cp .env.docker.example .env
+#   # điền các giá trị bắt buộc trong .env
+#   # Máy local: build image cho server amd64 rồi push Docker Hub
+#   docker compose build backend frontend dashboard
+#   docker compose push backend frontend dashboard
+#
+#   # Server: chỉ cần file này và .env, không cần source code
+#   docker compose pull
+#   docker compose up -d --no-build
+#
+# Nginx trên host proxy vào 127.0.0.1:3110/3111/3112 (mẫu ở
+# ops/nginx/sukien-keemori.conf); Postgres chỉ ở mạng Docker.
+#
+# Compose tự đọc `.env` ở thư mục này cho phần `${...}` bên dưới. File đó chứa
+# secret thật nên **không commit** — chỉ commit `.env.docker.example`.
+
+name: sukien-keemori
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      # `-U` và `-d` là bắt buộc: không có chúng `pg_isready` hỏi bằng user
+      # `root` của container và luôn trả về "không sẵn sàng".
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME} -d ${DB_DATABASE}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      # Postgres khởi động lần đầu phải khởi tạo cả cụm dữ liệu; không có
+      # `start_period` thì nó bị đánh trượt healthcheck trước khi kịp sẵn sàng.
+      start_period: 30s
+
+  # Migration chạy trong **một service riêng, chạy một lần rồi thoát**, chứ
+  # không nhét vào entrypoint của backend. Hai lý do:
+  #
+  # 1. Nhân bản backend lên hai container là hai tiến trình cùng chạy migration
+  #    một lúc. TypeORM có khoá nên thường không hỏng, nhưng "thường không
+  #    hỏng" không phải thứ đáng đánh cược với schema production.
+  # 2. Đây đúng là hình dạng của một Job bên Kubernetes, nên khi chuyển sang đó
+  #    thì dịch thẳng một-một, không phải nghĩ lại.
+  #
+  # Dùng chung image với backend — `typeorm` là dependency thật (không phải
+  # devDependency) và `data-source.ts` tự nhận biết đang chạy bản `.js` đã build
+  # để trỏ vào `dist/`, nên CLI chạy được trên image đã lược bỏ devDependencies.
+  migrate:
+    platform: linux/amd64
+    # Không có `build:` — dùng lại đúng image của `backend`. Khai `build` ở cả
+    # hai chỗ khiến Compose dựng hai image từ cùng một context, và trên VPS
+    # (nơi chỉ `pull` chứ không build) thì service này sẽ không có image nào.
+    image: ${IMAGE_REPO:-alexcoder257/sukien-keemori}:${BACKEND_IMAGE_TAG:-backend}
+    restart: "no"
+    env_file: .env
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+    command:
+      - node
+      - node_modules/typeorm/cli.js
+      - -d
+      - dist/configuration/data-source.js
+      - migration:run
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  backend:
+    platform: linux/amd64
+    image: ${IMAGE_REPO:-alexcoder257/sukien-keemori}:${BACKEND_IMAGE_TAG:-backend}
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Ghi đè hai biến của `.env`: bên trong mạng Docker thì host của database
+      # là tên service, không phải `localhost`.
+      DB_HOST: postgres
+      DB_PORT: 5432
+      PORT: 3001
+      # Schema do migration quản. Bật `synchronize` là mở đường cho schema lệch
+      # khỏi migration mà không ai biết.
+      DB_SYNCHRONIZE: "false"
+      # CORS phải liệt kê **đủ cả hai** app; thiếu origin nào thì trình duyệt
+      # chặn và mọi request của app đó hiện lên là lỗi mạng, không phải 4xx.
+      FRONTEND_ORIGIN: ${PUBLIC_WEB_URL:-http://localhost:3000},${PUBLIC_CMS_URL:-http://localhost:3002}
+      # Dùng trong link đặt lại mật khẩu và các redirect của OAuth — phải là
+      # địa chỉ **trình duyệt của khách mở được**, không phải tên service.
+      FRONTEND_URL: ${PUBLIC_WEB_URL:-http://localhost:3000}
+    volumes:
+      # Ảnh khách tải lên khi `STORAGE_DRIVER=local`. Không có dòng này thì mọi
+      # ảnh biến mất sau mỗi `docker compose up --build` — container là
+      # ephemeral, và đó là cái bẫy đắt nhất của việc đóng gói app có upload.
+      # Chuyển sang `STORAGE_DRIVER=r2` thì volume này thành thừa.
+      - backend-uploads:/app/uploads
+    ports:
+      - "127.0.0.1:${HOST_PORT_API:-3111}:3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        # Backend chỉ khởi động sau khi migration đã chạy **xong và thành
+        # công**. Migration hỏng thì app không lên, thay vì lên rồi đổ 500 vì
+        # thiếu cột.
+        condition: service_completed_successfully
+    healthcheck:
+      # `/settings/public` là route công khai không cần đăng nhập — nó chạm cả
+      # database nên trả 200 nghĩa là app thật sự phục vụ được, khác với việc
+      # chỉ có cổng đang mở.
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3001/settings/public').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    platform: linux/amd64
+    image: ${IMAGE_REPO:-alexcoder257/sukien-keemori}:${FRONTEND_IMAGE_TAG:-frontend}
+    build:
+      context: ./frontend
+      args:
+        # Build arg, **không phải** biến runtime: xem chú thích dài trong
+        # `frontend/Dockerfile`. Đổi giá trị này thì phải `--build` lại, restart
+        # không có tác dụng.
+        NEXT_PUBLIC_API_URL: ${PUBLIC_API_URL:-http://localhost:3001}
+        # Tên miền công khai — canonical, hreflang và og:image dựng từ nó. Cũng
+        # là build arg vì lý do y hệt: giá trị bị nướng vào bundle lúc build.
+        NEXT_PUBLIC_SITE_URL: ${PUBLIC_WEB_URL:-http://localhost:3000}
+        NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${NEXT_PUBLIC_RECAPTCHA_SITE_KEY:-}
+        NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY: ${NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY:-}
+        NEXT_PUBLIC_GA_ID: ${NEXT_PUBLIC_GA_ID:-}
+        # Build arg vì rewrite `/uploads/*` bị chốt lúc build — xem Dockerfile.
+        UPLOADS_ORIGIN: ${UPLOADS_ORIGIN:-}
+    restart: unless-stopped
+    environment:
+      # Chỉ có tác dụng với `next dev`/image build ngay trên máy này. Image từ CI
+      # đã chốt rewrite `/uploads/*` lúc build (build arg ở trên, biến
+      # `vars.UPLOADS_ORIGIN` của GitHub) — đổi ở đây rồi restart **không** đổi
+      # được đích của rewrite. Xem ops/r2/README.md.
+      UPLOADS_ORIGIN: ${UPLOADS_ORIGIN:-http://backend:3001}
+      # Địa chỉ backend cho **tiến trình server** của Next (Server Component,
+      # generateMetadata). Bắt buộc phải khác `NEXT_PUBLIC_API_URL` ở trên:
+      # cái kia là địa chỉ trình duyệt của khách gọi, còn `localhost` bên trong
+      # container này trỏ về chính nó chứ không phải backend.
+      INTERNAL_API_URL: http://backend:3001
+      REVALIDATE_SECRET: ${REVALIDATE_SECRET:-}
+    ports:
+      - "127.0.0.1:${HOST_PORT_WEB:-3110}:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  dashboard:
+    platform: linux/amd64
+    image: ${IMAGE_REPO:-alexcoder257/sukien-keemori}:${DASHBOARD_IMAGE_TAG:-dashboard}
+    build:
+      context: ./dashboard
+      args:
+        NEXT_PUBLIC_API_URL: ${PUBLIC_API_URL:-http://localhost:3001}
+        SITE_ORIGIN: ${PUBLIC_WEB_URL:-http://frontend:3000}
+        UPLOADS_ORIGIN: ${UPLOADS_ORIGIN:-}
+    restart: unless-stopped
+    environment:
+      UPLOADS_ORIGIN: ${UPLOADS_ORIGIN:-http://backend:3001}
+      INTERNAL_API_URL: http://backend:3001
+      # Đăng nhập CMS (lib/admin-auth.ts): route handler gọi backend qua
+      # `INTERNAL_API_URL`; `DASHBOARD_URL` dựng URL chuyển hướng sau đăng xuất.
+      DASHBOARD_URL: ${PUBLIC_CMS_URL:-http://localhost:3002}
+    ports:
+      - "127.0.0.1:${HOST_PORT_CMS:-3112}:3002"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  postgres-data:
+  backend-uploads:

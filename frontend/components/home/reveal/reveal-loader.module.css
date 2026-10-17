@@ -1,0 +1,257 @@
+/**
+ * Màn mở đầu: một phong bì thật được mở ra.
+ *
+ * Bốn khung hình: wordmark + tagline ký tên → phong bì ngà hiện ra dưới đèn →
+ * niêm sáp vỡ, nắp lật lên, tấm thiệp nhô ra và trở thành cửa sổ nhìn vào bức
+ * ảnh cưới → nền tối tan đi để lộ hero thật đã chờ sẵn bên dưới.
+ *
+ * Ở đây chỉ có hình. Thời lượng và thứ tự nằm ở `loadingTimeline` trong
+ * `hero-stage.tsx`; file này chỉ cung cấp các mốc `data-loader-*`.
+ *
+ * Không có màn kéo toàn màn hình nào: bức ảnh lộ ra từ bên trong tấm thiệp,
+ * nên phong bì và tấm thiệp là cùng một vật thể suốt cả cảnh.
+ */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  /* Không bao giờ nhận chuột: lớp này chỉ để nhìn, không để bấm. */
+  pointer-events: none;
+  /* Chiều sâu cho cú ngả `rotateX` của phong bì ở khung 2. */
+  perspective: 1600px;
+}
+
+/* --- Nền giấy gần đen ---------------------------------------------------- */
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      70% 50% at 50% 46%,
+      color-mix(in oklab, var(--reveal-espresso) 85%, transparent) 0%,
+      transparent 72%
+    ),
+    var(--reveal-black);
+}
+
+/* Kết cấu giấy của nền — cùng một lớp nhiễu với mặt thiệp, ở alpha thấp hơn. */
+.paperTexture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23p)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* --- Khung 1: chữ ký thương hiệu ---------------------------------------- */
+
+.brandSignature {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.9rem, 1.6vw, 1.35rem);
+  opacity: 0;
+}
+
+.loaderWordmark {
+  position: relative;
+  width: clamp(12.5rem, 24vw, 17.5rem);
+}
+
+.tagline {
+  margin: 0;
+  font-size: clamp(0.58rem, 0.76vw, 0.7rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.32em;
+  text-indent: 0.32em;
+  color: color-mix(in oklab, var(--reveal-champagne) 92%, transparent);
+}
+
+/* --- Khung 2–3: phong bì ------------------------------------------------- */
+
+.stageHalo {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  width: min(64vw, 900px);
+  aspect-ratio: 1.5;
+  translate: -50% -50%;
+  opacity: 0;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in oklab, var(--reveal-champagne) 13%, transparent) 0%,
+    color-mix(in oklab, var(--reveal-gold) 5%, transparent) 38%,
+    transparent 72%
+  );
+  filter: blur(24px);
+}
+
+.stage {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  width: min(88vw, 420px);
+  aspect-ratio: 1468 / 860;
+  translate: -50% -50%;
+  opacity: 0;
+  transform-style: preserve-3d;
+  /* Chiều sâu cho nắp phong bì lật ra; thiếu nó `rotateX` chỉ là phép bóp dẹt
+     theo chiều dọc chứ không phải một cánh giấy mở. */
+  perspective: 900px;
+  /* Đèn kiểu chụp sản phẩm: một nguồn sáng ấm chếch trên–trái. */
+  filter: drop-shadow(0 30px 60px rgb(0 0 0 / 0.75));
+  will-change: transform, opacity;
+}
+
+/* Lòng phong bì — tối, lộ ra khi nắp lật lên. */
+.envInside {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 3px;
+  background: linear-gradient(170deg, #241d13 0%, #3d3220 60%, #2a2317 100%);
+}
+
+/**
+ * Khuôn cắt của túi giấy. Tấm thiệp cao hơn phong bì, nên nếu không cắt thì lúc
+ * nằm trong túi nó thò hẳn ra dưới đáy. `clip-path` một phía — hở vô hạn phía
+ * trên, cắt đúng ở đáy phong bì — cho tấm thiệp trượt lên tự do mà vẫn biến mất
+ * hoàn toàn khi tụt xuống. Phần tử này không bao giờ được nhận transform, nếu
+ * không khuôn cắt sẽ đi theo tấm thiệp.
+ */
+.cardClip {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  clip-path: inset(-1000px 0 0 0);
+}
+
+/**
+ * Chỗ đứng của tấm thiệp bên trong phong bì. Cao hơn phong bì nhiều — đúng như
+ * một tấm thiệp thật nằm gọn trong túi giấy rồi được rút lên.
+ */
+.cardSlot {
+  position: absolute;
+  bottom: 6%;
+  left: 50%;
+  width: 74%;
+  translate: -50% 0;
+}
+
+/**
+ * Mặt trước phong bì: hình thang có khuyết chữ V ở mép trên, đúng như mép giấy
+ * gấp lên của một phong bì thật. Nó nằm trên tấm thiệp nên khi thiệp nhô lên,
+ * phần thân thiệp bị che đúng như đang trượt ra khỏi túi giấy.
+ */
+.envFront {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: 3px;
+  clip-path: polygon(0 0, 50% 72%, 100% 0, 100% 100%, 0 100%);
+  background: url("/images/site/phong-bi-km.avif") center / 100% 100% no-repeat;
+}
+
+/**
+ * Nắp phong bì. Tam giác lật quanh mép trên — `transform-origin: top center`
+ * đúng như bản lề giấy thật.
+ */
+.envFlap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 5;
+  height: 72%;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: url("/images/site/phong-bi-km.avif") top center / 100% 138.8889% no-repeat;
+}
+
+/* Mặt sau của nắp, thấy được khi nó đã lật quá 90°. */
+.envFlapBack {
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+  background: linear-gradient(178deg, #e6d8ba 0%, #cbb894 100%);
+}
+
+/* Ảnh phong bì và dấu sáp tách lớp để dấu vẫn lắc, xoay và nhấc lên. */
+.envelopePreload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sealImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.seal {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  z-index: 6;
+  width: 26%;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  filter: drop-shadow(0 5px 5px rgb(0 0 0 / 0.24));
+  will-change: transform, opacity;
+}
+
+/* --- Cửa sổ ảnh cưới ----------------------------------------------------- */
+
+/**
+ * Cửa sổ ảnh *trên mặt thiệp* ở khung 3: phần thân tấm thiệp tan dần thành bức
+ * ảnh cưới, đỉnh thiệp vẫn là giấy và chữ. Đây là lớp riêng nằm trong tấm
+ * thiệp, không phải lớp ảnh toàn màn hình — hai thứ nối nhau bằng một cú
+ * cross-fade ở khung 4.
+ */
+.window {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  opacity: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 16%,
+    rgb(0 0 0 / 0.5) 36%,
+    #000 60%
+  );
+}
+
+.windowImage {
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .stageHalo {
+    width: 110vw;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stage {
+    will-change: auto;
+  }
+}

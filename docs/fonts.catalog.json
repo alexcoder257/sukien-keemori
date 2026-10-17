@@ -1,0 +1,166 @@
+{
+  "$comment": [
+    "Danh mục font MÁY ĐỌC ĐƯỢC, rút từ `docs/font-tieng-viet.md` mục 2 và giới",
+    "hạn ở những họ đã tải về `frontend/assets/fonts/`. Đây là tập chọn hợp lệ",
+    "duy nhất khi gán font cho một mẫu thiệp: không có trong đây nghĩa là chưa",
+    "tải, phải tải và khai trong `assets/fonts/<family>/index.ts` trước đã.",
+    "",
+    "`role` là vai trong thiệp, khớp ba token `--template-font-{accent,display,body}`",
+    "của `template-typography.tsx`. `vn` là điểm dấu tiếng Việt soi mắt (3 = ★★★).",
+    "Chỉ dùng font `vn` >= 2; dưới mức đó dấu trên chữ HOA bắt đầu vỡ.",
+    "",
+    "`export` là tên biến export từ `@/assets/fonts`, `cssVar` là biến next/font",
+    "sinh ra. Hai trường này để script sinh code khỏi phải đoán."
+  ],
+  "roles": {
+    "accent": "Tên cặp đôi và accent ngắn — thường là script, chữ to nhất thiệp",
+    "script": "Chữ viết tay bổ sung cho tiêu đề bìa, độc lập với accent của mẫu",
+    "display": "Tiêu đề mục, monogram, số ngày",
+    "body": "Đoạn phải đọc: lời ngỏ, chuyện tình, địa chỉ"
+  },
+  "fonts": {
+    "hurricane": {
+      "label": "Hurricane", "roles": ["accent", "script"], "vn": 2,
+      "character": "Chữ viết tay nét bút nhanh, nghiêng, ít vòng trang trí", "kb": 65,
+      "note": "Tiêu đề bìa Hà Nội Xưa; đã soi chữ thường và HOA có dấu, dùng ngắn với line-height >= 1.1",
+      "export": "hurricane", "cssVar": "--font-hurricane",
+      "weights": ["400"], "italic": false
+    },
+    "beyond-perfection": {
+      "label": "Beyond Perfection", "roles": ["accent"], "vn": 2,
+      "character": "Script nét mảnh, vòng lượn dài", "kb": 331,
+      "note": "Bản Việt hóa từ mẫu JMII; dùng ngắn ở tiêu đề trang trí",
+      "export": "beyondPerfection", "cssVar": "--font-beyond-perfection",
+      "weights": ["400"], "italic": false
+    },
+    "hastegi": {
+      "label": "Hastegi", "roles": ["display"], "vn": 2,
+      "character": "Serif thanh mảnh, tương phản cao", "kb": 84,
+      "note": "Bản Việt hóa; đã soi tên TUẤN ANH và NHƯ BÌNH trong mẫu Lan Trắng",
+      "export": "hastegi", "cssVar": "--font-hastegi",
+      "weights": ["400"], "italic": false
+    },
+    "uvn-hoa-tay": {
+      "label": "UVN Hoa Tay", "roles": ["accent"], "vn": 2,
+      "character": "Chữ viết tay Việt mềm mại", "kb": 66,
+      "note": "Dùng cho nhãn chú rể, cô dâu; hạn chế đoạn dài",
+      "export": "uvnHoaTay", "cssVar": "--font-uvn-hoa-tay",
+      "weights": ["400"], "italic": false
+    },
+    "momo-signature": {
+      "label": "Momo Signature", "roles": ["accent"], "vn": 3,
+      "character": "Chữ ký đậm, hiện đại", "kb": 58,
+      "note": "Dấu rõ nhất nhóm script, chữ HOA có dấu vẫn sạch",
+      "export": "momoSignature", "cssVar": "--font-momo-signature",
+      "weights": ["400"], "italic": false
+    },
+    "charm": {
+      "label": "Charm", "roles": ["accent"], "vn": 3,
+      "character": "Script thanh lịch, nhẹ", "kb": 25,
+      "note": "Cadson Demak — vẽ cho Thái + Việt nên dấu chuẩn",
+      "export": "charm", "cssVar": "--font-charm",
+      "weights": ["400", "700"], "italic": false
+    },
+    "charmonman": {
+      "label": "Charmonman", "roles": ["accent"], "vn": 3,
+      "character": "Script mảnh, cổ điển", "kb": 25,
+      "note": "Cùng nhà với Charm",
+      "export": "charmonman", "cssVar": "--font-charmonman",
+      "weights": ["400", "700"], "italic": false
+    },
+    "great-vibes": {
+      "label": "Great Vibes", "roles": ["accent", "script"], "vn": 3,
+      "character": "Copperplate đám cưới kinh điển", "kb": 36,
+      "note": "Dấu cân đối kể cả chữ HOA",
+      "export": "greatVibes", "cssVar": "--font-great-vibes",
+      "weights": ["400"], "italic": false
+    },
+    "story-script": {
+      "label": "Story Script", "roles": ["accent"], "vn": 3,
+      "character": "Viết tay hiện đại, đều nét", "kb": 23,
+      "note": "Nhẹ, dễ đọc",
+      "export": "storyScript", "cssVar": "--font-story-script",
+      "weights": ["400"], "italic": false
+    },
+    "playfair-display": {
+      "label": "Playfair Display", "roles": ["display", "accent"], "vn": 3,
+      "character": "Didone tương phản cao", "kb": 27,
+      "note": "Có bộ nghiêng THẬT — dùng được <em>. Cũng là font của .theme-reveal",
+      "export": "playfairDisplay", "cssVar": "--font-playfair",
+      "weights": ["400 900"], "italic": true
+    },
+    "prata": {
+      "label": "Prata", "roles": ["display"], "vn": 3,
+      "character": "Didone, rất \"tạp chí\"", "kb": 16,
+      "note": "Chỉ có 400 — không tạo được phân cấp bằng độ đậm",
+      "export": "prata", "cssVar": "--font-prata",
+      "weights": ["400"], "italic": false
+    },
+    "cormorant-sc": {
+      "label": "Cormorant SC", "roles": ["display"], "vn": 3,
+      "character": "Garamond small-caps", "kb": 28,
+      "note": "Small caps sẵn — hợp tiêu đề mục giãn chữ",
+      "export": "cormorantSc", "cssVar": "--font-cormorant-sc",
+      "weights": ["300", "400", "500", "600", "700"], "italic": false
+    },
+    "cormorant": {
+      "label": "Cormorant", "roles": ["display", "body", "numerals"], "vn": 3,
+      "character": "Garamond mảnh, sang", "kb": 28,
+      "note": "Mảnh — cỡ nhỏ trên nền tối sẽ bết, cần tăng weight",
+      "export": "cormorant", "cssVar": "--font-cormorant",
+      "weights": ["300 700"], "italic": true
+    },
+    "eb-garamond": {
+      "label": "EB Garamond", "roles": ["display", "body"], "vn": 3,
+      "character": "Garamond cổ điển, thân thiện", "kb": 29,
+      "export": "ebGaramond", "cssVar": "--font-eb-garamond",
+      "weights": ["400 800"], "italic": true
+    },
+    "grenze-gotisch": {
+      "label": "Grenze Gotisch", "roles": ["accent", "display"], "vn": 3,
+      "character": "Blackletter đọc được", "kb": 21,
+      "note": "Blackletter DUY NHẤT có tiếng Việt đúng — không có phương án thay",
+      "export": "grenzeGotisch", "cssVar": "--font-grenze-gotisch",
+      "weights": ["100 900"], "italic": false
+    },
+    "newsreader": {
+      "label": "Newsreader", "roles": ["display", "body"], "vn": 3,
+      "character": "Serif biên tập, có trục opsz",
+      "export": "newsreader", "cssVar": "--font-newsreader",
+      "weights": ["200 800"], "italic": true
+    },
+    "lora": {
+      "label": "Lora", "roles": ["body"], "vn": 3,
+      "character": "Serif thân bài, nét chuyển có brush",
+      "export": "lora", "cssVar": "--font-lora",
+      "weights": ["400 700"], "italic": true
+    },
+    "spectral": {
+      "label": "Spectral", "roles": ["body"], "vn": 3,
+      "character": "Serif thân bài, đọc dài tốt",
+      "export": "spectral", "cssVar": "--font-spectral",
+      "weights": ["200", "300", "400", "500", "600", "700", "800"], "italic": true
+    },
+    "be-vietnam-pro": {
+      "label": "Be Vietnam Pro", "roles": ["body"], "vn": 3,
+      "character": "Sans, người Việt thiết kế",
+      "note": "Dấu chuẩn nhất nhóm sans — ưu tiên khi cần đúng chất Việt",
+      "export": "beVietnamPro", "cssVar": "--font-be-vietnam-pro",
+      "weights": ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+      "italic": true
+    },
+    "inter": {
+      "label": "Inter", "roles": ["body"], "vn": 3,
+      "character": "Sans giao diện",
+      "note": "KHÔNG có bộ nghiêng thật — không dùng class `italic`. Là font app, dùng trong thiệp sẽ làm mẫu đó trông giống giao diện",
+      "export": "inter", "cssVar": "--font-inter",
+      "weights": ["100 900"], "italic": false
+    }
+  },
+  "notDownloaded": {
+    "$comment": "Ứng viên ★★★ trong font-tieng-viet.md nhưng CHƯA tải. Muốn dùng phải tải trước (mục 4 của tài liệu đó). Ghi ở đây để khi cần một họ chữ hợp concept hơn thì biết còn cửa nào.",
+    "accent": ["dancing-script", "alex-brush", "allura", "bad-script"],
+    "display": ["yeseva-one", "fraunces", "noto-serif-display"],
+    "body": ["crimson-text", "literata", "source-serif-4", "alegreya", "vollkorn"]
+  }
+}

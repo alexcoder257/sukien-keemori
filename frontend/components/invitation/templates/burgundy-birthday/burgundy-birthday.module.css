@@ -1,0 +1,454 @@
+/*
+ * Burgundy — dựng theo canvas "Thiệp sinh nhật Khải Hồ": artboard Desktop
+ * (1200px) và Mobile (390px). Gốc là container nên bố cục đổi theo bề rộng
+ * TẤM THIỆP, không theo cửa sổ: khung preview 420px trong editor ra bản Mobile.
+ * Bản Desktop chỉ bật từ 900px bề rộng thiệp; dưới đó ba cột không còn đủ chỗ.
+ */
+.root {
+  /* Đỏ rượu vang đo trên khăn nhung của ảnh bàn tiệc (`candlelit-table.avif`:
+     nền #4d0b11, tối #2d0507, ánh #7e1c22). `--velvet` là màu nền giữ chỗ trong
+     lúc ảnh nhung chưa tải, nên lấy đúng sắc trung bình của ảnh đó. */
+  --velvet: #530d14;
+  --velvet-deep: #2d0507;
+  --gold-line: #a9805e;
+  --gold-inset: #7e5240;
+  --gold: #c9a27a;
+  --gold-bright: #d9b48a;
+  --gold-label: #d4ae84;
+  --gold-script: #ddbb8f;
+  --gold-monogram: #e7c9a0;
+  --rule: #b98d66;
+  --rule-dim: #8e6548;
+  --cream: #fbf3ea;
+  --cream-mid: #f1e4d6;
+  --cream-soft: #ebdccd;
+
+  /* Token ngữ nghĩa cho các block dùng chung (lời chúc, xác nhận tham dự, hộp
+     quà, đếm ngược) — chúng nằm trên nền nhung nên đọc theo tông tối. */
+  --background: var(--velvet);
+  --foreground: var(--cream);
+  --card: color-mix(in srgb, var(--cream) 7%, transparent);
+  --card-foreground: var(--cream);
+  --popover: var(--velvet-deep);
+  --popover-foreground: var(--cream);
+  --primary: var(--gold-bright);
+  --primary-foreground: var(--velvet-deep);
+  --secondary: color-mix(in srgb, var(--cream) 10%, transparent);
+  --secondary-foreground: var(--cream);
+  --muted: color-mix(in srgb, var(--cream) 8%, transparent);
+  --muted-foreground: var(--cream-soft);
+  --accent: color-mix(in srgb, var(--gold) 22%, transparent);
+  --accent-foreground: var(--cream);
+  --border: color-mix(in srgb, var(--gold) 42%, transparent);
+  --input: color-mix(in srgb, var(--gold) 55%, transparent);
+  --ring: var(--gold-bright);
+
+  container-type: inline-size;
+  min-height: 100svh;
+  /* Vải nhung rủ: dải sáng tối chạy dọc + thớ lông nhung mịn, màu đã nướng sẵn
+     trong ảnh (không phủ thêm lớp màu nào lên trên — lớp phủ đục nuốt mất vân).
+     Một ảnh phủ trọn, KHÔNG lặp: ảnh lặp (`repeat-y`) lại co giãn theo bề rộng
+     thì Chrome vẽ ra vệt nối ngang ở ranh giới các ô raster. Hai ảnh (Desktop,
+     Mobile) sinh bằng `scripts/render-velvet-texture.mjs`. */
+  background: var(--velvet) url("/images/templates/burgundy-birthday/decor/velvet-texture-landscape.avif") center top / cover no-repeat;
+  color: var(--cream);
+  font-family: var(--template-font-body);
+  font-variant-numeric: lining-nums;
+}
+
+/* ---------- Màn mở đầu (giấy gấp cổng, chép từ Đỏ Burgundy) ----------
+ * `shared/gate-fold-opening` vẽ màn giấy; phần dưới là hợp đồng phía mẫu: màn
+ * bìa chiếm đúng một khung hình, và trong lúc mở thì chỉ tấm thiệp (`.card`,
+ * mang `data-gate-opening-cover`) hiện ra, chạy "máy quay" từ khung giấy về
+ * đúng chỗ của nó. Màu, bóng và chữ của màn giấy dùng giá trị mặc định của
+ * component — chính là bảng màu Đỏ Burgundy, nên không khai lại ở đây.
+ */
+.opening.opening {
+  padding: 0;
+  height: 100svh;
+  align-content: start;
+  background: transparent;
+  /* Lời chào trên giấy dùng Cormorant SC như Đỏ Burgundy, không phải Playfair
+     của thân thiệp. Biến chỉ đặt trên màn bìa nên không đụng tiêu đề bên trong. */
+  --template-font-display: var(--font-cormorant-sc), Georgia, serif;
+}
+/* Màn bìa nằm gọn trong khung thiệp (tối đa 640px, xem `t/[slug]/page.tsx`)
+   thay vì tràn `100vw` như màn mở dùng chung: phần thừa hai bên là nền trắng
+   của trang, cùng một tấm thiệp từ lúc đóng tới lúc mở. Lặp class ba lần để
+   thắng `.cover.cover` của `invitation-opening.module.css`. */
+.opening.opening.opening {
+  left: 0;
+  width: 100%;
+  margin-left: 0;
+}
+.opening.opening[data-opening-phase="opening"],
+.openingContent.openingContent[data-opening-phase="opening"] {
+  animation: none;
+}
+.openingContent.openingContent[data-opening-phase="opening"] {
+  opacity: 1;
+  height: 100svh;
+  overflow: hidden;
+}
+.openingContent[data-opening-phase="opening"] > :not(.card) {
+  visibility: hidden;
+}
+.openingContent[data-opening-phase="opening"] > .card {
+  transform-origin: 0 0;
+  animation: cover-camera-in var(--gate-opening-zoomDuration) var(--gate-opening-zoom) cubic-bezier(.45,0,.2,1) both;
+}
+@keyframes cover-camera-in {
+  from {
+    transform: translate(var(--gate-opening-cover-x), var(--gate-opening-cover-y)) scale(var(--gate-opening-cover-scale));
+  }
+  to { transform: translate(0, 0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .openingContent[data-opening-phase="opening"] > .card {
+    animation: none;
+  }
+}
+
+/* `:where()` hạ độ ưu tiên về 0: viết `.root p` thì nó thắng mọi class đơn của
+   mẫu, và mọi `margin-top` khai trên thẻ `<p>` (dòng tên khách, chữ "Sinh
+   nhật"…) âm thầm mất tác dụng. */
+:where(.root) p { margin: 0; }
+.root a { color: inherit; text-decoration: none; touch-action: manipulation; }
+.root a:hover { color: var(--gold-label); }
+.root a:focus-visible { outline: 1px solid var(--gold-bright); outline-offset: 4px; }
+
+/* ---------- Khung và hạt góc ---------- */
+
+.corner {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: var(--gold-bright);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.cornerTl { left: -3px; top: -3px; }
+.cornerTr { right: -3px; top: -3px; }
+.cornerBl { left: -3px; bottom: -3px; }
+.cornerBr { right: -3px; bottom: -3px; }
+
+.card { padding: 32px 36px 0; }
+
+.frame {
+  position: relative;
+  border: 0.75px solid var(--gold-line);
+}
+.frameInset {
+  position: absolute;
+  inset: 7px;
+  border: 0.5px solid var(--gold-inset);
+  pointer-events: none;
+}
+.inner { position: relative; padding: 28px 40px 36px; }
+
+/* ---------- Màn đầu: lời mời · chân dung · huy hiệu ---------- */
+
+.top {
+  display: grid;
+  /* Artboard 1200px: chân dung 312px, khe 44px. Khung trang thiệp chỉ rộng
+     1024px nên cả hai co theo bề rộng thiệp, không bao giờ vượt số gốc. */
+  grid-template-columns: minmax(0, 1fr) min(312px, 26cqi) minmax(0, 1fr);
+  column-gap: min(44px, 3cqi);
+  align-items: center;
+  min-height: 334px;
+}
+.intro, .aside { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+.label {
+  font-family: var(--template-font-body);
+  font-size: var(--tpl-caption);
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  padding-left: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold-label);
+}
+
+.greeting { white-space: nowrap; letter-spacing: min(0.4em, 0.5cqi); padding-left: min(0.4em, 0.5cqi); }
+
+.guest {
+  max-width: 330px;
+  margin-top: 18px;
+  padding: 0 14px 1px;
+  border-bottom: 0.4px solid var(--rule-dim);
+  font-size: var(--tpl-lead);
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: var(--cream-soft);
+  overflow-wrap: anywhere;
+}
+
+.candle { width: 220px; height: 28px; margin-top: 10px; color: var(--gold); }
+
+.script {
+  margin-top: 14px;
+  font-family: var(--template-font-script);
+  font-size: var(--tpl-h2);
+  line-height: 1.1;
+  color: var(--gold-script);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--template-font-display);
+  font-weight: 400;
+  font-size: var(--tpl-h1);
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  color: var(--cream);
+}
+
+.nameRule { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.nameRule span { width: 44px; height: 0.5px; background: var(--rule); }
+.nameRule i { width: 4px; height: 4px; background: var(--gold); transform: rotate(45deg); }
+
+.portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 312 / 334;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 0.5px solid var(--gold-inset);
+}
+.portrait .corner { width: 4.5px; height: 4.5px; }
+.portraitInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.75px solid var(--gold);
+  /* Viền trong cách ảnh 3px như thiết kế: ảnh nằm trong một lớp lùi vào. */
+  clip-path: inset(0);
+}
+.portraitPhoto { inset: 3px !important; width: calc(100% - 6px) !important; height: calc(100% - 6px) !important; object-fit: cover; object-position: center top; }
+
+.monogramRow { display: flex; align-items: center; gap: 12px; color: var(--gold); }
+.monogramLine { width: 64px; height: 0.5px; background: var(--rule); }
+.wreath { position: relative; display: grid; place-items: center; width: 88px; height: 88px; }
+.wreath svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.wreath span {
+  position: relative;
+  margin-top: -2px;
+  font-family: var(--template-font-display);
+  font-style: italic;
+  font-size: var(--tpl-h4);
+  letter-spacing: 0.02em;
+  color: var(--gold-monogram);
+}
+
+.heading {
+  margin: 14px 0 0;
+  font-family: var(--template-font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--tpl-h3);
+  line-height: 1.3;
+  color: var(--cream);
+}
+
+.lead {
+  max-width: 270px;
+  margin-top: 16px !important;
+  font-size: var(--tpl-body);
+  line-height: 1.6;
+  color: var(--cream-soft);
+}
+
+/* ---------- Ba cột: thời gian · địa điểm · tiệc ---------- */
+
+.rule { display: flex; align-items: center; gap: 10px; margin-top: 14px; color: var(--gold-bright); }
+.rule > span { flex: 1; height: 0.55px; background: var(--rule); }
+.ruleStar { width: 14px; height: 14px; }
+
+.facts { display: flex; align-items: center; padding-top: 28px; }
+.fact { flex: 1; min-width: 0; }
+.factLabel { display: flex; align-items: center; gap: 10px; }
+.factIcon { display: none; }
+.factBody { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.facts .label { letter-spacing: 0.36em; padding-left: 0.36em; }
+
+.date {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--template-font-display);
+  font-size: var(--tpl-h3);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  color: var(--cream);
+}
+.date span { font-family: var(--template-font-body); color: var(--gold); }
+
+.factLine { font-size: var(--tpl-body); font-weight: 500; letter-spacing: 0.04em; color: var(--cream-mid); white-space: pre-wrap; }
+.time { font-family: var(--template-font-display); font-size: var(--tpl-small); letter-spacing: 0.08em; }
+
+.venue {
+  font-family: var(--template-font-display);
+  /* 36px của artboard chỉ vừa một dòng khi thiệp rộng đủ 1200px. */
+  font-size: var(--tpl-h4);
+  line-height: 1.15;
+  color: var(--cream);
+}
+.place { font-size: var(--tpl-body); font-style: italic; color: var(--cream-soft); }
+.factText { max-width: 280px; font-size: var(--tpl-body); line-height: 1.5; color: var(--cream-soft); }
+
+.factDivider {
+  position: relative;
+  flex: none;
+  align-self: stretch;
+  width: 1px;
+  min-height: 140px;
+  background: linear-gradient(to bottom, transparent, var(--rule-dim) 22%, var(--rule-dim) 78%, transparent);
+  color: var(--gold);
+}
+.factDividerStar { position: absolute; left: -6.5px; top: calc(50% - 7px); width: 14px; height: 14px; }
+
+/* ---------- Ảnh bàn tiệc và dress code ---------- */
+
+.bottom {
+  display: grid;
+  grid-template-columns: 55% minmax(0, 1fr);
+  margin-inline: -36px;
+}
+.scene {
+  position: relative;
+  height: 396px;
+  margin-top: 4px;
+  -webkit-mask-image: linear-gradient(to right, #000 78%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 78%, transparent 100%);
+}
+.scenePhoto { object-fit: cover; }
+
+.dress {
+  position: relative;
+  align-self: start;
+  justify-self: center;
+  width: min(434px, calc(100% - 36px));
+  box-sizing: border-box;
+  margin: 80px 36px 0 0;
+  padding: 22px 32px 26px;
+  border: 0.75px solid var(--gold-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dress .corner { width: 4.5px; height: 4.5px; }
+.dressTitle, .panelTitle {
+  margin: 0;
+  font-family: var(--template-font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--tpl-h3);
+  line-height: 1.2;
+  color: var(--cream);
+  text-align: center;
+}
+.dressRule, .panelRule { display: flex; align-items: center; gap: 4px; width: 260px; max-width: 100%; margin-top: 8px; color: var(--gold-bright); }
+.dressRule > span, .panelRule > span { flex: 1; height: 0.55px; background: var(--rule); }
+.dressRule .ruleStar, .panelRule .ruleStar { width: 14px; height: 14px; }
+
+.dressGroups { display: flex; align-items: stretch; width: 100%; margin-top: 14px; }
+.dressGroup { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.dressGroup + .dressGroup {
+  border-left: 1px solid transparent;
+  border-image: linear-gradient(to bottom, transparent, var(--rule-dim) 25%, var(--rule-dim) 75%, transparent) 1;
+}
+.dressGroup .label { letter-spacing: 0.36em; padding-left: 0.36em; }
+.swatches { display: flex; gap: 18px; height: 40px; align-items: center; margin: 0; padding: 0; list-style: none; }
+.swatches li { width: 32px; height: 32px; border-radius: 50%; box-shadow: 0 0 0 3px var(--velvet), 0 0 0 3.6px var(--gold); }
+.dressCaption { font-size: var(--tpl-body); font-style: italic; color: var(--cream-mid); white-space: pre-wrap; }
+
+/* ---------- Các chương phía dưới tấm thiệp ---------- */
+
+.panel {
+  position: relative;
+  max-width: 760px;
+  margin: 56px auto 0;
+  padding: 36px 40px 40px;
+  border: 0.75px solid var(--gold-line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.root > .panel:last-of-type { margin-bottom: 56px; }
+.panelInset { position: absolute; inset: 6px; border: 0.5px solid var(--gold-inset); pointer-events: none; }
+.panelLead { max-width: 460px; margin-top: 14px !important; font-size: var(--tpl-body); line-height: 1.6; color: var(--cream-soft); text-align: center; }
+.panelBody { position: relative; width: 100%; max-width: 620px; margin-top: 24px; }
+
+.timeline { margin: 0; padding: 0; list-style: none; }
+.timeline li { display: grid; grid-template-columns: 9rem 1fr; gap: 16px; padding: 14px 0; border-bottom: 0.5px solid var(--rule-dim); }
+.timeline li:last-child { border-bottom: 0; }
+.timeline span { font-family: var(--template-font-display); font-size: var(--tpl-lead); color: var(--gold-bright); }
+.timeline p { font-size: var(--tpl-body); line-height: 1.6; }
+.story { font-size: var(--tpl-lead); line-height: 1.7; text-align: center; white-space: pre-line; color: var(--cream-soft); }
+
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+@container (min-width: 1150px) {
+  .venue { font-size: var(--tpl-h3); }
+}
+
+/* ---------- Bản Mobile (artboard 390px) ---------- */
+
+@container (max-width: 899px) {
+  .root { background-image: url("/images/templates/burgundy-birthday/decor/velvet-texture-portrait.avif"); }
+  .card { padding: 56px 30px 0; }
+
+  /* Bản Mobile không có khung viền ngoài. */
+  .frame { border: 0; }
+  .frame > .frameInset, .frame > .corner { display: none; }
+  .inner { padding: 0; }
+
+  .top { display: flex; flex-direction: column; align-items: center; text-align: center; min-height: 0; }
+  .intro, .aside { display: contents; }
+  .greeting { order: 1; white-space: normal; letter-spacing: 0.38em; padding-left: 0.38em; }
+  .guest { order: 2; margin-top: 16px; padding-inline: 12px; }
+  .portrait { order: 3; width: min(266px, 100%); aspect-ratio: 266 / 218; margin-top: 20px; padding: 6px; }
+  .portrait .corner { width: 4px; height: 4px; }
+  /* Great Vibes cỡ lớn có nét và dấu thanh vươn cao hơn hẳn dòng chữ: chiều cao
+     dòng 1.1 + khe 14px là nét chữ đè lên mép khung ảnh ngay phía trên. */
+  .script { order: 4; margin-top: 12px; font-size: var(--tpl-h1); line-height: 1.4; }
+  .name { order: 5; font-size: var(--tpl-display); }
+  .candle { order: 6; width: 190px; height: 24px; margin-top: 8px; }
+  .heading { order: 7; margin-top: 8px; }
+  .lead { order: 8; max-width: none; margin-top: 6px !important; line-height: 1.5; }
+  .headingBreak, .nameRule, .monogramRow, .rule { display: none; }
+
+  .facts { flex-direction: column; align-items: stretch; padding-top: 18px; }
+  .fact { padding: 16px 20px; border: 0.5px solid var(--rule-dim); text-align: left; }
+  .factIcon { display: block; flex: none; width: 18px; height: 18px; color: var(--gold-label); }
+  .factBody { align-items: flex-start; gap: 4px; text-align: left; }
+  .facts .label { letter-spacing: 0.32em; padding-left: 0; }
+  .date { gap: 8px; font-size: var(--tpl-h3); line-height: 1.1; }
+  .factLine { letter-spacing: 0.03em; }
+  .venue { font-size: var(--tpl-h4); }
+  .factText { max-width: none; line-height: 1.45; }
+  .factDivider { align-self: center; min-height: 14px; height: 14px; background: var(--rule-dim); }
+  .factDividerStar { left: -4.5px; top: 2px; width: 10px; height: 10px; }
+
+  .bottom { display: flex; flex-direction: column; margin-inline: -30px; }
+  .dress { order: 1; align-self: stretch; width: auto; margin: 20px 30px 0; padding: 18px 24px 22px; }
+  .dressRule { width: 220px; margin-top: 6px; }
+  .dressGroups { margin-top: 12px; }
+  .dressGroup { gap: 8px; }
+  .dressGroup .label { letter-spacing: 0.32em; padding-left: 0.32em; }
+  .swatches { gap: 14px; height: 36px; }
+  .swatches li { width: 28px; height: 28px; }
+  .scene {
+    order: 2;
+    height: 290px;
+    margin-top: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 38%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 38%);
+  }
+  .scenePhoto { object-position: 38% center; }
+
+  .panel { margin: 40px 20px 0; padding: 28px 20px 32px; }
+  .timeline li { grid-template-columns: 6.5rem 1fr; gap: 12px; }
+}

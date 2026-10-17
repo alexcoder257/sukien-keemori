@@ -1,0 +1,177 @@
+/*
+ * Màu của màn gói do mẫu khai trên gốc của nó; giá trị dự phòng là bảng màu
+ * gốc của `do-burgundy`:
+ *   --gate-opening-backdrop  nền sau tấm giấy
+ *   --gate-opening-ink       chữ gợi ý "Mở thiệp"
+ *   --gate-opening-greeting  lời chào / tên khách mời
+ *   --gate-opening-shadow    bóng đổ của tấm giấy
+ *   --gate-opening-focus     viền focus bàn phím
+ *   --gate-opening-guest-*   khoảng cách nhãn → tên, cỡ chữ, chiều cao dòng,
+ *                            đệm dưới và lề ngang của tên khách mời
+ */
+.wrapper {
+  position: relative;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: clamp(20px, 3svh, 32px);
+  width: 100%;
+  min-height: 100svh;
+  padding: max(20px, env(safe-area-inset-top)) 20px max(20px, env(safe-area-inset-bottom));
+  border: 0;
+  background: transparent;
+  isolation: isolate;
+  color: var(--gate-opening-ink, #3c141b);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  overflow: hidden;
+}
+.wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--gate-opening-backdrop, radial-gradient(ellipse at 32% 28%, #dbc2b7, #ab8780 80%));
+}
+.wrapper:focus-visible { outline: 3px solid var(--gate-opening-focus, #f6ecdf); outline-offset: -8px; }
+.wrapper:disabled { cursor: default; }
+.stage {
+  position: relative;
+  display: block;
+  width: min(86cqw, 480px, 43svh);
+  aspect-ratio: 925 / 1432;
+  perspective: 1400px;
+  isolation: isolate;
+  filter: drop-shadow(0 12px 15px var(--gate-opening-shadow, #46192355));
+}
+.definitions { position: absolute; width: 0; height: 0; }
+.gate, .still, .ribbonFallback { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.gate { z-index: 1; backface-visibility: visible; }
+.innerLeft, .outerLeft { transform-origin: 0% 50%; }
+.innerRight, .outerRight { transform-origin: 100% 50%; }
+.outerLeft, .outerRight { z-index: 2; }
+.still { z-index: 3; overflow: hidden; }
+.ribbonLayer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+.ribbonCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 140%; }
+.ribbonFallback { transform-origin: 50% 50%; }
+.hint {
+  font-family: var(--template-font-display);
+  font-size: var(--tpl-caption);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.greeting {
+  display: block;
+  width: min(100%, 340px);
+  padding-inline: 12px;
+  color: var(--gate-opening-greeting, #561019);
+  text-align: center;
+}
+.greetingLabel {
+  display: block;
+  font-family: var(--template-font-display);
+  font-size: var(--tpl-small);
+  line-height: 1.7;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.guestGreeting { gap: var(--gate-opening-guest-gap, 8px); }
+.guestGreeting > :first-child { letter-spacing: .14em; }
+/* Đường kẻ ôm lấy tên chứ không kéo hết bề ngang khối: mặc định dùng chung để
+   tên dài không tràn, còn tên ngắn thì thừa ra một vạt kẻ trống. Tên lớn hơn
+   cỡ câu dẫn và dòng thấp hơn cỡ chữ để đường kẻ nằm ngay chân chữ Hoa Tay
+   (font chừa khoảng trống dưới rất lớn) — như tên được viết tay lên thiệp. */
+.guestGreeting > :last-child {
+  width: auto;
+  justify-self: center;
+  max-width: 100%;
+  padding-inline: var(--gate-opening-guest-inset, 0.45em);
+  padding-bottom: var(--gate-opening-guest-pad, 0);
+  font-size: var(--gate-opening-guest-size, var(--tpl-h4));
+  line-height: var(--gate-opening-guest-leading, 0.92);
+  border-bottom-color: color-mix(in srgb, currentColor 28%, transparent);
+}
+.wrapper[data-untying="true"] .greeting { animation: vanish 240ms ease-out both; }
+.wrapper[data-untying="true"] { animation: wrapper-fade var(--gate-opening-duration) linear both; }
+/* The hole reveals the actual cover under the paper. Its corners expand only
+   after the last hinge has finished, in step with the cover's camera move. */
+.wrapper[data-untying="true"]::before {
+  clip-path: polygon(evenodd,
+    0 0, 100% 0, 100% 100%, 0 100%, 0 0,
+    var(--gate-opening-window-left) var(--gate-opening-window-top),
+    var(--gate-opening-window-right) var(--gate-opening-window-top),
+    var(--gate-opening-window-right) var(--gate-opening-window-bottom),
+    var(--gate-opening-window-left) var(--gate-opening-window-bottom),
+    var(--gate-opening-window-left) var(--gate-opening-window-top));
+  animation: window-expand var(--gate-opening-zoomDuration) var(--gate-opening-zoom) cubic-bezier(.45,0,.2,1) both;
+}
+.wrapper[data-untying="true"] .stage {
+  transform-origin: 0 0;
+  animation: camera-in var(--gate-opening-zoomDuration) var(--gate-opening-zoom) cubic-bezier(.45,0,.2,1) both;
+}
+.wrapper[data-untying="true"] .hint { animation: vanish 240ms ease-out both; }
+.wrapper[data-untying="true"] .still { animation: vanish 300ms 100ms ease-out both; }
+.wrapper[data-untying="true"] .ribbonFallback { animation: ribbon-fall var(--gate-opening-ribbon) ease-in both; }
+.wrapper[data-untying="true"] .ribbonLayer { animation: vanish 120ms var(--gate-opening-ribbon) linear both; }
+.wrapper[data-untying="true"] .outerLeft {
+  animation: fold-left var(--gate-opening-fold) var(--gate-opening-outerLeft) cubic-bezier(.35,0,.2,1) both;
+}
+/* The outer folds' contact shadows disappear as those folds lift. The inner
+   panels themselves are plain paper, never another copy of the closed wrap. */
+.wrapper[data-untying="true"] .innerLeft .closedLighting {
+  animation: vanish 180ms var(--gate-opening-outerLeft) ease-out both;
+}
+.wrapper[data-untying="true"] .innerRight .closedLighting {
+  animation: vanish 180ms var(--gate-opening-outerRight) ease-out both;
+}
+.wrapper[data-untying="true"] .outerRight {
+  animation: fold-right var(--gate-opening-fold) var(--gate-opening-outerRight) cubic-bezier(.35,0,.2,1) both;
+}
+.wrapper[data-untying="true"] .innerLeft {
+  animation: fold-left var(--gate-opening-fold) var(--gate-opening-innerLeft) cubic-bezier(.35,0,.2,1) both;
+}
+.wrapper[data-untying="true"] .innerRight {
+  animation: fold-right var(--gate-opening-fold) var(--gate-opening-innerRight) cubic-bezier(.35,0,.2,1) both;
+}
+@keyframes vanish { to { opacity: 0; } }
+@keyframes wrapper-fade {
+  0%, 92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes ribbon-fall {
+  25% { transform: translateY(0) scaleY(.95); }
+  60% { transform: translateY(25%) scaleY(.9) rotate(2deg); }
+  100% { transform: translateY(115%) scaleY(.85) rotate(-3deg); }
+}
+@keyframes fold-left {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: rotateY(-145deg); opacity: 0; }
+}
+@keyframes fold-right {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: rotateY(145deg); opacity: 0; }
+}
+@keyframes camera-in {
+  from { transform: translate(0, 0) scale(1); }
+  to {
+    transform: translate(calc(-1 * var(--gate-opening-cover-x)), calc(-1 * var(--gate-opening-cover-y))) scale(var(--gate-opening-camera-scale));
+  }
+}
+@keyframes window-expand {
+  to {
+    clip-path: polygon(evenodd,
+      0 0, 100% 0, 100% 100%, 0 100%, 0 0,
+      0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wrapper[data-untying="true"] { animation: vanish 160ms linear both; }
+  .wrapper[data-untying="true"] :is(.stage, .still, .gate, .closedLighting, .ribbonLayer, .ribbonFallback, .hint, .greeting),
+  .wrapper[data-untying="true"]::before { animation: none; }
+  .wrapper[data-untying="true"]::before { clip-path: none; }
+}

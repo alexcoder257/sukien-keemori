@@ -1,0 +1,11 @@
+# Deploy: cd ops/r2/uploads-worker && npx wrangler login && npx wrangler deploy
+# Chỉ deploy SAU khi backend đã chạy STORAGE_DRIVER=r2 và đã chép vét ảnh lần
+# hai — route này chặn /uploads/* trước VPS, ảnh còn nằm trên đĩa sẽ thành 404.
+name = "keemori-uploads"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+routes = [{ pattern = "keemori.com/uploads/*", zone_name = "keemori.com" }]
+
+[[r2_buckets]]
+binding = "UPLOADS"
+bucket_name = "keemori-uploads"

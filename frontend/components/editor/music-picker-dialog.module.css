@@ -1,0 +1,58 @@
+/**
+ * Thanh tua của trình nghe thử. Dùng `input[type=range]` để có sẵn thao tác
+ * bàn phím và vùng chạm của hệ điều hành; phần tạo hình phải viết bằng CSS
+ * vì các pseudo-element của range không đặt được bằng Tailwind.
+ */
+.seek {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 16px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.seek:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 9999px;
+}
+
+.seek::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  /* Phần đã phát tô bằng primary, phần còn lại là nền mờ của cùng màu chữ. */
+  background: linear-gradient(
+    to right,
+    var(--primary) var(--seek-progress, 0%),
+    color-mix(in oklab, var(--foreground) 15%, transparent) var(--seek-progress, 0%)
+  );
+}
+
+.seek::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    to right,
+    var(--primary) var(--seek-progress, 0%),
+    color-mix(in oklab, var(--foreground) 15%, transparent) var(--seek-progress, 0%)
+  );
+}
+
+.seek::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4px;
+  border-radius: 9999px;
+  background: var(--primary);
+}
+
+.seek::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 9999px;
+  background: var(--primary);
+}

@@ -1,0 +1,223 @@
+/* Ẩn con trỏ hệ thống khi con trỏ tự vẽ đang chạy. Class này được gắn lên
+   <html> nên phải chừa lại vùng nhập liệu — ở đó caret chuẩn của hệ điều hành
+   mới là thứ cho biết đang gõ được. */
+.nativeHidden,
+.nativeHidden * {
+  cursor: none;
+}
+
+.nativeHidden input,
+.nativeHidden textarea,
+.nativeHidden select,
+.nativeHidden iframe,
+.nativeHidden [contenteditable="true"],
+.nativeHidden [data-cursor="native"] {
+  cursor: auto;
+}
+
+/* =============================================================================
+   CON TRỎ TỰ VẼ
+   Hai lớp: `dot` bám gần như tức thì để giữ độ chính xác, `ring` trễ hơn để
+   tạo quán tính. Mọi giá trị hình thức nằm ở đây; JS chỉ đổi `data-*` và ghi
+   vị trí, nên không có tween màu nào chạy trong lúc rê chuột.
+
+   Con trỏ nằm ngoài mọi lớp theme nên `var(--primary)` luôn là `deep-gold`
+   của `:root`, đọc được trên cả nền giấy lẫn nền tối.
+   ========================================================================== */
+
+.dot,
+.ring {
+  --cursor-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --cursor-dark: var(--color-forest-ink);
+  --cursor-light: var(--color-ivory);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 9999px;
+  /* `translate` là property riêng nên không đụng `transform` mà GSAP ghi. */
+  translate: -50% -50%;
+  will-change: transform;
+}
+
+/* --- Chấm định vị ---------------------------------------------------------- */
+
+.dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* Dấu cộng là tâm mặc định của cursor; phần tử cha chỉ lo bám tọa độ chuột. */
+.dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  background:
+    linear-gradient(var(--cursor-dark), var(--cursor-dark)) center / 100% 1px no-repeat,
+    linear-gradient(var(--cursor-dark), var(--cursor-dark)) center / 1px 100% no-repeat,
+    linear-gradient(var(--cursor-light), var(--cursor-light)) center / 100% 3px no-repeat,
+    linear-gradient(var(--cursor-light), var(--cursor-light)) center / 3px 100% no-repeat;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    opacity 0.2s var(--cursor-ease),
+    transform 0.3s var(--cursor-ease);
+}
+
+/* Link/card/media tự có vòng hoặc nhãn riêng nên giấu dấu cộng ở các trạng
+   thái đó; dấu cộng chỉ thay chấm định vị ở trạng thái nghỉ. */
+.dot:not([data-state="idle"])::after {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+/* --- Vòng tròn ------------------------------------------------------------- */
+
+.ring {
+  --ring-size: 26px;
+  --ring-bg: transparent;
+  --ring-border: color-mix(in oklab, var(--primary) 40%, transparent);
+  --ring-ink: var(--primary);
+
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border: 1px solid var(--ring-border);
+  background: var(--ring-bg);
+  /* Cố ý KHÔNG khai `backdrop-filter` ở đây. Chỉ cần có thuộc tính này — kể cả
+     `blur(0px)` — là trình duyệt phải đọc lại toàn bộ nền phía sau phần tử mỗi
+     frame nó dịch chuyển. Trạng thái nghỉ chiếm phần lớn thời gian rê chuột nên
+     không được trả chi phí đó; chỉ `link` và `media` mới khai. */
+  transition:
+    width 0.34s var(--cursor-ease),
+    height 0.34s var(--cursor-ease),
+    background-color 0.34s var(--cursor-ease),
+    border-color 0.34s var(--cursor-ease),
+    opacity 0.24s var(--cursor-ease),
+    scale 0.18s var(--cursor-ease);
+}
+
+/* Trạng thái nghỉ đi qua cả nền giấy sáng lẫn các section tối. Viền hai tông
+   cho mỗi nền ít nhất một cạnh tương phản rõ; không còn phụ thuộc deep-gold
+   pha alpha vốn gần như biến mất trên Paper/Ivory. */
+.ring[data-state="idle"] {
+  --ring-border: var(--cursor-dark);
+
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklab, var(--cursor-light) 88%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--cursor-light) 88%, transparent);
+}
+
+/* Link/nút: đĩa mờ với mũi tên ivory, cùng công thức với con trỏ ảnh.
+   Vì sao không dùng mũi tên `deep-gold` trên nền trong suốt: vòng của nút chỉ
+   40px nên mũi tên luôn rơi đúng vào nhãn nút, mà `deep-gold` với nền `paper`
+   hay nút champagne nằm cùng một dải sáng — tăng nét hay tăng cỡ đều không cứu
+   được, mũi tên vẫn chìm.
+
+   Nền gần như trong hẳn và blur để nhẹ: con trỏ nằm đè lên nhãn nút nên chữ
+   bên dưới chỉ được **mờ đi mà vẫn đọc ra**, không được biến mất sau một đĩa
+   xám. Tương phản cho mũi tên lấy từ bóng đổ của chính nó (xem `.arrow`),
+   không lấy từ nền đặc — đó là lý do hạ nền xuống được tới mức này. */
+.ring[data-state="link"] {
+  --ring-size: 40px;
+  --ring-bg: color-mix(in oklab, var(--color-forest-ink) 7%, transparent);
+  --ring-border: color-mix(in oklab, var(--color-ivory) 38%, transparent);
+  --ring-ink: var(--color-ivory);
+
+  /* 1px chứ không 2px: vòng của nút chỉ 40px nên nó luôn nằm đúng trên **chữ**,
+     mà chữ giao diện chỉ 12–14px — blur 2px là xoá hẳn nét, người dùng mất luôn
+     nhãn của thứ họ sắp bấm. Vòng `media` to gấp đôi và nằm trên ảnh nên vẫn
+     giữ 2px được. */
+  backdrop-filter: blur(1px);
+}
+
+/* Mũi tên nhỏ lại theo vòng: vòng của nút chỉ bằng 60% vòng của card, dùng
+   chung cỡ 20px thì mũi tên chiếm gần hết ruột đĩa. */
+.ring[data-state="link"] .arrow {
+  width: 16px;
+  height: 16px;
+}
+
+/* Card: to gấp rưỡi vòng của nút và có mũi tên ở giữa, nên rê từ thân card
+   xuống đúng cái nút bên trong nó là thấy con trỏ co lại — người dùng phân
+   biệt được "bấm đâu cũng vào" với "bấm đúng nút này". Vẫn không blur vì thân
+   card có tiêu đề và mô tả cần đọc. */
+.ring[data-state="card"] {
+  --ring-size: 68px;
+  --ring-bg: color-mix(in oklab, var(--primary) 10%, transparent);
+  --ring-border: var(--primary);
+}
+
+/* Ảnh và thẻ mẫu thiệp: cùng công thức với `link`. Ảnh bên dưới là thứ người
+   dùng đang chọn, nên đĩa chỉ được làm mờ nó chứ không được che. */
+.ring[data-state="media"] {
+  --ring-size: 92px;
+  --ring-bg: color-mix(in oklab, var(--color-forest-ink) 7%, transparent);
+  --ring-border: color-mix(in oklab, var(--color-ivory) 38%, transparent);
+  --ring-ink: var(--color-ivory);
+
+  backdrop-filter: blur(2px);
+}
+
+.ring[data-state="hidden"] {
+  --ring-size: 0px;
+
+  opacity: 0;
+}
+
+/* Con trỏ hệ thống đã bị giấu, nên cú bấm cần một phản hồi vật lý thay thế. */
+.ring[data-pressed="true"] {
+  scale: 0.82;
+}
+
+/* --- Nội dung trong vòng tròn ---------------------------------------------- */
+
+.arrow,
+.caption {
+  grid-area: 1 / 1;
+  color: var(--ring-ink);
+  opacity: 0;
+  transition: opacity 0.2s var(--cursor-ease);
+}
+
+/* Hai trạng thái mực `ivory` (`link`, `media`) nằm trên nền bất kỳ — nhãn nút
+   chữ đen, ảnh sáng, ảnh tối. Nền đĩa cố ý để trong nên tương phản phải lấy từ
+   đây: một quầng tối bám sát nét chữ, đủ tách mực khỏi thứ bên dưới mà không
+   che thêm chút nào.
+
+   Hai lớp bóng chứ không một: lớp `0 0` ôm sát nét là thứ giữ mũi tên đọc được
+   khi nó rơi trúng một mảng sáng, còn lớp lệch xuống cho chiều sâu. Nền đĩa đã
+   hạ gần như trong nên nếu chỉ còn một lớp thì mũi tên sẽ chìm đúng ở chỗ nền
+   đặc trước kia đang gánh. */
+.ring[data-state="link"] :is(.arrow, .caption),
+.ring[data-state="media"] :is(.arrow, .caption) {
+  filter: drop-shadow(0 0 2px color-mix(in oklab, var(--color-forest-ink) 85%, transparent))
+    drop-shadow(0 1px 3px color-mix(in oklab, var(--color-forest-ink) 70%, transparent));
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.caption {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Mỗi thời điểm chỉ một trong hai hiện, nên chuột lướt từ phần tử này sang
+   phần tử khác không bao giờ thấy chữ chồng lên mũi tên. */
+.ring[data-mode="arrow"] .arrow,
+.ring[data-mode="caption"] .caption {
+  opacity: 1;
+}

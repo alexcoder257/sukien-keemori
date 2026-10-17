@@ -1,0 +1,77 @@
+/**
+ * Nhịp sáng của nút chat.
+ *
+ * CSS Module chứ không phải utility trong `globals.css`: nhịp này chỉ tồn tại
+ * cho đúng một nút, và màu của nó là xanh Messenger — màu nhãn hiệu bên thứ ba,
+ * cùng loại ngoại lệ với gradient đặt thẳng trong component. Đưa vào
+ * `globals.css` là mở một hue ngoài bảng 7 màu cho toàn hệ thống dùng.
+ *
+ * Hai vòng thay vì một, lệch pha nhau một nửa chu kỳ: một vòng đơn độc có
+ * quãng lặng dài giữa hai lần loé và mắt đọc ra "trang bị giật", còn hai vòng
+ * gối nhau đọc ra một nhịp đều.
+ */
+@keyframes ring {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+/* Quầng sáng đứng yên phía dưới hai vòng: nó là thứ giữ cho nút vẫn "ấm" ở
+   quãng hai vòng cùng mờ hết, nên nhịp không bao giờ tắt hẳn. */
+@keyframes halo {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1.05);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.25);
+  }
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #0084ff;
+  animation: ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.ringDelayed {
+  animation-delay: 1.2s;
+}
+
+.halo {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(0, 132, 255, 0.55), transparent 70%);
+  filter: blur(8px);
+  animation: halo 2.4s ease-in-out infinite;
+}
+
+/**
+ * Người bật "giảm chuyển động" đang nói rằng chuyển động làm họ khó chịu —
+ * một nhịp loé không ngừng ở góc màn hình đúng là thứ họ tắt. Nút vẫn còn
+ * quầng sáng tĩnh để không mất hẳn độ nổi.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .ring {
+    display: none;
+  }
+
+  .halo {
+    animation: none;
+    opacity: 0.4;
+  }
+}

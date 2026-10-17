@@ -1,0 +1,2994 @@
+{
+  "brand": {
+    "name": "Wedding Card Online",
+    "tagline": "Wedding invitations online, shared with one link"
+  },
+  "auth": {
+    "backToHome": "Back to home",
+    "oauth": {
+      "google": "Continue with Google",
+      "facebook": "Continue with Facebook",
+      "googleSignup": "Sign up with Google",
+      "facebookSignup": "Sign up with Facebook",
+      "providerFallback": "social",
+      "connecting": "Connecting to {provider}…",
+      "errors": {
+        "cancelled": "You cancelled the {provider} sign-in.",
+        "state": "Your {provider} sign-in session expired, please try again.",
+        "email_unverified": "Your {provider} email is not verified, so it cannot be used to sign in.",
+        "email_missing": "Your {provider} account has no email address, so it cannot be used to sign in.",
+        "failed": "{provider} sign-in failed, please try again.",
+        "not_configured": "{provider} sign-in is not enabled. Please use your email and password."
+      }
+    },
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Welcome back! Sign in to continue.",
+      "divider": "Or sign in with email",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up",
+      "success": "Signed in successfully"
+    },
+    "register": {
+      "title": "Create account",
+      "subtitle": "Free, takes only 1 minute.",
+      "divider": "Or use email",
+      "oauthConsent": "Continuing with Google means you agree to our Terms of Service and Privacy Policy.",
+      "fullName": "Full name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "phone": "Phone number",
+      "phonePlaceholder": "912 345 678",
+      "password": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "confirmPassword": "Confirm password",
+      "confirmPlaceholder": "Re-enter password",
+      "agreePrefix": "I agree to the",
+      "terms": "Terms",
+      "and": "&",
+      "privacy": "Privacy Policy",
+      "submit": "Create account",
+      "submitting": "Creating account…",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "success": "Account created successfully",
+      "consent": {
+        "title": "Terms & Privacy",
+        "subtitle": "Read through, then tick the box below to continue signing up.",
+        "tabsLabel": "Choose a document",
+        "tabs": {
+          "terms": "Terms of Service",
+          "privacy": "Privacy Policy"
+        },
+        "agree": "I have read and agree to the Terms of Service and Privacy Policy of Keemori.",
+        "confirm": "Agree & continue",
+        "cancel": "Not now"
+      }
+    },
+    "forgot": {
+      "title": "Forgot password?",
+      "subtitle": "Enter your email and we'll send a password reset link.",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "submit": "Send reset link",
+      "submitting": "Sending…",
+      "backToLogin": "Back to sign in",
+      "sentTitle": "Check your inbox",
+      "sentBody": "We sent a reset link to {email}. Check your spam folder if you don't see it.",
+      "resend": "Resend link",
+      "resendIn": "Resend in {seconds}s",
+      "resent": "Reset link resent"
+    },
+    "reset": {
+      "title": "Reset password",
+      "subtitle": "Create a new password for your account.",
+      "invalidTitle": "Invalid link",
+      "invalidBody": "This reset link has expired or has already been used. Please request a new one.",
+      "requestNew": "Request a new link",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Update password",
+      "submitting": "Updating…",
+      "success": "Password changed",
+      "strength": {
+        "label": "Strength:",
+        "weak": "Weak",
+        "fair": "Fair",
+        "good": "Good",
+        "strong": "Strong",
+        "hintFair": "add special characters",
+        "hintWeak": "add uppercase, numbers and special characters"
+      }
+    },
+    "errors": {
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "Invalid email.",
+      "phoneInvalid": "Invalid phone number.",
+      "passwordRequired": "Please enter your password.",
+      "passwordMin": "Password must be at least 8 characters.",
+      "passwordPolicy": "Password must include uppercase, lowercase and a special character.",
+      "fullNameRequired": "Please enter your full name.",
+      "termsRequired": "You must agree to the Terms & Privacy Policy.",
+      "confirmMismatch": "Passwords do not match.",
+      "generic": "Something went wrong, please try again.",
+      "tooManyRequests": "Too many attempts. Please wait a few minutes and try again."
+    }
+  },
+  "common": {
+    "nav": {
+      "home": "Home",
+      "templates": "Templates",
+      "pricing": "Pricing",
+      "guide": "How it works",
+      "login": "Sign in",
+      "myCards": "My invitations",
+      "consult": "Talk to us",
+      "menu": "Main navigation",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "logout": "Sign out",
+      "logoutSuccess": "Signed out",
+      "account": "Account",
+      "faq": "FAQ"
+    },
+    "language": {
+      "label": "Language",
+      "vi": "Tiếng Việt",
+      "en": "English"
+    },
+    "theme": {
+      "label": "Appearance",
+      "switchToDark": "Switch to dark mode",
+      "switchToLight": "Switch to light mode"
+    },
+    "notifications": {
+      "title": "Notifications",
+      "empty": "No notifications yet.",
+      "markAllRead": "Mark all as read",
+      "close": "Close notifications",
+      "unreadLabel": "Notifications — {count} unread",
+      "untitledCard": "Untitled invitation",
+      "wishPendingOne": "{name} sent a wish and it is waiting for your approval.",
+      "wishPendingMany": "{name} and {count} more wishes are waiting for your approval.",
+      "paymentSuccess": "Payment received — your invitation now has a permanent link."
+    },
+    "phoneField": {
+      "countryLabel": "Country calling code",
+      "countrySearch": "Search country or code",
+      "countryEmpty": "No matching country"
+    },
+    "footer": {
+      "tagline": "Create a birthday or event invitation online in 5 minutes — pick a template, fill in the details, share a link & QR code",
+      "linksTitle": "Links",
+      "legalTitle": "Legal",
+      "terms": "Terms of service",
+      "privacy": "Privacy policy",
+      "legalLinks": {
+        "terms": "Terms of service",
+        "privacy": "Privacy policy",
+        "paymentRefund": "Payments & refunds",
+        "businessInfo": "Business information"
+      },
+      "contact": "Contact",
+      "socialTitle": "Follow us",
+      "social": {
+        "facebook": "Keemori on Facebook",
+        "instagram": "Keemori on Instagram",
+        "tiktok": "Keemori on TikTok",
+        "email": "Email Keemori",
+        "emailCopied": "Copied {email}",
+        "emailCopyFailed": "Support email: {email}",
+        "zalo": "Message Keemori on Zalo"
+      },
+      "copyright": "© {year} Keemori – Online Invitations"
+    },
+    "tag": {
+      "hot": "Hot",
+      "new": "New"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "continue": "Continue",
+      "linkQr": "Link/QR",
+      "viewAll": "View all",
+      "viewMore": "View more",
+      "save": "Save",
+      "cancel": "Cancel",
+      "done": "Done",
+      "back": "Back",
+      "prev": "Previous template",
+      "next": "Next template",
+      "backToTop": "Back to top"
+    },
+    "cursor": {
+      "view": "View"
+    },
+    "scrollHint": "Scroll to explore",
+    "support": {
+      "messenger": {
+        "label": "Chat with us on Messenger",
+        "cta": "Chat with us!",
+        "dismiss": "Hide chat button"
+      }
+    },
+    "invitationKinds": {
+      "wedding": "Wedding",
+      "birthday": "Birthday",
+      "graduation": "Graduation",
+      "event": "Event",
+      "anniversary": "Anniversary",
+      "greeting": "Greeting card"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "meta": "Page not found",
+      "code": "404",
+      "eyebrow": "A little off the path",
+      "title": "This page is no longer here",
+      "body": "The address may have a typo, or the page has been renamed. One of the familiar routes below should get you back on track.",
+      "invitationNote": "Opening a wedding invitation? The link may have expired. Message the couple to ask for a fresh one.",
+      "linksTitle": "You may be looking for",
+      "home": "Back to home",
+      "templates": "Browse templates",
+      "guide": "Read the guide",
+      "contact": "Contact support"
+    },
+    "runtime": {
+      "meta": "Something went wrong",
+      "eyebrow": "Unexpected error",
+      "title": "This page ran into trouble",
+      "body": "The fault is on our side, not yours. Try loading it again — most hiccups like this are temporary.",
+      "retry": "Try again",
+      "home": "Back to home",
+      "contact": "Report this to us",
+      "digestLabel": "Error code"
+    },
+    "global": {
+      "title": "The page could not load",
+      "body": "The application hit a fatal error and cannot be displayed. Please reload the page.",
+      "retry": "Reload",
+      "digestLabel": "Error code"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Online birthday & event invitations | Keemori",
+      "description": "Online invitations for birthdays, parties and events, designed to your brief. Send them to your guests by link or QR code on Zalo and Messenger."
+    },
+    "chapters": {
+      "beginning": {
+        "index": "01",
+        "label": "The beginning"
+      },
+      "style": {
+        "index": "02",
+        "label": "Find your style"
+      },
+      "share": {
+        "index": "04",
+        "label": "Share the moment"
+      },
+      "forever": {
+        "index": "05",
+        "label": "Begin forever"
+      }
+    },
+    "hero": {
+      "title": "Every special day\ndeserves an",
+      "titleAccent": "unforgettable invite.",
+      "keyword": "Online event & birthday invitations",
+      "lead": "From birthdays and get-togethers to special events — an invitation designed just for your occasion, sent to your guests by link or QR code.",
+      "primaryCta": "Create your invitation",
+      "secondaryCta": "Talk to us",
+      "trust": "A beautiful invitation for moments worth celebrating.",
+      "highlights": {
+        "design": "Designed for your occasion",
+        "share": "Share by link & QR",
+        "devices": "Looks right on any device"
+      },
+      "signature": "Make it a celebration",
+      "signatureBrand": "WITH KEEMORI",
+      "celebrationNote": "Let's\ncelebrate",
+      "card": {
+        "greeting": "You're invited",
+        "occasion": "Birthday celebration",
+        "title": "Minh Anh",
+        "date": "22 · 11 · 2026",
+        "venue": "18:30 · Make a wish with us"
+      }
+    },
+    "featured": {
+      "title": "Featured templates",
+      "subtitle": "The most-picked designs this month."
+    },
+    "couples": {
+      "title": "Couples who created theirs",
+      "weddingDate": "Wedding on {date}",
+      "subtitle": "Real invitations, built by couples on the platform.",
+      "prev": "Previous invitations",
+      "next": "Next invitations"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "subtitle": "What people usually ask before they start.",
+      "seeAll": "See all frequently asked questions"
+    },
+    "finalCta": {
+      "title": "Ready to invite everyone to your special day?",
+      "subtitle": "One price per invitation, worked out directly with the designer.",
+      "cta": "Create invitation",
+      "lead": "Create birthday and event invitations that feel like you.",
+      "socialProof": "{count} invitations already created here",
+      "note": "Designed to your brief · Link and QR code included",
+      "secondaryCta": "See pricing"
+    }
+  },
+  "templatePages": {
+    "breadcrumbLabel": "Breadcrumb",
+    "breadcrumbHome": "Home",
+    "breadcrumbTemplates": "Templates",
+    "heading": "{name} online wedding invitation template",
+    "metaTitle": "{name} online wedding invitation template",
+    "photoCount": "{count} wedding photo slots in the design",
+    "noPhotos": "No wedding photos needed",
+    "highlightsTitle": "Highlights",
+    "suitableTitle": "A good fit for",
+    "featuresTitle": "Included features",
+    "faqTitle": "Frequently asked questions",
+    "relatedTitle": "Similar templates",
+    "relatedAll": "Browse all templates",
+    "overviewTitle": "About this template",
+    "genericLead": "The {name} online wedding invitation template, in a {styles} style. See the whole invitation below or open the full demo before you choose.",
+    "posterAlt": "Preview of the {name} wedding invitation template",
+    "previewAlt": "The full {name} wedding invitation after the envelope opens",
+    "previewTitle": "The whole invitation",
+    "previewNote": "Scroll inside the frame to see it from top to bottom. Names, dates and photos are sample content — open the demo to see the envelope and music too.",
+    "items": {}
+  },
+  "templates": {
+    "meta": {
+      "title": "Event invitation design examples",
+      "description": "A selection of online invitations Keemori has designed for birthdays, openings, conferences and parties — browse them before ordering your own custom design."
+    },
+    "title": "Design examples",
+    "subtitle": "A selection of invitations Keemori has designed. Yours will be made to order for your event, colours and style — pick the ones you like as a starting point for our consultation.",
+    "categories": {
+      "luxury": "Luxury",
+      "modern": "Modern",
+      "classic": "Classic",
+      "minimal": "Minimal",
+      "traditional": "Traditional",
+      "formal": "Formal"
+    },
+    "colors": {
+      "red": "Red",
+      "pink": "Pink",
+      "orange": "Orange",
+      "yellow": "Yellow",
+      "green": "Green",
+      "blue": "Blue",
+      "purple": "Purple",
+      "brown": "Brown",
+      "black": "Black",
+      "white": "White / cream"
+    },
+    "useTemplate": "Use this template",
+    "previewLabel": "Preview of the {name} template",
+    "playLabel": "Live preview of the {name} template",
+    "emptyCatalog": "We're updating our design examples. You can still contact us now to order a custom invitation for your event.",
+    "contactCta": "Talk to us",
+    "detail": {
+      "open": "See details for the {name} template",
+      "view": "See details",
+      "featuresTitle": "Features",
+      "features": {
+        "content": "Editable content",
+        "ceremonies": "Several ceremonies in one card",
+        "guestLinks": "A personal link for each guest",
+        "rsvp": "RSVP",
+        "wishes": "Guestbook",
+        "maps": "Google Maps directions",
+        "countdown": "Countdown & calendar",
+        "gift": "Gifts via QR code",
+        "music": "Background music",
+        "share": "Share by link & QR",
+        "locales": "Vietnamese · English"
+      },
+      "customNote": "Fill in the content, photos and guest list yourself in the editor — every guest gets a personal link with their name.",
+      "choose": "Need a design made for your event? Talk to us",
+      "demo": "View demo",
+      "photos": {
+        "none": "No photo needed",
+        "count": "Uses {count} photos"
+      },
+      "use": "Use this template"
+    }
+  },
+  "editor": {
+    "sharePreview": {
+      "title": "Share link preview",
+      "description": "Guests will see this image and invitation when you share your link.",
+      "choose": "Change photo",
+      "pickerTitle": "Choose a sharing photo",
+      "pickerDescription": "Choose the default Keemori image or one of your uploaded wedding and album photos.",
+      "auto": "Follow the cover photo",
+      "brand": "Default Keemori image",
+      "cover": "Cover photo",
+      "usingPhoto": "Using your selected photo",
+      "usingBrand": "Using the default Keemori image",
+      "empty": "Upload photos under Wedding photos or Album for more choices.",
+      "note": "Appearance may vary by app. Changes apply after saving.",
+      "crop": "Photo position in the frame",
+      "cropHint": "Move the photo to keep faces in the sharing frame. The crop on your invitation stays the same.",
+      "photo": "Photo {number}",
+      "weddingPhotos": "Wedding photos",
+      "album": "Photo album",
+      "pendingLink": "Your link will be available after saving",
+      "unnamedCouple": "you two"
+    },
+    "meta": {
+      "title": "Edit invitation"
+    },
+    "exit": "Exit",
+    "templateLabel": "{name} template",
+    "templateKicker": "Template",
+    "templatePicker": {
+      "title": "Change template",
+      "description": "Everything you have filled in is kept when you switch template.",
+      "select": "Use the {name} template",
+      "photoSlotsHint": "{name} has {count} photo frames; you have filled {filled}."
+    },
+    "save": "Save & create link",
+    "saving": "Saving…",
+    "uploadingPhotos": "Processing photo {done}/{total}…",
+    "photoSaveProgress": {
+      "title": "Hang tight, your photos are on their way",
+      "doneTitle": "All done, your invitation is ready!",
+      "description": "We're polishing each of your photos and tucking them into the invitation so guests get it fast and crisp. It'll only take a moment!",
+      "stages": {
+        "uploading": "Sending your photos…",
+        "processing": "Polishing photo {done}/{total}…",
+        "finishing": "Almost there, creating your link…",
+        "done": "Opening your invitation…"
+      },
+      "hint": "Feel free to close this — saving keeps going in the background. Just don't close the page.",
+      "dismiss": "I'll wait outside"
+    },
+    "loginRequired": "Sign in to save your invitation and create a share link. Your content has been kept.",
+    "draftPhotosRestoring": "Restoring your photos ({done}/{count}) — please wait, no need to pick them again.",
+    "draftPhotosLost": "Some photos couldn't be restored (older than a day, or not uploaded yet). Please pick them again before saving.",
+    "photoUpload": {
+      "pending": "Loading photo",
+      "retryLater": "Will retry on save",
+      "processingTimeout": "Your photos are still being processed. Please wait a few seconds and save again — nothing is lost.",
+      "photosFailed": "Some photos could not be uploaded. Please remove and re-pick the marked photos, then save again."
+    },
+    "saved": "Invitation content saved",
+    "saveFailed": "Couldn't save your invitation. Please try again.",
+    "fixErrors": "Some details need fixing — correct the field marked in red and save again.",
+    "coupleNamesLocked": {
+      "title": "Not saved: the couple's names are locked",
+      "description": "This invitation was paid for more than 15 days ago, so the bride's and groom's full names and nicknames can no longer be edited (Terms of Service, section 6). Everything else is still editable — keep the original names to save, or contact an admin to have them unlocked.",
+      "contact": "Contact an admin",
+      "dismiss": "Got it"
+    },
+    "fillSample": "Fill sample data",
+    "fillSampleConfirm": {
+      "title": "Try it with sample content?",
+      "description": "We'll fill in some sample content so you can see how your invitation comes together. The names, dates and venues are just for reference — remember to swap in your own details before sending it out. Anything you've already typed will be replaced with the sample.",
+      "cancel": "Maybe later",
+      "confirm": "Fill it in for me"
+    },
+    "filledSample": "Sample data filled into every field",
+    "modes": {
+      "label": "Mode",
+      "edit": "Edit",
+      "preview": "Preview"
+    },
+    "devices": {
+      "label": "Preview device",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
+    },
+    "backToEdit": "Back to editing",
+    "blockVisible": "Show this block on the invitation",
+    "toggleBlock": "Toggle the {name} block",
+    "notes": {
+      "envelope": "This is the opening screen: keep the greeting short, then use the invitation message for the formal wording and how guests should address you.",
+      "couple": "Use the full names exactly as you want them printed. Short names are used on the envelope and smaller sections; leave them empty and they are taken from the full names. Leave \"Birth order\" blank and the card shows \"Groom\" / \"Bride\".",
+      "families": "Add both parents' names and each family's address. This is especially useful when a family-altar ceremony is held at home.",
+      "ceremonies": "Common ceremonies are the engagement, bride's family and groom's family ceremonies. Customs vary by region, so add only the ceremonies your families are actually holding.",
+      "reception": "Wedding venues often have separate guest-arrival and reception-start times. Include the full venue address; use Google Maps' Share button for the map link.",
+      "dressCode": "A dress-code hint for guests: describe it in a line or two, then pick colours from the suggestions or paste your own hex codes. Turn this block off if your wedding has no dress code.",
+      "timeline": "Order the day's milestones, such as guest arrival → ceremony → reception → photos. Add a start time for each activity so guests can follow the schedule easily; the end time is optional. Icons are drawn in the style of the selected template; on Auto, the icon follows the activity you type.",
+      "countdown": "Choose the ceremony or reception start time you want the countdown to target. It does not have to be the same as guest arrival.",
+      "story": "A few lines about the two of you — how you met, what made you choose each other. Three to five sentences reads best; this block sits right before the photo album.",
+      "music": "Choose one gentle background track; guests can turn it off when they open the invitation.",
+      "thankYou": "This message appears at the end of the invitation after guests have viewed the content.",
+      "qrAuto": "The bank transfer QR code is generated automatically from the account details.",
+      "photoSlots": "This template lays out {count} photo frames at fixed ratios — you fill them in; you cannot add frames or move them. Switching templates keeps your photos.",
+      "noPhotoSlots": "This template has no photo frames — it uses illustrations drawn for it. To put your real wedding photos on the card, pick a template with photo frames; everything you typed is kept.",
+      "album": "The album is included with every invitation and can be added to any template. It is separate from the photo frames each template lays out.",
+      "wishes": "Guests write their wishes right on the card. Every wish starts as pending — only the ones you approve appear on the card.",
+      "rsvp": "Guests confirm whether they're coming and how many, from any link. Only you can see this list. Personal links fill in the name, and sending again updates the earlier answer."
+    },
+    "ceremonyKinds": {
+      "label": "Ceremony type",
+      "engagement": "Engagement ceremony",
+      "bride": "Bride's ceremony",
+      "groom": "Groom's ceremony",
+      "other": "Other ceremony"
+    },
+    "places": {
+      "attribution": "Place data © OpenStreetMap",
+      "guideToggle": "How to get a Google Maps link",
+      "guideAlt": "Three steps to copy a Google Maps share link: search the place, tap Share, copy the link",
+      "guideCaption": "Open Google Maps, search the venue → tap Share → Copy link, then paste it above.",
+      "fromGroomHome": "Groom's family address",
+      "fromBrideHome": "Bride's family address",
+      "fromReception": "Reception venue address",
+      "linkReading": "Reading link…",
+      "linkPinned": "Pinned the exact spot from the link",
+      "linkApproximate": "The link only has an approximate spot; the map may be slightly off",
+      "linkFailed": "Could not read this link; the map will use the address you typed",
+      "searching": "Searching for places…",
+      "empty": "No matching place found",
+      "hint": "Pick a suggestion so the map points to the right spot, or just type"
+    },
+    "blocks": {
+      "photos": {
+        "title": "Wedding photos on the card",
+        "upload": "Choose photo",
+        "replace": "Replace photo",
+        "removeSlot": "Remove {name}",
+        "browseTemplates": "Browse templates with photos",
+        "rejectedType": "Only JPG, PNG, WebP or AVIF images are accepted.",
+        "slots": {
+          "cover": "Cover photo",
+          "couple": "Photo of you both",
+          "groom": "Groom's photo",
+          "bride": "Bride's photo",
+          "story": "Photo with your story",
+          "closing": "Closing photo"
+        }
+      },
+      "envelope": {
+        "title": "Envelope (opening screen)",
+        "greeting": "Greeting",
+        "greetingPlaceholder": "You are warmly invited",
+        "invitation": "Invitation message",
+        "invitationPlaceholder": "We would be delighted to welcome you…"
+      },
+      "guestInvite": {
+        "title": "Personal link for each guest",
+        "guestList": "Guest list",
+        "guestListPlaceholder": "Minh\nMr & Mrs Cuong\nLinh and partner",
+        "count": "{count} guests · one personal link each",
+        "empty": "No guests yet",
+        "naming": "One guest per line. Type the name exactly as you want it addressed on the card — it appears right after “Dear”. For example: Minh · Mr & Mrs Cuong · Linh and partner · Uncle Hung.",
+        "whereLinks": "To get the links: tap “Save & create link”, then go to My invitations → “Guest links” on this invitation to copy each guest's link.",
+        "renameWarning": "Editing a name creates a new link for that guest. The old link still opens the invitation, but only with the general greeting.",
+        "preview": "The preview shows the greeting for the first guest on the list.",
+        "whereLinksSaved": "To get the links: tap “Save & create link” so your latest list has links, then open Guest links to copy each guest's link.",
+        "openGuestLinks": "Open Guest links ↗"
+      },
+      "couple": {
+        "title": "Couple details",
+        "groomFullName": "Groom's full name",
+        "brideFullName": "Bride's full name",
+        "fullNamePlaceholder": "Nguyen Hoang Nam",
+        "groomNickname": "Short name (groom)",
+        "brideNickname": "Short name (bride)",
+        "nicknamePlaceholder": "Leave empty to use the full name",
+        "groomChildOrder": "Birth order (groom)",
+        "brideChildOrder": "Birth order (bride)",
+        "childOrderPlaceholder": "Eldest son / Second daughter"
+      },
+      "families": {
+        "title": "Family details",
+        "groomFather": "Groom's father",
+        "groomMother": "Groom's mother",
+        "brideFather": "Bride's father",
+        "brideMother": "Bride's mother",
+        "groomAddress": "Groom's family address",
+        "brideAddress": "Bride's family address",
+        "fatherPlaceholder": "Nguyen Hoang Nam",
+        "motherPlaceholder": "Le Thi Hanh",
+        "addressPlaceholder": "12 Nguyen Trai, Thanh Xuan, Ha Noi"
+      },
+      "ceremonies": {
+        "title": "Ceremonies",
+        "itemTitle": "Ceremony {index}",
+        "customKind": "Ceremony name",
+        "customKindPlaceholder": "Tea ceremony / Blessing service…",
+        "dateTime": "Date & time",
+        "dateTimePlaceholder": "10:00 · 22 Nov 2026",
+        "venue": "Venue",
+        "venuePlaceholder": "Bride's home / Church / Wedding venue",
+        "note": "Announcement",
+        "notePlaceholder": "The families will hold the tea ceremony and exchange rings…",
+        "add": "Add ceremony",
+        "remove": "Remove ceremony {index}"
+      },
+      "reception": {
+        "title": "Reception",
+        "date": "Reception date",
+        "welcomeTime": "Guests welcome from",
+        "startTime": "Dinner starts",
+        "venueLabel": "Lead-in",
+        "venueLabelPlaceholder": "The ceremony will be held at",
+        "venueAddress": "Venue address",
+        "venueAddressPlaceholder": "ABC Wedding Centre, 123 Nguyen Trai, Ha Noi",
+        "mapUrl": "Google Maps location",
+        "mapUrlPlaceholder": "Paste the venue's Google Maps link"
+      },
+      "dressCode": {
+        "title": "Dress code",
+        "heading": "Dress code title",
+        "headingPlaceholder": "Dresscode",
+        "description": "Dress code description",
+        "descriptionPlaceholder": "For example: party attire, pastel tones preferred",
+        "colors": "Colours",
+        "colorPlaceholder": "#e8b7b7",
+        "suggestedColors": "Pick from suggestions",
+        "customColor": "Custom colour",
+        "addColor": "Add",
+        "addColorLabel": "Add colour {color}",
+        "removeColor": "Remove colour {color}",
+        "pickColor": "Choose a colour with the colour picker",
+        "colorInvalid": "Colour code must look like #RRGGBB.",
+        "colorLimit": "Up to {limit} colours."
+      },
+      "timeline": {
+        "title": "Wedding day timeline",
+        "customTitle": "Custom heading",
+        "customTitlePlaceholder": "Wedding day timeline",
+        "fromTime": "From",
+        "toTime": "To",
+        "activity": "Activity",
+        "itemTitle": "Activity {index}",
+        "activityPlaceholder": "Guest arrival / Ceremony / Reception",
+        "icon": "Icon",
+        "iconAuto": "Auto",
+        "kinds": {
+          "welcome": "Guest arrival",
+          "ancestral": "Ancestral / tea ceremony",
+          "procession": "Bride procession",
+          "ceremony": "Wedding ceremony",
+          "reception": "Reception",
+          "toast": "Toast",
+          "cake": "Cake cutting",
+          "photo": "Photos",
+          "music": "Music & dancing",
+          "farewell": "Farewell"
+        },
+        "add": "Add activity",
+        "delete": "Remove",
+        "remove": "Remove activity {index}",
+        "autoTranslate": "Show in multiple languages for international guests"
+      },
+      "countdown": {
+        "title": "Countdown & add to calendar",
+        "weddingDate": "Wedding date (countdown target)"
+      },
+      "story": {
+        "title": "Our story",
+        "message": "Your story",
+        "messagePlaceholder": "We met on a late autumn afternoon…"
+      },
+      "album": {
+        "title": "Photo album",
+        "upload": "Upload photos",
+        "photoLabel": "Photo {index}",
+        "removePhoto": "Remove photo {index}",
+        "countLabel": "{count} photos",
+        "rejectedType": "Only JPG, PNG, WebP or AVIF images are accepted.",
+        "rejectedDuplicate": "This photo is already in the album and was not added again.",
+        "rejectedLimit": "The album holds at most {limit} photos, so the extra ones were skipped."
+      },
+      "giftBox": {
+        "title": "Gift box (bank QR)",
+        "groomBank": "Groom's bank",
+        "bankPlaceholder": "Search or pick a bank",
+        "groomAccount": "Groom's account number",
+        "accountPlaceholder": "0123456789",
+        "brideBank": "Bride's bank",
+        "brideAccount": "Bride's account number",
+        "groomAccountName": "Groom's account holder name",
+        "brideAccountName": "Bride's account holder name",
+        "accountNamePlaceholder": "NGUYEN MINH QUAN",
+        "qrNote": "The QR code is generated automatically from the bank and account number — no upload needed. Please double-check the account number: the code encodes exactly what you type, so one wrong digit sends guests to a stranger."
+      },
+      "wishes": {
+        "title": "Guestbook",
+        "empty": "No wishes yet. Once guests write in, their wishes show up here for you to approve.",
+        "pendingCount": "{count} wishes awaiting approval",
+        "approvedCount": "{count} wishes showing on the card",
+        "pending": "Pending",
+        "approved": "Approved",
+        "approve": "Approve",
+        "unapprove": "Hide from card",
+        "delete": "Delete",
+        "approveDone": "Wish approved.",
+        "unapproveDone": "Wish hidden from the card.",
+        "deleteDone": "Wish deleted.",
+        "actionFailed": "That did not go through. Please try again.",
+        "filterAll": "All",
+        "filterPending": "Pending",
+        "filterApproved": "Approved",
+        "manage": "Open the wishes manager",
+        "whereWishes": "After saving, review wishes in My cards → Wishes.",
+        "whereWishesSaved": "Approve, hide and delete wishes on their own page in My cards.",
+        "openWishes": "Open the wishes page ↗"
+      },
+      "rsvp": {
+        "title": "RSVP",
+        "empty": "No responses yet. Once guests RSVP, they show up here.",
+        "guestsComing": "Guests coming",
+        "attendingCount": "Attending replies",
+        "declinedCount": "Not attending",
+        "filterAll": "All",
+        "filterAttending": "Attending",
+        "filterDeclined": "Not attending",
+        "partyOf": "Attending · {count} guests",
+        "declined": "Not attending",
+        "personalLink": "Personal link",
+        "personalLinkHint": "Sent from a personal guest link — sending again updates this row",
+        "deleteLabel": "Delete {name}'s response",
+        "deleteDone": "Response deleted.",
+        "actionFailed": "That did not go through. Please try again.",
+        "whereResponses": "Once the card is saved, see who has RSVP'd under My cards → RSVP.",
+        "whereResponsesSaved": "See who has replied on its own page in My cards.",
+        "openResponses": "Open the RSVP page ↗"
+      },
+      "music": {
+        "title": "Background music",
+        "track": "Pick a track from the library",
+        "trackPlaceholder": "No track selected",
+        "preview": "Preview",
+        "choose": "Pick a track",
+        "change": "Change",
+        "dialogTitle": "Music library",
+        "dialogDescription": "Hit play to preview, then pick the track you like.",
+        "searchPlaceholder": "Search by song or artist...",
+        "searchEmpty": "No song matches “{query}”.",
+        "play": "Preview {name}",
+        "pause": "Pause {name}",
+        "seek": "Seek {name}",
+        "confirm": "Use this track",
+        "cancel": "Cancel",
+        "none": "No music",
+        "confirmNone": "Save"
+      },
+      "thankYou": {
+        "title": "Thank-you note",
+        "message": "Thank-you message",
+        "messagePlaceholder": "Thank you for taking the time to visit our invitation…"
+      }
+    },
+    "banks": {
+      "empty": "No matching bank.",
+      "clear": "Clear selected bank"
+    },
+    "defaultTemplateName": "Default template",
+    "occasion": {
+      "hint": "This is the heart of the invitation — it shows on the very first screen guests see.",
+      "greetingOccasions": {
+        "birthday": "Birthday",
+        "opening": "Grand opening",
+        "housewarming": "Housewarming",
+        "newYear": "New Year",
+        "teachersDay": "Teachers' Day",
+        "other": "Other occasion"
+      },
+      "birthday": {
+        "title": "Guest of honour",
+        "fields": {
+          "name": {
+            "label": "Full name",
+            "placeholder": "Nguyen Minh Anh"
+          },
+          "nickname": {
+            "label": "Nickname",
+            "placeholder": "Minh Anh"
+          },
+          "age": {
+            "label": "Age / milestone",
+            "placeholder": "Turning 25 · First birthday"
+          },
+          "organizer": {
+            "label": "Hosted by (optional)",
+            "placeholder": "Minh Anh's family"
+          }
+        }
+      },
+      "graduation": {
+        "title": "The graduate",
+        "fields": {
+          "name": {
+            "label": "Full name",
+            "placeholder": "Tran Bao Ngoc"
+          },
+          "nickname": {
+            "label": "Nickname",
+            "placeholder": "Bao Ngoc"
+          },
+          "school": {
+            "label": "School",
+            "placeholder": "ABC University"
+          },
+          "major": {
+            "label": "Major",
+            "placeholder": "Graphic design"
+          },
+          "classOf": {
+            "label": "Class of",
+            "placeholder": "Class of 2026"
+          }
+        }
+      },
+      "event": {
+        "title": "Event details",
+        "fields": {
+          "name": {
+            "label": "Event name",
+            "placeholder": "Autumn Music Night"
+          },
+          "organizer": {
+            "label": "Organiser",
+            "placeholder": "ABC Music Club"
+          }
+        }
+      },
+      "anniversary": {
+        "title": "Anniversary details",
+        "fields": {
+          "name": {
+            "label": "Your names or organisation",
+            "placeholder": "Minh Quan & Thu Ha"
+          },
+          "years": {
+            "label": "Milestone",
+            "placeholder": "10th wedding anniversary · 5 years in business"
+          }
+        }
+      },
+      "greeting": {
+        "title": "Your wish",
+        "fields": {
+          "greetingOccasion": {
+            "label": "Occasion",
+            "placeholder": "Choose an occasion"
+          },
+          "name": {
+            "label": "To",
+            "placeholder": "Ms Lan · ABC Coffee"
+          },
+          "sender": {
+            "label": "From",
+            "placeholder": "The Tuan family"
+          },
+          "message": {
+            "label": "Wish",
+            "placeholder": "Congratulations on the grand opening! Wishing you a full house every day…"
+          }
+        }
+      }
+    },
+    "kindBlocks": {
+      "common": {
+        "reception": {
+          "title": "Time & venue",
+          "date": "Date",
+          "startTime": "Start time",
+          "venueLabelPlaceholder": "The party takes place at",
+          "venueAddress": "Address",
+          "venueAddressPlaceholder": "ABC Restaurant, 123 Nguyen Trai, Hanoi",
+          "mapUrlPlaceholder": "Paste the venue's Google Maps link"
+        },
+        "countdown": {
+          "weddingDate": "Event date (countdown target)"
+        },
+        "story": {
+          "title": "A note",
+          "message": "Message",
+          "messagePlaceholder": "A few words for your guests…"
+        },
+        "giftBox": {
+          "title": "Gift box (bank QR)",
+          "groomBank": "Bank",
+          "groomAccount": "Account number",
+          "groomAccountName": "Account holder"
+        },
+        "timeline": {
+          "title": "Schedule",
+          "customTitlePlaceholder": "Party schedule",
+          "activityPlaceholder": "Welcome / Blow out the candles / Dinner",
+          "kinds": {
+            "ceremony": "Main programme"
+          }
+        },
+        "album": {
+          "title": "Photo album"
+        },
+        "thankYou": {
+          "messagePlaceholder": "Thank you for taking the time to visit our invitation…"
+        }
+      },
+      "birthday": {
+        "story": {
+          "title": "A note from me",
+          "messagePlaceholder": "A new year of life, and another year to be grateful for friends like you…"
+        }
+      },
+      "graduation": {
+        "reception": {
+          "venueLabelPlaceholder": "The ceremony takes place at"
+        },
+        "story": {
+          "title": "My journey",
+          "messagePlaceholder": "Four years of late-night projects…"
+        },
+        "timeline": {
+          "customTitlePlaceholder": "Ceremony schedule",
+          "activityPlaceholder": "Diploma ceremony / Photos / Celebration",
+          "kinds": {
+            "ceremony": "Diploma ceremony"
+          }
+        }
+      },
+      "event": {
+        "reception": {
+          "venueLabelPlaceholder": "The event takes place at"
+        },
+        "story": {
+          "title": "About the event",
+          "message": "Description",
+          "messagePlaceholder": "An evening of autumn love songs…"
+        },
+        "timeline": {
+          "customTitlePlaceholder": "Event programme",
+          "activityPlaceholder": "Check-in / Performances / Networking",
+          "kinds": {
+            "ceremony": "Main programme"
+          }
+        }
+      },
+      "anniversary": {
+        "story": {
+          "title": "Our story",
+          "messagePlaceholder": "Ten years, two kids and so many memories…"
+        }
+      },
+      "greeting": {
+        "envelope": {
+          "invitationPlaceholder": "A small wish, sent with all our love."
+        },
+        "story": {
+          "title": "An extra note",
+          "messagePlaceholder": "A few personal lines to go with your wish (optional)"
+        },
+        "thankYou": {
+          "messagePlaceholder": "A closing line for the recipient…"
+        }
+      }
+    },
+    "namesLockedOccasion": {
+      "title": "Can't save: the name on this invitation is locked",
+      "description": "This invitation was paid more than 15 days ago, so its main name can no longer be changed (Terms of Use, section 6). Everything else can still be edited — keep the original name to save, or contact an admin to unlock it."
+    },
+    "kindNotes": {
+      "common": {
+        "reception": "Add the date, start time and the venue's full address (name, street, district); use Google Maps' Share button for the map link.",
+        "dressCode": "A dress-code hint for guests: describe it in a line or two, then pick colours from the suggestions or paste your own hex codes. Turn this block off if your event has no dress code."
+      }
+    },
+    "saveOnly": "Save",
+    "savedDraft": "Draft saved. Pay to create your shareable link."
+  },
+  "invitation": {
+    "meta": {
+      "title": "{couple} — wedding invitation",
+      "description": "You are warmly invited to the wedding of {couple}."
+    },
+    "notFound": "This invitation could not be found. The link may have been removed.",
+    "guestInviteLabel": "Cordially invited:",
+    "musicOn": "Play background music",
+    "musicOff": "Mute background music",
+    "openingLabels": {
+      "invitation": "Together with our families",
+      "opening": "Opening…",
+      "save": "Save",
+      "theDate": "THE DATE"
+    },
+    "openEnvelope": "Open invitation",
+    "sections": {
+      "families": {
+        "title": "Our families",
+        "groomSide": "Groom's family",
+        "brideSide": "Bride's family",
+        "father": "Mr.",
+        "mother": "Mrs.",
+        "groom": "Groom",
+        "bride": "Bride"
+      },
+      "ceremonies": {
+        "title": "Ceremonies",
+        "mapLabel": "Map to ceremony venue"
+      },
+      "reception": {
+        "title": "Reception",
+        "welcomeTime": "Guests welcome",
+        "startTime": "Dinner starts",
+        "openMap": "Open map",
+        "mapLabel": "Map showing the way to the venue"
+      },
+      "details": {
+        "title": "Wedding details",
+        "announce": "We joyfully announce the wedding of our children",
+        "invitation": "You are warmly invited to share this happy day with our families",
+        "heldAt": "Held at",
+        "ceremonyAt": "The ceremony will be held at",
+        "timeAt": "At {time}",
+        "monthLabel": "Month {month}",
+        "yearLabel": "Year {year}",
+        "lunarDate": "( Lunar {day}/{month}, year of {year} )",
+        "partyInvitation": "We cordially invite you\nto the wedding reception of our family",
+        "openMap": "Directions"
+      },
+      "dressCode": {
+        "title": "Dress code",
+        "colorLabel": "Colour {color}"
+      },
+      "timeline": {
+        "title": "Wedding day timeline"
+      },
+      "countdown": {
+        "title": "Counting down to the big day",
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds",
+        "addToCalendar": "Add to calendar",
+        "google": "Google Calendar",
+        "apple": "Apple Calendar",
+        "calendar": {
+          "weekdays": [
+            "Sun",
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat"
+          ],
+          "weddingDay": "Wedding day"
+        },
+        "passed": "The wedding has taken place. Thank you for celebrating with us."
+      },
+      "story": {
+        "title": "Our story"
+      },
+      "album": {
+        "title": "Wedding album",
+        "openPhoto": "Open photo {index}",
+        "prevPhoto": "Previous photo",
+        "nextPhoto": "Next photo",
+        "closePhoto": "Close photo",
+        "counter": "{index}/{total}"
+      },
+      "giftBox": {
+        "title": "Gift box",
+        "subtitle": "If you can't join us, you're welcome to send your wishes here.",
+        "groom": "Groom",
+        "bride": "Bride",
+        "accountNumber": "Account number",
+        "qrLabel": "Bank transfer QR code — {side}",
+        "copy": "Copy account number",
+        "copied": "Account number copied",
+        "download": "Download QR code",
+        "openEnvelope": "Open the envelope for the {side}",
+        "envelopeHint": "Tap an envelope to see its transfer QR code."
+      },
+      "wishes": {
+        "title": "Guestbook",
+        "subtitle": "Leave a wish for the bride and groom.",
+        "name": "Your name",
+        "namePlaceholder": "Enter your name*",
+        "message": "Your wish",
+        "messagePlaceholder": "Write your wish*",
+        "submit": "Send wish",
+        "submitted": "Wish sent — the couple will approve it before it appears on the card.",
+        "submitFailed": "Could not send the wish. Please try again.",
+        "suggest": "Suggest a wish",
+        "suggestions": [
+          "Wishing you both a lifetime of happiness together!",
+          "Congratulations! May you laugh more than you argue, always.",
+          "May you keep holding hands through every road ahead.",
+          "Wishing the bride and groom a love as sweet as today."
+        ],
+        "empty": "No wishes yet. Be the first one!",
+        "listLabel": "Approved wishes"
+      },
+      "rsvp": {
+        "title": "RSVP",
+        "subtitle": "We would love to celebrate with you. Please let us know whether you can make it.",
+        "name": "Your name",
+        "namePlaceholder": "Enter your name*",
+        "question": "Will you attend?",
+        "accept": "I'll be there",
+        "decline": "Sorry, I can't make it",
+        "partySize": "Number of guests",
+        "fewer": "One guest fewer",
+        "more": "One more guest",
+        "submit": "Send RSVP",
+        "submitFailed": "Could not send your RSVP. Please try again.",
+        "thanksAttending": "Thank you! The couple has your RSVP for {count} guests.",
+        "thanksDeclined": "Thank you for letting us know.",
+        "change": "Change my answer"
+      },
+      "thankYou": {
+        "title": "Thank you"
+      },
+      "photos": {
+        "title": "Wedding photos"
+      }
+    },
+    "errors": {
+      "required": "Please fill in this field.",
+      "ceremonyRequired": "An invitation needs at least one ceremony.",
+      "urlInvalid": "This link is not valid.",
+      "hexInvalid": "Colour code must look like #RRGGBB.",
+      "tooLong": "Please keep this under {max} characters.",
+      "bankBinInvalid": "Please pick a bank from the list.",
+      "accountNumberInvalid": "Account numbers may only contain letters and digits, with no spaces or accents.",
+      "guestListTooLong": "The guest list can have at most {max} guests.",
+      "guestNameTooLong": "Each guest name can be at most {max} characters.",
+      "rsvpChoiceRequired": "Please let us know whether you will attend."
+    },
+    "kinds": {
+      "occasionLabel": {
+        "birthday": "Birthday party",
+        "graduation": "Graduation",
+        "event": "Event",
+        "anniversary": "Anniversary",
+        "greeting": "Greeting card"
+      },
+      "greetingHeadline": {
+        "birthday": "Happy birthday",
+        "opening": "Happy grand opening",
+        "housewarming": "Happy housewarming",
+        "newYear": "Happy New Year",
+        "teachersDay": "Happy Teachers' Day",
+        "other": "With warm wishes"
+      },
+      "organizedBy": "Hosted by {name}",
+      "from": "From {name}",
+      "to": "To {name}",
+      "meta": {
+        "birthday": {
+          "title": "Birthday invitation · {name}",
+          "description": "You're invited to {name}'s birthday party."
+        },
+        "graduation": {
+          "title": "Graduation invitation · {name}",
+          "description": "You're invited to celebrate {name}'s graduation."
+        },
+        "event": {
+          "title": "Invitation · {name}",
+          "description": "You're invited to {name}."
+        },
+        "anniversary": {
+          "title": "Anniversary invitation · {name}",
+          "description": "You're invited to celebrate {name}'s anniversary."
+        },
+        "greeting": {
+          "title": "A greeting for {name}",
+          "description": "A warm wish for {name}."
+        }
+      }
+    },
+    "kindSections": {
+      "common": {
+        "reception": {
+          "title": "Time & venue",
+          "startTime": "Starts",
+          "mapLabel": "Map to the venue"
+        },
+        "timeline": {
+          "title": "Schedule"
+        },
+        "countdown": {
+          "title": "Countdown",
+          "calendar": {
+            "weddingDay": "The day"
+          },
+          "passed": "The party has happened. Thank you for being part of it."
+        },
+        "story": {
+          "title": "A note"
+        },
+        "album": {
+          "title": "Photo album"
+        },
+        "photos": {
+          "title": "Photos"
+        },
+        "giftBox": {
+          "title": "Gift box",
+          "subtitle": "Can't make it? You can send a gift here.",
+          "groom": "Gift account",
+          "openEnvelope": "Open {side}'s gift envelope"
+        },
+        "wishes": {
+          "subtitle": "Leave a wish.",
+          "submitted": "Wish sent — it will appear on the invitation once approved.",
+          "suggestions": [
+            "Wishing you joy, health and lots of luck!",
+            "May all the best things come your way.",
+            "Wishing you a day to remember!",
+            "See you there!"
+          ]
+        },
+        "rsvp": {
+          "subtitle": "We'd love to see you. Let us know if you can make it.",
+          "thanksAttending": "Thank you! We've got your RSVP for {count} guests."
+        }
+      },
+      "birthday": {
+        "countdown": {
+          "title": "Counting down to the party"
+        },
+        "wishes": {
+          "suggestions": [
+            "Happy birthday! Have a brilliant year ahead!",
+            "Wishing you a peaceful, happy and lucky new year of life.",
+            "Happy birthday — may every wish come true!",
+            "See you at the party!"
+          ]
+        }
+      },
+      "graduation": {
+        "story": {
+          "title": "The journey"
+        },
+        "countdown": {
+          "title": "Counting down to graduation",
+          "passed": "The ceremony has happened. Thank you for being part of my journey."
+        },
+        "wishes": {
+          "suggestions": [
+            "Congratulations, graduate! Wishing you every success ahead.",
+            "So proud of you! Go far on the path you've chosen.",
+            "Happy graduation — all that hard work paid off!",
+            "See you at the ceremony!"
+          ]
+        }
+      },
+      "event": {
+        "story": {
+          "title": "About"
+        },
+        "countdown": {
+          "title": "Counting down to the event",
+          "passed": "The event has happened. Thank you for joining us."
+        },
+        "rsvp": {
+          "subtitle": "We look forward to welcoming you. Please RSVP so we can save your seat.",
+          "thanksAttending": "Thank you! We've got your RSVP for {count} guests."
+        },
+        "wishes": {
+          "suggestions": [
+            "Wishing the event every success!",
+            "Can't wait to be there!",
+            "Wishing the organisers a wonderful show.",
+            "See everyone there!"
+          ]
+        }
+      },
+      "anniversary": {
+        "story": {
+          "title": "Our story"
+        },
+        "countdown": {
+          "title": "Counting down to the anniversary"
+        },
+        "wishes": {
+          "suggestions": [
+            "Happy anniversary! Stay as happy as day one.",
+            "Here's to many more wonderful years together.",
+            "Congratulations on a milestone to be proud of!",
+            "See you at the party!"
+          ]
+        }
+      },
+      "greeting": {
+        "story": {
+          "title": "A note"
+        },
+        "wishes": {
+          "title": "Wishes",
+          "subtitle": "Add your own wish."
+        }
+      }
+    },
+    "burgundyBirthday": {
+      "invitationLabel": "You are warmly invited",
+      "birthday": "Birthday",
+      "warmInvitation": "An invitation, a celebration",
+      "invitationMessage": "You are warmly invited to celebrate {name}’s birthday with us.",
+      "timeLabel": "Time",
+      "locationLabel": "Venue",
+      "partyLabel": "Birthday party",
+      "partyMessage": "We look forward to welcoming you and celebrating a truly meaningful evening together.",
+      "viewMap": "Get directions",
+      "dressCode": "Dress code",
+      "openWrapper": "Tap to open the invitation"
+    }
+  },
+  "myCards": {
+    "meta": {
+      "title": "My invitations"
+    },
+    "title": "My invitations",
+    "count": "{count} invitations",
+    "newCard": "New invitation",
+    "createdAt": "Created",
+    "templateLabel": "{name} template",
+    "status": {
+      "draft": "Draft",
+      "published": "Published"
+    },
+    "permanentLink": "Permanent link",
+    "views": "{count} guests viewed",
+    "noLink": "No link yet — pay to create it",
+    "empty": {
+      "title": "You don't have any invitations yet",
+      "subtitle": "Pick a template and start filling in your details — it takes 5 minutes.",
+      "cta": "Browse templates"
+    },
+    "deleteConfirm": {
+      "title": "Delete this invitation?",
+      "body": "\"{title}\" and its share link will be deleted. This cannot be undone.",
+      "confirm": "Delete invitation",
+      "done": "Invitation deleted",
+      "failed": "Couldn't delete the invitation. Please try again."
+    },
+    "wishes": {
+      "meta": {
+        "title": "Wishes"
+      },
+      "title": "Wishes",
+      "subtitle": "Wishes guests sent to the card {title}. Approve one to show it on the card, or delete it for good.",
+      "back": "Back to My cards",
+      "action": "Wishes",
+      "pendingBadge": "{count} pending",
+      "viewCard": "View card"
+    },
+    "guests": {
+      "meta": {
+        "title": "Guest links"
+      },
+      "title": "Guest links",
+      "subtitle": "Every guest of {title} has a personal link. Opening it shows “Dear <name>” on the invitation's opening screen.",
+      "back": "Back to My cards",
+      "action": "Guest links",
+      "count": "{count} guests",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyAll": "Copy all",
+      "copiedAll": "Copied {count} links",
+      "copyFailed": "Your browser blocked copying. Select the link and copy it manually.",
+      "open": "Open {name}'s link",
+      "editList": "Edit list",
+      "empty": "No guests yet. Open the editor, add your guests under “Personal link for each guest”, then save.",
+      "disabled": "This feature is turned off, so these links only show the general greeting. Turn it back on in the editor and the links you sent greet each guest by name again.",
+      "draft": "This invitation has no public link yet. Tap “Save & create link” in the editor before sending it out.",
+      "shareHint": "Send each link to one person only.",
+      "rsvpResponded": "{count} responded",
+      "rsvpPending": "No reply yet",
+      "rsvpAttending": "Attending · {count}",
+      "rsvpDeclined": "Not attending"
+    },
+    "rsvp": {
+      "meta": {
+        "title": "RSVP"
+      },
+      "title": "RSVP",
+      "subtitle": "Responses guests sent to the card {title}. Only you can see this list.",
+      "back": "Back to My cards",
+      "action": "RSVP",
+      "viewCard": "View card",
+      "disabled": "The RSVP section is turned off, so guests cannot send new responses. Turn it back on in the editor."
+    },
+    "share": {
+      "title": "General invitation link",
+      "subtitle": "Send this link to your guests, or print the QR code on a paper card so they can scan straight to it.",
+      "linkLabel": "Invitation link",
+      "copy": "Copy",
+      "copied": "Copied",
+      "qrTitle": "QR code for invitation {slug}",
+      "qrHint": "Scanning it with a phone camera opens the invitation. Download as PNG to print.",
+      "downloadQr": "Download QR",
+      "openCard": "View invitation",
+      "viewAllCards": "View all invitations"
+    },
+    "pay": "Pay {price}",
+    "resumePayment": "Continue payment"
+  },
+  "account": {
+    "meta": {
+      "title": "Account"
+    },
+    "title": "Account",
+    "stats": {
+      "cards": "Invitations",
+      "views": "Guests viewed",
+      "wishes": "Wishes"
+    },
+    "profile": {
+      "heading": "Personal information",
+      "fullName": "Full name",
+      "email": "Email",
+      "emailNote": "Email is used to sign in and cannot be changed.",
+      "phone": "Phone number",
+      "phonePlaceholder": "912 345 678",
+      "save": "Save changes",
+      "saved": "Changes saved",
+      "errors": {
+        "fullNameRequired": "Please enter your full name",
+        "phoneInvalid": "Invalid phone number"
+      }
+    },
+    "prefs": {
+      "heading": "Preferences",
+      "emailNotifications": {
+        "label": "Email notifications",
+        "description": "Payments, reviews and news"
+      },
+      "allowShowcase": {
+        "label": "Show on homepage",
+        "description": "Your invitation may be featured on the homepage"
+      }
+    },
+    "info": {
+      "heading": "Account",
+      "role": "Account type",
+      "roles": {
+        "customer": "Customer",
+        "admin": "Administrator",
+        "super_admin": "Super administrator"
+      },
+      "signIn": "Sign-in method",
+      "signInGoogle": "Google",
+      "signInFacebook": "Facebook",
+      "signInPassword": "Email & password",
+      "memberSince": "Member since"
+    },
+    "danger": {
+      "title": "Delete account",
+      "description": "Permanently delete your invitations, wishes and all data — this cannot be undone.",
+      "action": "Delete account",
+      "confirmTitle": "Delete this account?",
+      "confirmBody": "All invitations, share links, wishes and account data will be permanently deleted. This action cannot be undone.",
+      "confirm": "Delete permanently",
+      "cancel": "Cancel",
+      "success": "Account deleted"
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Custom invitation pricing",
+      "description": "Online birthday and event invitations designed to your brief, at one fixed price per invitation. Get a link and QR code to share with your guests."
+    },
+    "title": "Custom-designed invitations",
+    "subtitle": "Every invitation is designed for your occasion — a birthday, a party or an event. Work directly with the designer and get a link and QR code to share with your guests.",
+    "custom": {
+      "eyebrow": "Made for you",
+      "title": "Custom invitation",
+      "body": "Your invitation is designed from scratch around your story, colours and style.",
+      "priceNote": "One invitation, one payment — the link is permanent",
+      "features": [
+        "Layout, colours and fonts chosen by you",
+        "Work directly with the designer",
+        "Pay by bank transfer right on the website; the link is created when the money arrives"
+      ],
+      "cta": "Talk to us",
+      "createCta": "Create invitation",
+      "discountBadge": "{percent}% off"
+    }
+  },
+  "guide": {
+    "meta": {
+      "title": "How to create an online wedding invitation",
+      "description": "Find where each invitation editor field appears, with numbered screenshots from a real Burgundy Red invitation, then learn how to create and share your card."
+    },
+    "eyebrow": "Guide",
+    "title": "See where every field appears.",
+    "subtitle": "Compare the editor with the invitation, using real screenshots of Hoàng Phong & Tú Linh’s Burgundy Red invitation.",
+    "totalTime": "About {minutes} minutes the first time",
+    "minutes": "{minutes} min",
+    "stepLabel": "Step {index}",
+    "stepsTitle": "3 steps from an idea to an invitation",
+    "stepsSubtitle": "Try the editor before signing in. When you are ready, sign in and select Save & Create link to save the invitation to your account.",
+    "steps": {
+      "choose": {
+        "title": "Choose a template",
+        "body": "Explore 60+ templates and try a working invitation before choosing the style for your wedding.",
+        "instructions": [
+          {
+            "title": "Find your style",
+            "body": "Open Templates to see reference designs, or message Keemori to have one designed to order."
+          },
+          {
+            "title": "Open the live preview",
+            "body": "Open a template’s details and preview. Scroll through the envelope, photos, ceremony and reception sections on both a phone and a computer."
+          },
+          {
+            "title": "Check the photos",
+            "body": "Each template lays out its own photo frames. The photo album is included with every invitation and can be added to any template."
+          },
+          {
+            "title": "Start editing",
+            "body": "Select Use this template to open the editor. You can enter your content and preview it before signing in."
+          }
+        ],
+        "hint": "Choose a layout you like: fonts, colors and composition are designed as part of each template.",
+        "action": "Explore templates",
+        "caption": "The real Keemori catalog: search, filter and preview designs."
+      },
+      "content": {
+        "title": "Add your details and preview",
+        "body": "Enter your wedding details, add photos and review each section before creating a link for your guests.",
+        "instructions": [
+          {
+            "title": "Couple and family details",
+            "body": "Enter the couple’s full names and optional nicknames for the envelope. Check parents’ names and how each family is addressed."
+          },
+          {
+            "title": "Separate ceremony and reception details",
+            "body": "Enter the date, time and place for each ceremony and the reception in their own sections. Check the reception Directions button and review every ceremony separately."
+          },
+          {
+            "title": "Add photos to the right slots",
+            "body": "Choose cover and couple photos for the template’s slots. Photos upload as soon as you pick them, even before you sign in. Add a photo album if you like. Preview to check that faces are not cropped and text stays readable."
+          },
+          {
+            "title": "Complete optional sections",
+            "body": "Add your story, timeline, music, thank-you message or gift details as needed. Use each section’s switch to hide anything you do not want to show."
+          },
+          {
+            "title": "Review the invitation",
+            "body": "Open Preview and check phone and desktop layouts. Review spelling, dates, photos, music and maps. If you used sample data, replace all example details before sharing."
+          }
+        ],
+        "hint": "Select Save & Create link to save your content. Keep the editor open until uploads and saving have finished.",
+        "action": "Choose a template to start",
+        "caption": "The editor for Hoàng Phong & Tú Linh’s Burgundy Red invitation."
+      },
+      "share": {
+        "title": "Save and share your link or QR code",
+        "body": "After saving, your invitation appears in My invitations with its own link for guests.",
+        "instructions": [
+          {
+            "title": "Save & Create link",
+            "body": "Select Save & Create link. If you are signed out, sign in and return to finish saving. The content you just entered is kept for this step."
+          },
+          {
+            "title": "Check the status",
+            "body": "In My invitations, check the invitation's status: draft or published. A published invitation has a permanent link with no view limit."
+          },
+          {
+            "title": "Copy the link or download the QR code",
+            "body": "Open Link & QR, then select Copy to share through Zalo, Messenger or email. Download the QR code as a PNG for printed invitations or your welcome sign."
+          },
+          {
+            "title": "Test as a guest",
+            "body": "Open the link on a phone and scan the QR code with the camera. Check the names, event details and map links before sending it to everyone."
+          },
+          {
+            "title": "Update after sharing",
+            "body": "Go to My invitations, edit that invitation and save your changes. Keep its URL unchanged so guests can see updates through the same link. If you change the URL, download the new QR code and send the new link."
+          }
+        ],
+        "hint": "The image shows an example link and QR code. Always share the link and QR code from your own invitation.",
+        "action": "Open My invitations",
+        "caption": "The real sharing dialog: copy a link, open the invitation and download its QR code. Example data only."
+      }
+    },
+    "checklist": {
+      "title": "Prepare this first",
+      "subtitle": "Gather these before opening the editor and you'll finish the whole invitation in one go.",
+      "groups": {
+        "couple": {
+          "title": "About you two",
+          "items": [
+            "Full names and nicknames of the bride and groom",
+            "Both sets of parents' names",
+            "A short story about the two of you",
+            "A portrait photo in portrait orientation"
+          ]
+        },
+        "ceremony": {
+          "title": "Ceremony and reception",
+          "items": [
+            "Date and time of each family ceremony",
+            "Date, time and address of the reception",
+            "Google Maps link for the reception venue",
+            "The timeline for the day"
+          ]
+        },
+        "media": {
+          "title": "Photos and music",
+          "items": [
+            "Photos for your template’s slots; an album if you like",
+            "A clear cover photo with space for text",
+            "Choose music from the library if desired"
+          ]
+        },
+        "guests": {
+          "title": "Guests",
+          "items": [
+            "Your guest list, split into groups",
+            "A tailored invitation line per group",
+            "Bank details for wedding gifts"
+          ]
+        }
+      }
+    },
+    "tips": {
+      "title": "A final check before sharing",
+      "items": {
+        "mobile": {
+          "title": "Check it on a phone",
+          "body": "Open the link on a phone to check text size, photo cropping and buttons. Ask someone to double-check names, dates and times."
+        },
+        "map": {
+          "title": "Attach a map link",
+          "body": "One tap opens Google Maps. Add the street number and district for guests travelling from out of town."
+        },
+        "music": {
+          "title": "Test the music",
+          "body": "Try opening the envelope and using the music control on a phone. The browser may need a tap before audio can play."
+        },
+        "qr": {
+          "title": "Print the QR code",
+          "body": "Older relatives still get a paper invitation, while the map and timeline stay up to date."
+        }
+      }
+    },
+    "cta": {
+      "title": "Start with a template",
+      "body": "Choose a design and try the editor for free. Custom-designed invitations have a fixed price — see the Pricing page.",
+      "primary": "Browse templates",
+      "secondary": "See pricing"
+    },
+    "navigationLabel": "Guide contents",
+    "startAction": "Browse templates",
+    "checklistAction": "Find each field",
+    "fieldMap": {
+      "eyebrow": "EDITOR → INVITATION",
+      "title": "Connect each field to its place",
+      "subtitle": "Choose a chapter and a field. The left screenshot shows where to enter it; the right shows what guests see.",
+      "legend": "Matching red numbers identify the same content in both screenshots.",
+      "navigation": "Choose a chapter",
+      "chooseField": "Choose a field to compare",
+      "formLabel": "Enter it here",
+      "cardLabel": "Guests see it here",
+      "zoom": "Enlarge",
+      "zoomHint": "Shown at original size. On a phone, scroll horizontally to see the whole image.",
+      "imageLanguage": "Screenshot of the Vietnamese interface.",
+      "noDirectPosition": "This field has no separate visible position in the example. Read the explanation above; the related section is shown below for context.",
+      "exampleNote": "Example: Hoàng Phong & Tú Linh · Burgundy Red. Positions are specific to this design. Use each section’s switch to show or hide it. Pictured details and bank accounts are examples. Screenshots capture this invitation at one point in time and do not change when the saved invitation is edited later.",
+      "groups": {
+        "photos": "Design photos",
+        "envelope": "Envelope & invitation",
+        "guests": "Personal guest links",
+        "couple": "The couple",
+        "families": "Families",
+        "ceremonies": "Ceremonies",
+        "reception": "Reception",
+        "dress-code": "Dress code",
+        "timeline": "Wedding timeline",
+        "countdown": "Countdown & calendar",
+        "story": "Your story",
+        "album": "Wedding album",
+        "gifts": "Wedding gifts",
+        "wishes": "Guestbook",
+        "rsvp": "RSVP",
+        "music": "Music",
+        "thanks": "Thank you"
+      },
+      "fields": {
+        "1": {
+          "label": "Cover photo",
+          "body": "Appears in the polaroid on the left of the red envelope at the start of the invitation."
+        },
+        "2": {
+          "label": "Couple photo",
+          "body": "Appears as the large portrait in the story stationery scene and again in the framed photo near the end."
+        },
+        "3": {
+          "label": "Story photo",
+          "body": "Appears in the small tilted photograph on the right of the stationery scene."
+        },
+        "4": {
+          "label": "Greeting",
+          "body": "“Trân trọng kính mời” appears below the couple’s names on the cover, and on the opening screen of the general invitation link."
+        },
+        "5": {
+          "label": "Invitation message",
+          "body": "The message appears below the two families. Enter your full invitation wording here."
+        },
+        "6": {
+          "label": "Guest list",
+          "body": "One guest per line. “Cô Lan” appears on the opening screen of her personal link. The editor preview uses the first guest. Save, then copy each link from My invitations → Guest links."
+        },
+        "7": {
+          "label": "Groom’s full name",
+          "body": "Enter the full name. Burgundy Red uses the nickname (9) on its cover; if that is blank, it derives a short name from this field. This design has no separate full-name line."
+        },
+        "8": {
+          "label": "Bride’s full name",
+          "body": "Enter the full name. The cover uses the nickname (10), or derives a short name from this field when the nickname is blank."
+        },
+        "9": {
+          "label": "Groom’s nickname",
+          "body": "“Hoàng Phong” is the first large name on the cover, repeated on the envelope card, announcement and closing."
+        },
+        "10": {
+          "label": "Bride’s nickname",
+          "body": "“Tú Linh” is the large name below the ampersand on the cover and is repeated elsewhere in this design."
+        },
+        "11": {
+          "label": "Groom’s birth order",
+          "body": "For example, eldest son or second son. Burgundy Red does not display this field. It is kept for designs that show birth order."
+        },
+        "12": {
+          "label": "Bride’s birth order",
+          "body": "For example, eldest daughter or second daughter. This design does not display the field, so there is no marker 12 on the invitation."
+        },
+        "13": {
+          "label": "Groom’s father",
+          "body": "Appears after “Ông” in the groom’s family column. Enter the name without adding the title."
+        },
+        "14": {
+          "label": "Groom’s mother",
+          "body": "Appears after “Bà”, below the father’s name in the groom’s family column."
+        },
+        "15": {
+          "label": "Groom’s family address",
+          "body": "Appears below his parents’ names. This is the family address and does not replace the reception address."
+        },
+        "16": {
+          "label": "Bride’s father",
+          "body": "Appears after “Ông” in the bride’s family column."
+        },
+        "17": {
+          "label": "Bride’s mother",
+          "body": "Appears after “Bà”, below the father’s name in the bride’s family column."
+        },
+        "18": {
+          "label": "Bride’s family address",
+          "body": "Appears below her parents’ names. Include the street number, street and area."
+        },
+        "19": {
+          "label": "Ceremony type",
+          "body": "Sets the heading, such as “Lễ ăn hỏi”. Choosing another type reveals a custom-name field. Each added ceremony creates a similar entry."
+        },
+        "20": {
+          "label": "Ceremony date",
+          "body": "The date appears after the time below the ceremony heading. Each ceremony can have a different date."
+        },
+        "21": {
+          "label": "Ceremony time",
+          "body": "Hours and minutes become “08:00” at the start of the date/time line. Set each ceremony’s own time."
+        },
+        "22": {
+          "label": "Ceremony venue",
+          "body": "Appears directly below that ceremony’s date and time. Type an address or select a suggestion from the family addresses."
+        },
+        "23": {
+          "label": "Ceremony note",
+          "body": "Appears in italics below the venue, for example an invitation for close relatives to attend."
+        },
+        "24": {
+          "label": "Reception date",
+          "body": "Creates the large day number and month/year line. The weekday and lunar date are calculated automatically; the date is also repeated on the cover."
+        },
+        "25": {
+          "label": "Guest arrival time",
+          "body": "Appears in the “Đón khách: 17:30” line, separately from the reception start time."
+        },
+        "26": {
+          "label": "Reception start time",
+          "body": "Appears in the “Vào lúc 18:30, Chủ Nhật” line. This is when the reception starts."
+        },
+        "27": {
+          "label": "Lead-in",
+          "body": "The line directly above the reception venue address. Leave it blank to use the template’s default wording, or write your own introduction."
+        },
+        "28": {
+          "label": "Reception venue address",
+          "body": "The venue name and address appear above Directions. Include both the venue name and full address."
+        },
+        "29": {
+          "label": "Google Maps link",
+          "body": "Powers the Directions button; the raw URL is not printed. Paste a Maps sharing link and check the destination before sharing."
+        },
+        "30": {
+          "label": "Dress code title",
+          "body": "Sets the heading above the color palette."
+        },
+        "31": {
+          "label": "Outfit description",
+          "body": "Appears below the palette, describing the suggested outfits or colors."
+        },
+        "32": {
+          "label": "Colors",
+          "body": "Selected colors become swatches on the invitation. Suggested colors, the color picker and custom hex values all update this palette, up to six colors."
+        },
+        "33": {
+          "label": "Timeline title",
+          "body": "Appears above the schedule, such as “Lịch trình buổi lễ”."
+        },
+        "34": {
+          "label": "Start time",
+          "body": "Appears above the activity, such as 09:00 for the ceremony. Each activity has its own entry."
+        },
+        "35": {
+          "label": "End time",
+          "body": "Optional. It is blank in this saved invitation, so only the start time (33) appears. When filled, the line reads like “09:00 – 10:00”."
+        },
+        "36": {
+          "label": "Activity icon",
+          "body": "Burgundy Red uses fixed dots, so this choice does not change its symbols. Designs with activity icons use the selected activity type."
+        },
+        "37": {
+          "label": "Activity",
+          "body": "The activity name appears below its time, such as ceremony, welcome or reception."
+        },
+        "38": {
+          "label": "Countdown date",
+          "body": "Marks the wedding date on the calendar. This is a separate countdown/calendar setting; check that it agrees with your reception date."
+        },
+        "39": {
+          "label": "Countdown time",
+          "body": "Together with date 37, sets the countdown target and calendar event start. The remaining days, hours, minutes and seconds change over time."
+        },
+        "40": {
+          "label": "Your story",
+          "body": "Appears below the story heading and above the stationery photographs."
+        },
+        "41": {
+          "label": "Wedding album",
+          "body": "Uploaded photos appear in a horizontal album. Tap to enlarge. This is separate from the design photo slots."
+        },
+        "42": {
+          "label": "Groom’s bank",
+          "body": "Appears after opening the Groom envelope and is used to generate its transfer QR code."
+        },
+        "43": {
+          "label": "Groom’s account number",
+          "body": "Appears under the account-number label and is encoded in the QR. The pictured number is an example."
+        },
+        "44": {
+          "label": "Groom’s account holder",
+          "body": "Appears below the bank name. Enter the account holder’s correct name."
+        },
+        "45": {
+          "label": "Bride’s bank",
+          "body": "Appears in the Bride envelope’s dialog and is used for its QR code."
+        },
+        "46": {
+          "label": "Bride’s account number",
+          "body": "Appears in the Bride dialog. Check this account separately before sharing."
+        },
+        "47": {
+          "label": "Bride’s account holder",
+          "body": "Appears below the bank name in the Bride dialog."
+        },
+        "48": {
+          "label": "Guestbook",
+          "body": "Enables the guest wish form. The editor list is for moderation; only approved wishes appear publicly. This preview shows the form’s position."
+        },
+        "49": {
+          "label": "RSVP",
+          "body": "Enables the guest name, attendance and party-size form. Response lists and totals in the editor are private to the owner."
+        },
+        "50": {
+          "label": "Background music",
+          "body": "The track plays through the floating round button. Its title is not printed on the invitation. Guests can toggle playback; browsers may require a tap first."
+        },
+        "51": {
+          "label": "Thank-you message",
+          "body": "Appears below “Thank you” at the end of the invitation."
+        }
+      }
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Admin"
+    },
+    "title": "Admin",
+    "nav": {
+      "label": "Admin navigation",
+      "comingSoon": "This screen is not built yet",
+      "items": {
+        "dashboard": "Overview",
+        "users": "Users",
+        "settings": "Link settings",
+        "faq": "FAQ",
+        "templateTags": "Template tags",
+        "homepage": "Homepage templates",
+        "cards": "Created cards",
+        "analytics": "Analytics"
+      },
+      "dashboard": "Dashboard",
+      "templates": "Templates"
+    },
+    "backendNote": "Every limit, ownership rule and access check is enforced by the backend.",
+    "errors": {
+      "required": "This field is required.",
+      "emailInvalid": "Invalid email.",
+      "numberMin": "Value must be greater than 0.",
+      "failed": "Action failed, please try again."
+    },
+    "loading": "Loading…",
+    "roles": {
+      "customer": "Customer",
+      "admin": "Admin",
+      "super_admin": "Super admin"
+    },
+    "overview": {
+      "subtitle": "Operations area. Items with a lock icon are not built yet.",
+      "roadmap": "Next up: FAQ, blog, homepage reviews and public partner profiles."
+    },
+    "users": {
+      "title": "Users",
+      "subtitle": "Buyers and partner accounts live here together; they differ by role and by having a store.",
+      "searchPlaceholder": "Search by email or name",
+      "roleFilter": "Filter by role",
+      "allRoles": "All roles",
+      "total": "{count} accounts",
+      "empty": "No accounts match.",
+      "promote": "Make partner",
+      "promoted": "{name} is now a partner",
+      "roleChanged": "Role updated",
+      "columns": {
+        "name": "Account",
+        "role": "Role",
+        "createdAt": "Created",
+        "actions": "Actions"
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Ways to reach Thiệp Cưới Online: customer support and technical issues."
+    },
+    "eyebrow": "Contact",
+    "title": "Need a hand? Talk to us",
+    "subtitle": "Pick the right channel below for the fastest answer. During business hours most requests get a reply within a few hours.",
+    "responseNote": "Average response time: within one business day.",
+    "channelsTitle": "Ways to reach us",
+    "channels": {
+      "email": {
+        "title": "Email",
+        "description": "Questions about invitations, payments, share links and your account.",
+        "action": "Send an email"
+      },
+      "zalo": {
+        "title": "Zalo",
+        "description": "Message Keemori on Zalo at the number below — handiest when you're on your phone.",
+        "action": "Message Keemori on Zalo"
+      },
+      "fanpage": {
+        "title": "Fanpage",
+        "description": "Message the Keemori page on Facebook — best when you need a quick answer.",
+        "action": "Message the fanpage",
+        "value": "Message us on Facebook"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "See new templates and invitations made by our customers, or message Keemori directly.",
+        "action": "Open Keemori on Instagram",
+        "value": "Follow us on Instagram"
+      },
+      "tiktok": {
+        "title": "TikTok",
+        "description": "Short videos of our templates and quick invitation tips, plus direct messages when you have a question.",
+        "action": "Open Keemori on TikTok",
+        "value": "Follow us on TikTok"
+      }
+    },
+    "hoursTitle": "Business hours",
+    "hours": [
+      "Monday – Friday: 8:30 – 18:00",
+      "Saturday: 8:30 – 12:00",
+      "Sunday and public holidays: closed, email still logged"
+    ],
+    "beforeTitle": "Before you write",
+    "beforeBody": "Most questions already have an answer. These two pages are faster than waiting for an email.",
+    "beforeGuide": "Read the step-by-step guide",
+    "beforePricing": "See pricing",
+    "formNote": "There is no online contact form yet — please use email, Zalo or the fanpage above."
+  },
+  "faqPage": {
+    "meta": {
+      "title": "Online wedding invitation FAQ",
+      "description": "Answers about custom-designed invitations: pricing, bank-transfer payment, photo slots and albums, sharing links and guest wishes."
+    },
+    "eyebrow": "Support",
+    "title": "Frequently asked questions",
+    "subtitle": "Everything customers ask before ordering — from the price and how to pay to how guests send their wishes.",
+    "count": "{count} questions",
+    "breadcrumb": "FAQ",
+    "help": {
+      "title": "Still not answered?",
+      "body": "Send us a message. During working hours most requests get a reply within a few hours.",
+      "contact": "Contact support",
+      "guide": "Read the guide"
+    },
+    "cta": {
+      "title": "Start with a template",
+      "body": "Browse the reference designs, then message us to order a custom invitation.",
+      "primary": "Browse templates",
+      "secondary": "See pricing"
+    }
+  },
+  "legal": {
+    "shared": {
+      "eyebrow": "Legal",
+      "versionLabel": "Version",
+      "effectiveLabel": "Effective from",
+      "updatedLabel": "Last updated",
+      "tocTitle": "Contents",
+      "pendingLabel": "This section has not been finalised. We leave it open rather than state a rule that has not been confirmed — if you need an answer for your particular case, please contact support.",
+      "relatedTitle": "Related documents"
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms of Service",
+        "description": "Terms of service for Keemori's made-to-order online event invitation design: ordering, payment, accounts, content and each party's responsibilities."
+      },
+      "title": "Terms of Service",
+      "subtitle": "These terms apply to Keemori's made-to-order online event invitation design service (custom invitations). By ordering a design, paying, or signing in to the account we create for you, you agree to the terms below.",
+      "sections": [
+        {
+          "heading": "1. Acceptance of terms",
+          "body": [
+            "By ordering a design, paying, or signing in to a Keemori account, you confirm that you have read, understood and agree to be bound by these terms.",
+            "We record your acceptance together with the version of this document at that time. The version number is shown at the top of this page, and you can request an export of your own acceptance history.",
+            "If you do not agree with any part of these terms, please do not order a design and stop using the service."
+          ]
+        },
+        {
+          "heading": "2. The service",
+          "body": [
+            "Keemori designs online invitations to order for your event — birthdays, store openings, conferences, parties and other events. Each invitation is designed from scratch for one event, not picked from a ready-made template library.",
+            "An invitation is a web page with its own link and QR code, which you send to your guests by message, on social media or printed on paper.",
+            "The scope of each design — content, style, information blocks and included features — is agreed between us during the consultation, before you pay.",
+            "There is no trial. We only start designing once we have received full payment."
+          ]
+        },
+        {
+          "heading": "3. How ordering works",
+          "body": [
+            "You contact us through the channels on our Contact page and describe your event and what you want. We advise you and send a quote.",
+            "Once we agree on the brief, you pay the full order value by bank transfer. We start designing once the payment arrives.",
+            "We create a Keemori account for you, place the invitation in it and send you the sign-in details so you can review the design.",
+            "You send feedback through the channel we are using, and we make revisions as agreed during the consultation. The invitation is published once you confirm the final version.",
+            "Turnaround depends on the complexity of the design and how quickly both sides respond; we give you an estimated timeline during the consultation."
+          ]
+        },
+        {
+          "heading": "4. Your account",
+          "body": [
+            "Your account is created by us using the email address you provide. Change the password the first time you sign in; from then on you are responsible for keeping it secure.",
+            "You can also sign in with a Google or Facebook account that uses the same email address.",
+            "All activity under your account is treated as yours. Tell us immediately if you suspect unauthorised access.",
+            "In your account you can edit the text of your invitation yourself: event details, time, venue and invitation wording. The layout, fonts, colours and design work done by Keemori cannot be changed from your account — contact us if you want them changed."
+          ]
+        },
+        {
+          "heading": "5. Price and payment",
+          "body": [
+            "Prices are listed on the Pricing page, in Vietnamese đồng. The price of an order is fixed when you create the payment order, including any promotion or voucher code applied at that moment.",
+            "You pay 100% of the order value by bank transfer (VietQR) right on the website. The invitation's public link is only created once the money has arrived.",
+            "Payments are non-refundable, except where the invitation has a technical fault caused by Keemori.",
+            "Details on the payment process, handling of incorrect transfers and refunds are in our Payment & Refund Policy."
+          ]
+        },
+        {
+          "heading": "6. Invitation links and duration",
+          "body": [
+            "A paid invitation does not expire and has no limit on the number of viewers, for as long as your account exists.",
+            "Every invitation has a public link. Anyone with the link can view the invitation; we do not password-protect individual invitations.",
+            "A link that has been issued to your invitation will never be reissued to someone else's invitation.",
+            "Each invitation is designed for one event and must not be reused for another event by replacing its details. 15 days after the first successful payment, the host name shown on the invitation can no longer be edited from your account; contact support if it needs to change."
+          ]
+        },
+        {
+          "heading": "7. Your content",
+          "body": [
+            "You keep all rights to the content you provide: names, photos, logos, invitation wording and event details.",
+            "You grant us the right to store, process and display that content to the extent needed to design your invitation and run the service — for example, showing the invitation to people who open the link.",
+            "You are responsible for the lawfulness of your content, including the right to use any photos, logos, brands and other people's information you give us.",
+            "If your invitation has a guestbook, guests' wishes only appear after you approve them, and you can delete any wish at any time. You decide what appears on your invitation."
+          ]
+        },
+        {
+          "heading": "8. Prohibited content",
+          "body": [
+            "Do not post content that is unlawful, infringes the rights of others, or is fraudulent, harassing or hateful.",
+            "Do not use the service to spread malware or spam, or to collect other people's data without authorisation.",
+            "Do not attempt to probe, interfere with or disrupt the system.",
+            "We may decline to design content that breaches these rules."
+          ]
+        },
+        {
+          "heading": "9. Intellectual property",
+          "body": [
+            "The source code, platform and Keemori brand belong to us or our licensors.",
+            "The design made for you may be used for the event named in your order, as an online invitation on the Keemori platform. You may not copy, resell or use that design as a template for third parties."
+          ]
+        },
+        {
+          "heading": "10. Suspension and termination",
+          "body": [
+            "We may suspend or terminate accounts that breach these terms, and will give notice beforehand where possible.",
+            "You may stop using the service at any time. If you delete your own account, your account data is permanently deleted, the invitation links tied to it stop working, and amounts already paid are not refunded.",
+            "Accounts we disable for a breach lose sign-in access, but their data is kept for reconciliation — see the Privacy Policy."
+          ]
+        },
+        {
+          "heading": "11. Limitation of liability",
+          "body": [
+            "The service is provided as is. We work to keep the system stable but do not promise it will never be interrupted.",
+            "To the extent permitted by law, our liability for any single incident does not exceed the amount you paid for the invitation concerned.",
+            "This limit does not apply to liability that cannot be excluded by law."
+          ]
+        },
+        {
+          "heading": "12. Changes to these terms",
+          "body": [
+            "These terms may be updated as the service changes. The version and date of the latest update are always shown at the top of this page.",
+            "If a change significantly affects your rights, we will notify you by email or within the product before it applies, and may ask you to accept the new version."
+          ]
+        },
+        {
+          "heading": "13. Complaints and dispute resolution",
+          "body": [
+            "Any complaint about the service — quality, payment, personal data or content on the platform — can be sent by support email or Facebook Messenger. Every complaint is recorded, even when the outcome is that we cannot do what you asked.",
+            "To help us act quickly, a complaint should include:",
+            "- The email of the account concerned.",
+            "- The invitation link or order code, if any.",
+            "- A description of what happened and when.",
+            "- The outcome you would like.",
+            "For payment complaints, please include the time of the transfer and the amount — those two details are enough for us to find the payment in our ledger.",
+            "We reply through the same channel you used, stating our conclusion and the reasons for it. If you are not satisfied, you may ask us to review it once more with additional information or arguments. We handle complaints as quickly as possible and reply within 3 working days of receiving them. If the matter needs to be verified with a third party — a bank or payment provider — and cannot be concluded within that time, we still reply within 3 working days to explain the status and when we expect to conclude.",
+            "Both parties will try to resolve disputes by negotiation first. If no agreement is reached, you may complain to the competent consumer protection authority or bring a claim before a competent court under Vietnamese law. Complaining to us does not limit your legal rights."
+          ]
+        },
+        {
+          "heading": "14. Contact",
+          "body": [
+            "Questions about these terms can be sent to Keemori's support email or Facebook Messenger."
+          ],
+          "contact": true
+        }
+      ]
+    },
+    "privacy": {
+      "meta": {
+        "title": "Privacy Policy",
+        "description": "Keemori's privacy policy: the data we collect when designing event invitations to order, how we use it, who we share it with and your rights."
+      },
+      "title": "Privacy Policy",
+      "subtitle": "This page explains what data we collect, what we use it for, who we share it with and what rights you have over your data.",
+      "sections": [
+        {
+          "heading": "1. Scope",
+          "body": [
+            "This policy applies to the Keemori website, our made-to-order event invitation design service, and the invitations created and shared through it.",
+            "For guest data in an invitation, the invitation owner decides what is collected; we process that data on the owner's behalf."
+          ]
+        },
+        {
+          "heading": "2. Data we collect",
+          "body": [
+            "Consultation details: your name, email, phone number, the channel you contact us on (Zalo, Facebook Messenger, email), a description of your event and your design brief.",
+            "Account data: the account we create using the email you provide, plus a display name and phone number if any. The initial password is set by us and sent to you; once you change it, your password is stored only as a one-way hash that we cannot read.",
+            "If you sign in with Google or Facebook, we receive your email address and display name from that provider, plus an identifier to recognise you next time. We never receive your password for those services.",
+            "Invitation content: the host name, event time and venue, photos, logos, invitation wording and gift details (if any) that you provide or enter yourself.",
+            "Content submitted by guests: names and wishes in the guestbook; and names, whether they will attend and how many people are coming if the invitation has an RSVP section.",
+            "Technical data: IP address, browser type, access time, and a random viewer ID stored in guests' cookies to count how many people have viewed an invitation.",
+            "Payment data: your orders (amount, voucher code used, time), plus the amount, time, and the sender's name and account number as reported to us by the bank through SePay for reconciliation. You pay from your own banking app using the VietQR code shown on the website; money goes straight into our bank account and we never receive or store your card number."
+          ]
+        },
+        {
+          "heading": "3. How we use data",
+          "body": [
+            "To advise you, design your invitation to order and keep in touch while we work on it.",
+            "To create, store and show your invitation to people who open its link.",
+            "To authenticate sign-ins, keep sessions and protect accounts from unauthorised access.",
+            "To create your payment order, match your bank transfer to it and send you a receipt.",
+            "To send transactional emails: account details, password resets and payment receipts. We do not send marketing email unless you sign up for it.",
+            "To count how many people have viewed an invitation, so you know how far it has reached.",
+            "To detect abuse, fight spam and improve the service."
+          ]
+        },
+        {
+          "heading": "4. Cookies and similar technologies",
+          "body": [
+            "We use cookies to keep you signed in and to refresh your session when it expires.",
+            "Guests who open an invitation get a cookie containing a random viewer ID. It is not linked to anyone's identity; it only ensures that one person opening the invitation several times is not counted as several people.",
+            "We use Google Analytics to measure traffic to our marketing and pricing pages. It sets analytics cookies and gives us aggregate figures — sessions, traffic sources, devices — not who you are.",
+            "Your invitation page is outside that measurement: we deliberately do not load Google Analytics on invitation pages, so invitation links and the information on them are not sent to Google.",
+            "No cookies are used for personalised advertising, and we do not use third-party ad tracking.",
+            "Some forms are protected by reCAPTCHA to block automated submissions; this means your browser exchanges data with Google under Google's own policy."
+          ]
+        },
+        {
+          "heading": "5. Sharing and third parties",
+          "body": [
+            "We do not sell your personal data.",
+            "Data is only shared with providers that help us run the service, and only to the extent each one needs:",
+            "- Our server and database hosting providers.",
+            "- Resend — sending transactional email (account details, password resets, payment receipts).",
+            "- SePay — notifying us of bank transactions so your bank transfer can be matched to your payment order automatically.",
+            "- Cloudflare R2 — storing and serving the photos on invitations.",
+            "- Google and Facebook — only if you choose to sign in with them.",
+            "- Google reCAPTCHA — blocking automated form submissions.",
+            "- Google Analytics — measuring traffic to marketing pages, not invitation pages.",
+            "- Photon / OpenStreetMap or Google Places — address suggestions when entering an event venue.",
+            "Messages you send us on Zalo or Facebook Messenger pass through those platforms and are subject to their own privacy policies.",
+            "Google Maps Embed runs in a guest's browser when an invitation includes a map. In that case the guest's browser connects directly to Google under Google's own policy, without going through our servers.",
+            "We may disclose data when lawfully required by a competent state authority."
+          ]
+        },
+        {
+          "heading": "6. Public invitations, guestbook and RSVP",
+          "body": [
+            "Anyone with an invitation link can see its content. Think carefully before including sensitive details such as a home address or personal bank account number.",
+            "Depending on the design, an invitation may have a guestbook — where guests leave their name and a wish — and an RSVP section, where guests say whether they will attend and how many people are coming.",
+            "Submitted wishes are held for approval and only appear on the invitation once the owner approves them. The owner can delete any wish. RSVP responses are never shown publicly; only the invitation owner can see them.",
+            "What guests enter belongs to the invitation owner; we store it on their behalf and use it for nothing else."
+          ]
+        },
+        {
+          "heading": "7. Photos on invitations",
+          "body": [
+            "Photos are recompressed before storage, and all metadata is removed in the process — including the GPS coordinates phones usually embed.",
+            "This is deliberate: an invitation is a public link, and a photo that still carries coordinates would reveal where it was taken to anyone who opens the invitation.",
+            "Uploaded photos are served from hard-to-guess links that do not require sign-in. Anyone with a photo's link can see it.",
+            "When an invitation is deleted, its photo files are deleted from storage, not just hidden from the interface."
+          ]
+        },
+        {
+          "heading": "8. Security",
+          "body": [
+            "Connections to the service are encrypted with HTTPS. Passwords are hashed one-way before storage.",
+            "Keemori staff see your invitation content while designing, revising and supporting it. Internal access to data is limited by role and used only for those purposes.",
+            "No system is perfectly secure; change your initial password, use a strong password and do not share your account."
+          ]
+        },
+        {
+          "heading": "9. Your rights",
+          "body": [
+            "You have the right to view, correct or request deletion of your personal data.",
+            "You have the right to request a copy of your data, including your history of accepting legal documents, and to withdraw consent you gave earlier.",
+            "To exercise these rights, send a request through the support channels on our Contact page; we may need to verify your identity first."
+          ]
+        },
+        {
+          "heading": "10. Children",
+          "body": [
+            "The person ordering a design and the account holder must be 18 or older. We do not knowingly collect children's data; if we find any, it will be deleted."
+          ]
+        },
+        {
+          "heading": "11. Changes to this policy",
+          "body": [
+            "This policy may be updated as the service or the law changes. The version and date of the latest update are always shown at the top of this page."
+          ]
+        },
+        {
+          "heading": "12. Deleting your account",
+          "body": [
+            "If you delete your account yourself under Account, your account data is permanently deleted, your email address is released and you can register again with it.",
+            "If we disable an account (for example, for breaching our terms), it loses sign-in access, related data is kept, and that email address cannot be registered again.",
+            "In both cases, orders and payment transactions are not deleted — accounting law requires us to keep these records."
+          ]
+        },
+        {
+          "heading": "13. Retention",
+          "body": [
+            "Paid invitations and their photos are kept for as long as your account exists; no automatic deletion applies to them.",
+            "Your account is kept for as long as you want to use it: we do not delete accounts for inactivity.",
+            "Orders and payment records are not deleted along with an invitation or account — see section 12.",
+            "Admin activity logs are kept for 24 months from the date recorded, then deleted automatically.",
+            "Database backups are kept for at most 30 days and then deleted. Because a backup is a snapshot of all data at one point in time, content you asked us to delete may still exist in backups that have not yet expired — no later than 30 days after you delete it, that content no longer exists anywhere in our systems. We do not use backups to restore data deleted at your request."
+          ]
+        },
+        {
+          "heading": "14. Contact",
+          "body": [
+            "Questions and requests to exercise your personal data rights can be sent to Keemori's support email or Facebook Messenger."
+          ],
+          "contact": true
+        }
+      ]
+    },
+    "paymentRefund": {
+      "meta": {
+        "title": "Payment & Refund Policy",
+        "description": "How payment works for a made-to-order event invitation: pricing, 100% upfront payment, bank transfer, incorrect transfers and refunds."
+      },
+      "title": "Payment & Refund Policy",
+      "subtitle": "This page explains how an invitation design order is quoted, paid and reconciled, and what happens when something goes wrong.",
+      "sections": [
+        {
+          "heading": "1. Scope",
+          "body": [
+            "This policy applies to every payment for Keemori's made-to-order event invitation design service (custom invitations).",
+            "This policy supplements our Terms of Service; where they conflict on payment matters, this page prevails."
+          ]
+        },
+        {
+          "heading": "2. Prices",
+          "body": [
+            "Prices are listed on the Pricing page, in Vietnamese đồng (VND), and include applicable taxes, if any. A package promotion and a voucher code (if you use one) are deducted directly from the amount you transfer and shown clearly on the payment screen before you confirm.",
+            "The price of an order is fixed when you press Pay and the order is created on the website. Later changes to our prices do not apply to orders already created.",
+            "You pay once per invitation: there is no subscription fee and no automatic renewal.",
+            "Custom invitations have no trial and no free plan."
+          ]
+        },
+        {
+          "heading": "3. Payment upfront",
+          "body": [
+            "You pay 100% of the order value before the invitation gets a public link. You can compose and preview it freely beforehand; the link is created only once the payment has reached our account.",
+            "Revisions within the brief agreed during the consultation cost nothing extra. Requests outside that brief may be quoted separately, and are only carried out with your agreement."
+          ]
+        },
+        {
+          "heading": "4. Payment method",
+          "body": [
+            "There is currently one payment method: bank transfer, made right on the website with a VietQR code. We do not accept credit cards and do not store any card details.",
+            "When you press Pay, the website creates an order and shows the amount, the receiving account details and the transfer reference, with a pre-filled VietQR code. The safest way to pay is to scan that code without changing anything.",
+            "If you transfer manually, keep the transfer reference exactly as given — it is how we tell which order an incoming payment belongs to.",
+            "When the money arrives, our automatic reconciliation through SePay (the service that reports bank transactions to us) matches it to your order and creates the invitation link, usually within seconds. You do not need to send us a screenshot of the transaction."
+          ]
+        },
+        {
+          "heading": "5. Incorrect or short transfers",
+          "body": [
+            "Wrong or missing transfer reference: the payment cannot be matched automatically and goes into a manual reconciliation queue. Contact support with the time of transfer and the amount, and we will match it for you.",
+            "Short payment: the order is recorded as underpaid and the invitation link is not created until you transfer the remaining amount.",
+            "Overpayment or duplicate transfer: the excess is not kept automatically. Contact support and it will be returned to you.",
+            "Every transfer into our account is recorded, including transfers not yet matched to an order — no payment goes missing."
+          ]
+        },
+        {
+          "heading": "6. Receipts",
+          "body": [
+            "Once we receive the money, we email a receipt with the amount received to the address on your account, and show a notice in the website's notification bell.",
+            "If you need a VAT invoice, please contact support with your invoicing details."
+          ]
+        },
+        {
+          "heading": "7. Refunds",
+          "body": [
+            "Each invitation is designed specifically for you and its link is created as soon as we receive payment, so payments are non-refundable.",
+            "The only exception is a technical fault caused by us: the invitation does not open, content displays incorrectly or is lost, or an agreed feature does not work. Send a complaint through our support channels and we will fix it as quickly as possible. If the fault is still not fixed more than 3 working days after we receive your complaint, we refund the full amount you paid for that invitation — you do not need to ask again.",
+            "Refunds are sent to the same bank account used for payment, within 7 working days of our decision to refund. If that account cannot receive the money, you can give us another account in your name.",
+            "Cases that are not refunded:",
+            "- Changing your mind or no longer wanting the invitation.",
+            "- The event being cancelled, postponed or rescheduled. If the time or venue changes, you can update those details yourself in your account.",
+            "- The design not meeting your aesthetic expectations.",
+            "- Incorrect content that you provided or entered.",
+            "- Not responding so that the invitation can be completed.",
+            "- Problems outside our system: your or your guests' connection, browser or device.",
+            "Overpayments and duplicate transfers are not covered by this section. Returning money we received in excess is not a refund, and it is always returned — see section 5.",
+            "A refund ends the transaction for that invitation: once refunded, you may no longer use the refunded invitation.",
+            "Publishing this process does not limit your rights under consumer protection law."
+          ]
+        },
+        {
+          "heading": "8. Payment disputes",
+          "body": [
+            "If you believe you were charged incorrectly, contact us before opening a dispute with your bank — we keep full transaction logs for reconciliation and can usually resolve it faster.",
+            "The formal complaint process is in the Complaints and dispute resolution section of our Terms of Service."
+          ]
+        },
+        {
+          "heading": "9. Contact",
+          "body": [
+            "Questions about payment, reconciliation or refunds can be sent to Keemori's support email or Facebook Messenger."
+          ],
+          "contact": true
+        }
+      ]
+    },
+    "businessInfo": {
+      "meta": {
+        "title": "Business information",
+        "description": "Who operates Keemori, the service and its listed prices, general terms of sale, delivery and payment methods."
+      },
+      "title": "Business information",
+      "subtitle": "Who is behind Keemori, what Keemori sells and how — what you should know before paying for an invitation.",
+      "owner": {
+        "eyebrow": "Website owner",
+        "fields": {
+          "businessName": "Trading name",
+          "taxCode": "Business registration / Tax code",
+          "registeredAt": "First registered",
+          "registrationAuthority": "Issued by",
+          "registeredAddress": "Address",
+          "legalRepresentative": "Business owner",
+          "email": "Email",
+          "zalo": "Zalo",
+          "paymentAccount": "Payment account"
+        },
+        "accountHolder": "Account holder: {name}",
+        "moitBadge": "Registered with the Ministry of Industry and Trade"
+      },
+      "prices": {
+        "caption": "Listed price of the service",
+        "plan": "Service",
+        "price": "Price per invitation",
+        "item": "Custom-designed invitation",
+        "itemNote": "Paid once by bank transfer before design starts. The link is permanent with no viewer limit.",
+        "seeFull": "See pricing"
+      },
+      "sections": [
+        {
+          "heading": "1. Website owner",
+          "body": [
+            "The Keemori website is owned and directly operated by the household business below to provide its own service. Keemori is not an e-commerce marketplace: we do not list goods or services from third parties, and every order on the website is a direct transaction between you and us."
+          ],
+          "slot": "owner"
+        },
+        {
+          "heading": "2. Our service",
+          "body": [
+            "Keemori designs made-to-order online invitations for birthdays, openings, conferences, parties and other events: we build one invitation around your content and style, then deliver a link and QR code to send to your guests. Invitations open in the browser of any phone or computer; guests don't need to install an app or create an account.",
+            "An invitation is made of blocks you can switch on and off: event details, time and venue with a map, schedule, countdown and calendar, a note, a photo album, a gift box with bank-transfer QR codes, a guestbook, RSVP, personal guest links, a thank-you note and background music. Every feature is included in every invitation — there are no plans.",
+            "The website sells a single service: a custom-designed invitation at a fixed price per invitation, shown in the table below, paid once by bank transfer right on the website; the link is created when the money arrives. There is no trial. The link is permanent with no viewer limit.",
+            "Prices are listed in Vietnamese dong, include applicable taxes if any, and are paid once per invitation — no subscription and no automatic renewal."
+          ],
+          "slot": "prices"
+        },
+        {
+          "heading": "3. General terms of sale",
+          "body": [
+            "These terms apply to every customer ordering a design on Keemori, individuals and businesses alike (shops, restaurants, event organisers…).",
+            "An order goes through four steps:",
+            "- Contact us by email, Zalo or Messenger: describe the event, the content and the style you want, then receive a quote.",
+            "- Pay the full order value by bank transfer (VietQR on the website) to the account in section 1. The invitation link is only created once the full amount has arrived.",
+            "- Keemori designs the invitation, creates a Keemori account for you and sends you the sign-in details so you can review the design.",
+            "- You approve the final version, the invitation is published and you receive the link and QR code to send to your guests.",
+            "We commit to: keeping invitation links working long-term with no viewer limit; answering every complaint within 3 business days at most; refunding the full price of an invitation that is faulty on our side and still not fixed after 3 business days.",
+            "You are responsible for: using only content and photos you have the right to use, not publishing content that breaks the law or infringes on others' rights, and checking your invitation carefully before sending the link to guests.",
+            "You accept the Terms of service and Privacy policy when you create an account. The full rights and obligations of both parties, along with the complaint and dispute process, are set out in the documents below."
+          ],
+          "slot": "transactionLinks"
+        },
+        {
+          "heading": "4. Delivery",
+          "body": [
+            "Keemori is a digital service: there are no physical goods, no shipping and no delivery fees.",
+            "Your invitation is delivered as a link and a QR code, available under My invitations once you approve the final version. You send the link to guests yourself via Zalo, Messenger or text, or print the QR code on paper invitations.",
+            "Turnaround depends on how complex the design is and how quickly both sides reply; the expected date is given during the consultation.",
+            "If you have transferred the money but we have not started designing, contact us with the time and amount of the transfer — we will check it against the bank statement and confirm with you."
+          ]
+        },
+        {
+          "heading": "5. Payment methods",
+          "body": [
+            "Keemori accepts a single payment method: bank transfer, made right on the website with a VietQR code. We don't take cash, don't accept credit cards and never store your card details.",
+            "When you press Pay for an invitation, the website creates an order and shows the amount, the receiving account details (section 1) and the transfer reference. Scan the VietQR code, or keep the reference exactly as given if you transfer manually, so the system can recognise the payment.",
+            "Reconciliation is automatic through SePay: when the bank reports the credit, the money is matched to your order and the invitation link is created, usually within seconds. A transfer with the wrong reference is matched by hand when you contact us.",
+            "Payments go only to the account held in the name of the household business in section 1. If your banking app shows a different recipient name, don't transfer and let us know right away."
+          ],
+          "slot": "paymentLinks"
+        },
+        {
+          "heading": "6. Contact",
+          "body": [
+            "Questions about the service, an order or anything on this page are handled through Keemori's support email, Zalo or Facebook Messenger. We reply within 3 business days at most."
+          ],
+          "contact": true
+        }
+      ]
+    }
+  },
+  "openingLab": {
+    "typographyTitle": "Typography",
+    "fontCombo": "Font combination",
+    "inheritFonts": "Inherit template fonts",
+    "regionFonts": "Fonts by region",
+    "regionFontsHint": "Choose a listed font or enter the CSS font-family of a loaded font. Region fonts override the combination; leave blank to inherit.",
+    "clearRegionFonts": "Clear region fonts and use the combination",
+    "inheritRegionFont": "From combination / template",
+    "fontCombos": {
+      "reference-1": "01 · Hastegi / Beyond Perfection / Lora",
+      "reference-2": "02 · Beyond Perfection / Hastegi / Lora",
+      "reference-3": "03 · Cormorant / Great Vibes / EB Garamond",
+      "reference-4": "04 · UVN Hoa Tay / Hastegi / Be Vietnam Pro"
+    },
+    "textRegions": {
+      "firstName": "Groom name",
+      "secondName": "Bride name",
+      "ampersand": "Ampersand",
+      "invitation": "Invitation line",
+      "date": "Wedding date",
+      "monogram": "Initials",
+      "heading": "THE DATE line",
+      "headingAccent": "Save heading",
+      "action": "Open button"
+    },
+    "decorTitle": "Decorative icons",
+    "decorSlots": {
+      "corner": "Corner motifs",
+      "divider": "Divider icon",
+      "ambient": "Background motifs"
+    },
+    "motifs": {
+      "double-happiness": "Double happiness",
+      "flower": "Flower",
+      "sprig": "Leaf sprig",
+      "heart": "Heart",
+      "diamond": "Diamond",
+      "none": "Hidden"
+    },
+    "kicker": "Keemori · Opening library",
+    "title": "One invitation, nine entrances.",
+    "description": "Three concepts inspired by ceremonial cards, floral envelopes and linen paper. Choose a design, make the palette yours and tap to see it open.",
+    "settings": "Opening settings",
+    "variantsTitle": "Choose a design",
+    "colorsTitle": "Color palette",
+    "contentTitle": "Preview content",
+    "reset": "Default colors",
+    "firstName": "Groom’s name",
+    "secondName": "Bride’s name",
+    "date": "Wedding date",
+    "preview": "Opening preview",
+    "mobile": "Phone",
+    "desktop": "Wide",
+    "replay": "Replay",
+    "revealed": "Your invitation content will appear here after opening.",
+    "enabled": "Show opening screen",
+    "exportTitle": "Get reusable configuration",
+    "exportDescription": "Use this configuration as WeddingOpening props. Data, colors, fonts and decor can be supplied dynamically by the template.",
+    "copy": "Copy configuration",
+    "copied": "Copied",
+    "copyError": "Could not copy. Select and copy the configuration below.",
+    "concepts": {
+      "ceremony": "Traditional celebration",
+      "envelope": "Floral envelopes & wax seals",
+      "linen": "Linen paper & pressed flowers"
+    },
+    "variants": {
+      "ceremony-classic": "Double Joy",
+      "ceremony-arch": "Crimson Arch",
+      "ceremony-gate": "Joyful Gates",
+      "envelope-botanical": "Botanical Letter",
+      "envelope-bouquet": "Bloom Letter",
+      "envelope-ribbon": "Silk Ribbon",
+      "linen-fold": "Paper Fold",
+      "linen-vellum": "Vellum",
+      "linen-pressed": "Pressed Flowers"
+    },
+    "colors": {
+      "background": "Background",
+      "paper": "Paper",
+      "ink": "Text",
+      "accent": "Accent",
+      "seal": "Seal / button",
+      "onSeal": "Button text",
+      "botanical": "Leaves & flowers"
+    },
+    "sample": {
+      "firstName": "Gia Khánh",
+      "secondName": "Quỳnh Anh"
+    },
+    "labels": {
+      "invitation": "Together with our families",
+      "open": "Open invitation",
+      "opening": "Opening…",
+      "save": "Save",
+      "theDate": "THE DATE"
+    }
+  },
+  "tools": {
+    "eyebrow": "Free tools",
+    "breadcrumb": "Tools",
+    "open": "Use the tool",
+    "howToTitle": "How to use",
+    "faqTitle": "Frequently asked questions",
+    "relatedTitle": "Other tools",
+    "cta": {
+      "title": "Got the date and the guest count? Time for the invitation.",
+      "body": "Order a custom-designed online wedding invitation and get a link and QR code to share on Zalo or Messenger.",
+      "action": "Choose a design"
+    },
+    "hub": {
+      "meta": {
+        "title": "Free wedding planning tools",
+        "description": "Convert dates between the Gregorian and Vietnamese lunar calendars, work out how many reception tables to book, and make a QR code for paper invitations — free, no sign-up."
+      },
+      "title": "Wedding planning tools",
+      "subtitle": "The small calculations couples end up doing by hand. Free, no account needed, running right in your browser."
+    },
+    "items": {
+      "lunar": {
+        "card": {
+          "title": "Lunar date converter",
+          "body": "Convert between the Gregorian and Vietnamese lunar calendars, with the lunar-date line ready for your invitation."
+        },
+        "meta": {
+          "title": "Vietnamese lunar date converter for wedding invitations",
+          "description": "Convert Gregorian dates to the Vietnamese lunar calendar and back, with the weekday, the year's name and leap months — plus a ready-to-copy line for your invitation."
+        },
+        "title": "Vietnamese lunar date converter",
+        "subtitle": "Enter your wedding date in either calendar to see the other, the weekday and the year's name — with the lunar-date line ready to copy onto your invitation.",
+        "widget": {
+          "modeLabel": "Conversion direction",
+          "modeSolar": "Gregorian → Lunar",
+          "modeLunar": "Lunar → Gregorian",
+          "solarLabel": "Gregorian date",
+          "lunarDay": "Lunar day",
+          "lunarMonth": "Lunar month",
+          "lunarYear": "Year",
+          "leapLabel": "Leap month",
+          "leapSuffix": " (leap)",
+          "resultSolar": "Gregorian",
+          "resultLunar": "Lunar",
+          "solarLine": "{weekday}, {day}/{month}/{year}",
+          "lunarLine": "Day {day}, month {month}{leap}, year of {canChi}",
+          "cardLineLabel": "Line for the invitation",
+          "cardLine": "(i.e. day {day} of lunar month {month}{leap}, year of {canChi})",
+          "weekdays": [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "copy": "Copy",
+          "copied": "Copied",
+          "empty": "Enter a date to see the result.",
+          "invalid": "This date doesn't exist in the chosen lunar year: short months have no day 30, or that year has no such leap month."
+        },
+        "howTo": [
+          "Choose a direction: from a Gregorian date to the lunar calendar, or from a lunar date back.",
+          "Enter your wedding date. For lunar dates, tick “Leap month” if the day falls in a leap month.",
+          "Read the weekday, the lunar date and the year's name, then copy the ready-made line for your invitation."
+        ],
+        "notes": {
+          "title": "The lunar date on a Vietnamese invitation",
+          "paragraphs": [
+            "Vietnamese invitations usually give the Gregorian date first and the lunar date in brackets. Older relatives check the lunar date, so getting a single number wrong is the first thing anyone notices.",
+            "The lunar year doesn't turn over with the Gregorian one. The Year of Đinh Mùi begins on 6 February 2027, so a wedding in January 2027 still falls in the Year of Bính Ngọ.",
+            "The tool uses the same astronomical algorithm and Vietnam time zone (UTC+7) that Keemori uses to print lunar dates on invitations, so the numbers here match the ones on your card."
+          ]
+        },
+        "faqs": [
+          {
+            "question": "How accurate is the conversion?",
+            "answer": "It uses Hồ Ngọc Đức's algorithm in the Vietnam time zone (UTC+7), the common way the Vietnamese lunar calendar is computed today. For an important date, families may still double-check against a printed calendar."
+          },
+          {
+            "question": "Which lunar years are 2026 and 2027?",
+            "answer": "Most of 2026 is the Year of Bính Ngọ. The Year of Đinh Mùi starts at lunar new year, on 6 February 2027, so the days before it in early 2027 still belong to Bính Ngọ."
+          },
+          {
+            "question": "How is a leap month written?",
+            "answer": "Add “nhuận” after the month, as in “tháng 6 nhuận”. 2025 has a leap sixth month; the tool detects it automatically when converting from a Gregorian date."
+          },
+          {
+            "question": "Does it tell me which days are auspicious?",
+            "answer": "No. The tool only converts dates. Many families ask an elder or a date reader to choose the day — ask early, since you also need the venue to be free."
+          }
+        ]
+      },
+      "tables": {
+        "card": {
+          "title": "Reception table calculator",
+          "body": "From your guest count, confirmed replies and your own attendance estimate, get the number of tables to book."
+        },
+        "meta": {
+          "title": "Wedding reception table calculator",
+          "description": "Enter your guest count, confirmed replies, expected attendance and seats per table to see how many reception tables to book and how many seats will be spare."
+        },
+        "title": "Reception table calculator",
+        "subtitle": "Book too many and you pay for empty tables; too few and guests wait while extra ones are set up. A few numbers give you a reasoned estimate before you confirm with the venue.",
+        "widget": {
+          "guests": "Total guests invited (people)",
+          "confirmed": "Confirmed attending (people)",
+          "confirmedHint": "Leave blank if nobody has replied yet. These guests are counted in full.",
+          "rate": "% of the rest you expect to attend",
+          "rateHint": "80% is only a starting point to show the maths — adjust it to your family's and venue's experience.",
+          "perTable": "Seats per table",
+          "perTableHint": "Ask about your exact hall: some seat 10, others 8 or 12.",
+          "reserve": "Spare tables",
+          "reserveHint": "Ask the venue how unused spare tables are charged.",
+          "expected": "Expected guests",
+          "tables": "Tables to book",
+          "seats": "Total seats",
+          "spare": "Spare seats",
+          "note": "This is an estimate. Ask the venue for its deadline for the final table count and its policy on late changes, then set your RSVP deadline before it."
+        },
+        "howTo": [
+          "Enter the total number of guests invited — count people, not invitations.",
+          "If you already have RSVPs, enter how many people are confirmed. The rest is estimated with your percentage.",
+          "Adjust seats per table and spare tables to match the venue, then read the number of tables to book."
+        ],
+        "notes": {
+          "title": "Getting the number close to reality",
+          "paragraphs": [
+            "The surest way is real answers instead of guesses: ask guests whether they're coming and how many, then follow up individually with anyone who hasn't replied before the venue's deadline.",
+            "Attendance varies from wedding to wedding — distance, weekday versus weekend, and how the invitation was delivered all change it. That's why the tool lets you set the rate instead of assuming one.",
+            "On Keemori invitations, guests RSVP on the invitation itself and you see the summary in My invitations, so the “confirmed” box can hold real numbers."
+          ]
+        },
+        "faqs": [
+          {
+            "question": "How many people sit at a reception table?",
+            "answer": "Ten per table is common, but some venues seat 8 or 12 depending on the hall and table style. Ask about your hall and enter it in “Seats per table”."
+          },
+          {
+            "question": "How many spare tables should I book?",
+            "answer": "It depends on the venue's policy. Ask whether spare tables are only charged if used and when the final count is due, then set your spare tables accordingly."
+          },
+          {
+            "question": "What attendance rate is reasonable?",
+            "answer": "There's no figure that fits every wedding. Use your family's experience as a starting point, and collect RSVPs as early as you can to replace the estimate with real numbers."
+          }
+        ]
+      },
+      "qr": {
+        "card": {
+          "title": "Invitation QR code",
+          "body": "Paste your invitation link and download a PNG QR code to print on paper cards or a welcome sign."
+        },
+        "meta": {
+          "title": "QR code generator for wedding invitation links",
+          "description": "Paste your online wedding invitation link to create a free QR code and download a sharp PNG for paper invitations or a welcome sign. Generated in your browser."
+        },
+        "title": "QR code for your wedding invitation",
+        "subtitle": "Print a QR code on your paper invitation so guests can scan straight to the online one — with the map, countdown and guestbook that paper can't hold.",
+        "widget": {
+          "urlLabel": "Invitation link",
+          "urlPlaceholder": "https://keemori.com/en/t/couple-names-xxxx",
+          "invalid": "Enter a full link starting with https:// or http://",
+          "privacy": "The code is made in your browser; your link isn't sent to any server.",
+          "qrTitle": "QR code for the invitation link",
+          "empty": "Your QR code will appear here",
+          "download": "Download QR code (PNG)",
+          "hint": "Scan it with a phone camera before printing, and print a test copy to make sure it's large enough."
+        },
+        "howTo": [
+          "Open your online wedding invitation and copy its link.",
+          "Paste the link above. The QR code appears as soon as the link is valid.",
+          "Click “Download QR code (PNG)” to get a white-background image with margins, sharp enough to print."
+        ],
+        "notes": {
+          "title": "Printing the code on a paper invitation",
+          "paragraphs": [
+            "A paper card is still the formal way to invite grandparents and elders. Add a small QR code on the back or a lower corner with a short line such as “Scan for the map and reception details”, and they get both.",
+            "Keep the code black on white with a white margin around it — pale or busy codes are hard for many phone cameras to read. Test on several phones before printing a large batch.",
+            "If your invitation is on Keemori, the “Get link & QR” box in My invitations already has a QR download button. This tool is for any other link, or when the link is all you have."
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Does the QR code expire?",
+            "answer": "No. The code contains only the link you entered, so it works for as long as the link opens. Keemori invitation links never change, and published invitations have permanent links."
+          },
+          {
+            "question": "Can I use it for links that aren't from Keemori?",
+            "answer": "Yes. Any link starting with https:// or http:// works."
+          },
+          {
+            "question": "Is my link stored anywhere?",
+            "answer": "No. The QR code is drawn in your browser; the link isn't sent to or stored on any server."
+          },
+          {
+            "question": "Where should the code go on a paper invitation?",
+            "answer": "Usually on the back or a lower corner, with a line saying what scanning does. Avoid placing it over patterns or on a dark background."
+          }
+        ]
+      }
+    }
+  },
+  "create": {
+    "meta": {
+      "title": "Create an online invitation for any occasion",
+      "description": "Pick an invitation type — wedding, birthday, graduation, event, anniversary or greeting — then fill it in to get a link and QR code for your guests."
+    },
+    "eyebrow": "Step 1 · Choose a type",
+    "title": "What's the occasion?",
+    "subtitle": "Each type has its own form that only asks for what that occasion needs. Pick one to start.",
+    "start": "Start",
+    "examplesLabel": "Great for",
+    "note": "No account needed to start — you only sign in when you save.",
+    "kinds": {
+      "wedding": {
+        "name": "Wedding invitation",
+        "description": "The couple, both families, ceremonies and the reception.",
+        "examples": "Wedding · Engagement"
+      },
+      "birthday": {
+        "name": "Birthday invitation",
+        "description": "The guest of honour, the new age, and the party's time and place.",
+        "examples": "Birthday · First birthday · Longevity party"
+      },
+      "graduation": {
+        "name": "Graduation invitation",
+        "description": "The graduate, school, major, class year and the ceremony schedule.",
+        "examples": "Graduation · Graduation party"
+      },
+      "event": {
+        "name": "Event invitation",
+        "description": "Event name, organiser, programme and RSVP.",
+        "examples": "Workshop · Concert · Gala · Reunion"
+      },
+      "anniversary": {
+        "name": "Anniversary invitation",
+        "description": "The milestone, your story and a celebration.",
+        "examples": "Wedding anniversary · Company anniversary"
+      },
+      "greeting": {
+        "name": "Greeting card",
+        "description": "A personal wish sent to one recipient — no venue needed.",
+        "examples": "Birthday · Grand opening · Housewarming · New Year · Teachers' Day"
+      }
+    }
+  },
+  "payment": {
+    "meta": {
+      "title": "Pay for your invitation",
+      "description": "Transfer the amount to unlock a permanent link for your invitation."
+    },
+    "upgrade": {
+      "title": "Pay for this invitation",
+      "body": "“{title}” — pay to create a permanent link you can share, with no limit on viewers.",
+      "loading": "Fetching your price…",
+      "packageName": "Custom invitation",
+      "hint": "Bank transfer with a VietQR code. Your invitation link is created the moment the money arrives — no one has to approve it.",
+      "rows": {
+        "list": "List price",
+        "packageDiscount": "Promotion",
+        "packageDiscountPercent": "Promotion {percent}%",
+        "voucher": "Code {code}",
+        "total": "Amount due"
+      },
+      "submit": "Continue to payment",
+      "submitting": "Working on it…",
+      "failed": "Could not create the order. Please try again.",
+      "quoteFailed": "Could not load the price.",
+      "consent": {
+        "label": "I have read and agree to the",
+        "terms": "Terms of Use",
+        "and": "and",
+        "paymentPolicy": "Payment & Refund Policy"
+      },
+      "voucher": {
+        "label": "Discount code",
+        "placeholder": "Enter a discount code",
+        "apply": "Apply",
+        "applying": "Checking…",
+        "applied": "− {amount}",
+        "failed": "Could not check that code. Please try again.",
+        "available": "Available codes ({count})",
+        "loading": "Finding available codes…",
+        "empty": "No codes available for this order. You can enter a private code above.",
+        "listFailed": "Could not load discount codes.",
+        "retry": "Try again",
+        "save": "Save {amount}",
+        "expires": "Expires {date}",
+        "pickerTitle": "Choose a discount code",
+        "back": "Back",
+        "confirm": "Confirm",
+        "eligibleTitle": "Available vouchers",
+        "unavailableTitle": "Unavailable vouchers",
+        "selectedCount": "{count} voucher selected",
+        "selectedSaving": "Save {amount}",
+        "noneSelected": "No discount code selected",
+        "clearSelection": "Use no discount code",
+        "selectCode": "Select {code}",
+        "reasons": {
+          "minimum": "Requires an order of at least {amount}",
+          "userLimit": "You have used up this code",
+          "unavailable": "This code can't be used for this order"
+        }
+      }
+    },
+    "success": {
+      "title": "Payment received!",
+      "body": "Your invitation now has a permanent link. Time to send it to everyone.",
+      "perks": {
+        "link": "A permanent link that never expires, with no limit on viewers.",
+        "share": "Get the link and QR code from My invitations to send to your guests."
+      },
+      "done": "Get link & QR"
+    },
+    "checkout": {
+      "title": "Transfer to finish",
+      "subtitle": "Scan the code or transfer manually. This page updates itself once the money arrives.",
+      "loading": "Loading payment details…",
+      "failed": {
+        "title": "This order can't be opened",
+        "body": "It does not exist, was cancelled, or belongs to another account.",
+        "retry": "Try again"
+      },
+      "summary": {
+        "title": "Order",
+        "package": "Package",
+        "packageName": "Custom invitation",
+        "amount": "Amount"
+      },
+      "qr": {
+        "title": "Scan the VietQR code",
+        "hint": "Open your banking app and scan — amount and message are already filled in.",
+        "alt": "VietQR code for order {code}",
+        "download": "Save QR code",
+        "downloading": "Saving…"
+      },
+      "manual": {
+        "title": "Or transfer manually",
+        "bank": "Bank",
+        "account": "Account number",
+        "name": "Account holder",
+        "amount": "Amount",
+        "content": "Transfer message",
+        "contentHint": "Keep this code in the transfer message — it is the only thing that tells us which order the money belongs to."
+      },
+      "copy": "Copy",
+      "copied": "Copied",
+      "waiting": "Waiting for payment confirmation…",
+      "waitingHint": "Payments are usually confirmed within a few seconds of your transfer. You can close this page — your order is still recorded.",
+      "countdown": "Please complete the transfer within {time}.",
+      "expired": {
+        "title": "Waiting time is up",
+        "body": "This page stops checking on its own after 10 minutes. If you have already transferred, nothing is lost — the code {code} is still valid and the order is recorded whenever the money arrives; tap Check again to see right away. If you have not transferred yet, cancel this order and start a new one from your invitations.",
+        "recheck": "Check again",
+        "checking": "Checking…"
+      },
+      "paid": {
+        "title": "Payment received",
+        "body": "Your invitation link is ready: permanent, with no limit on viewers.",
+        "cta": "Get link & QR",
+        "viewCard": "View invitation"
+      },
+      "cancelled": {
+        "title": "Order cancelled",
+        "body": "This order no longer accepts payment. You can start a new one from your invitations.",
+        "cta": "Back to my invitations"
+      },
+      "cancel": "Cancel order",
+      "cancelling": "Cancelling…",
+      "cancelFailed": "Could not cancel the order. Please try again.",
+      "back": "Back to my invitations"
+    }
+  }
+}

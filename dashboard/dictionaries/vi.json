@@ -1,0 +1,774 @@
+{
+  "auth": {
+    "login": {
+      "title": "Chào mừng trở lại",
+      "eyebrow": "Keemori · Quản trị",
+      "subtitle": "Đăng nhập để quản lý thiệp, nội dung và vận hành của Keemori. Tài khoản quản trị tách riêng khỏi tài khoản khách hàng.",
+      "email": "Email",
+      "password": "Mật khẩu",
+      "showPassword": "Hiện mật khẩu",
+      "hidePassword": "Ẩn mật khẩu",
+      "submit": "Đăng nhập",
+      "submitting": "Đang đăng nhập…",
+      "securityNote": "Nhập sai nhiều lần sẽ bị tạm khoá vài phút. Tài khoản do quản trị viên cấp, không có đăng ký công khai."
+    },
+    "errors": {
+      "invalid": "Email hoặc mật khẩu không đúng.",
+      "throttled": "Bạn đã thử quá nhiều lần. Vui lòng đợi vài phút rồi thử lại.",
+      "unavailable": "Không kết nối được máy chủ, vui lòng thử lại sau.",
+      "emailRequired": "Vui lòng nhập email.",
+      "emailInvalid": "Email không hợp lệ.",
+      "passwordRequired": "Vui lòng nhập mật khẩu."
+    },
+    "notices": {
+      "password_changed": "Đã đổi mật khẩu. Vui lòng đăng nhập lại bằng mật khẩu mới."
+    }
+  },
+  "common": {
+    "tier": {
+      "free": "Free",
+      "gold": "Gold",
+      "diamond": "Diamond"
+    },
+    "actions": {
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "continue": "Tiếp tục",
+      "linkQr": "Link/QR",
+      "pay": "Thanh toán",
+      "viewAll": "Xem tất cả",
+      "viewMore": "Xem thêm",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "back": "Quay lại",
+      "prev": "Xem mẫu trước",
+      "next": "Xem mẫu sau",
+      "backToTop": "Lên đầu trang",
+      "close": "Đóng"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "meta": "Không tìm thấy trang",
+      "title": "Không tìm thấy màn này",
+      "body": "Đường dẫn không khớp màn nào trong khu quản trị. Có thể bạn gõ nhầm, hoặc màn đó chưa được dựng — sidebar bên trái là bản đồ đầy đủ.",
+      "home": "Về trang tổng quan"
+    },
+    "runtime": {
+      "meta": "Đã có lỗi xảy ra",
+      "title": "Màn này đang gặp trục trặc",
+      "body": "Thao tác vừa rồi không hoàn tất. Thử lại một lần; nếu vẫn lỗi, gửi mã lỗi bên dưới cho kỹ thuật.",
+      "retry": "Thử lại",
+      "home": "Về trang tổng quan",
+      "digestLabel": "Mã lỗi"
+    },
+    "global": {
+      "title": "Không tải được trang",
+      "body": "Khu quản trị gặp sự cố nghiêm trọng và không thể hiển thị. Vui lòng tải lại trang.",
+      "retry": "Tải lại",
+      "digestLabel": "Mã lỗi"
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Quản trị"
+    },
+    "title": "Quản trị",
+    "nav": {
+      "label": "Điều hướng quản trị",
+      "comingSoon": "Màn hình này chưa được dựng",
+      "menu": "Mở menu quản trị",
+      "close": "Đóng menu",
+      "skipToContent": "Bỏ qua menu, tới nội dung chính",
+      "groups": {
+        "overview": "Tổng quan",
+        "operations": "Vận hành",
+        "content": "Nội dung & hiển thị",
+        "homepage": "Trang chủ",
+        "configuration": "Cấu hình",
+        "commercial": "Kinh doanh"
+      },
+      "items": {
+        "dashboard": "Tổng quan",
+        "users": "Người dùng",
+        "settings": "Cấu hình link",
+        "faq": "FAQ",
+        "templateReviews": "Đánh giá mẫu thiệp",
+        "templateTags": "Tag mẫu thiệp",
+        "homepageHero": "Thiệp mẫu ở hero",
+        "homepage": "Mẫu thiệp nổi bật",
+        "coupleShowcase": "Cặp đôi đã tạo thiệp",
+        "siteStats": "Số liệu công bố",
+        "cards": "Thiệp đã tạo",
+        "analytics": "Phân tích",
+        "audit": "Nhật ký thao tác",
+        "weddings": "Lịch ngày cưới",
+        "templateStats": "Mẫu xem nhiều",
+        "payments": "Thanh toán",
+        "priceConfig": "Bảng giá",
+        "vouchers": "Mã giảm giá"
+      }
+    },
+    "dashboardNote": "Dashboard thống kê doanh thu và Google Analytics nằm ở thiết kế riêng, chưa nằm trong phạm vi màn này.",
+    "backendNote": "Mọi giới hạn theo gói, quyền sở hữu và thanh toán đều do backend kiểm tra.",
+    "errors": {
+      "required": "Vui lòng nhập thông tin này.",
+      "emailInvalid": "Email không hợp lệ.",
+      "numberMin": "Giá trị phải lớn hơn 0.",
+      "failed": "Thao tác không thành công, vui lòng thử lại.",
+      "urlInvalid": "Đường dẫn không hợp lệ.",
+      "numberMax": "Giá trị vượt quá mức cho phép.",
+      "percentMax": "Mã giảm theo phần trăm không được vượt quá 100%.",
+      "relativePath": "Đường dẫn phải bắt đầu bằng / (ảnh của chính site).",
+      "phoneInvalid": "Số điện thoại phải gồm 10 chữ số, bắt đầu bằng 0."
+    },
+    "loading": "Đang tải…",
+    "roles": {
+      "customer": "Khách hàng"
+    },
+    "adminRoles": {
+      "super_admin": "Super admin",
+      "admin": "Quản trị viên",
+      "editor": "Biên tập viên",
+      "support": "Hỗ trợ khách hàng",
+      "accountant": "Kế toán"
+    },
+    "permissions": {
+      "dashboard:view": "Xem tổng quan",
+      "users:view": "Xem người dùng",
+      "users:delete": "Vô hiệu hoá tài khoản",
+      "cards:manage": "Quản lý thiệp",
+      "content:manage": "Biên tập nội dung",
+      "reviews:manage": "Kiểm duyệt đánh giá mẫu",
+      "templates:manage": "Quản lý kho mẫu",
+      "settings:manage": "Cấu hình vận hành",
+      "analytics:view": "Phân tích",
+      "audit:view": "Nhật ký thao tác",
+      "payments:manage": "Tra soát giao dịch",
+      "pricing:manage": "Bảng giá",
+      "vouchers:manage": "Mã giảm giá"
+    },
+    "overview": {
+      "subtitle": "Theo dõi nhanh lưu lượng, người dùng và tình hình tạo thiệp trên toàn website.",
+      "operations": "Chỉ số vận hành",
+      "operationsHint": "Số liệu toàn hệ thống, cập nhật theo dữ liệu hiện có.",
+      "totalUsers": "Tổng người dùng",
+      "totalCards": "Tổng thiệp đã tạo",
+      "analyticsRestricted": "Admin thường chỉ xem số liệu vận hành. Lưu lượng website và mẫu phổ biến chỉ dành cho super admin."
+    },
+    "users": {
+      "title": "Người dùng",
+      "subtitle": "Tài khoản khách mua thiệp.",
+      "searchPlaceholder": "Tìm theo email hoặc họ tên",
+      "total": "{count} tài khoản",
+      "empty": "Không có tài khoản nào khớp.",
+      "columns": {
+        "name": "Tài khoản",
+        "role": "Quyền",
+        "createdAt": "Ngày tạo",
+        "actions": "Thao tác"
+      },
+      "view": "Xem chi tiết",
+      "delete": "Xóa tài khoản",
+      "deleteConfirmTitle": "Xóa tài khoản này?",
+      "deleteConfirmBody": "{name} ({email}) sẽ không đăng nhập được nữa và email này không đăng ký lại được. Thiệp và đơn hàng vẫn giữ nguyên.",
+      "deleteConfirm": "Xóa tài khoản",
+      "deleted": "Đã xóa tài khoản {name}",
+      "detail": {
+        "cards": "Thiệp đã tạo",
+        "cardViews": "Lượt xem thiệp",
+        "phone": "Số điện thoại",
+        "google": "Đăng nhập bằng Google",
+        "updatedAt": "Cập nhật lần cuối",
+        "emailNotifications": "Nhận email thông báo",
+        "allowShowcase": "Cho phép trưng bày thiệp",
+        "yes": "Có",
+        "no": "Không",
+        "empty": "—",
+        "paymentHistory": "Xem lịch sử thanh toán"
+      }
+    },
+    "settings": {
+      "title": "Cấu hình link",
+      "save": "Lưu cấu hình",
+      "saved": "Đã lưu cấu hình",
+      "homepageCount": "Số mẫu hiện ở trang chủ",
+      "homepageCountHint": "Dùng cho dải mẫu ở trang chủ; chọn mẫu nào là ở màn “Mẫu trên trang chủ”.",
+      "messengerUrl": "Link Messenger fanpage",
+      "messengerUrlHint": "Nút chat nổi ở góc phải dưới trang khách và thẻ Fanpage ở trang Liên hệ. Để trống thì ẩn cả hai.",
+      "socialTitle": "Mạng xã hội",
+      "socialHint": "Hiện ở hai nơi: biểu tượng ở chân trang khách và thẻ kênh liên hệ ở trang Liên hệ (Instagram, TikTok, Zalo). Ô nào để trống thì biểu tượng ở chân trang vẫn hiện nhưng mờ và không bấm được, còn thẻ ở trang Liên hệ bị ẩn; email để trống thì dùng hộp thư hỗ trợ mặc định.",
+      "facebookUrl": "Facebook",
+      "instagramUrl": "Instagram",
+      "tiktokUrl": "TikTok",
+      "zaloPhone": "Số Zalo",
+      "contactEmail": "Email liên hệ",
+      "contactEmailHint": "Email chỉ dùng cho biểu tượng thư ở chân trang. Email trích trong văn bản pháp lý không đổi theo ô này.",
+      "zaloPhoneHint": "Số Zalo hiện ở biểu tượng chân trang, thẻ Zalo ở trang Liên hệ và trang Thông tin doanh nghiệp; bấm vào mở zalo.me/<số>. Nhập 10 số, dán kèm dấu cách cũng được.",
+      "subtitle": "Link Messenger, mạng xã hội và email hiện ở trang khách."
+    },
+    "signOut": "Đăng xuất",
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Câu hỏi thường gặp hiện ở trang chủ. Mỗi câu phải có đủ cả tiếng Việt lẫn tiếng Anh.",
+      "add": "Thêm câu hỏi",
+      "edit": "Sửa câu hỏi",
+      "questionVi": "Câu hỏi (VI)",
+      "answerVi": "Trả lời (VI)",
+      "questionEn": "Câu hỏi (EN)",
+      "answerEn": "Trả lời (EN)",
+      "sortOrder": "Thứ tự",
+      "published": "Đang hiển thị",
+      "empty": "Chưa có câu hỏi nào.",
+      "created": "Đã thêm câu hỏi",
+      "updated": "Đã cập nhật câu hỏi",
+      "deleted": "Đã xoá câu hỏi",
+      "confirmDelete": "Xoá câu hỏi này?",
+      "columns": {
+        "question": "Câu hỏi",
+        "order": "Thứ tự",
+        "status": "Trạng thái",
+        "actions": "Thao tác"
+      }
+    },
+    "templateReviews": {
+      "title": "Đánh giá mẫu thiệp",
+      "subtitle": "Đánh giá do người dùng gửi cho từng mẫu trong kho mẫu. Hiện ngay khi gửi, không qua duyệt; ở đây chỉ xem và gỡ nội dung không phù hợp.",
+      "searchPlaceholder": "Tìm theo nhận xét, tên hoặc email",
+      "ratingFilter": "Lọc theo số sao",
+      "allRatings": "Tất cả số sao",
+      "starLabel": "{count} sao",
+      "total": "{count} đánh giá",
+      "empty": "Không có đánh giá nào khớp.",
+      "noComment": "Chỉ chấm sao",
+      "edited": "đã chỉnh sửa",
+      "anonymous": "Người dùng",
+      "delete": "Xóa đánh giá",
+      "confirmDelete": "Xóa đánh giá này? Thao tác không hoàn tác được.",
+      "deleted": "Đã xóa đánh giá",
+      "columns": {
+        "template": "Mẫu",
+        "author": "Người viết",
+        "rating": "Điểm",
+        "comment": "Nhận xét",
+        "actions": "Thao tác"
+      }
+    },
+    "templateTags": {
+      "title": "Tag mẫu thiệp",
+      "subtitle": "Bậc, phong cách và nhãn marketing của từng mẫu. Đường dẫn mẫu không đổi được vì nó nối tới giao diện và thư mục ảnh.",
+      "tier": "Bậc",
+      "searchLabel": "Tìm mẫu",
+      "searchPlaceholder": "Nhập tên mẫu...",
+      "tierFilter": "Lọc theo bậc",
+      "allTiers": "Tất cả bậc",
+      "tags": "Nhãn",
+      "categories": "Phong cách",
+      "published": "Trong kho mẫu",
+      "tagLabels": {
+        "hot": "Hot",
+        "new": "Mới"
+      },
+      "colorsTitle": "Màu chủ đạo (chốt lúc dựng mẫu)",
+      "colorLabels": {
+        "red": "Đỏ",
+        "pink": "Hồng",
+        "orange": "Cam",
+        "yellow": "Vàng",
+        "green": "Xanh lá",
+        "blue": "Xanh dương",
+        "purple": "Tím",
+        "brown": "Nâu",
+        "black": "Đen",
+        "white": "Trắng / kem"
+      },
+      "categoryLabels": {
+        "luxury": "Sang trọng",
+        "modern": "Hiện đại",
+        "classic": "Cổ điển",
+        "minimal": "Tối giản",
+        "traditional": "Truyền thống",
+        "formal": "Trang trọng"
+      },
+      "save": "Lưu mẫu này",
+      "saved": "Đã lưu mẫu thiệp",
+      "empty": "Kho mẫu đang trống.",
+      "noSearchMatches": "Không tìm thấy mẫu phù hợp.",
+      "noTierMatches": "Không có mẫu nào thuộc bậc này.",
+      "columns": {
+        "template": "Mẫu",
+        "tier": "Bậc",
+        "tags": "Nhãn",
+        "categories": "Phong cách",
+        "status": "Trạng thái",
+        "actions": "Thao tác"
+      }
+    },
+    "templateStats": {
+      "title": "Mẫu xem nhiều",
+      "subtitle": "Mẫu nào trong kho được khách bấm vào nhiều nhất, so với số thiệp tạo ra từ mẫu đó.",
+      "periodLabel": "Kỳ thống kê",
+      "periods": {
+        "7": "7 ngày",
+        "30": "30 ngày",
+        "90": "90 ngày",
+        "0": "Từ trước tới nay"
+      },
+      "trackingSince": "Bắt đầu ghi nhận lượt xem mẫu từ {date}.",
+      "noTracking": "Chưa ghi nhận lượt xem mẫu nào — số liệu bắt đầu từ lúc bản này được triển khai.",
+      "countingNote": "Mỗi trình duyệt tính tối đa một lượt mỗi mẫu mỗi ngày.",
+      "summary": {
+        "open": "Lượt mở mẫu",
+        "demo": "Lượt mở demo",
+        "cards": "Thiệp đã tạo"
+      },
+      "columns": {
+        "template": "Mẫu",
+        "open": "Mở mẫu",
+        "demo": "Mở demo",
+        "cards": "Thiệp đã tạo",
+        "conversion": "Tỷ lệ tạo thiệp"
+      },
+      "columnHints": {
+        "open": "Bấm vào mẫu trong kho mẫu (hộp thoại xem nhanh) hoặc mở trang giới thiệu mẫu.",
+        "demo": "Mở bản thiệp đầy đủ của mẫu.",
+        "conversion": "Thiệp đã tạo ÷ lượt mở mẫu trong cùng kỳ."
+      },
+      "unpublished": "Đã gỡ khỏi kho",
+      "empty": "Kho mẫu đang trống.",
+      "total": "{count} mẫu"
+    },
+    "homepage": {
+      "title": "Mẫu thiệp nổi bật",
+      "subtitle": "Chọn mẫu lên trang chủ và kéo để sắp thứ tự. Chưa chọn mẫu nào thì trang chủ tự lấy các mẫu đầu kho.",
+      "selected": "Trên trang chủ · {count} mẫu",
+      "selectedHint": "Kéo tay nắm dưới thẻ để đổi thứ tự, bấm × để gỡ. Trang chủ hiện đủ mọi mẫu ở đây, đúng thứ tự này.",
+      "emptySelected": "Chưa chọn mẫu nào — trang chủ đang tự lấy các mẫu đầu kho. Bấm một mẫu ở kho mẫu để thêm.",
+      "dragHandle": "Kéo để đổi thứ tự",
+      "remove": "Gỡ khỏi trang chủ",
+      "unsaved": "Có thay đổi chưa lưu",
+      "discard": "Hoàn tác",
+      "library": "Kho mẫu · {count}",
+      "libraryHint": "Mẫu chưa lên trang chủ. Bấm một mẫu để thêm vào cuối dải.",
+      "librarySearch": "Tìm theo tên hoặc slug",
+      "libraryEmpty": "Mọi mẫu trong kho đã ở trên trang chủ.",
+      "noMatches": "Không có mẫu nào khớp.",
+      "add": "Thêm vào trang chủ",
+      "unpublished": "Chưa xuất bản",
+      "save": "Lưu dải trang chủ",
+      "saved": "Đã lưu dải trang chủ",
+      "unpublishedHint": "Mẫu chưa xuất bản không hiện ở trang chủ dù được chọn.",
+      "empty": "Kho mẫu đang trống."
+    },
+    "homepageHero": {
+      "title": "Thiệp mẫu ở hero",
+      "subtitle": "Nút \"Xem thiệp mẫu\" ở đầu trang chủ dẫn tới thiệp nào.",
+      "demoCard": "Thiệp mẫu",
+      "demoCardHint": "Bỏ trống thì trang chủ dùng thiệp mẫu mặc định. Nội dung mặt thiệp ở hero cũng lấy từ thiệp này.",
+      "save": "Lưu thiệp mẫu",
+      "saved": "Đã lưu thiệp mẫu"
+    },
+    "coupleShowcase": {
+      "title": "Cặp đôi trên trang chủ",
+      "subtitle": "Dải \"Cặp đôi đã tạo thiệp\": chọn thiệp nào lên trang chủ, ảnh nào và theo thứ tự nào.",
+      "add": "Thêm ô trưng bày",
+      "edit": "Sửa ô trưng bày",
+      "card": "Thiệp",
+      "names": "Tên hiển thị",
+      "weddingDate": "Ngày cưới (nhãn)",
+      "imageSrc": "Ảnh chụp dài (thumbnail)",
+      "imageSrcHint": "Ảnh chụp toàn bộ thiệp từ trên xuống, card trên trang chủ cuộn nó khi rê chuột. Ảnh tải lên được giữ bề ngang 960px, không cắt chiều cao.",
+      "posterSrc": "Ảnh bìa (poster)",
+      "posterSrcHint": "Màn bìa hiện trên card lúc nghỉ, khổ 0.78 (ví dụ 960×1231). Bỏ trống với ảnh của kho mẫu thì tự lấy poster.avif nằm cạnh thumbnail.",
+      "removeImage": "Bỏ ảnh",
+      "imagePosition": "Neo ảnh",
+      "imagePositionHint": "Giá trị của object-position, ví dụ 50% 0% để lấy phần trên của ảnh.",
+      "published": "Đang hiển thị",
+      "empty": "Chưa có ô nào trong dải.",
+      "created": "Đã thêm ô trưng bày",
+      "updated": "Đã cập nhật ô trưng bày",
+      "deleted": "Đã xoá ô trưng bày",
+      "confirmDelete": "Xoá ô này khỏi dải trang chủ?",
+      "dragHandle": "Kéo để đổi thứ tự",
+      "reorderHint": "Kéo tay nắm ở cột Thứ tự để sắp lại dải. Thứ tự lưu ngay khi thả.",
+      "reordered": "Đã lưu thứ tự mới",
+      "columns": {
+        "preview": "Xem trước",
+        "names": "Cặp đôi",
+        "order": "Thứ tự",
+        "status": "Trạng thái",
+        "actions": "Thao tác"
+      },
+      "picker": {
+        "choose": "Chọn thiệp",
+        "change": "Đổi thiệp",
+        "clear": "Bỏ chọn",
+        "search": "Tìm theo tên hoặc đường dẫn thiệp…",
+        "empty": "Không có thiệp nào khớp.",
+        "loading": "Đang tải danh sách thiệp…",
+        "title": "Chọn thiệp",
+        "cancel": "Đóng",
+        "draftHint": "Chỉ hiện thiệp đã xuất bản — thiệp nháp chưa có link mở được.",
+        "unknown": "Thiệp không còn tồn tại",
+        "failed": "Không tải được danh sách thiệp. Thử lại sau ít phút.",
+        "tabTemplate": "Demo mẫu thiệp",
+        "tabCard": "Thiệp đã tạo",
+        "templateHint": "Mẫu nào cũng có sẵn trang demo. Chọn mẫu là dẫn tới /mau-thiep/<mẫu>/demo."
+      },
+      "cover": {
+        "upload": "Tải ảnh lên",
+        "uploading": "Đang tải…",
+        "uploadFailed": "Tải ảnh lên thất bại",
+        "remove": "Bỏ ảnh bìa",
+        "hint": "Ảnh tải lên hoặc đường dẫn có sẵn trong repo (ví dụ /images/site/hero-editorial.avif)."
+      }
+    },
+    "siteStats": {
+      "title": "Số liệu công bố",
+      "subtitle": "Con số hiện ở dải thống kê trang chủ. Đây là số công bố do vận hành chốt, không phải số đếm từ dữ liệu thật.",
+      "homeGroup": "Trang chủ",
+      "fields": {
+        "home.invitations": "Thiệp đã tạo",
+        "home.templates": "Mẫu thiệp",
+        "home.rating": "Đánh giá trung bình"
+      },
+      "cacheHint": "Trang khách có cache nên số mới hiện ra sau vài phút.",
+      "save": "Lưu số liệu",
+      "saved": "Đã lưu số liệu"
+    },
+    "cards": {
+      "title": "Thiệp đã tạo",
+      "subtitle": "Lịch sử thiệp của mọi cặp đôi. Chọn thiệp trưng bày và mở khoá sửa tên cô dâu chú rể khi khách liên hệ; nội dung thiệp là dữ liệu riêng của khách.",
+      "searchPlaceholder": "Tìm theo tiêu đề, đường dẫn hoặc email",
+      "statusFilter": "Lọc theo trạng thái",
+      "allStatuses": "Tất cả trạng thái",
+      "status": {
+        "draft": "Bản nháp",
+        "paid": "Đã xuất bản"
+      },
+      "showcase": "Trưng bày trang chủ",
+      "showcaseOn": "Đã đưa thiệp lên trang chủ",
+      "showcaseOff": "Đã gỡ thiệp khỏi trang chủ",
+      "coupleNames": {
+        "allowEdit": "Cho sửa tên",
+        "notPaid": "Chưa xuất bản",
+        "locked": "Đã khoá",
+        "unlocked": "Đang mở cho khách sửa",
+        "locksOn": "Tự khoá lúc {date}",
+        "unlockedDone": "Đã mở khoá sửa tên cô dâu chú rể",
+        "lockedDone": "Đã khoá lại tên cô dâu chú rể"
+      },
+      "total": "{count} thiệp",
+      "empty": "Không có thiệp nào khớp.",
+      "views": "{count} lượt xem",
+      "copyLink": "Sao chép link thiệp",
+      "linkCopied": "Đã sao chép link thiệp",
+      "prev": "Trang trước",
+      "next": "Trang sau",
+      "columns": {
+        "card": "Thiệp",
+        "owner": "Chủ thiệp",
+        "template": "Mẫu",
+        "status": "Trạng thái",
+        "views": "Lượt xem",
+        "showcase": "Trang chủ",
+        "coupleNames": "Tên trên thiệp",
+        "kind": "Loại"
+      },
+      "kindFilter": "Lọc theo loại thiệp",
+      "allKinds": "Mọi loại thiệp",
+      "kinds": {
+        "wedding": "Thiệp cưới",
+        "birthday": "Thiệp sinh nhật",
+        "graduation": "Thiệp tốt nghiệp",
+        "event": "Thiệp sự kiện",
+        "anniversary": "Thiệp kỷ niệm",
+        "greeting": "Thiệp chúc mừng"
+      }
+    },
+    "weddings": {
+      "title": "Lịch ngày cưới",
+      "subtitle": "Thiệp xếp theo ngày cưới, gần nhất trước — để gửi lời chúc đúng ngày. Chỉ gồm thiệp đã xuất bản và có nhập ngày cưới.",
+      "scopes": {
+        "upcoming": "Sắp tới",
+        "past": "Đã qua"
+      },
+      "withinLabel": "Khoảng thời gian",
+      "within": {
+        "7": "Trong 7 ngày",
+        "30": "Trong 30 ngày",
+        "90": "Trong 90 ngày",
+        "all": "Tất cả"
+      },
+      "columns": {
+        "date": "Ngày cưới",
+        "couple": "Cặp đôi",
+        "contact": "Liên hệ",
+        "status": "Trạng thái",
+        "views": "Người xem"
+      },
+      "today": "Hôm nay",
+      "tomorrow": "Ngày mai",
+      "yesterday": "Hôm qua",
+      "inDays": "Còn {count} ngày",
+      "daysAgo": "{count} ngày trước",
+      "copyEmail": "Sao chép email",
+      "emailCopied": "Đã sao chép email",
+      "emptyUpcoming": "Không có đám cưới nào sắp tới trong khoảng này.",
+      "emptyPast": "Không có đám cưới nào đã qua trong khoảng này.",
+      "total": "{count} đám cưới"
+    },
+    "analytics": {
+      "title": "Phân tích",
+      "subtitle": "Lưu lượng website, mẫu đang được chọn nhiều và thiệp đã tạo.",
+      "snapshot": "Sức khoẻ website",
+      "visitors": "Khách truy cập",
+      "pageViews": "Lượt xem trang",
+      "cardViews": "Lượt xem thiệp",
+      "totalCards": "Thiệp đã tạo",
+      "rangeLabel": "Khoảng thời gian",
+      "range": {
+        "7": "7 ngày",
+        "30": "30 ngày",
+        "90": "90 ngày"
+      },
+      "byTemplate": "Thiệp theo mẫu",
+      "byStatus": "Thiệp theo trạng thái",
+      "daily": "Lưu lượng theo ngày",
+      "dailyHint": "So sánh khách truy cập và tổng lượt xem trang trong kỳ.",
+      "statusHint": "Phân bổ toàn bộ thiệp theo vòng đời hiện tại.",
+      "templateHint": "8 mẫu được chọn nhiều nhất, xếp theo số thiệp đã tạo.",
+      "dataTable": "Xem bảng dữ liệu lưu lượng",
+      "googleTitle": "Google Analytics",
+      "googleHint": "Những gì bảng đếm của mình không đo được: khách đến từ đâu, bằng thiết bị gì, xem trang nào. Số ở đây thấp hơn biểu đồ trên vì GA không đo trang thiệp và bị chặn bởi trình chặn quảng cáo.",
+      "googleNotConfigured": "Chưa kết nối Google Analytics. Khai GA_PROPERTY_ID, GA_CLIENT_EMAIL và GA_PRIVATE_KEY ở backend để hiện số liệu tại đây.",
+      "googleError": "Không đọc được dữ liệu Google Analytics. Số liệu phía trên vẫn đúng.",
+      "sessions": "Phiên truy cập",
+      "engagementRate": "Tỉ lệ tương tác",
+      "avgSessionDuration": "Thời lượng phiên TB",
+      "newUserRate": "Người dùng mới",
+      "byChannel": "Khách đến từ đâu",
+      "byDevice": "Thiết bị",
+      "topPages": "Trang được xem nhiều",
+      "channel": {
+        "organicSearch": "Tìm kiếm tự nhiên",
+        "direct": "Truy cập trực tiếp",
+        "referral": "Từ trang khác",
+        "organicSocial": "Mạng xã hội",
+        "paidSearch": "Quảng cáo tìm kiếm",
+        "email": "Email",
+        "unassigned": "Chưa phân loại"
+      },
+      "device": {
+        "mobile": "Điện thoại",
+        "desktop": "Máy tính",
+        "tablet": "Máy tính bảng"
+      },
+      "date": "Ngày",
+      "count": "Số thiệp",
+      "empty": "Chưa có dữ liệu.",
+      "retry": "Thử tải lại",
+      "googleAnalytics": "Mở Google Analytics",
+      "googleAnalyticsHint": "Số của Google Analytics luôn thấp hơn biểu đồ ở đây: nó không đo trang thiệp và mất phần khách chặn tracker.",
+      "visitorHint": "Khách truy cập là ước lượng do trình duyệt tự khai lần đầu trong ngày; không có cookie định danh nào."
+    },
+    "audit": {
+      "title": "Nhật ký thao tác",
+      "subtitle": "Dấu vết của những việc không lấy lại được: xoá tài khoản, đổi quyền, ghép tiền vào đơn.",
+      "empty": "Chưa có thao tác nào được ghi.",
+      "systemActor": "Hệ thống",
+      "columns": {
+        "time": "Thời điểm",
+        "action": "Hành động",
+        "actor": "Người thao tác",
+        "target": "Đối tượng",
+        "details": "Chi tiết"
+      },
+      "filters": {
+        "action": "Hành động",
+        "allActions": "Tất cả hành động",
+        "targetId": "ID đối tượng",
+        "targetIdPlaceholder": "Dán ID tài khoản, đơn hàng…",
+        "reset": "Xoá bộ lọc"
+      },
+      "actions": {
+        "user.self_deleted": "Người dùng tự xoá tài khoản",
+        "user.disabled": "Vô hiệu hoá tài khoản",
+        "user.role_changed": "Đổi vai trò",
+        "partner.approved": "Duyệt hồ sơ đối tác",
+        "partner.rejected": "Từ chối hồ sơ đối tác",
+        "partner.promoted": "Nâng lên đối tác",
+        "partner.revoked": "Thu hồi quyền đối tác",
+        "order.matched_manually": "Ghép tay giao dịch vào đơn",
+        "template_review.deleted": "Xoá đánh giá mẫu",
+        "card.couple_names_unlocked": "Mở khoá sửa tên cô dâu chú rể",
+        "card.couple_names_locked": "Khoá lại tên cô dâu chú rể"
+      }
+    },
+    "account": {
+      "navLabel": "Tài khoản",
+      "title": "Tài khoản",
+      "subtitle": "Thông tin phiên đăng nhập và đổi mật khẩu của chính bạn.",
+      "email": "Email",
+      "roles": "Vai trò",
+      "permissions": "Quyền",
+      "none": "Chưa được gán",
+      "rolesHint": "Vai trò do quản trị viên cấp trong cơ sở dữ liệu. Đổi vai trò có hiệu lực ngay ở thao tác kế tiếp; danh sách quyền trên màn này cập nhật sau lần làm mới phiên (tối đa 15 phút).",
+      "password": {
+        "title": "Đổi mật khẩu",
+        "hint": "Sau khi đổi, mọi phiên đăng nhập — kể cả phiên này — sẽ bị đăng xuất.",
+        "current": "Mật khẩu hiện tại",
+        "next": "Mật khẩu mới",
+        "confirm": "Nhập lại mật khẩu mới",
+        "submit": "Đổi mật khẩu",
+        "done": "Đã đổi mật khẩu, đang đăng xuất…",
+        "rules": "Tối thiểu 8 ký tự, có chữ hoa, chữ thường và chữ số.",
+        "errors": {
+          "required": "Vui lòng nhập thông tin này.",
+          "weak": "Mật khẩu cần tối thiểu 8 ký tự, có chữ hoa, chữ thường và chữ số.",
+          "mismatch": "Mật khẩu nhập lại không khớp.",
+          "same": "Mật khẩu mới phải khác mật khẩu hiện tại."
+        }
+      }
+    },
+    "theme": {
+      "switchToDark": "Chế độ tối",
+      "switchToLight": "Chế độ sáng"
+    },
+    "pagination": {
+      "total": "Tổng {count} mục"
+    },
+    "payments": {
+      "title": "Thanh toán",
+      "subtitle": "Tra cứu đơn mua thiệp và tiền vào.",
+      "tabs": {
+        "orders": "Đơn mua thiệp",
+        "unmatched": "Tiền vào chưa ghép"
+      },
+      "orders": {
+        "searchPlaceholder": "Mã đơn, email, tên khách, đường dẫn thiệp, mã voucher, mã ngân hàng…",
+        "allStatuses": "Mọi trạng thái",
+        "total": "{count} đơn",
+        "empty": "Chưa có đơn nào.",
+        "emptySearch": "Không có đơn nào khớp.",
+        "columns": {
+          "code": "Mã đơn",
+          "customer": "Khách hàng",
+          "card": "Thiệp",
+          "amount": "Số tiền",
+          "status": "Trạng thái",
+          "payment": "Tiền vào"
+        },
+        "status": {
+          "pending": "Chờ thanh toán",
+          "paid": "Đã thanh toán",
+          "cancelled": "Đã huỷ"
+        },
+        "createdAt": "Tạo {date}",
+        "paidAt": "Trả lúc {date}",
+        "deletedUser": "Tài khoản đã xoá",
+        "deletedCard": "Thiệp đã xoá",
+        "filterByUser": "Xem mọi đơn của người này",
+        "copy": "Sao chép mã đơn",
+        "copied": "Đã sao chép {code}",
+        "from": "Từ ngày",
+        "to": "Đến ngày",
+        "paidTotal": "Đã thanh toán:",
+        "paidCount": "{count} đơn"
+      },
+      "unmatched": {
+        "searchPlaceholder": "Nội dung chuyển khoản, mã ngân hàng hoặc số tiền",
+        "total": "{count} khoản",
+        "empty": "Không còn khoản nào chờ tra soát.",
+        "emptySearch": "Không có khoản nào khớp."
+      },
+      "noCode": "Không có mã đơn trong nội dung",
+      "match": "Ghép vào đơn",
+      "matched": "Đã ghép tiền vào đơn {code}",
+      "columns": {
+        "date": "Thời điểm",
+        "amount": "Số tiền",
+        "content": "Nội dung chuyển khoản",
+        "status": "Trạng thái",
+        "actions": "Thao tác"
+      },
+      "status": {
+        "matched": "Đã ghép tự động",
+        "manual": "Đã ghép tay",
+        "unmatched": "Chưa ghép",
+        "underpaid": "Trả thiếu",
+        "ignored": "Tiền ra"
+      },
+      "matchDialog": {
+        "title": "Ghép tiền vào đơn",
+        "body": "Khoản {amount} này sẽ được ghi nhận là đã thanh toán cho đơn có mã bên dưới, và thiệp được xuất bản ngay.",
+        "orderLabel": "Mã đơn",
+        "orderPlaceholder": "VD: TC7F3K9A",
+        "hint": "Mã 8 ký tự khách thấy ở màn chuyển khoản. Khách chỉ nhớ email thì tra ở tab Đơn mua thiệp. Ghép nhầm thì phải hoàn tiền thủ công.",
+        "confirm": "Ghép và xác nhận đã trả"
+      }
+    },
+    "vouchers": {
+      "title": "Mã giảm giá",
+      "subtitle": "Mã khách nhập ở hộp thanh toán.",
+      "hint": "Mã tính sau khuyến mãi của gói: giá niêm yết trừ khuyến mãi trước, rồi mới trừ mã. Mã áp cho gói thiệp duy nhất.",
+      "create": "Tạo mã mới",
+      "editTitle": "Sửa mã giảm giá",
+      "dialogHint": "Mã đã tạo thì không đổi được chữ — cần mã khác thì tắt mã cũ rồi tạo mã mới.",
+      "empty": "Chưa có mã giảm giá nào.",
+      "save": "Lưu mã",
+      "saved": "Đã lưu mã giảm giá",
+      "deleteTitle": "Xóa mã giảm giá này?",
+      "deleteBody": "Đơn đã dùng mã vẫn giữ nguyên số tiền và chữ của mã trên biên nhận. Cái mất là sổ lượt dùng của chiến dịch.",
+      "deleted": "Đã xóa mã giảm giá",
+      "active": "Đang chạy",
+      "inactive": "Đã tắt",
+      "noExpiry": "Không hết hạn",
+      "unlimited": "Không giới hạn",
+      "maxDiscountShort": "Tối đa",
+      "publicShort": "Hiện khi thanh toán",
+      "privateShort": "Chỉ nhập mã",
+      "publicHint": "Mã sẽ hiện để chọn trong hộp thanh toán khi còn đủ điều kiện. Mã riêng của đối tác chỉ hiện cho đúng chủ cửa hàng.",
+      "discountTypes": {
+        "percent": "Giảm theo phần trăm",
+        "amount": "Giảm số tiền cố định"
+      },
+      "columns": {
+        "actions": "Thao tác",
+        "code": "Mã",
+        "discount": "Mức giảm",
+        "scope": "Áp dụng cho",
+        "usage": "Đã dùng",
+        "window": "Hết hạn",
+        "status": "Trạng thái"
+      },
+      "fields": {
+        "code": "Mã",
+        "description": "Ghi chú nội bộ",
+        "discountType": "Loại giảm",
+        "percentValue": "Giảm (%)",
+        "amountValue": "Giảm (VND)",
+        "maxDiscount": "Giảm tối đa (VND)",
+        "minAmount": "Giá trị đơn tối thiểu (VND)",
+        "startsAt": "Bắt đầu",
+        "expiresAt": "Hết hạn",
+        "usageLimit": "Tổng lượt dùng",
+        "perUserLimit": "Lượt mỗi tài khoản",
+        "isPublic": "Hiển thị khi thanh toán",
+        "isActive": "Đang chạy"
+      }
+    },
+    "priceConfig": {
+      "title": "Bảng giá",
+      "subtitle": "Giá của gói thiệp custom, áp dụng cho mọi khách hàng.",
+      "money": "Giá niêm yết (VND)",
+      "discount": "Khuyến mãi (%)",
+      "discountEmpty": "Không giảm",
+      "discountHint": "Bỏ trống là không chạy khuyến mãi.",
+      "save": "Lưu bảng giá",
+      "saved": "Đã lưu bảng giá",
+      "hint": "Giá khách trả = giá niêm yết trừ khuyến mãi của gói, rồi trừ mã giảm giá (nếu có). Kết quả làm tròn lên bội số 1.000 ₫.",
+      "finalPrice": "Giá sau khuyến mãi của gói:"
+    }
+  }
+}

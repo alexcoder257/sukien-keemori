@@ -1,0 +1,2994 @@
+{
+  "brand": {
+    "name": "Thiệp Cưới Online",
+    "tagline": "Thiệp cưới online, gửi bằng một đường link"
+  },
+  "auth": {
+    "backToHome": "Về trang chủ",
+    "oauth": {
+      "google": "Tiếp tục với Google",
+      "facebook": "Tiếp tục với Facebook",
+      "googleSignup": "Đăng ký với Google",
+      "facebookSignup": "Đăng ký với Facebook",
+      "providerFallback": "mạng xã hội",
+      "connecting": "Đang kết nối với {provider}…",
+      "errors": {
+        "cancelled": "Bạn đã huỷ đăng nhập bằng {provider}.",
+        "state": "Phiên đăng nhập {provider} đã hết hạn, vui lòng thử lại.",
+        "email_unverified": "Email {provider} của bạn chưa được xác minh nên không dùng để đăng nhập được.",
+        "email_missing": "Tài khoản {provider} của bạn không có email nên không dùng để đăng nhập được.",
+        "failed": "Đăng nhập bằng {provider} thất bại, vui lòng thử lại.",
+        "not_configured": "Đăng nhập bằng {provider} chưa được bật. Vui lòng dùng email và mật khẩu."
+      }
+    },
+    "login": {
+      "title": "Đăng nhập",
+      "subtitle": "Chào mừng trở lại! Đăng nhập để tiếp tục.",
+      "divider": "Hoặc đăng nhập bằng email",
+      "email": "Email",
+      "emailPlaceholder": "ban@email.com",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "••••••••",
+      "remember": "Ghi nhớ tôi",
+      "forgot": "Quên mật khẩu?",
+      "submit": "Đăng nhập",
+      "submitting": "Đang đăng nhập…",
+      "noAccount": "Chưa có tài khoản?",
+      "signupLink": "Đăng ký",
+      "success": "Đăng nhập thành công"
+    },
+    "register": {
+      "title": "Tạo tài khoản",
+      "subtitle": "Miễn phí, chỉ mất 1 phút.",
+      "divider": "Hoặc dùng email",
+      "oauthConsent": "Tiếp tục bằng Google đồng nghĩa với việc bạn đồng ý với Điều khoản sử dụng và Chính sách bảo mật của chúng tôi.",
+      "fullName": "Họ và tên",
+      "fullNamePlaceholder": "Nguyễn Văn A",
+      "email": "Email",
+      "emailPlaceholder": "ban@email.com",
+      "phone": "Số điện thoại",
+      "phonePlaceholder": "912 345 678",
+      "password": "Mật khẩu",
+      "passwordPlaceholder": "Tối thiểu 8 ký tự",
+      "confirmPassword": "Nhập lại mật khẩu",
+      "confirmPlaceholder": "Nhập lại mật khẩu",
+      "agreePrefix": "Tôi đồng ý với",
+      "terms": "Điều khoản",
+      "and": "&",
+      "privacy": "Bảo mật",
+      "submit": "Tạo tài khoản",
+      "submitting": "Đang tạo tài khoản…",
+      "hasAccount": "Đã có tài khoản?",
+      "loginLink": "Đăng nhập",
+      "success": "Tạo tài khoản thành công",
+      "consent": {
+        "title": "Điều khoản & Chính sách",
+        "subtitle": "Đọc qua rồi tích vào ô đồng ý bên dưới để tiếp tục đăng ký.",
+        "tabsLabel": "Chọn văn bản",
+        "tabs": {
+          "terms": "Điều khoản sử dụng",
+          "privacy": "Chính sách bảo mật"
+        },
+        "agree": "Tôi đã đọc và đồng ý với Điều khoản sử dụng và Chính sách bảo mật của Keemori.",
+        "confirm": "Đồng ý & tiếp tục",
+        "cancel": "Để sau"
+      }
+    },
+    "forgot": {
+      "title": "Quên mật khẩu?",
+      "subtitle": "Nhập email, chúng tôi sẽ gửi liên kết đặt lại mật khẩu.",
+      "email": "Email",
+      "emailPlaceholder": "ban@email.com",
+      "submit": "Gửi liên kết đặt lại",
+      "submitting": "Đang gửi…",
+      "backToLogin": "Quay lại đăng nhập",
+      "sentTitle": "Kiểm tra hộp thư của bạn",
+      "sentBody": "Chúng tôi đã gửi liên kết đặt lại tới {email}. Kiểm tra cả mục spam nếu chưa thấy.",
+      "resend": "Gửi lại liên kết",
+      "resendIn": "Gửi lại sau {seconds}s",
+      "resent": "Đã gửi lại liên kết"
+    },
+    "reset": {
+      "title": "Đặt lại mật khẩu",
+      "subtitle": "Tạo mật khẩu mới cho tài khoản của bạn.",
+      "invalidTitle": "Liên kết không hợp lệ",
+      "invalidBody": "Liên kết đặt lại mật khẩu đã hết hạn hoặc đã được sử dụng. Hãy yêu cầu một liên kết mới.",
+      "requestNew": "Yêu cầu liên kết mới",
+      "newPassword": "Mật khẩu mới",
+      "confirmPassword": "Nhập lại mật khẩu mới",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Cập nhật mật khẩu",
+      "submitting": "Đang cập nhật…",
+      "success": "Đã đổi mật khẩu",
+      "strength": {
+        "label": "Độ mạnh:",
+        "weak": "Yếu",
+        "fair": "Trung bình",
+        "good": "Khá",
+        "strong": "Mạnh",
+        "hintFair": "thêm ký tự đặc biệt",
+        "hintWeak": "thêm chữ hoa, số và ký tự đặc biệt"
+      }
+    },
+    "errors": {
+      "emailRequired": "Vui lòng nhập email.",
+      "emailInvalid": "Email không hợp lệ.",
+      "phoneInvalid": "Số điện thoại không hợp lệ.",
+      "passwordRequired": "Vui lòng nhập mật khẩu.",
+      "passwordMin": "Mật khẩu tối thiểu 8 ký tự.",
+      "passwordPolicy": "Mật khẩu cần có chữ hoa, chữ thường và ký tự đặc biệt.",
+      "fullNameRequired": "Vui lòng nhập họ và tên.",
+      "termsRequired": "Bạn cần đồng ý với Điều khoản & Bảo mật.",
+      "confirmMismatch": "Mật khẩu nhập lại không khớp.",
+      "generic": "Có lỗi xảy ra, vui lòng thử lại.",
+      "tooManyRequests": "Bạn đã thử quá nhiều lần. Vui lòng đợi ít phút rồi thử lại."
+    }
+  },
+  "common": {
+    "nav": {
+      "home": "Trang chủ",
+      "templates": "Mẫu thiệp",
+      "pricing": "Bảng giá",
+      "guide": "Hướng dẫn",
+      "login": "Đăng nhập",
+      "myCards": "Thiệp của tôi",
+      "consult": "Liên hệ tư vấn",
+      "menu": "Điều hướng chính",
+      "openMenu": "Mở menu",
+      "closeMenu": "Đóng menu",
+      "logout": "Đăng xuất",
+      "logoutSuccess": "Đã đăng xuất",
+      "account": "Tài khoản",
+      "faq": "Câu hỏi thường gặp"
+    },
+    "language": {
+      "label": "Ngôn ngữ",
+      "vi": "Tiếng Việt",
+      "en": "English"
+    },
+    "theme": {
+      "label": "Giao diện",
+      "switchToDark": "Chuyển sang nền tối",
+      "switchToLight": "Chuyển sang nền sáng"
+    },
+    "notifications": {
+      "title": "Thông báo",
+      "empty": "Chưa có thông báo nào.",
+      "markAllRead": "Đánh dấu đã đọc",
+      "close": "Đóng thông báo",
+      "unreadLabel": "Thông báo — {count} chưa đọc",
+      "untitledCard": "Thiệp chưa đặt tên",
+      "wishPendingOne": "{name} vừa gửi lời chúc, đang chờ bạn duyệt.",
+      "wishPendingMany": "{name} và {count} lời chúc khác đang chờ bạn duyệt.",
+      "paymentSuccess": "Đã nhận thanh toán — thiệp đã có link vĩnh viễn."
+    },
+    "phoneField": {
+      "countryLabel": "Mã vùng quốc gia",
+      "countrySearch": "Tìm quốc gia hoặc mã vùng",
+      "countryEmpty": "Không tìm thấy quốc gia phù hợp"
+    },
+    "footer": {
+      "tagline": "Tạo thiệp mời sinh nhật, sự kiện online trong 5 phút — chọn mẫu, điền thông tin, chia sẻ link & QR.",
+      "linksTitle": "Liên kết",
+      "legalTitle": "Pháp lý",
+      "terms": "Điều khoản sử dụng",
+      "privacy": "Chính sách bảo mật",
+      "legalLinks": {
+        "terms": "Điều khoản sử dụng",
+        "privacy": "Chính sách bảo mật",
+        "paymentRefund": "Thanh toán & hoàn tiền",
+        "businessInfo": "Thông tin doanh nghiệp"
+      },
+      "contact": "Liên hệ",
+      "socialTitle": "Kết nối",
+      "social": {
+        "facebook": "Keemori trên Facebook",
+        "instagram": "Keemori trên Instagram",
+        "tiktok": "Keemori trên TikTok",
+        "email": "Gửi email cho Keemori",
+        "emailCopied": "Đã sao chép {email}",
+        "emailCopyFailed": "Email hỗ trợ: {email}",
+        "zalo": "Nhắn Keemori qua Zalo"
+      },
+      "copyright": "© {year} Keemori – Thiệp Mời Online"
+    },
+    "tag": {
+      "hot": "Hot",
+      "new": "Mới"
+    },
+    "actions": {
+      "edit": "Sửa",
+      "delete": "Xóa",
+      "continue": "Tiếp tục",
+      "linkQr": "Link/QR",
+      "viewAll": "Xem tất cả",
+      "viewMore": "Xem thêm",
+      "save": "Lưu",
+      "cancel": "Hủy",
+      "done": "Xong",
+      "back": "Quay lại",
+      "prev": "Xem mẫu trước",
+      "next": "Xem mẫu sau",
+      "backToTop": "Lên đầu trang"
+    },
+    "cursor": {
+      "view": "Xem"
+    },
+    "scrollHint": "Cuộn để khám phá",
+    "support": {
+      "messenger": {
+        "label": "Chat với chúng tôi qua Messenger",
+        "cta": "Chat với chúng tôi!",
+        "dismiss": "Ẩn nút chat"
+      }
+    },
+    "invitationKinds": {
+      "wedding": "Thiệp cưới",
+      "birthday": "Thiệp sinh nhật",
+      "graduation": "Thiệp tốt nghiệp",
+      "event": "Thiệp sự kiện",
+      "anniversary": "Thiệp kỷ niệm",
+      "greeting": "Thiệp chúc mừng"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "meta": "Không tìm thấy trang",
+      "code": "404",
+      "eyebrow": "Lạc đường một chút",
+      "title": "Trang này không còn ở đây",
+      "body": "Có thể đường dẫn đã gõ sai, hoặc trang đã được đổi tên. Vài lối quen dưới đây sẽ đưa bạn về đúng chỗ.",
+      "invitationNote": "Nếu bạn đang mở một tấm thiệp cưới: link có thể đã hết hiệu lực. Hãy nhắn cho cô dâu chú rể để xin link mới.",
+      "linksTitle": "Có thể bạn đang tìm",
+      "home": "Về trang chủ",
+      "templates": "Xem kho mẫu thiệp",
+      "guide": "Đọc hướng dẫn",
+      "contact": "Liên hệ hỗ trợ"
+    },
+    "runtime": {
+      "meta": "Đã có lỗi xảy ra",
+      "eyebrow": "Sự cố ngoài dự tính",
+      "title": "Trang này đang gặp trục trặc",
+      "body": "Lỗi nằm ở phía chúng tôi, không phải ở bạn. Thử tải lại một lần xem sao — phần lớn sự cố kiểu này chỉ thoáng qua.",
+      "retry": "Thử lại",
+      "home": "Về trang chủ",
+      "contact": "Báo cho chúng tôi",
+      "digestLabel": "Mã lỗi"
+    },
+    "global": {
+      "title": "Không tải được trang",
+      "body": "Ứng dụng gặp sự cố nghiêm trọng và không thể hiển thị. Vui lòng tải lại trang.",
+      "retry": "Tải lại",
+      "digestLabel": "Mã lỗi"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "Thiệp mời sinh nhật & sự kiện online | Keemori",
+      "description": "Thiệp mời sinh nhật, tiệc và sự kiện online, thiết kế riêng theo yêu cầu. Gửi lời mời tới khách qua link và mã QR trên Zalo, Messenger."
+    },
+    "chapters": {
+      "beginning": {
+        "index": "01",
+        "label": "Khởi đầu"
+      },
+      "style": {
+        "index": "02",
+        "label": "Tìm phong cách"
+      },
+      "share": {
+        "index": "04",
+        "label": "Trao lời mời"
+      },
+      "forever": {
+        "index": "05",
+        "label": "Bắt đầu mãi mãi"
+      }
+    },
+    "hero": {
+      "title": "Mỗi dịp đặc biệt,\nmột lời mời",
+      "titleAccent": "thật đáng nhớ.",
+      "keyword": "Thiệp sự kiện & sinh nhật online",
+      "lead": "Từ tiệc sinh nhật, buổi gặp mặt đến sự kiện đặc biệt — tấm thiệp được thiết kế riêng cho dịp của bạn, gửi tới khách mời qua link hoặc mã QR.",
+      "primaryCta": "Tạo thiệp của bạn",
+      "secondaryCta": "Liên hệ tư vấn",
+      "trust": "Một lời mời đẹp, khởi đầu cho những khoảnh khắc vui.",
+      "highlights": {
+        "design": "Thiết kế riêng theo dịp",
+        "share": "Gửi qua link & QR",
+        "devices": "Đẹp trên mọi thiết bị"
+      },
+      "signature": "Hẹn một ngày vui",
+      "signatureBrand": "WITH KEEMORI",
+      "celebrationNote": "Let's\ncelebrate",
+      "card": {
+        "greeting": "Trân trọng mời bạn",
+        "occasion": "Tiệc sinh nhật",
+        "title": "Minh Anh",
+        "date": "22 · 11 · 2026",
+        "venue": "18:30 · Cùng nhau đón tuổi mới"
+      }
+    },
+    "featured": {
+      "title": "Mẫu thiệp nổi bật",
+      "subtitle": "Những mẫu được chọn nhiều nhất trong tháng."
+    },
+    "couples": {
+      "title": "Cặp đôi đã tạo thiệp",
+      "weddingDate": "Ngày cưới {date}",
+      "subtitle": "Thiệp thật, do các cặp đôi tự tạo trên nền tảng.",
+      "prev": "Thiệp trước",
+      "next": "Thiệp sau"
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "subtitle": "Vài điều thường được hỏi trước khi bắt đầu.",
+      "seeAll": "Xem toàn bộ câu hỏi thường gặp"
+    },
+    "finalCta": {
+      "title": "Sẵn sàng gửi lời mời cho ngày đặc biệt?",
+      "subtitle": "Một mức giá cho mỗi thiệp, trao đổi trực tiếp với người thiết kế.",
+      "cta": "Tạo thiệp ngay",
+      "lead": "Tạo thiệp sinh nhật, sự kiện mang dấu ấn của bạn.",
+      "socialProof": "Đã có {count} thiệp mời được tạo trên nền tảng",
+      "note": "Thiết kế theo yêu cầu · Nhận link và mã QR",
+      "secondaryCta": "Xem bảng giá"
+    }
+  },
+  "templatePages": {
+    "breadcrumbLabel": "Đường dẫn",
+    "breadcrumbHome": "Trang chủ",
+    "breadcrumbTemplates": "Mẫu thiệp",
+    "heading": "Mẫu thiệp cưới online {name}",
+    "metaTitle": "Mẫu thiệp cưới online {name}",
+    "photoCount": "{count} ô ảnh cưới trong thiết kế",
+    "noPhotos": "Không cần ảnh cưới",
+    "highlightsTitle": "Điểm nổi bật",
+    "suitableTitle": "Phù hợp với",
+    "featuresTitle": "Tính năng có sẵn",
+    "faqTitle": "Câu hỏi thường gặp",
+    "relatedTitle": "Mẫu thiệp tương tự",
+    "relatedAll": "Xem toàn bộ kho mẫu",
+    "overviewTitle": "Giới thiệu mẫu",
+    "genericLead": "Mẫu thiệp cưới online {name}, phong cách {styles}. Xem trọn tấm thiệp bên dưới hoặc mở bản demo đầy đủ trước khi chọn.",
+    "posterAlt": "Ảnh xem trước mẫu thiệp cưới {name}",
+    "previewAlt": "Toàn bộ mẫu thiệp cưới {name} sau khi mở phong bì",
+    "previewTitle": "Toàn bộ tấm thiệp",
+    "previewNote": "Cuộn trong khung để xem từ đầu đến cuối. Tên, ngày và ảnh chỉ là nội dung minh hoạ — mở bản demo để xem cả phong bì và nhạc nền.",
+    "items": {}
+  },
+  "templates": {
+    "meta": {
+      "title": "Mẫu thiệp mời sự kiện tham khảo",
+      "description": "Một số mẫu thiệp mời online Keemori đã thiết kế cho sinh nhật, khai trương, hội nghị và tiệc — tham khảo trước khi đặt thiệp thiết kế riêng."
+    },
+    "title": "Mẫu thiệp tham khảo",
+    "subtitle": "Một số thiệp mời Keemori đã thiết kế. Thiệp của bạn sẽ được làm riêng theo sự kiện, màu sắc và phong cách bạn muốn — chọn mẫu bạn thích làm điểm bắt đầu khi tư vấn.",
+    "categories": {
+      "luxury": "Sang trọng",
+      "modern": "Hiện đại",
+      "classic": "Cổ điển",
+      "minimal": "Tối giản",
+      "traditional": "Truyền thống",
+      "formal": "Lịch sự"
+    },
+    "colors": {
+      "red": "Đỏ",
+      "pink": "Hồng",
+      "orange": "Cam",
+      "yellow": "Vàng",
+      "green": "Xanh lá",
+      "blue": "Xanh dương",
+      "purple": "Tím",
+      "brown": "Nâu",
+      "black": "Đen",
+      "white": "Trắng / kem"
+    },
+    "useTemplate": "Dùng mẫu này",
+    "previewLabel": "Xem trước mẫu {name}",
+    "playLabel": "Bản chạy thử của mẫu {name}",
+    "emptyCatalog": "Mẫu tham khảo đang được cập nhật. Bạn vẫn có thể liên hệ ngay để đặt thiệp thiết kế riêng cho sự kiện của mình.",
+    "contactCta": "Liên hệ tư vấn",
+    "detail": {
+      "open": "Xem chi tiết mẫu {name}",
+      "view": "Xem chi tiết",
+      "featuresTitle": "Tính năng",
+      "features": {
+        "content": "Tùy chỉnh nội dung",
+        "ceremonies": "Nhiều lễ trong một thiệp",
+        "guestLinks": "Link mời riêng từng khách",
+        "rsvp": "Xác nhận tham dự",
+        "wishes": "Sổ lưu bút",
+        "maps": "Chỉ đường Google Maps",
+        "countdown": "Đếm ngược & lưu lịch",
+        "gift": "Nhận quà qua mã QR",
+        "music": "Nhạc nền",
+        "share": "Chia sẻ link & QR",
+        "locales": "Song ngữ Việt · Anh"
+      },
+      "customNote": "Bạn tự điền nội dung, ảnh và danh sách khách mời trong trình chỉnh sửa — mỗi khách nhận một link mời riêng có tên mình.",
+      "choose": "Cần thiết kế riêng theo sự kiện? Liên hệ tư vấn",
+      "demo": "Xem demo",
+      "photos": {
+        "none": "Không cần ảnh",
+        "count": "Mẫu này dùng {count} ảnh"
+      },
+      "use": "Dùng mẫu này"
+    }
+  },
+  "editor": {
+    "sharePreview": {
+      "title": "Xem trước link chia sẻ",
+      "description": "Khách mời sẽ thấy ảnh và lời mời này khi bạn gửi link.",
+      "choose": "Đổi ảnh",
+      "pickerTitle": "Chọn ảnh chia sẻ",
+      "pickerDescription": "Chọn ảnh mặc định Keemori hoặc ảnh cưới, album bạn đã tải lên.",
+      "auto": "Dùng ảnh bìa tự động",
+      "brand": "Ảnh mặc định Keemori",
+      "cover": "Ảnh bìa",
+      "usingPhoto": "Đang dùng ảnh đã chọn",
+      "usingBrand": "Đang dùng ảnh mặc định Keemori",
+      "empty": "Tải ảnh ở phần Ảnh cưới hoặc Album để có thêm ảnh lựa chọn.",
+      "note": "Hiển thị có thể khác theo ứng dụng. Thay đổi áp dụng sau khi lưu.",
+      "crop": "Vị trí ảnh trong khung",
+      "cropHint": "Di chuyển để giữ khuôn mặt trong khung ảnh chia sẻ. Ảnh trên thiệp vẫn giữ cách cắt hiện tại.",
+      "photo": "Ảnh {number}",
+      "weddingPhotos": "Ảnh cưới trên thiệp",
+      "album": "Album ảnh",
+      "pendingLink": "Link sẽ có sau khi lưu thiệp",
+      "unnamedCouple": "hai bạn"
+    },
+    "meta": {
+      "title": "Chỉnh sửa thiệp"
+    },
+    "exit": "Thoát",
+    "templateLabel": "Mẫu {name}",
+    "templateKicker": "Mẫu thiệp",
+    "templatePicker": {
+      "title": "Đổi mẫu thiệp",
+      "description": "Nội dung bạn đã nhập được giữ nguyên khi đổi mẫu.",
+      "select": "Dùng mẫu {name}",
+      "photoSlotsHint": "Mẫu {name} có {count} ô ảnh, bạn đã điền {filled}."
+    },
+    "save": "Lưu & Tạo link",
+    "saving": "Đang lưu…",
+    "uploadingPhotos": "Đang xử lý ảnh {done}/{total}…",
+    "photoSaveProgress": {
+      "title": "Chờ xíu nhé, ảnh cưới đang lên thiệp",
+      "doneTitle": "Xong rồi, thiệp đã sẵn sàng!",
+      "description": "Tụi mình đang chăm chút và cất từng tấm ảnh của hai bạn vào thiệp, để khách mời mở ra vừa nhanh vừa nét. Cô dâu chú rể đợi trong chốc lát nha!",
+      "stages": {
+        "uploading": "Đang gửi ảnh lên…",
+        "processing": "Đang chăm chút ảnh {done}/{total}…",
+        "finishing": "Sắp xong rồi, đang tạo link thiệp…",
+        "done": "Đang mở thiệp của hai bạn…"
+      },
+      "hint": "Bạn cứ đóng hộp này nếu muốn — thiệp vẫn tiếp tục được lưu. Chỉ cần đừng tắt trang thôi nhé.",
+      "dismiss": "Mình đợi bên ngoài"
+    },
+    "loginRequired": "Đăng nhập để lưu thiệp và tạo link chia sẻ. Nội dung bạn vừa nhập đã được giữ lại.",
+    "draftPhotosRestoring": "Đang tải lại ảnh bạn đã chọn ({done}/{count}) — vui lòng đợi, không cần chọn lại.",
+    "draftPhotosLost": "Một số ảnh không khôi phục được (đã quá 1 ngày hoặc chưa kịp tải lên). Vui lòng chọn lại những ảnh đó trước khi lưu.",
+    "photoUpload": {
+      "pending": "Đang tải ảnh",
+      "retryLater": "Sẽ gửi lại khi lưu",
+      "processingTimeout": "Ảnh vẫn đang được xử lý. Vui lòng đợi vài giây rồi bấm lưu lại — ảnh không bị mất.",
+      "photosFailed": "Có ảnh không tải lên được. Vui lòng gỡ và chọn lại ảnh bị đánh dấu, rồi lưu lại."
+    },
+    "saved": "Đã lưu nội dung thiệp",
+    "saveFailed": "Không lưu được thiệp, vui lòng thử lại.",
+    "fixErrors": "Còn thông tin chưa hợp lệ — sửa ô báo đỏ rồi lưu lại.",
+    "coupleNamesLocked": {
+      "title": "Không lưu được: tên cô dâu chú rể đã bị khoá",
+      "description": "Thiệp đã thanh toán quá 15 ngày nên họ tên và tên gọi của cô dâu, chú rể không còn sửa được (Điều khoản sử dụng, mục 6). Các nội dung khác vẫn sửa bình thường — hãy giữ nguyên tên cũ để lưu, hoặc liên hệ admin để được mở khoá.",
+      "contact": "Liên hệ admin",
+      "dismiss": "Đã hiểu"
+    },
+    "fillSample": "Điền dữ liệu mẫu",
+    "fillSampleConfirm": {
+      "title": "Xem thử với nội dung mẫu nhé?",
+      "description": "Chúng mình sẽ điền sẵn một bộ nội dung mẫu để bạn hình dung tấm thiệp trông thế nào. Tên, ngày giờ và địa điểm trong đó chỉ để tham khảo thôi — nhớ thay bằng thông tin của hai bạn trước khi gửi thiệp nha. Những gì bạn đã gõ sẽ được thay bằng nội dung mẫu.",
+      "cancel": "Để sau",
+      "confirm": "Điền giúp mình"
+    },
+    "filledSample": "Đã điền dữ liệu mẫu vào toàn bộ form",
+    "modes": {
+      "label": "Chế độ",
+      "edit": "Chỉnh sửa",
+      "preview": "Xem thiệp"
+    },
+    "devices": {
+      "label": "Thiết bị xem trước",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
+    },
+    "backToEdit": "Quay lại chỉnh sửa",
+    "blockVisible": "Hiện block trên thiệp",
+    "toggleBlock": "Bật/tắt block {name}",
+    "notes": {
+      "envelope": "Đây là màn hình mở đầu khi khách mở thiệp: lời chào nên ngắn, còn lời mời có thể viết trang trọng và nêu rõ cách xưng hô.",
+      "couple": "Nhập họ tên đầy đủ đúng như giấy tờ hoặc cách gia đình muốn in trên thiệp. Tên gọi thân mật dùng trên phong bì và các mục nhỏ, để trống sẽ tự trích từ họ tên đầy đủ. Ô \"Con thứ mấy\" để trống thì thiệp ghi \"Chú rể\" / \"Cô dâu\".",
+      "families": "Ghi tên bố mẹ và địa chỉ của từng bên gia đình. Nếu có nghi lễ gia tiên, địa chỉ này giúp khách nhận biết đúng nơi làm lễ.",
+      "ceremonies": "Nghi lễ thường gặp gồm lễ ăn hỏi, lễ vu quy (nhà gái) và lễ thành hôn (nhà trai). Tập quán có thể khác theo vùng, bạn chỉ thêm những lễ gia đình thực sự tổ chức.",
+      "reception": "Tiệc cưới tại nhà hàng thường tách giờ đón khách và giờ khai tiệc. Địa chỉ nên ghi đủ tên địa điểm, số nhà và quận/huyện; link Maps lấy từ nút Chia sẻ trên Google Maps.",
+      "dressCode": "Gợi ý trang phục cho khách: viết vài chữ mô tả rồi chọn màu từ bảng gợi ý hoặc dán mã hex của riêng bạn. Tắt block này nếu đám cưới của bạn không đặt yêu cầu trang phục.",
+      "timeline": "Sắp xếp theo trình tự trong ngày, ví dụ: đón khách → làm lễ → khai tiệc → chụp ảnh. Nhập giờ bắt đầu cho từng hoạt động để khách dễ theo dõi; giờ kết thúc có thể bỏ trống. Biểu tượng được vẽ theo phong cách của mẫu đang chọn; để Tự động thì hệ thống chọn theo chữ bạn nhập.",
+      "countdown": "Chọn đúng ngày và giờ bắt đầu lễ hoặc tiệc mà bạn muốn đếm ngược. Đây là mốc hiển thị trên trang thiệp, không nhất thiết trùng giờ đón khách.",
+      "story": "Vài dòng kể lại chuyện của hai bạn — gặp nhau thế nào, điều gì khiến bạn chọn nhau. Ngắn 3–5 câu là vừa đẹp; phần này nằm ngay trước album ảnh.",
+      "music": "Chọn một bản nhạc nền nhẹ nhàng; khách có thể tắt nhạc khi mở thiệp.",
+      "thankYou": "Lời cảm ơn sẽ xuất hiện ở cuối thiệp sau khi khách xem nội dung.",
+      "qrAuto": "Mã QR chuyển khoản được tạo tự động từ thông tin tài khoản.",
+      "photoSlots": "Mẫu này dàn sẵn {count} ô ảnh với tỉ lệ khung cố định — bạn đổ ảnh vào các ô đó, không thêm cũng không đổi vị trí được. Đổi sang mẫu khác thì ảnh vẫn được giữ lại.",
+      "noPhotoSlots": "Mẫu này không có ô ảnh nào — thiệp dùng tranh minh họa vẽ riêng. Muốn có ảnh cưới thật của hai bạn trên thiệp thì chọn một mẫu có ô ảnh; nội dung bạn đã nhập được giữ nguyên.",
+      "album": "Album có trong mọi thiệp và thêm được vào bất kỳ mẫu nào. Nó khác với ô ảnh trong thiết kế vốn do từng mẫu quy định.",
+      "wishes": "Khách mời viết lời chúc ngay trên thiệp. Mọi lời chúc đều ở trạng thái chờ duyệt — chỉ lời chúc bạn duyệt mới hiện trên thiệp.",
+      "rsvp": "Khách xác nhận có đi không và đi mấy người, bằng link nào cũng được. Chỉ bạn xem được danh sách này. Link mời riêng điền sẵn tên và gửi lại là cập nhật câu trả lời cũ."
+    },
+    "ceremonyKinds": {
+      "label": "Loại nghi lễ",
+      "engagement": "Lễ ăn hỏi",
+      "bride": "Lễ vu quy (nhà gái)",
+      "groom": "Lễ thành hôn (nhà trai)",
+      "other": "Nghi lễ khác"
+    },
+    "places": {
+      "attribution": "Dữ liệu địa điểm © OpenStreetMap",
+      "guideToggle": "Cách lấy link Google Maps",
+      "guideAlt": "Ba bước lấy link chia sẻ trên Google Maps: tìm địa điểm, bấm Chia sẻ, sao chép link",
+      "guideCaption": "Mở Google Maps, tìm địa điểm → bấm Chia sẻ → Sao chép link, rồi dán vào ô trên.",
+      "fromGroomHome": "Địa chỉ nhà trai",
+      "fromBrideHome": "Địa chỉ nhà gái",
+      "fromReception": "Địa chỉ nhà hàng",
+      "linkReading": "Đang đọc link…",
+      "linkPinned": "Đã ghim đúng vị trí từ link",
+      "linkApproximate": "Link chỉ có vị trí gần đúng, bản đồ có thể lệch đôi chút",
+      "linkFailed": "Không đọc được link này; bản đồ sẽ tra theo địa chỉ bạn nhập",
+      "searching": "Đang tìm địa điểm…",
+      "empty": "Không tìm thấy địa điểm phù hợp",
+      "hint": "Chọn từ gợi ý để bản đồ trỏ đúng điểm, hoặc cứ gõ tay"
+    },
+    "blocks": {
+      "photos": {
+        "title": "Ảnh cưới trên thiệp",
+        "upload": "Chọn ảnh",
+        "replace": "Đổi ảnh khác",
+        "removeSlot": "Gỡ {name}",
+        "browseTemplates": "Xem mẫu có ảnh",
+        "rejectedType": "Chỉ nhận ảnh JPG, PNG, WebP hoặc AVIF.",
+        "slots": {
+          "cover": "Ảnh bìa",
+          "couple": "Ảnh hai bạn",
+          "groom": "Ảnh chú rể",
+          "bride": "Ảnh cô dâu",
+          "story": "Ảnh kèm chuyện tình",
+          "closing": "Ảnh cuối thiệp"
+        }
+      },
+      "envelope": {
+        "title": "Phong bì (màn mở đầu)",
+        "greeting": "Lời chào",
+        "greetingPlaceholder": "Trân trọng kính mời",
+        "invitation": "Lời mời",
+        "invitationPlaceholder": "Chúng tôi rất hân hạnh được đón tiếp bạn…"
+      },
+      "guestInvite": {
+        "title": "Link mời riêng từng khách",
+        "guestList": "Danh sách khách mời",
+        "guestListPlaceholder": "Bạn Minh\nAnh Chị Cường Thu\nBạn Linh và người thương",
+        "count": "{count} khách · mỗi khách một link riêng",
+        "empty": "Chưa có khách nào",
+        "naming": "Mỗi dòng là một khách mời. Gõ đúng cách xưng hô bạn muốn hiện trên thiệp, vì tên sẽ đứng ngay sau chữ “Kính mời:”. Ví dụ: Bạn Minh · Anh Chị Cường Thu · Bạn Linh và người thương · Cô Chú Hùng.",
+        "whereLinks": "Lấy link: bấm “Lưu & Tạo link”, rồi vào Thiệp của tôi → “Link khách mời” ở thiệp này để sao chép link của từng người.",
+        "renameWarning": "Sửa chữ một tên sẽ tạo link mới cho người đó. Link cũ vẫn mở được thiệp, nhưng chỉ hiện lời chào chung.",
+        "preview": "Xem thử đang hiện lời chào của khách đầu tiên trong danh sách.",
+        "whereLinksSaved": "Lấy link: bấm “Lưu & Tạo link” để danh sách mới nhất có link, rồi mở trang Link khách mời để sao chép link của từng người.",
+        "openGuestLinks": "Mở Link khách mời ↗"
+      },
+      "couple": {
+        "title": "Thông tin cặp đôi",
+        "groomFullName": "Họ tên đầy đủ chú rể",
+        "brideFullName": "Họ tên đầy đủ cô dâu",
+        "fullNamePlaceholder": "Nguyễn Hoàng Nam",
+        "groomNickname": "Tên gọi thân mật (chú rể)",
+        "brideNickname": "Tên gọi thân mật (cô dâu)",
+        "nicknamePlaceholder": "Để trống sẽ tự lấy từ tên đầy đủ",
+        "groomChildOrder": "Con thứ mấy (chú rể)",
+        "brideChildOrder": "Con thứ mấy (cô dâu)",
+        "childOrderPlaceholder": "Trưởng nam / Thứ nữ"
+      },
+      "families": {
+        "title": "Thông tin gia đình",
+        "groomFather": "Họ tên bố chú rể",
+        "groomMother": "Họ tên mẹ chú rể",
+        "brideFather": "Họ tên bố cô dâu",
+        "brideMother": "Họ tên mẹ cô dâu",
+        "groomAddress": "Địa chỉ nhà trai",
+        "brideAddress": "Địa chỉ nhà gái",
+        "fatherPlaceholder": "Nguyễn Hoàng Nam",
+        "motherPlaceholder": "Lê Thị Hạnh",
+        "addressPlaceholder": "12 Nguyễn Trãi, Thanh Xuân, Hà Nội"
+      },
+      "ceremonies": {
+        "title": "Lễ cưới (nghi lễ)",
+        "itemTitle": "Nghi lễ {index}",
+        "customKind": "Tên nghi lễ",
+        "customKindPlaceholder": "Lễ báo hỷ / Lễ dạm ngõ…",
+        "dateTime": "Ngày giờ",
+        "dateTimePlaceholder": "10:00 · 22/11/2026",
+        "venue": "Địa điểm",
+        "venuePlaceholder": "Nhà gái / Nhà thờ / Trung tâm tiệc cưới",
+        "note": "Lời thông báo",
+        "notePlaceholder": "Gia đình làm lễ gia tiên và trao nhẫn…",
+        "add": "Thêm nghi lễ",
+        "remove": "Xóa nghi lễ {index}"
+      },
+      "reception": {
+        "title": "Tiệc cưới",
+        "date": "Ngày tiệc",
+        "welcomeTime": "Giờ đón khách",
+        "startTime": "Giờ khai tiệc",
+        "venueLabel": "Lời dẫn",
+        "venueLabelPlaceholder": "Lễ thành hôn được cử hành tại",
+        "venueAddress": "Địa chỉ nhà hàng",
+        "venueAddressPlaceholder": "Trung tâm tiệc cưới ABC, 123 Nguyễn Trãi, Hà Nội",
+        "mapUrl": "Bản đồ Google Maps",
+        "mapUrlPlaceholder": "Dán link Google Maps của nhà hàng"
+      },
+      "dressCode": {
+        "title": "Dress code",
+        "heading": "Tiêu đề dress code",
+        "headingPlaceholder": "Dresscode",
+        "description": "Mô tả trang phục",
+        "descriptionPlaceholder": "Ví dụ: trang phục dự tiệc, ưu tiên tông pastel",
+        "colors": "Màu sắc",
+        "colorPlaceholder": "#e8b7b7",
+        "suggestedColors": "Chọn từ gợi ý",
+        "customColor": "Màu tuỳ chỉnh",
+        "addColor": "Thêm",
+        "addColorLabel": "Thêm màu {color}",
+        "removeColor": "Bỏ màu {color}",
+        "pickColor": "Chọn màu bằng bộ chọn màu",
+        "colorInvalid": "Mã màu phải dạng #RRGGBB.",
+        "colorLimit": "Tối đa {limit} màu."
+      },
+      "timeline": {
+        "title": "Lịch trình ngày cưới",
+        "customTitle": "Tiêu đề tùy chỉnh",
+        "customTitlePlaceholder": "Lịch trình ngày cưới",
+        "fromTime": "Từ giờ",
+        "toTime": "Đến giờ",
+        "activity": "Hoạt động",
+        "itemTitle": "Hoạt động {index}",
+        "activityPlaceholder": "Đón khách / Làm lễ / Khai tiệc",
+        "icon": "Biểu tượng",
+        "iconAuto": "Tự động",
+        "kinds": {
+          "welcome": "Đón khách",
+          "ancestral": "Lễ gia tiên / Vu quy",
+          "procession": "Đón dâu / Rước dâu",
+          "ceremony": "Lễ thành hôn",
+          "reception": "Khai tiệc",
+          "toast": "Nâng ly",
+          "cake": "Cắt bánh",
+          "photo": "Chụp ảnh",
+          "music": "Giao lưu / Văn nghệ",
+          "farewell": "Tiễn khách"
+        },
+        "add": "Thêm hoạt động",
+        "delete": "Xóa",
+        "remove": "Xóa hoạt động {index}",
+        "autoTranslate": "Tự hiển thị đa ngôn ngữ cho khách quốc tế"
+      },
+      "countdown": {
+        "title": "Đếm ngược & Thêm vào lịch",
+        "weddingDate": "Ngày cưới (mốc đếm ngược)"
+      },
+      "story": {
+        "title": "Chuyện của chúng tôi",
+        "message": "Đoạn chuyện tình",
+        "messagePlaceholder": "Chúng mình gặp nhau vào một chiều cuối thu…"
+      },
+      "album": {
+        "title": "Album ảnh cưới",
+        "upload": "Tải ảnh lên",
+        "photoLabel": "Ảnh {index}",
+        "removePhoto": "Xóa ảnh {index}",
+        "countLabel": "{count} ảnh",
+        "rejectedType": "Chỉ nhận ảnh JPG, PNG, WebP hoặc AVIF.",
+        "rejectedDuplicate": "Ảnh này đã có trong album nên không được thêm lại.",
+        "rejectedLimit": "Album tối đa {limit} ảnh nên phần ảnh dư đã bị bỏ qua."
+      },
+      "giftBox": {
+        "title": "Hộp mừng cưới (QR ngân hàng)",
+        "groomBank": "Ngân hàng chú rể",
+        "bankPlaceholder": "Chọn hoặc gõ tên ngân hàng",
+        "groomAccount": "Số tài khoản chú rể",
+        "accountPlaceholder": "0123456789",
+        "brideBank": "Ngân hàng cô dâu",
+        "brideAccount": "Số tài khoản cô dâu",
+        "groomAccountName": "Tên chủ tài khoản chú rể",
+        "brideAccountName": "Tên chủ tài khoản cô dâu",
+        "accountNamePlaceholder": "NGUYEN MINH QUAN",
+        "qrNote": "Mã QR tạo tự động từ ngân hàng và số tài khoản, không cần tải ảnh lên. Kiểm tra kỹ số tài khoản giúp mình nhé — mã mã hoá đúng những gì bạn nhập, sai một số là khách chuyển nhầm người."
+      },
+      "wishes": {
+        "title": "Sổ lưu bút",
+        "empty": "Chưa có lời chúc nào. Khi khách gửi, lời chúc sẽ hiện ở đây để bạn duyệt.",
+        "pendingCount": "{count} lời chúc chờ duyệt",
+        "approvedCount": "{count} lời chúc đã hiện trên thiệp",
+        "pending": "Chờ duyệt",
+        "approved": "Đã duyệt",
+        "approve": "Duyệt",
+        "unapprove": "Ẩn khỏi thiệp",
+        "delete": "Xóa",
+        "approveDone": "Đã duyệt lời chúc.",
+        "unapproveDone": "Đã ẩn lời chúc khỏi thiệp.",
+        "deleteDone": "Đã xóa lời chúc.",
+        "actionFailed": "Không thực hiện được, vui lòng thử lại.",
+        "filterAll": "Tất cả",
+        "filterPending": "Chờ duyệt",
+        "filterApproved": "Đã duyệt",
+        "manage": "Mở trang quản lý lời chúc",
+        "whereWishes": "Sau khi lưu thiệp, duyệt lời chúc tại Thiệp của tôi → Lời chúc.",
+        "whereWishesSaved": "Duyệt, ẩn và xoá lời chúc ở trang riêng trong Thiệp của tôi.",
+        "openWishes": "Mở trang lời chúc ↗"
+      },
+      "rsvp": {
+        "title": "Xác nhận tham dự",
+        "empty": "Chưa có phản hồi nào. Khi khách gửi xác nhận, danh sách sẽ hiện ở đây.",
+        "guestsComing": "Khách sẽ đến",
+        "attendingCount": "Phản hồi tham dự",
+        "declinedCount": "Không tham dự",
+        "filterAll": "Tất cả",
+        "filterAttending": "Tham dự",
+        "filterDeclined": "Không tham dự",
+        "partyOf": "Tham dự · {count} người",
+        "declined": "Không tham dự",
+        "personalLink": "Link riêng",
+        "personalLinkHint": "Gửi từ link mời riêng — khách gửi lại sẽ sửa dòng này",
+        "deleteLabel": "Xóa phản hồi của {name}",
+        "deleteDone": "Đã xóa phản hồi.",
+        "actionFailed": "Không thực hiện được, vui lòng thử lại.",
+        "whereResponses": "Sau khi lưu thiệp, xem danh sách khách đã xác nhận tại Thiệp của tôi → Xác nhận tham dự.",
+        "whereResponsesSaved": "Xem danh sách khách đã xác nhận ở trang riêng trong Thiệp của tôi.",
+        "openResponses": "Mở trang xác nhận tham dự ↗"
+      },
+      "music": {
+        "title": "Nhạc nền",
+        "track": "Chọn bài từ thư viện nhạc",
+        "trackPlaceholder": "Chưa chọn bài hát",
+        "preview": "Nghe thử",
+        "choose": "Chọn nhạc",
+        "change": "Đổi bài",
+        "dialogTitle": "Thư viện nhạc nền",
+        "dialogDescription": "Bấm nút phát để nghe thử, rồi chọn bản nhạc bạn thích.",
+        "searchPlaceholder": "Tìm theo tên bài hát hoặc ca sĩ...",
+        "searchEmpty": "Không tìm thấy bài nào khớp “{query}”.",
+        "play": "Nghe thử {name}",
+        "pause": "Tạm dừng {name}",
+        "seek": "Tua bài {name}",
+        "confirm": "Chọn bài này",
+        "cancel": "Hủy",
+        "none": "Không dùng nhạc",
+        "confirmNone": "Lưu"
+      },
+      "thankYou": {
+        "title": "Lời cảm ơn",
+        "message": "Nội dung lời cảm ơn",
+        "messagePlaceholder": "Cảm ơn bạn đã dành thời gian ghé thăm thiệp cưới của chúng tôi…"
+      }
+    },
+    "banks": {
+      "empty": "Không tìm thấy ngân hàng nào.",
+      "clear": "Bỏ chọn ngân hàng"
+    },
+    "defaultTemplateName": "Mẫu mặc định",
+    "occasion": {
+      "hint": "Đây là phần chính của thiệp, hiện ngay ở màn đầu tiên khi khách mở thiệp.",
+      "greetingOccasions": {
+        "birthday": "Sinh nhật",
+        "opening": "Khai trương",
+        "housewarming": "Tân gia",
+        "newYear": "Năm mới",
+        "teachersDay": "Ngày Nhà giáo 20/11",
+        "other": "Dịp khác"
+      },
+      "birthday": {
+        "title": "Nhân vật chính",
+        "fields": {
+          "name": {
+            "label": "Họ tên người được mừng",
+            "placeholder": "Nguyễn Minh Anh"
+          },
+          "nickname": {
+            "label": "Tên gọi thân mật",
+            "placeholder": "Minh Anh"
+          },
+          "age": {
+            "label": "Tuổi / mốc mừng",
+            "placeholder": "Tròn 25 tuổi · Thôi nôi"
+          },
+          "organizer": {
+            "label": "Người tổ chức (không bắt buộc)",
+            "placeholder": "Gia đình bé Minh Anh"
+          }
+        }
+      },
+      "graduation": {
+        "title": "Tân cử nhân",
+        "fields": {
+          "name": {
+            "label": "Họ tên",
+            "placeholder": "Trần Bảo Ngọc"
+          },
+          "nickname": {
+            "label": "Tên gọi thân mật",
+            "placeholder": "Bảo Ngọc"
+          },
+          "school": {
+            "label": "Trường",
+            "placeholder": "Đại học ABC"
+          },
+          "major": {
+            "label": "Ngành",
+            "placeholder": "Thiết kế đồ hoạ"
+          },
+          "classOf": {
+            "label": "Khoá",
+            "placeholder": "Khoá 2022 – 2026"
+          }
+        }
+      },
+      "event": {
+        "title": "Thông tin sự kiện",
+        "fields": {
+          "name": {
+            "label": "Tên sự kiện",
+            "placeholder": "Đêm nhạc Mùa thu"
+          },
+          "organizer": {
+            "label": "Đơn vị tổ chức",
+            "placeholder": "Câu lạc bộ Âm nhạc ABC"
+          }
+        }
+      },
+      "anniversary": {
+        "title": "Thông tin kỷ niệm",
+        "fields": {
+          "name": {
+            "label": "Tên hai bạn hoặc đơn vị",
+            "placeholder": "Minh Quân & Thu Hà"
+          },
+          "years": {
+            "label": "Mốc kỷ niệm",
+            "placeholder": "10 năm ngày cưới · 5 năm thành lập"
+          }
+        }
+      },
+      "greeting": {
+        "title": "Lời chúc",
+        "fields": {
+          "greetingOccasion": {
+            "label": "Dịp chúc mừng",
+            "placeholder": "Chọn dịp"
+          },
+          "name": {
+            "label": "Gửi đến",
+            "placeholder": "Cô Lan · Tiệm cà phê ABC"
+          },
+          "sender": {
+            "label": "Người gửi",
+            "placeholder": "Gia đình anh Tuấn"
+          },
+          "message": {
+            "label": "Lời chúc",
+            "placeholder": "Chúc mừng khai trương! Chúc tiệm luôn đông khách…"
+          }
+        }
+      }
+    },
+    "kindBlocks": {
+      "common": {
+        "reception": {
+          "title": "Thời gian & địa điểm",
+          "date": "Ngày tổ chức",
+          "startTime": "Giờ bắt đầu",
+          "venueLabelPlaceholder": "Buổi tiệc được tổ chức tại",
+          "venueAddress": "Địa chỉ",
+          "venueAddressPlaceholder": "Nhà hàng ABC, 123 Nguyễn Trãi, Hà Nội",
+          "mapUrlPlaceholder": "Dán link Google Maps của địa điểm"
+        },
+        "countdown": {
+          "weddingDate": "Ngày diễn ra (mốc đếm ngược)"
+        },
+        "story": {
+          "title": "Lời nhắn",
+          "message": "Nội dung",
+          "messagePlaceholder": "Vài dòng gửi tới khách mời…"
+        },
+        "giftBox": {
+          "title": "Hộp quà (QR ngân hàng)",
+          "groomBank": "Ngân hàng",
+          "groomAccount": "Số tài khoản",
+          "groomAccountName": "Tên chủ tài khoản"
+        },
+        "timeline": {
+          "title": "Lịch trình",
+          "customTitlePlaceholder": "Lịch trình buổi tiệc",
+          "activityPlaceholder": "Đón khách / Thổi nến / Khai tiệc",
+          "kinds": {
+            "ceremony": "Phần chính của chương trình"
+          }
+        },
+        "album": {
+          "title": "Album ảnh"
+        },
+        "thankYou": {
+          "messagePlaceholder": "Cảm ơn bạn đã dành thời gian ghé thăm thiệp của mình…"
+        }
+      },
+      "birthday": {
+        "story": {
+          "title": "Lời nhắn của mình",
+          "messagePlaceholder": "Một tuổi mới, thêm một năm để biết ơn những người bạn…"
+        }
+      },
+      "graduation": {
+        "reception": {
+          "venueLabelPlaceholder": "Buổi lễ được tổ chức tại"
+        },
+        "story": {
+          "title": "Hành trình của mình",
+          "messagePlaceholder": "Bốn năm với những đêm chạy đồ án…"
+        },
+        "timeline": {
+          "customTitlePlaceholder": "Lịch trình buổi lễ",
+          "activityPlaceholder": "Lễ trao bằng / Chụp ảnh / Tiệc mừng",
+          "kinds": {
+            "ceremony": "Lễ trao bằng"
+          }
+        }
+      },
+      "event": {
+        "reception": {
+          "venueLabelPlaceholder": "Sự kiện diễn ra tại"
+        },
+        "story": {
+          "title": "Giới thiệu sự kiện",
+          "message": "Mô tả",
+          "messagePlaceholder": "Một buổi tối của những bản tình ca mùa thu…"
+        },
+        "timeline": {
+          "customTitlePlaceholder": "Chương trình sự kiện",
+          "activityPlaceholder": "Check-in / Biểu diễn / Giao lưu",
+          "kinds": {
+            "ceremony": "Phần chính"
+          }
+        }
+      },
+      "anniversary": {
+        "story": {
+          "title": "Câu chuyện của chúng mình",
+          "messagePlaceholder": "Mười năm, hai đứa nhỏ và rất nhiều kỷ niệm…"
+        }
+      },
+      "greeting": {
+        "envelope": {
+          "invitationPlaceholder": "Một lời chúc nhỏ, gửi trọn yêu thương."
+        },
+        "story": {
+          "title": "Lời nhắn thêm",
+          "messagePlaceholder": "Vài dòng tâm sự gửi kèm lời chúc (không bắt buộc)"
+        },
+        "thankYou": {
+          "messagePlaceholder": "Lời kết gửi người nhận…"
+        }
+      }
+    },
+    "namesLockedOccasion": {
+      "title": "Không lưu được: tên trên thiệp đã bị khoá",
+      "description": "Thiệp đã thanh toán quá 15 ngày nên tên chính của thiệp không còn sửa được (Điều khoản sử dụng, mục 6). Các nội dung khác vẫn sửa bình thường — hãy giữ nguyên tên cũ để lưu, hoặc liên hệ admin để được mở khoá."
+    },
+    "kindNotes": {
+      "common": {
+        "reception": "Ghi rõ ngày, giờ bắt đầu và địa chỉ đầy đủ của địa điểm (tên địa điểm, số nhà, quận/huyện); link Maps lấy từ nút Chia sẻ trên Google Maps.",
+        "dressCode": "Gợi ý trang phục cho khách: viết vài chữ mô tả rồi chọn màu từ bảng gợi ý hoặc dán mã hex của riêng bạn. Tắt block này nếu buổi tiệc không đặt yêu cầu trang phục."
+      }
+    },
+    "saveOnly": "Lưu",
+    "savedDraft": "Đã lưu bản nháp. Thanh toán để tạo link chia sẻ."
+  },
+  "invitation": {
+    "meta": {
+      "title": "Thiệp cưới {couple}",
+      "description": "Trân trọng kính mời bạn tới dự lễ cưới của {couple}."
+    },
+    "notFound": "Không tìm thấy thiệp này. Link có thể đã bị xóa.",
+    "guestInviteLabel": "Trân trọng kính mời:",
+    "musicOn": "Bật nhạc nền",
+    "musicOff": "Tắt nhạc nền",
+    "openingLabels": {
+      "invitation": "Trân trọng kính mời",
+      "opening": "Đang mở…",
+      "save": "Save",
+      "theDate": "THE DATE"
+    },
+    "openEnvelope": "Mở thiệp",
+    "sections": {
+      "families": {
+        "title": "Hai gia đình",
+        "groomSide": "Nhà trai",
+        "brideSide": "Nhà gái",
+        "father": "Ông",
+        "mother": "Bà",
+        "groom": "Chú rể",
+        "bride": "Cô dâu"
+      },
+      "ceremonies": {
+        "title": "Nghi lễ",
+        "mapLabel": "Bản đồ tới địa điểm nghi lễ"
+      },
+      "reception": {
+        "title": "Tiệc cưới",
+        "welcomeTime": "Đón khách",
+        "startTime": "Khai tiệc",
+        "openMap": "Xem bản đồ",
+        "mapLabel": "Bản đồ đường tới nhà hàng"
+      },
+      "details": {
+        "title": "Thông tin lễ cưới",
+        "announce": "Trân trọng báo tin lễ thành hôn của con chúng tôi",
+        "invitation": "Kính mời tham dự tiệc chung vui của gia đình chúng tôi",
+        "heldAt": "Tổ chức tại",
+        "ceremonyAt": "Lễ thành hôn được cử hành tại",
+        "timeAt": "Vào lúc {time}",
+        "monthLabel": "Tháng {month}",
+        "yearLabel": "Năm {year}",
+        "lunarDate": "( Tức ngày {day} tháng {month} năm {year} )",
+        "partyInvitation": "Trân trọng kính mời tới dự\nbuổi tiệc cưới của gia đình chúng tôi",
+        "openMap": "Chỉ đường"
+      },
+      "dressCode": {
+        "title": "Dress code",
+        "colorLabel": "Tông màu {color}"
+      },
+      "timeline": {
+        "title": "Lịch trình ngày cưới"
+      },
+      "countdown": {
+        "title": "Đếm ngược tới ngày cưới",
+        "days": "Ngày",
+        "hours": "Giờ",
+        "minutes": "Phút",
+        "seconds": "Giây",
+        "addToCalendar": "Thêm vào lịch",
+        "google": "Google Calendar",
+        "apple": "Apple Calendar",
+        "calendar": {
+          "weekdays": [
+            "CN",
+            "T2",
+            "T3",
+            "T4",
+            "T5",
+            "T6",
+            "T7"
+          ],
+          "weddingDay": "Ngày cưới"
+        },
+        "passed": "Lễ cưới đã diễn ra. Cảm ơn bạn đã đồng hành cùng chúng tôi."
+      },
+      "story": {
+        "title": "Chuyện của chúng tôi"
+      },
+      "album": {
+        "title": "Album ảnh cưới",
+        "openPhoto": "Xem ảnh {index}",
+        "prevPhoto": "Ảnh trước",
+        "nextPhoto": "Ảnh sau",
+        "closePhoto": "Đóng ảnh",
+        "counter": "{index}/{total}"
+      },
+      "giftBox": {
+        "title": "Hộp mừng cưới",
+        "subtitle": "Nếu không tới dự được, bạn có thể gửi lời chúc qua đây.",
+        "groom": "Chú rể",
+        "bride": "Cô dâu",
+        "accountNumber": "Số tài khoản",
+        "qrLabel": "Mã QR chuyển khoản {side}",
+        "copy": "Copy số tài khoản",
+        "copied": "Đã copy số tài khoản",
+        "download": "Tải mã QR",
+        "openEnvelope": "Mở phong bì mừng cưới của {side}",
+        "envelopeHint": "Chạm vào phong bì để xem mã QR chuyển khoản."
+      },
+      "wishes": {
+        "title": "Sổ lưu bút",
+        "subtitle": "Để lại một lời chúc cho cô dâu chú rể nhé.",
+        "name": "Tên của bạn",
+        "namePlaceholder": "Nhập tên của bạn*",
+        "message": "Lời chúc",
+        "messagePlaceholder": "Nhập lời chúc của bạn*",
+        "submit": "Gửi lời chúc",
+        "submitted": "Đã gửi lời chúc — cô dâu chú rể sẽ duyệt trước khi hiện lên thiệp.",
+        "submitFailed": "Chưa gửi được lời chúc, vui lòng thử lại.",
+        "suggest": "Gợi ý một lời chúc",
+        "suggestions": [
+          "Chúc hai bạn trăm năm hạnh phúc, đầu bạc răng long!",
+          "Mừng ngày trọng đại! Chúc hai bạn cười nhiều hơn cãi, yêu nhiều hơn giận.",
+          "Chúc hai bạn luôn nắm tay nhau qua mọi chặng đường.",
+          "Chúc cô dâu chú rể mãi ngọt ngào như ngày hôm nay."
+        ],
+        "empty": "Chưa có lời chúc nào. Bạn là người đầu tiên nhé!",
+        "listLabel": "Danh sách lời chúc đã duyệt"
+      },
+      "rsvp": {
+        "title": "Xác nhận tham dự",
+        "subtitle": "Cô dâu chú rể rất mong được đón bạn. Hãy cho chúng mình biết bạn có đến được không nhé.",
+        "name": "Tên của bạn",
+        "namePlaceholder": "Nhập tên của bạn*",
+        "question": "Bạn có tham dự không?",
+        "accept": "Mình sẽ đến",
+        "decline": "Rất tiếc, mình không đến được",
+        "partySize": "Số người tham dự",
+        "fewer": "Bớt một người",
+        "more": "Thêm một người",
+        "submit": "Gửi xác nhận",
+        "submitFailed": "Chưa gửi được xác nhận, vui lòng thử lại.",
+        "thanksAttending": "Cảm ơn bạn! Cô dâu chú rể đã nhận xác nhận {count} người tham dự.",
+        "thanksDeclined": "Cảm ơn bạn đã báo cho chúng mình biết.",
+        "change": "Đổi câu trả lời"
+      },
+      "thankYou": {
+        "title": "Lời cảm ơn"
+      },
+      "photos": {
+        "title": "Ảnh cưới"
+      }
+    },
+    "errors": {
+      "required": "Vui lòng nhập thông tin này.",
+      "ceremonyRequired": "Thiệp cần ít nhất một nghi lễ.",
+      "urlInvalid": "Link không hợp lệ.",
+      "hexInvalid": "Mã màu phải dạng #RRGGBB.",
+      "tooLong": "Tối đa {max} ký tự.",
+      "bankBinInvalid": "Vui lòng chọn ngân hàng từ danh sách.",
+      "accountNumberInvalid": "Số tài khoản chỉ gồm chữ và số, không dấu và không khoảng trắng.",
+      "guestListTooLong": "Danh sách tối đa {max} khách mời.",
+      "guestNameTooLong": "Mỗi tên khách mời tối đa {max} ký tự.",
+      "rsvpChoiceRequired": "Vui lòng chọn bạn có tham dự hay không."
+    },
+    "kinds": {
+      "occasionLabel": {
+        "birthday": "Tiệc sinh nhật",
+        "graduation": "Lễ tốt nghiệp",
+        "event": "Sự kiện",
+        "anniversary": "Lễ kỷ niệm",
+        "greeting": "Thiệp chúc mừng"
+      },
+      "greetingHeadline": {
+        "birthday": "Chúc mừng sinh nhật",
+        "opening": "Chúc mừng khai trương",
+        "housewarming": "Chúc mừng tân gia",
+        "newYear": "Chúc mừng năm mới",
+        "teachersDay": "Tri ân ngày Nhà giáo",
+        "other": "Gửi lời chúc mừng"
+      },
+      "organizedBy": "Tổ chức bởi {name}",
+      "from": "Từ {name}",
+      "to": "Gửi {name}",
+      "meta": {
+        "birthday": {
+          "title": "Thiệp mời sinh nhật · {name}",
+          "description": "Trân trọng mời bạn tới dự tiệc sinh nhật của {name}."
+        },
+        "graduation": {
+          "title": "Thiệp mời tốt nghiệp · {name}",
+          "description": "Trân trọng mời bạn tới chung vui ngày tốt nghiệp của {name}."
+        },
+        "event": {
+          "title": "Thiệp mời · {name}",
+          "description": "Trân trọng kính mời bạn tới dự {name}."
+        },
+        "anniversary": {
+          "title": "Thiệp mời kỷ niệm · {name}",
+          "description": "Trân trọng mời bạn tới chung vui ngày kỷ niệm của {name}."
+        },
+        "greeting": {
+          "title": "Thiệp chúc mừng gửi {name}",
+          "description": "Một lời chúc gửi tới {name}."
+        }
+      }
+    },
+    "kindSections": {
+      "common": {
+        "reception": {
+          "title": "Thời gian & địa điểm",
+          "startTime": "Bắt đầu",
+          "mapLabel": "Bản đồ đường tới địa điểm"
+        },
+        "timeline": {
+          "title": "Lịch trình"
+        },
+        "countdown": {
+          "title": "Đếm ngược",
+          "calendar": {
+            "weddingDay": "Ngày diễn ra"
+          },
+          "passed": "Buổi tiệc đã diễn ra. Cảm ơn bạn đã đồng hành cùng chúng tôi."
+        },
+        "story": {
+          "title": "Lời nhắn"
+        },
+        "album": {
+          "title": "Album ảnh"
+        },
+        "photos": {
+          "title": "Ảnh"
+        },
+        "giftBox": {
+          "title": "Hộp quà",
+          "subtitle": "Nếu không tới dự được, bạn có thể gửi quà mừng qua đây.",
+          "groom": "Tài khoản nhận quà",
+          "openEnvelope": "Mở phong bì quà mừng của {side}"
+        },
+        "wishes": {
+          "subtitle": "Để lại một lời chúc nhé.",
+          "submitted": "Đã gửi lời chúc — lời chúc sẽ hiện lên thiệp sau khi được duyệt.",
+          "suggestions": [
+            "Chúc bạn luôn vui, khoẻ và thật nhiều may mắn!",
+            "Chúc mọi điều tốt đẹp nhất sẽ đến với bạn.",
+            "Chúc một ngày thật đáng nhớ!",
+            "Hẹn gặp bạn hôm đó nhé!"
+          ]
+        },
+        "rsvp": {
+          "subtitle": "Chúng mình rất mong được đón bạn. Hãy cho chúng mình biết bạn có đến được không nhé.",
+          "thanksAttending": "Cảm ơn bạn! Chúng mình đã nhận xác nhận {count} người tham dự."
+        }
+      },
+      "birthday": {
+        "countdown": {
+          "title": "Đếm ngược tới bữa tiệc"
+        },
+        "wishes": {
+          "suggestions": [
+            "Chúc mừng sinh nhật! Tuổi mới thật rực rỡ nhé!",
+            "Chúc bạn tuổi mới bình an, luôn vui và thật nhiều may mắn.",
+            "Sinh nhật vui vẻ — chúc mọi điều ước đều thành sự thật!",
+            "Hẹn gặp bạn ở bữa tiệc nhé!"
+          ]
+        }
+      },
+      "graduation": {
+        "story": {
+          "title": "Hành trình"
+        },
+        "countdown": {
+          "title": "Đếm ngược tới ngày tốt nghiệp",
+          "passed": "Buổi lễ đã diễn ra. Cảm ơn bạn đã đồng hành cùng mình."
+        },
+        "wishes": {
+          "suggestions": [
+            "Chúc mừng tân cử nhân! Chặng đường mới thật nhiều thành công nhé.",
+            "Tự hào về bạn lắm! Chúc bạn vững bước trên con đường đã chọn.",
+            "Chúc mừng tốt nghiệp — mọi nỗ lực đều xứng đáng!",
+            "Hẹn gặp bạn ở buổi lễ nhé!"
+          ]
+        }
+      },
+      "event": {
+        "story": {
+          "title": "Giới thiệu"
+        },
+        "countdown": {
+          "title": "Đếm ngược tới sự kiện",
+          "passed": "Sự kiện đã diễn ra. Cảm ơn bạn đã đồng hành cùng chúng tôi."
+        },
+        "rsvp": {
+          "subtitle": "Chúng tôi rất mong được đón tiếp bạn. Vui lòng xác nhận để chúng tôi giữ chỗ.",
+          "thanksAttending": "Cảm ơn bạn! Chúng tôi đã nhận xác nhận {count} người tham dự."
+        },
+        "wishes": {
+          "suggestions": [
+            "Chúc sự kiện thành công tốt đẹp!",
+            "Mong chờ được tham dự!",
+            "Chúc ban tổ chức một chương trình thật ấn tượng.",
+            "Hẹn gặp mọi người hôm đó!"
+          ]
+        }
+      },
+      "anniversary": {
+        "story": {
+          "title": "Câu chuyện của chúng mình"
+        },
+        "countdown": {
+          "title": "Đếm ngược tới ngày kỷ niệm"
+        },
+        "wishes": {
+          "suggestions": [
+            "Chúc mừng ngày kỷ niệm! Mãi hạnh phúc như ngày đầu nhé.",
+            "Chúc thêm thật nhiều năm tháng tuyệt vời bên nhau.",
+            "Chúc mừng một chặng đường đáng tự hào!",
+            "Hẹn gặp ở buổi tiệc nhé!"
+          ]
+        }
+      },
+      "greeting": {
+        "story": {
+          "title": "Lời nhắn"
+        },
+        "wishes": {
+          "title": "Lời chúc",
+          "subtitle": "Gửi thêm lời chúc của bạn nhé."
+        }
+      }
+    },
+    "burgundyBirthday": {
+      "invitationLabel": "Trân trọng kính mời",
+      "birthday": "Sinh nhật",
+      "warmInvitation": "Một lời mời, trọn niềm vui",
+      "invitationMessage": "Trân trọng kính mời quý khách đến chung vui trong buổi tiệc sinh nhật {name}.",
+      "timeLabel": "Thời gian",
+      "locationLabel": "Địa điểm",
+      "partyLabel": "Tiệc sinh nhật",
+      "partyMessage": "Rất hân hạnh được đón tiếp và cùng nhau tạo nên một buổi tiệc thật ý nghĩa.",
+      "viewMap": "Xem đường đi",
+      "dressCode": "Dress code",
+      "openWrapper": "Chạm để mở thiệp"
+    }
+  },
+  "myCards": {
+    "meta": {
+      "title": "Thiệp của tôi"
+    },
+    "title": "Thiệp của tôi",
+    "count": "{count} thiệp",
+    "newCard": "Tạo thiệp mới",
+    "createdAt": "Ngày tạo",
+    "templateLabel": "Mẫu {name}",
+    "status": {
+      "draft": "Bản nháp",
+      "published": "Đã xuất bản"
+    },
+    "permanentLink": "Link vĩnh viễn",
+    "views": "{count} khách đã xem",
+    "noLink": "Chưa có link — thanh toán để tạo link",
+    "empty": {
+      "title": "Bạn chưa có thiệp nào",
+      "subtitle": "Chọn một mẫu thiệp và bắt đầu điền thông tin — chỉ mất 5 phút.",
+      "cta": "Chọn mẫu thiệp"
+    },
+    "deleteConfirm": {
+      "title": "Xóa thiệp này?",
+      "body": "Thiệp \"{title}\" và link chia sẻ sẽ bị xóa. Hành động này không thể hoàn tác.",
+      "confirm": "Xóa thiệp",
+      "done": "Đã xóa thiệp",
+      "failed": "Không xóa được thiệp, vui lòng thử lại."
+    },
+    "wishes": {
+      "meta": {
+        "title": "Lời chúc"
+      },
+      "title": "Lời chúc",
+      "subtitle": "Lời chúc khách mời gửi tới thiệp {title}. Duyệt để hiện lên thiệp, hoặc xóa hẳn.",
+      "back": "Về Thiệp của tôi",
+      "action": "Lời chúc",
+      "pendingBadge": "{count} chờ duyệt",
+      "viewCard": "Xem thiệp"
+    },
+    "guests": {
+      "meta": {
+        "title": "Link khách mời"
+      },
+      "title": "Link khách mời",
+      "subtitle": "Mỗi khách mời của thiệp {title} có một link riêng. Khách mở link sẽ thấy “Kính mời: <tên>” ngay trên màn mở đầu.",
+      "back": "Về Thiệp của tôi",
+      "action": "Link khách mời",
+      "count": "{count} khách",
+      "copy": "Sao chép",
+      "copied": "Đã chép",
+      "copyAll": "Sao chép tất cả",
+      "copiedAll": "Đã chép {count} link",
+      "copyFailed": "Trình duyệt không cho sao chép. Hãy bôi đen link rồi chép tay.",
+      "open": "Mở link của {name}",
+      "editList": "Sửa danh sách",
+      "empty": "Chưa có khách nào. Mở trình chỉnh sửa, nhập danh sách khách vào mục “Link mời riêng từng khách” rồi bấm Lưu.",
+      "disabled": "Tính năng đang tắt nên các link này chỉ hiện lời chào chung. Bật lại trong trình chỉnh sửa là link đã gửi chào đúng tên như cũ.",
+      "draft": "Thiệp chưa có link công khai. Bấm “Lưu & Tạo link” trong trình chỉnh sửa trước khi gửi cho khách.",
+      "shareHint": "Gửi mỗi link cho đúng một người.",
+      "rsvpResponded": "{count} đã phản hồi",
+      "rsvpPending": "Chưa phản hồi",
+      "rsvpAttending": "Tham dự · {count} người",
+      "rsvpDeclined": "Không tham dự"
+    },
+    "rsvp": {
+      "meta": {
+        "title": "Xác nhận tham dự"
+      },
+      "title": "Xác nhận tham dự",
+      "subtitle": "Phản hồi khách mời gửi tới thiệp {title}. Chỉ bạn xem được danh sách này.",
+      "back": "Về Thiệp của tôi",
+      "action": "Xác nhận tham dự",
+      "viewCard": "Xem thiệp",
+      "disabled": "Thiệp đang tắt mục Xác nhận tham dự nên khách không gửi thêm phản hồi được. Bật lại trong trình chỉnh sửa."
+    },
+    "share": {
+      "title": "Link mời chung",
+      "subtitle": "Gửi link này cho khách mời, hoặc in mã QR lên thiệp giấy để khách quét là mở được thiệp.",
+      "linkLabel": "Đường dẫn thiệp",
+      "copy": "Sao chép",
+      "copied": "Đã chép",
+      "qrTitle": "Mã QR mở thiệp {slug}",
+      "qrHint": "Quét mã bằng camera điện thoại là mở thẳng thiệp. Tải về dạng PNG để in.",
+      "downloadQr": "Tải mã QR",
+      "openCard": "Xem thiệp",
+      "viewAllCards": "Xem tất cả thiệp"
+    },
+    "pay": "Thanh toán {price}",
+    "resumePayment": "Tiếp tục thanh toán"
+  },
+  "account": {
+    "meta": {
+      "title": "Tài khoản"
+    },
+    "title": "Tài khoản",
+    "stats": {
+      "cards": "Thiệp",
+      "views": "Khách đã xem",
+      "wishes": "Lời chúc"
+    },
+    "profile": {
+      "heading": "Thông tin cá nhân",
+      "fullName": "Họ và tên",
+      "email": "Email",
+      "emailNote": "Email dùng để đăng nhập, không thay đổi được.",
+      "phone": "Số điện thoại",
+      "phonePlaceholder": "912 345 678",
+      "save": "Lưu thay đổi",
+      "saved": "Đã lưu thay đổi",
+      "errors": {
+        "fullNameRequired": "Vui lòng nhập họ và tên",
+        "phoneInvalid": "Số điện thoại không hợp lệ"
+      }
+    },
+    "prefs": {
+      "heading": "Tùy chỉnh",
+      "emailNotifications": {
+        "label": "Thông báo email",
+        "description": "Thanh toán, đánh giá và tin tức"
+      },
+      "allowShowcase": {
+        "label": "Hiển thị trên trang chủ",
+        "description": "Thiệp có thể được chọn hiển thị trên trang chủ"
+      }
+    },
+    "info": {
+      "heading": "Tài khoản",
+      "role": "Loại tài khoản",
+      "roles": {
+        "customer": "Khách hàng",
+        "admin": "Quản trị viên",
+        "super_admin": "Quản trị viên cấp cao"
+      },
+      "signIn": "Đăng nhập bằng",
+      "signInGoogle": "Google",
+      "signInFacebook": "Facebook",
+      "signInPassword": "Email & mật khẩu",
+      "memberSince": "Thành viên từ"
+    },
+    "danger": {
+      "title": "Xóa tài khoản",
+      "description": "Xóa vĩnh viễn thiệp, lời chúc và mọi dữ liệu — không thể khôi phục.",
+      "action": "Xóa tài khoản",
+      "confirmTitle": "Xóa tài khoản này?",
+      "confirmBody": "Toàn bộ thiệp, link chia sẻ, lời chúc và dữ liệu tài khoản sẽ bị xóa vĩnh viễn. Hành động này không thể hoàn tác.",
+      "confirm": "Xóa vĩnh viễn",
+      "cancel": "Hủy",
+      "success": "Đã xóa tài khoản"
+    }
+  },
+  "pricing": {
+    "meta": {
+      "title": "Bảng giá thiệp mời thiết kế riêng",
+      "description": "Thiệp mời sinh nhật và sự kiện online được thiết kế riêng theo yêu cầu, một mức giá cố định cho mỗi thiệp. Nhận link và mã QR để gửi khách mời."
+    },
+    "title": "Thiệp mời thiết kế riêng",
+    "subtitle": "Mỗi tấm thiệp được thiết kế riêng cho dịp của bạn — sinh nhật, buổi tiệc hay sự kiện. Trao đổi trực tiếp với người thiết kế, nhận link và mã QR để gửi khách.",
+    "custom": {
+      "eyebrow": "Thiết kế riêng",
+      "title": "Thiệp custom",
+      "body": "Tấm thiệp được thiết kế riêng theo câu chuyện, màu sắc và phong cách bạn muốn.",
+      "priceNote": "Một thiệp, thanh toán một lần — link dùng vĩnh viễn",
+      "features": [
+        "Bố cục, màu sắc và font chữ theo ý bạn",
+        "Trao đổi trực tiếp với người thiết kế",
+        "Thanh toán bằng chuyển khoản ngay trong website, link được tạo khi tiền về"
+      ],
+      "cta": "Liên hệ tư vấn",
+      "createCta": "Tạo thiệp",
+      "discountBadge": "Giảm {percent}%"
+    }
+  },
+  "guide": {
+    "meta": {
+      "title": "Hướng dẫn tạo thiệp cưới online",
+      "description": "Đối chiếu từng ô nhập với vị trí hiển thị trên thiệp cưới. Ảnh chụp thật mẫu Đỏ Burgundy có số khoanh đỏ, kèm hướng dẫn tạo và chia sẻ thiệp."
+    },
+    "eyebrow": "Hướng dẫn",
+    "title": "Điền ở đâu, hiện ở đó.",
+    "subtitle": "Nhìn form, đối chiếu thiệp. Hướng dẫn bằng ảnh chụp thật từ thiệp Hoàng Phong & Tú Linh, mẫu Đỏ Burgundy.",
+    "totalTime": "Khoảng {minutes} phút cho lần đầu",
+    "minutes": "{minutes} phút",
+    "stepLabel": "Bước {index}",
+    "stepsTitle": "3 bước từ ý tưởng đến lời mời",
+    "stepsSubtitle": "Bạn có thể soạn thử trước khi đăng nhập. Khi đã sẵn sàng, đăng nhập và nhấn Lưu & Tạo link để lưu thiệp vào tài khoản.",
+    "steps": {
+      "choose": {
+        "title": "Chọn mẫu thiệp",
+        "body": "Bắt đầu từ kho 60+ mẫu. Xem thiệp hoạt động thật trước khi quyết định phong cách cho ngày cưới.",
+        "instructions": [
+          {
+            "title": "Tìm phong cách phù hợp",
+            "body": "Mở Mẫu thiệp để xem các thiết kế tham khảo, hoặc nhắn cho Keemori để được thiết kế riêng theo yêu cầu."
+          },
+          {
+            "title": "Mở bản xem thử",
+            "body": "Chọn mẫu để xem chi tiết rồi mở bản xem thử. Cuộn hết thiệp để xem phong bì, bố cục ảnh, thông tin lễ và tiệc trên cả điện thoại lẫn máy tính."
+          },
+          {
+            "title": "Kiểm tra phần ảnh",
+            "body": "Mỗi mẫu dàn sẵn một số ô ảnh riêng. Album ảnh có trong mọi thiệp và thêm được vào bất kỳ mẫu nào."
+          },
+          {
+            "title": "Bắt đầu soạn thiệp",
+            "body": "Nhấn Dùng mẫu này để mở trình soạn thảo. Bạn có thể nhập nội dung và xem thử trước khi đăng nhập."
+          }
+        ],
+        "hint": "Chọn theo bố cục bạn thích: phông chữ, màu sắc và cách trình bày được thiết kế sẵn theo từng mẫu.",
+        "action": "Khám phá kho mẫu",
+        "caption": "Kho mẫu thật của Keemori: tìm kiếm, lọc và xem từng thiết kế."
+      },
+      "content": {
+        "title": "Điền thông tin và xem thử",
+        "body": "Nhập thông tin hai bạn, thêm ảnh rồi kiểm tra từng phần trước khi tạo link gửi khách.",
+        "instructions": [
+          {
+            "title": "Thông tin cặp đôi và gia đình",
+            "body": "Điền họ tên đầy đủ của cô dâu, chú rể; thêm tên gọi thân mật nếu muốn dùng trên phong bì. Kiểm tra tên bố mẹ và cách xưng hô của hai bên."
+          },
+          {
+            "title": "Tách rõ lễ và tiệc",
+            "body": "Nhập ngày, giờ, địa điểm cho từng nghi lễ và tiệc cưới ở đúng mục. Kiểm tra nút Chỉ đường của tiệc cưới; nếu có nhiều nghi lễ, soát riêng ngày giờ và địa điểm từng lễ."
+          },
+          {
+            "title": "Thêm ảnh vào đúng vị trí",
+            "body": "Chọn ảnh bìa và ảnh cặp đôi theo các ô của mẫu. Ảnh được tải lên ngay khi chọn, kể cả khi bạn chưa đăng nhập. Thêm album ảnh nếu muốn; xem thử để kiểm tra ảnh có bị cắt mặt hoặc che chữ không."
+          },
+          {
+            "title": "Hoàn thiện các phần tùy chọn",
+            "body": "Thêm câu chuyện, lịch trình, nhạc nền, lời cảm ơn hoặc thông tin mừng cưới theo nhu cầu. Dùng công tắc ở từng khối để ẩn những phần bạn không muốn xuất hiện."
+          },
+          {
+            "title": "Đọc lại bản xem thử",
+            "body": "Mở Xem thiệp, kiểm tra trên màn hình điện thoại và máy tính. Soát lỗi chính tả, ngày giờ, ảnh, nhạc và bản đồ. Nếu đã điền dữ liệu mẫu để thử, thay toàn bộ thông tin minh họa trước khi chia sẻ."
+          }
+        ],
+        "hint": "Nhấn Lưu & Tạo link để lưu nội dung. Đừng đóng trình soạn thảo khi ảnh đang tải hoặc thao tác lưu chưa hoàn tất.",
+        "action": "Chọn mẫu để bắt đầu",
+        "caption": "Form của thiệp Hoàng Phong & Tú Linh trên mẫu Đỏ Burgundy."
+      },
+      "share": {
+        "title": "Lưu thiệp, lấy link và mã QR",
+        "body": "Sau khi lưu thành công, thiệp nằm trong Thiệp của tôi và có đường dẫn riêng để gửi khách.",
+        "instructions": [
+          {
+            "title": "Lưu & Tạo link",
+            "body": "Nhấn nút Lưu & Tạo link. Nếu chưa đăng nhập, làm theo màn hình đăng nhập rồi quay lại hoàn tất lưu; nội dung vừa nhập được giữ lại cho bước này."
+          },
+          {
+            "title": "Kiểm tra trạng thái",
+            "body": "Trong Thiệp của tôi, xem trạng thái thiệp: bản nháp hay đã xuất bản. Thiệp đã xuất bản có link vĩnh viễn và không giới hạn lượt xem."
+          },
+          {
+            "title": "Sao chép link hoặc tải mã QR",
+            "body": "Mở Lấy link & QR, nhấn Sao chép để gửi qua Zalo, Messenger hoặc email. Nhấn Tải mã QR để lấy ảnh PNG dùng trên thiệp giấy hoặc bảng đón khách."
+          },
+          {
+            "title": "Thử như một khách mời",
+            "body": "Mở link trên điện thoại và quét thử mã QR bằng camera. Kiểm tra đúng tên hai bạn, đầy đủ thông tin và mở được bản đồ trước khi gửi cho mọi người."
+          },
+          {
+            "title": "Cập nhật sau khi đã gửi",
+            "body": "Khi cần sửa, vào Thiệp của tôi, mở trình chỉnh sửa của tấm thiệp đó và lưu lại. Giữ nguyên đường dẫn để khách mở link đã nhận vẫn xem được nội dung mới; nếu đổi đường dẫn, hãy lấy lại link và mã QR để gửi."
+          }
+        ],
+        "hint": "Ảnh bên cạnh dùng link và mã QR minh họa. Khi gửi khách, luôn lấy link và mã QR từ chính thiệp của bạn.",
+        "action": "Mở Thiệp của tôi",
+        "caption": "Hộp chia sẻ thật: sao chép đường dẫn, xem thiệp và tải mã QR. Dữ liệu chỉ để minh họa."
+      }
+    },
+    "checklist": {
+      "title": "Chuẩn bị trước cho nhanh",
+      "subtitle": "Gom sẵn những thứ này trước khi mở trình soạn thảo, bạn sẽ làm xong thiệp trong một lượt.",
+      "groups": {
+        "couple": {
+          "title": "Về hai bạn",
+          "items": [
+            "Tên đầy đủ và tên gọi thân mật của cô dâu, chú rể",
+            "Tên bố mẹ hai bên",
+            "Một câu chuyện ngắn về hai bạn",
+            "Ảnh chân dung khung dọc"
+          ]
+        },
+        "ceremony": {
+          "title": "Về lễ và tiệc",
+          "items": [
+            "Ngày giờ lễ gia tiên từng bên",
+            "Ngày giờ và địa chỉ tiệc cưới",
+            "Link Google Maps của địa điểm tiệc cưới",
+            "Lịch trình các mốc trong ngày"
+          ]
+        },
+        "media": {
+          "title": "Hình ảnh và âm nhạc",
+          "items": [
+            "Ảnh đã chọn theo các ô của mẫu; album nếu muốn",
+            "Ảnh bìa rõ mặt, có khoảng trống phù hợp cho chữ",
+            "Chọn nhạc nền trong thư viện nếu muốn"
+          ]
+        },
+        "guests": {
+          "title": "Khách mời",
+          "items": [
+            "Danh sách khách chia theo nhóm",
+            "Lời mời riêng cho từng nhóm",
+            "Thông tin tài khoản nhận mừng cưới"
+          ]
+        }
+      }
+    },
+    "tips": {
+      "title": "Kiểm tra lần cuối trước khi gửi",
+      "items": {
+        "mobile": {
+          "title": "Kiểm tra trên điện thoại",
+          "body": "Mở link trên điện thoại để kiểm tra cỡ chữ, cách cắt ảnh và các nút thao tác. Nhờ một người thân đọc lại tên và ngày giờ."
+        },
+        "map": {
+          "title": "Đính link bản đồ",
+          "body": "Khách chỉ cần một cú chạm để mở Google Maps. Ghi thêm số nhà và quận/huyện cho người đi xe khách."
+        },
+        "music": {
+          "title": "Nghe thử nhạc nền",
+          "body": "Thử mở phong bì và nút bật/tắt nhạc trên điện thoại. Trình duyệt có thể cần một thao tác chạm trước khi phát âm thanh."
+        },
+        "qr": {
+          "title": "In mã QR lên thiệp giấy",
+          "body": "Khách lớn tuổi vẫn nhận thiệp giấy, còn bản đồ và lịch trình thì luôn là bản mới nhất."
+        }
+      }
+    },
+    "cta": {
+      "title": "Bắt đầu với một mẫu thiệp",
+      "body": "Chọn mẫu và soạn thử miễn phí. Thiệp thiết kế riêng có giá cố định — xem trang Bảng giá.",
+      "primary": "Chọn mẫu thiệp",
+      "secondary": "Xem bảng giá"
+    },
+    "navigationLabel": "Nội dung hướng dẫn",
+    "startAction": "Xem kho mẫu",
+    "checklistAction": "Xem vị trí từng ô nhập",
+    "fieldMap": {
+      "eyebrow": "FORM → THIỆP",
+      "title": "Mỗi ô nhập, một vị trí trên thiệp",
+      "subtitle": "Chọn nhóm nội dung, rồi chọn ô bạn muốn tìm. Ảnh bên trái là nơi điền; ảnh bên phải là phần khách nhìn thấy.",
+      "legend": "Cùng số khoanh đỏ = cùng một nội dung ở hai ảnh.",
+      "navigation": "Chọn nhóm nội dung",
+      "chooseField": "Chọn ô nhập cần đối chiếu",
+      "formLabel": "Bạn điền ở đây",
+      "cardLabel": "Khách thấy ở đây",
+      "zoom": "Phóng to",
+      "zoomHint": "Ảnh giữ kích thước gốc. Trên điện thoại, vuốt ngang để xem hết ảnh.",
+      "imageLanguage": "Ảnh chụp giao diện tiếng Việt.",
+      "noDirectPosition": "Ô này không có vị trí hiển thị riêng trong thiệp ví dụ. Xem giải thích phía trên; ảnh dưới là phần liên quan để đối chiếu.",
+      "exampleNote": "Ví dụ: Hoàng Phong & Tú Linh · Đỏ Burgundy. Vị trí minh họa theo đúng mẫu này; mẫu khác có thể dàn trang khác. Dùng công tắc ở đầu mỗi nhóm để bật/tắt phần tương ứng. Thông tin và tài khoản trong ảnh chỉ để minh họa. Ảnh là bản chụp tại thời điểm làm hướng dẫn, nên sẽ không tự đổi khi sửa thiệp sau này.",
+      "groups": {
+        "photos": "Ảnh cưới trên thiệp",
+        "envelope": "Phong bì & lời mời",
+        "guests": "Link mời riêng",
+        "couple": "Thông tin cặp đôi",
+        "families": "Thông tin gia đình",
+        "ceremonies": "Lễ cưới (nghi lễ)",
+        "reception": "Tiệc cưới",
+        "dress-code": "Dress code",
+        "timeline": "Lịch trình ngày cưới",
+        "countdown": "Đếm ngược & lịch",
+        "story": "Chuyện của chúng tôi",
+        "album": "Album ảnh cưới",
+        "gifts": "Hộp mừng cưới",
+        "wishes": "Sổ lưu bút",
+        "rsvp": "Xác nhận tham dự",
+        "music": "Nhạc nền",
+        "thanks": "Lời cảm ơn"
+      },
+      "fields": {
+        "1": {
+          "label": "Ảnh bìa",
+          "body": "Ảnh ở ô này nằm trong tấm ảnh polaroid bên trái phong bì đỏ ở đầu thiệp."
+        },
+        "2": {
+          "label": "Ảnh hai bạn",
+          "body": "Hiện trong ảnh chân dung lớn ở cảnh đồ giấy của phần chuyện tình, và được dùng lại trong khung ảnh gần cuối thiệp."
+        },
+        "3": {
+          "label": "Ảnh kèm chuyện tình",
+          "body": "Hiện trong tấm ảnh nhỏ nghiêng bên phải ở cảnh đồ giấy. Đổi ảnh trong ô này để thay đúng tấm ảnh số 3."
+        },
+        "4": {
+          "label": "Lời chào",
+          "body": "Ví dụ “Trân trọng kính mời” hiện dưới tên hai bạn trên bìa. Với link chung, câu này còn hiện trên màn mở đầu."
+        },
+        "5": {
+          "label": "Lời mời",
+          "body": "Đoạn “Chúng tôi rất hân hạnh…” hiện bên dưới thông tin hai gia đình. Hãy viết lời mời đầy đủ ở ô này."
+        },
+        "6": {
+          "label": "Danh sách khách mời",
+          "body": "Mỗi dòng một người. Ví dụ dòng “Cô Lan” tạo lời kính mời Cô Lan trên màn mở đầu khi khách mở link riêng. Bản xem thử dùng tên đầu tiên; lưu thiệp rồi lấy từng link trong Thiệp của tôi → Link khách mời."
+        },
+        "7": {
+          "label": "Họ tên đầy đủ chú rể",
+          "body": "Nhập họ tên chính xác. Riêng Đỏ Burgundy, tên trên bìa ưu tiên ô Tên gọi thân mật (số 9); nếu để trống ô 9, mẫu tự lấy tên từ họ tên đầy đủ này. Không có dòng họ tên đầy đủ riêng trên mẫu này."
+        },
+        "8": {
+          "label": "Họ tên đầy đủ cô dâu",
+          "body": "Nhập họ tên chính xác. Tên hiển thị trên bìa ưu tiên ô Tên gọi thân mật (số 10); khi để trống ô 10, mẫu tự lấy tên từ họ tên đầy đủ này."
+        },
+        "9": {
+          "label": "Tên gọi thân mật chú rể",
+          "body": "“Hoàng Phong” là tên lớn đầu tiên trên bìa; tên này còn được dùng trên tấm giấy trong phong bì, phần báo tin và cuối thiệp."
+        },
+        "10": {
+          "label": "Tên gọi thân mật cô dâu",
+          "body": "“Tú Linh” là tên lớn bên dưới dấu & trên bìa. Tên gọi này cũng được dùng ở các phần ghi tên hai bạn."
+        },
+        "11": {
+          "label": "Con thứ mấy chú rể",
+          "body": "Có thể điền “Trưởng nam”, “Thứ nam”… Đỏ Burgundy hiện không in trường này. Nội dung vẫn được lưu để dùng khi đổi sang mẫu có hiển thị thứ bậc."
+        },
+        "12": {
+          "label": "Con thứ mấy cô dâu",
+          "body": "Có thể điền “Trưởng nữ”, “Thứ nữ”… Đỏ Burgundy hiện không in trường này, nên không có vị trí số 12 trên ảnh thiệp."
+        },
+        "13": {
+          "label": "Họ tên bố chú rể",
+          "body": "Hiện sau chữ “Ông” trong cột Nhà trai, ví dụ Nguyễn Hoàng Nam. Không cần gõ thêm chữ Ông vào ô tên."
+        },
+        "14": {
+          "label": "Họ tên mẹ chú rể",
+          "body": "Hiện sau chữ “Bà”, ngay dưới tên bố trong cột Nhà trai."
+        },
+        "15": {
+          "label": "Địa chỉ nhà trai",
+          "body": "Hiện dưới tên bố mẹ trong cột Nhà trai. Đây là địa chỉ gia đình, không thay địa chỉ tiệc cưới."
+        },
+        "16": {
+          "label": "Họ tên bố cô dâu",
+          "body": "Hiện sau chữ “Ông” trong cột Nhà gái, ví dụ Trần Văn Dũng."
+        },
+        "17": {
+          "label": "Họ tên mẹ cô dâu",
+          "body": "Hiện sau chữ “Bà”, ngay dưới tên bố trong cột Nhà gái."
+        },
+        "18": {
+          "label": "Địa chỉ nhà gái",
+          "body": "Hiện dưới tên bố mẹ trong cột Nhà gái. Kiểm tra đủ số nhà, đường và khu vực."
+        },
+        "19": {
+          "label": "Loại nghi lễ",
+          "body": "Chọn loại lễ để tạo tiêu đề, ví dụ “Lễ ăn hỏi”. Nếu chọn loại khác, nhập tên riêng ở ô xuất hiện thêm. Mỗi nghi lễ thêm vào tạo một mục tương tự."
+        },
+        "20": {
+          "label": "Ngày nghi lễ",
+          "body": "Ngày dương lịch hiện sau giờ ở dòng bên dưới tên lễ. Ví dụ lễ ăn hỏi diễn ra ngày 14/11/2026; các lễ khác có thể có ngày riêng."
+        },
+        "21": {
+          "label": "Giờ nghi lễ",
+          "body": "Giờ và phút ghép thành “08:00” ở đầu dòng ngày giờ. Chọn đúng giờ cho từng lễ, không dùng nhầm giờ tiệc."
+        },
+        "22": {
+          "label": "Địa điểm nghi lễ",
+          "body": "Hiện ngay dưới ngày giờ của nghi lễ tương ứng. Có thể gõ địa chỉ hoặc chọn gợi ý từ địa chỉ gia đình đã nhập."
+        },
+        "23": {
+          "label": "Lời thông báo",
+          "body": "Hiện bằng dòng chữ nghiêng dưới địa điểm, ví dụ “Kính mời họ hàng thân thiết dự lễ ăn hỏi.”"
+        },
+        "24": {
+          "label": "Ngày tiệc",
+          "body": "Tạo số ngày lớn “22” và dòng “tháng 11 năm 2026”. Thứ và ngày âm được tính tự động; ngày còn được nhắc lại trên bìa."
+        },
+        "25": {
+          "label": "Giờ đón khách",
+          "body": "Hiện ở dòng “Đón khách: 17:30”, tách riêng giờ khai tiệc."
+        },
+        "26": {
+          "label": "Giờ khai tiệc",
+          "body": "Hiện trong dòng “Vào lúc 18:30, Chủ Nhật”. Đây là giờ bắt đầu tiệc."
+        },
+        "27": {
+          "label": "Lời dẫn",
+          "body": "Dòng chữ ngay trên địa chỉ nhà hàng. Để trống thì mẫu dùng câu mặc định “Lễ thành hôn được cử hành tại”; bạn có thể viết lại cho hợp lời mời của mình."
+        },
+        "28": {
+          "label": "Địa chỉ nhà hàng",
+          "body": "Tên và địa chỉ địa điểm hiện phía trên nút Chỉ đường. Ghi đủ tên nơi tổ chức và địa chỉ để khách dễ tìm."
+        },
+        "29": {
+          "label": "Bản đồ Google Maps",
+          "body": "Link được gắn vào nút “Chỉ đường”, không in nguyên URL lên thiệp. Dùng link Chia sẻ từ Google Maps và bấm thử nút trước khi gửi khách."
+        },
+        "30": {
+          "label": "Tiêu đề dress code",
+          "body": "Thay dòng tiêu đề phía trên bảng màu, ví dụ “Dresscode”."
+        },
+        "31": {
+          "label": "Mô tả trang phục",
+          "body": "Hiện dưới bảng màu, ví dụ “Sắc đỏ rượu vang, ngà và kem”."
+        },
+        "32": {
+          "label": "Màu sắc",
+          "body": "Các màu đã chọn hiện thành các ô màu trên thiệp. Chọn màu gợi ý, bộ chọn màu hoặc mã màu tùy chỉnh đều cập nhật cùng bảng màu này; tối đa 6 màu."
+        },
+        "33": {
+          "label": "Tiêu đề lịch trình",
+          "body": "Hiện ở đầu phần lịch trình, ví dụ “Lịch trình buổi lễ”."
+        },
+        "34": {
+          "label": "Từ giờ",
+          "body": "Giờ bắt đầu hiện ngay trên tên hoạt động, ví dụ 09:00 cho Lễ thành hôn. Mỗi hoạt động thêm vào có dòng riêng."
+        },
+        "35": {
+          "label": "Đến giờ",
+          "body": "Không bắt buộc. Thiệp ví dụ đang để trống nên chỉ hiện giờ bắt đầu (số 33). Khi điền, hai giờ xuất hiện cùng dòng theo dạng “09:00 – 10:00”."
+        },
+        "36": {
+          "label": "Biểu tượng",
+          "body": "Đỏ Burgundy dùng dấu chấm cố định cho lịch trình, nên lựa chọn biểu tượng không đổi hình ở mẫu này. Các mẫu có biểu tượng sẽ dùng lựa chọn theo loại hoạt động."
+        },
+        "37": {
+          "label": "Hoạt động",
+          "body": "Tên hoạt động hiện dưới giờ tương ứng, ví dụ “Lễ thành hôn”, “Đón khách”, “Tiệc mừng”."
+        },
+        "38": {
+          "label": "Ngày đếm ngược",
+          "body": "Ngày được đánh dấu trên lịch. Đây là mốc riêng cho lịch và bộ đếm ngược, nên hãy kiểm tra cùng với ngày tiệc."
+        },
+        "39": {
+          "label": "Giờ đếm ngược",
+          "body": "Giờ này kết hợp với ngày số 37 để tính số ngày, giờ, phút, giây còn lại và tạo sự kiện khi khách lưu lịch. Các con số trong ảnh thay đổi theo thời điểm xem."
+        },
+        "40": {
+          "label": "Đoạn chuyện tình",
+          "body": "Hiện ngay dưới tiêu đề “Và những ngày sau, vẫn cùng nhau.” và phía trên cảnh ảnh đồ giấy. Viết câu chuyện của hai bạn ở đây."
+        },
+        "41": {
+          "label": "Album ảnh cưới",
+          "body": "Các ảnh tải lên hiện thành album kéo ngang. Chạm ảnh để xem lớn. Album này tách biệt các ô ảnh thiết kế."
+        },
+        "42": {
+          "label": "Ngân hàng chú rể",
+          "body": "Hiện trong hộp mở ra khi khách bấm phong bì “Chú rể”, đồng thời dùng để tạo mã QR."
+        },
+        "43": {
+          "label": "Số tài khoản chú rể",
+          "body": "Hiện dưới nhãn Số tài khoản trong hộp của chú rể và được mã hóa vào QR. Ví dụ trong ảnh chỉ để minh họa."
+        },
+        "44": {
+          "label": "Tên chủ tài khoản chú rể",
+          "body": "Hiện dưới tên ngân hàng. Điền đúng tên chủ tài khoản của tài khoản nhận mừng cưới."
+        },
+        "45": {
+          "label": "Ngân hàng cô dâu",
+          "body": "Tương tự bên chú rể, nhưng hiện trong hộp của phong bì “Cô dâu”."
+        },
+        "46": {
+          "label": "Số tài khoản cô dâu",
+          "body": "Hiện trong hộp của cô dâu; kiểm tra riêng tài khoản này trước khi chia sẻ thiệp."
+        },
+        "47": {
+          "label": "Tên chủ tài khoản cô dâu",
+          "body": "Hiện dưới tên ngân hàng trong hộp mừng cưới của cô dâu."
+        },
+        "48": {
+          "label": "Sổ lưu bút",
+          "body": "Bật khối để khách có form gửi lời chúc. Danh sách ở editor dùng để duyệt; chỉ lời chúc đã duyệt mới hiện trên thiệp công khai. Bản xem thử minh họa vị trí form."
+        },
+        "49": {
+          "label": "Xác nhận tham dự",
+          "body": "Bật khối để khách điền tên, lựa chọn tham dự và số người. Số liệu, danh sách phản hồi trong editor chỉ chủ thiệp xem được; không đưa lên thiệp công khai."
+        },
+        "50": {
+          "label": "Chọn nhạc nền",
+          "body": "Bài nhạc phát qua nút tròn ở góc màn hình; tên bài không in thành một mục trên thiệp. Khách chạm để bật/tắt, trình duyệt có thể yêu cầu thao tác trước khi phát."
+        },
+        "51": {
+          "label": "Nội dung lời cảm ơn",
+          "body": "Hiện dưới chữ “Thank you” ở cuối thiệp. Dùng lời cảm ơn ngắn dành cho khách đã xem hoặc đến dự."
+        }
+      }
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Quản trị"
+    },
+    "title": "Quản trị",
+    "nav": {
+      "label": "Điều hướng quản trị",
+      "comingSoon": "Màn hình này chưa được dựng",
+      "items": {
+        "dashboard": "Tổng quan",
+        "users": "Người dùng",
+        "settings": "Cấu hình link",
+        "faq": "FAQ",
+        "templateTags": "Tag mẫu thiệp",
+        "homepage": "Mẫu trên trang chủ",
+        "cards": "Thiệp đã tạo",
+        "analytics": "Phân tích"
+      },
+      "dashboard": "Dashboard",
+      "templates": "Mẫu thiệp"
+    },
+    "backendNote": "Mọi giới hạn, quyền sở hữu và quyền truy cập đều do backend kiểm tra.",
+    "errors": {
+      "required": "Vui lòng nhập thông tin này.",
+      "emailInvalid": "Email không hợp lệ.",
+      "numberMin": "Giá trị phải lớn hơn 0.",
+      "failed": "Thao tác không thành công, vui lòng thử lại."
+    },
+    "loading": "Đang tải…",
+    "roles": {
+      "customer": "Khách hàng",
+      "admin": "Admin",
+      "super_admin": "Super admin"
+    },
+    "overview": {
+      "subtitle": "Khu vực vận hành. Mục có biểu tượng khoá là màn hình chưa dựng.",
+      "roadmap": "Đợt tiếp theo: FAQ, blog, đánh giá trang chủ và hồ sơ đối tác công khai."
+    },
+    "users": {
+      "title": "Người dùng",
+      "subtitle": "Khách mua thiệp và tài khoản đối tác nằm chung ở đây; khác nhau ở quyền và ở cửa hàng.",
+      "searchPlaceholder": "Tìm theo email hoặc họ tên",
+      "roleFilter": "Lọc theo quyền",
+      "allRoles": "Tất cả quyền",
+      "total": "{count} tài khoản",
+      "empty": "Không có tài khoản nào khớp.",
+      "promote": "Nâng lên đối tác",
+      "promoted": "Đã nâng {name} lên đối tác",
+      "roleChanged": "Đã đổi quyền tài khoản",
+      "columns": {
+        "name": "Tài khoản",
+        "role": "Quyền",
+        "createdAt": "Ngày tạo",
+        "actions": "Thao tác"
+      }
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Liên hệ",
+      "description": "Các kênh liên hệ với Thiệp Cưới Online: hỗ trợ khách hàng và báo lỗi kỹ thuật."
+    },
+    "eyebrow": "Liên hệ",
+    "title": "Cần hỗ trợ? Nhắn cho chúng tôi",
+    "subtitle": "Chọn đúng kênh bên dưới để được trả lời nhanh nhất. Trong giờ làm việc, phần lớn yêu cầu được phản hồi trong vòng vài giờ.",
+    "responseNote": "Thời gian phản hồi trung bình: trong ngày làm việc.",
+    "channelsTitle": "Kênh liên hệ",
+    "channels": {
+      "email": {
+        "title": "Email",
+        "description": "Thắc mắc về thiệp, thanh toán, link chia sẻ, tài khoản.",
+        "action": "Gửi email"
+      },
+      "zalo": {
+        "title": "Zalo",
+        "description": "Nhắn tin cho Keemori qua Zalo bằng số bên dưới — tiện nhất khi bạn đang cầm điện thoại.",
+        "action": "Nhắn tin Zalo cho Keemori"
+      },
+      "fanpage": {
+        "title": "Fanpage",
+        "description": "Nhắn tin trực tiếp cho trang Keemori trên Facebook, hợp khi cần trả lời nhanh.",
+        "action": "Nhắn tin qua fanpage",
+        "value": "Nhắn tin trên Facebook"
+      },
+      "instagram": {
+        "title": "Instagram",
+        "description": "Xem các mẫu thiệp mới, thiệp khách đã tạo và nhắn tin trực tiếp cho Keemori.",
+        "action": "Mở trang Instagram của Keemori",
+        "value": "Theo dõi trên Instagram"
+      },
+      "tiktok": {
+        "title": "TikTok",
+        "description": "Video giới thiệu mẫu thiệp và mẹo tạo thiệp nhanh, kèm tin nhắn trực tiếp khi cần hỏi.",
+        "action": "Mở kênh TikTok của Keemori",
+        "value": "Theo dõi trên TikTok"
+      }
+    },
+    "hoursTitle": "Giờ làm việc",
+    "hours": [
+      "Thứ Hai – Thứ Sáu: 8:30 – 18:00",
+      "Thứ Bảy: 8:30 – 12:00",
+      "Chủ nhật và ngày lễ: nghỉ, email vẫn được ghi nhận"
+    ],
+    "beforeTitle": "Trước khi liên hệ",
+    "beforeBody": "Nhiều câu hỏi thường gặp đã có sẵn câu trả lời. Xem trước hai mục dưới đây sẽ nhanh hơn chờ email.",
+    "beforeGuide": "Xem hướng dẫn tạo thiệp",
+    "beforePricing": "Xem bảng giá",
+    "formNote": "Chưa có biểu mẫu liên hệ trực tuyến — vui lòng dùng email, Zalo hoặc fanpage ở trên."
+  },
+  "faqPage": {
+    "meta": {
+      "title": "Câu hỏi thường gặp về thiệp cưới online",
+      "description": "Giải đáp về thiệp mời thiết kế riêng: giá, thanh toán chuyển khoản, ô ảnh và album, link chia sẻ và lời chúc của khách."
+    },
+    "eyebrow": "Hỗ trợ",
+    "title": "Câu hỏi thường gặp",
+    "subtitle": "Tất cả những điều khách hỏi trước khi đặt thiệp — từ giá và cách thanh toán đến cách khách mời gửi lời chúc.",
+    "count": "{count} câu hỏi",
+    "breadcrumb": "Câu hỏi thường gặp",
+    "help": {
+      "title": "Không tìm thấy câu trả lời?",
+      "body": "Nhắn cho chúng tôi. Trong giờ làm việc, phần lớn yêu cầu được phản hồi trong vòng vài giờ.",
+      "contact": "Liên hệ hỗ trợ",
+      "guide": "Xem hướng dẫn tạo thiệp"
+    },
+    "cta": {
+      "title": "Bắt đầu với một mẫu thiệp",
+      "body": "Xem mẫu tham khảo, rồi nhắn cho chúng tôi để đặt thiệp thiết kế riêng.",
+      "primary": "Chọn mẫu thiệp",
+      "secondary": "Xem bảng giá"
+    }
+  },
+  "legal": {
+    "shared": {
+      "eyebrow": "Pháp lý",
+      "versionLabel": "Phiên bản",
+      "effectiveLabel": "Hiệu lực từ",
+      "updatedLabel": "Cập nhật lần cuối",
+      "tocTitle": "Nội dung",
+      "pendingLabel": "Mục này chưa được chốt nội dung. Chúng tôi để trống thay vì đưa ra một quy định chưa được xác nhận — nếu bạn cần câu trả lời cho trường hợp cụ thể của mình, vui lòng liên hệ kênh hỗ trợ.",
+      "relatedTitle": "Văn bản liên quan"
+    },
+    "terms": {
+      "meta": {
+        "title": "Điều khoản sử dụng",
+        "description": "Điều khoản sử dụng dịch vụ thiết kế thiệp mời sự kiện online theo yêu cầu của Keemori: đặt thiết kế, thanh toán, tài khoản, nội dung và trách nhiệm của các bên."
+      },
+      "title": "Điều khoản sử dụng",
+      "subtitle": "Điều khoản này áp dụng cho dịch vụ thiết kế thiệp mời sự kiện online theo yêu cầu (thiệp custom) của Keemori. Khi đặt thiết kế, thanh toán hoặc đăng nhập vào tài khoản chúng tôi tạo cho bạn, bạn đồng ý với các nội dung dưới đây.",
+      "sections": [
+        {
+          "heading": "1. Chấp nhận điều khoản",
+          "body": [
+            "Khi đặt thiết kế, thanh toán hoặc đăng nhập vào tài khoản Keemori, bạn xác nhận đã đọc, hiểu và đồng ý bị ràng buộc bởi các điều khoản này.",
+            "Chúng tôi ghi lại việc bạn chấp thuận kèm phiên bản của văn bản tại thời điểm đó. Số phiên bản hiện ở đầu trang này, và bạn có thể yêu cầu bản trích xuất lịch sử chấp thuận của chính mình.",
+            "Nếu bạn không đồng ý với bất kỳ nội dung nào, vui lòng không đặt thiết kế và ngừng sử dụng dịch vụ."
+          ]
+        },
+        {
+          "heading": "2. Dịch vụ",
+          "body": [
+            "Keemori thiết kế thiệp mời online theo yêu cầu cho sự kiện của bạn — sinh nhật, khai trương, hội nghị, tiệc và các sự kiện khác. Mỗi thiệp được thiết kế riêng cho một sự kiện, không chọn từ kho mẫu có sẵn.",
+            "Thiệp là một trang web có đường dẫn riêng và mã QR, để bạn gửi cho khách mời qua tin nhắn, mạng xã hội hoặc in lên giấy.",
+            "Phạm vi thiết kế của từng thiệp — nội dung, phong cách, các khối thông tin và tính năng đi kèm — được hai bên thống nhất khi tư vấn, trước khi bạn thanh toán.",
+            "Dịch vụ không có bản dùng thử. Chúng tôi chỉ bắt đầu thiết kế sau khi nhận đủ tiền."
+          ]
+        },
+        {
+          "heading": "3. Quy trình đặt thiết kế",
+          "body": [
+            "Bạn liên hệ qua các kênh ở trang Liên hệ, mô tả sự kiện và mong muốn của mình. Chúng tôi tư vấn và báo giá.",
+            "Khi hai bên thống nhất yêu cầu, bạn thanh toán toàn bộ giá trị đơn bằng chuyển khoản. Chúng tôi bắt đầu thiết kế sau khi tiền về.",
+            "Chúng tôi tạo một tài khoản Keemori cho bạn, đặt thiệp vào tài khoản đó và gửi thông tin đăng nhập để bạn xem bản thiết kế.",
+            "Bạn góp ý qua kênh hai bên đang trao đổi, và chúng tôi chỉnh sửa theo thoả thuận khi tư vấn. Thiệp được xuất bản khi bạn xác nhận duyệt bản cuối.",
+            "Thời gian hoàn thành phụ thuộc vào độ phức tạp của thiết kế và tốc độ phản hồi của hai bên; mốc dự kiến được báo khi tư vấn."
+          ]
+        },
+        {
+          "heading": "4. Tài khoản",
+          "body": [
+            "Tài khoản của bạn do chúng tôi tạo bằng địa chỉ email bạn cung cấp. Hãy đổi mật khẩu ngay lần đăng nhập đầu tiên; từ đó bạn tự chịu trách nhiệm bảo mật mật khẩu của mình.",
+            "Bạn cũng đăng nhập được bằng tài khoản Google hoặc Facebook dùng cùng địa chỉ email đó.",
+            "Mọi hoạt động phát sinh từ tài khoản của bạn được xem là do bạn thực hiện. Hãy báo cho chúng tôi ngay khi nghi ngờ tài khoản bị truy cập trái phép.",
+            "Trong tài khoản, bạn tự sửa được phần nội dung chữ của thiệp: thông tin sự kiện, thời gian, địa điểm và lời mời. Bố cục, phông chữ, màu sắc và phần thiết kế do Keemori thực hiện thì không tự thay đổi được — muốn đổi, vui lòng liên hệ chúng tôi."
+          ]
+        },
+        {
+          "heading": "5. Giá và thanh toán",
+          "body": [
+            "Giá niêm yết tại trang Bảng giá, tính bằng Đồng Việt Nam. Giá của một đơn được chốt khi bạn tạo đơn thanh toán, gồm cả khuyến mãi hoặc mã giảm giá áp dụng lúc đó.",
+            "Bạn thanh toán 100% giá trị đơn bằng chuyển khoản ngân hàng (mã VietQR) ngay trong website. Link công khai của thiệp chỉ được tạo sau khi tiền về.",
+            "Dịch vụ không hoàn tiền sau khi bạn đã thanh toán, trừ trường hợp thiệp bị lỗi kỹ thuật do Keemori gây ra.",
+            "Chi tiết về quy trình thanh toán, xử lý chuyển khoản sai và hoàn tiền nằm ở Chính sách thanh toán & hoàn tiền."
+          ]
+        },
+        {
+          "heading": "6. Đường dẫn và thời hạn của thiệp",
+          "body": [
+            "Thiệp đã thanh toán không có hạn dùng và không giới hạn số người xem, chừng nào tài khoản của bạn còn tồn tại.",
+            "Mỗi thiệp có một đường dẫn công khai. Bất kỳ ai có đường dẫn đều xem được thiệp; chúng tôi không đặt mật khẩu cho từng thiệp.",
+            "Một đường dẫn đã cấp cho thiệp của bạn sẽ không được cấp lại cho thiệp của người khác.",
+            "Mỗi thiệp được thiết kế cho một sự kiện, và không được dùng lại cho sự kiện khác bằng cách thay thông tin. Sau 15 ngày kể từ lần thanh toán đầu tiên, tên chủ sự kiện hiển thị trên thiệp không còn tự chỉnh sửa được; nếu cần đổi, vui lòng liên hệ bộ phận hỗ trợ."
+          ]
+        },
+        {
+          "heading": "7. Nội dung của bạn",
+          "body": [
+            "Bạn giữ toàn bộ quyền đối với nội dung mình cung cấp: tên, ảnh, logo, lời mời và thông tin sự kiện.",
+            "Bạn cấp cho chúng tôi quyền lưu trữ, xử lý và hiển thị nội dung đó trong phạm vi cần thiết để thiết kế thiệp và vận hành dịch vụ — ví dụ hiển thị thiệp cho người nhận link.",
+            "Bạn chịu trách nhiệm về tính hợp pháp của nội dung, bao gồm quyền sử dụng ảnh, logo, thương hiệu và thông tin của người khác mà bạn cung cấp cho chúng tôi.",
+            "Nếu thiệp có sổ lưu bút, lời chúc của khách mời chỉ hiển thị sau khi bạn duyệt, và bạn xoá được bất kỳ lời chúc nào vào bất kỳ lúc nào. Bạn là người quyết định nội dung nào xuất hiện trên thiệp của mình."
+          ]
+        },
+        {
+          "heading": "8. Nội dung không được phép",
+          "body": [
+            "Không đăng nội dung vi phạm pháp luật, xâm phạm quyền của người khác, mang tính lừa đảo, quấy rối hoặc thù ghét.",
+            "Không dùng dịch vụ để phát tán mã độc, thư rác, hoặc để thu thập dữ liệu người khác trái phép.",
+            "Không cố gắng dò tìm, can thiệp hoặc làm gián đoạn hệ thống.",
+            "Chúng tôi có quyền từ chối thiết kế nội dung vi phạm các điều trên."
+          ]
+        },
+        {
+          "heading": "9. Quyền sở hữu trí tuệ",
+          "body": [
+            "Mã nguồn, nền tảng và thương hiệu Keemori thuộc về chúng tôi hoặc bên cấp phép cho chúng tôi.",
+            "Thiết kế làm riêng cho bạn được dùng cho sự kiện ghi trong đơn, dưới dạng thiệp online trên nền tảng Keemori. Bạn không được sao chép, bán lại hoặc dùng thiết kế đó làm mẫu cho bên thứ ba."
+          ]
+        },
+        {
+          "heading": "10. Tạm ngừng và chấm dứt",
+          "body": [
+            "Chúng tôi có thể tạm ngừng hoặc chấm dứt tài khoản vi phạm điều khoản này, và sẽ thông báo trước khi có thể.",
+            "Bạn có thể ngừng sử dụng dịch vụ bất cứ lúc nào. Khi bạn tự xoá tài khoản, dữ liệu tài khoản bị xoá thật, các link thiệp gắn với tài khoản ngừng hoạt động, và khoản đã thanh toán không được hoàn lại.",
+            "Tài khoản bị chúng tôi vô hiệu hoá vì vi phạm sẽ mất quyền đăng nhập nhưng dữ liệu được giữ lại phục vụ đối chiếu — xem Chính sách bảo mật."
+          ]
+        },
+        {
+          "heading": "11. Giới hạn trách nhiệm",
+          "body": [
+            "Dịch vụ được cung cấp theo hiện trạng. Chúng tôi nỗ lực duy trì hệ thống ổn định nhưng không cam kết dịch vụ không bao giờ gián đoạn.",
+            "Trong phạm vi pháp luật cho phép, trách nhiệm của chúng tôi đối với một sự cố không vượt quá số tiền bạn đã thanh toán cho thiệp liên quan.",
+            "Giới hạn này không áp dụng cho những trách nhiệm mà pháp luật không cho phép loại trừ."
+          ]
+        },
+        {
+          "heading": "12. Thay đổi điều khoản",
+          "body": [
+            "Điều khoản có thể được cập nhật khi dịch vụ thay đổi. Phiên bản và ngày cập nhật gần nhất luôn hiển thị ở đầu trang này.",
+            "Nếu thay đổi ảnh hưởng đáng kể đến quyền lợi của bạn, chúng tôi sẽ thông báo qua email hoặc trên chính sản phẩm trước khi áp dụng, và có thể yêu cầu bạn chấp thuận lại phiên bản mới."
+          ]
+        },
+        {
+          "heading": "13. Khiếu nại và giải quyết tranh chấp",
+          "body": [
+            "Mọi khiếu nại về dịch vụ — chất lượng, thanh toán, dữ liệu cá nhân hoặc nội dung trên nền tảng — gửi qua email hỗ trợ hoặc Facebook Messenger. Mọi khiếu nại đều được ghi nhận, kể cả khi kết quả cuối cùng là chúng tôi không thực hiện được yêu cầu của bạn.",
+            "Để xử lý nhanh, khiếu nại nên có:",
+            "- Email của tài khoản liên quan.",
+            "- Đường dẫn thiệp hoặc mã đơn hàng, nếu có.",
+            "- Mô tả sự việc và thời điểm xảy ra.",
+            "- Kết quả bạn mong muốn.",
+            "Với khiếu nại về giao dịch, nên kèm thời điểm chuyển khoản và số tiền — hai thông tin này đủ để chúng tôi tìm ra khoản tiền trong sổ.",
+            "Chúng tôi trả lời bằng chính kênh bạn đã dùng để gửi khiếu nại, nêu rõ kết luận và căn cứ. Nếu chưa hài lòng với kết quả, bạn có thể yêu cầu xem xét lại một lần kèm thông tin hoặc lập luận bổ sung. Chúng tôi xử lý nhanh nhất có thể và trả lời trong tối đa 3 ngày làm việc kể từ khi nhận được khiếu nại. Nếu sự việc phải xác minh với bên thứ ba — ngân hàng hoặc nhà cung cấp dịch vụ thanh toán — mà chưa thể kết luận trong thời hạn đó, chúng tôi vẫn trả lời trong 3 ngày làm việc để nêu rõ tình trạng và thời điểm dự kiến có kết luận.",
+            "Hai bên ưu tiên giải quyết bằng thương lượng. Nếu không đạt được thoả thuận, bạn có quyền khiếu nại tới cơ quan bảo vệ quyền lợi người tiêu dùng có thẩm quyền, hoặc khởi kiện tại toà án có thẩm quyền theo pháp luật Việt Nam. Việc gửi khiếu nại tới chúng tôi không hạn chế quyền của bạn theo pháp luật."
+          ]
+        },
+        {
+          "heading": "14. Liên hệ",
+          "body": [
+            "Mọi câu hỏi về điều khoản này được tiếp nhận qua email hỗ trợ hoặc Facebook Messenger của Keemori."
+          ],
+          "contact": true
+        }
+      ]
+    },
+    "privacy": {
+      "meta": {
+        "title": "Chính sách bảo mật",
+        "description": "Chính sách bảo mật của Keemori: dữ liệu chúng tôi thu thập khi thiết kế thiệp mời sự kiện theo yêu cầu, cách sử dụng, chia sẻ với ai và quyền của bạn."
+      },
+      "title": "Chính sách bảo mật",
+      "subtitle": "Trang này giải thích chúng tôi thu thập dữ liệu gì, dùng để làm gì, chia sẻ với ai và bạn có những quyền nào đối với dữ liệu của mình.",
+      "sections": [
+        {
+          "heading": "1. Phạm vi áp dụng",
+          "body": [
+            "Chính sách này áp dụng cho website Keemori, dịch vụ thiết kế thiệp mời sự kiện theo yêu cầu, và các thiệp được tạo, chia sẻ qua dịch vụ này.",
+            "Với dữ liệu khách mời trong một tấm thiệp, chủ thiệp là người quyết định thu thập những gì; chúng tôi xử lý dữ liệu đó thay mặt chủ thiệp."
+          ]
+        },
+        {
+          "heading": "2. Dữ liệu chúng tôi thu thập",
+          "body": [
+            "Thông tin khi tư vấn: tên, email, số điện thoại, kênh bạn liên hệ (Zalo, Facebook Messenger, email), mô tả sự kiện và yêu cầu thiết kế.",
+            "Dữ liệu tài khoản: tài khoản do chúng tôi tạo bằng email bạn cung cấp, cùng tên hiển thị và số điện thoại nếu có. Mật khẩu ban đầu do chúng tôi đặt và gửi cho bạn; sau khi bạn đổi, mật khẩu chỉ được lưu ở dạng băm một chiều và chúng tôi không đọc được.",
+            "Nếu bạn đăng nhập bằng Google hoặc Facebook, chúng tôi nhận từ nhà cung cấp đó địa chỉ email và tên hiển thị của bạn, cùng một mã định danh để nhận ra bạn ở lần đăng nhập sau. Chúng tôi không nhận mật khẩu của bạn ở các dịch vụ đó.",
+            "Nội dung thiệp: tên chủ sự kiện, thời gian và địa điểm, ảnh, logo, lời mời và thông tin nhận quà mừng (nếu có) do bạn cung cấp hoặc tự nhập.",
+            "Nội dung khách mời gửi: tên và lời chúc trong sổ lưu bút; tên, có tham dự hay không và số người đi cùng nếu thiệp có phần xác nhận tham dự.",
+            "Dữ liệu kỹ thuật: địa chỉ IP, loại trình duyệt, thời điểm truy cập, và một mã người xem ngẫu nhiên đặt trong cookie của khách mời để đếm số người đã xem thiệp.",
+            "Dữ liệu thanh toán: đơn hàng (số tiền, mã giảm giá đã dùng, thời điểm), cùng số tiền, thời điểm, tên và số tài khoản người chuyển do ngân hàng báo về qua SePay để đối soát. Bạn chuyển khoản bằng ứng dụng ngân hàng của mình theo mã VietQR hiển thị trong website; tiền vào thẳng tài khoản ngân hàng của chúng tôi và chúng tôi không nhận hay lưu số thẻ của bạn."
+          ]
+        },
+        {
+          "heading": "3. Mục đích sử dụng",
+          "body": [
+            "Tư vấn, thiết kế thiệp theo yêu cầu và liên lạc với bạn trong quá trình làm thiệp.",
+            "Tạo, lưu và hiển thị thiệp của bạn cho người nhận link.",
+            "Xác thực đăng nhập, giữ phiên và bảo vệ tài khoản khỏi truy cập trái phép.",
+            "Tạo đơn thanh toán, đối soát khoản chuyển khoản của bạn với đơn đó và gửi biên nhận.",
+            "Gửi email giao dịch: thông tin tài khoản, đặt lại mật khẩu và biên nhận thanh toán. Chúng tôi không gửi email tiếp thị nếu bạn không đăng ký nhận.",
+            "Đếm số người đã xem một thiệp, để bạn biết thiệp của mình đã tới bao nhiêu người.",
+            "Phát hiện lạm dụng, chống spam và cải thiện chất lượng dịch vụ."
+          ]
+        },
+        {
+          "heading": "4. Cookie và công nghệ tương tự",
+          "body": [
+            "Chúng tôi dùng cookie để giữ phiên đăng nhập và làm mới phiên khi hết hạn.",
+            "Khách mời mở một thiệp được đặt một cookie chứa mã người xem ngẫu nhiên. Mã này không gắn với danh tính của ai; nó chỉ để cùng một người mở thiệp nhiều lần không bị đếm thành nhiều người.",
+            "Chúng tôi dùng Google Analytics để đo lượng truy cập các trang giới thiệu và bảng giá. Công cụ này đặt cookie thống kê và cho chúng tôi biết số liệu tổng hợp — số phiên, nguồn truy cập, thiết bị — chứ không cho biết bạn là ai.",
+            "Trang thiệp của bạn nằm ngoài phạm vi đo lường này: chúng tôi cố ý không nạp Google Analytics trên trang thiệp, nên đường dẫn thiệp và thông tin trên đó không được gửi tới Google.",
+            "Không có cookie nào phục vụ quảng cáo cá nhân hoá, và chúng tôi không dùng dịch vụ theo dõi quảng cáo của bên thứ ba.",
+            "Một số biểu mẫu được bảo vệ bằng reCAPTCHA để chặn gửi tự động; việc này khiến trình duyệt của bạn trao đổi dữ liệu với Google theo chính sách riêng của họ."
+          ]
+        },
+        {
+          "heading": "5. Chia sẻ dữ liệu và bên thứ ba",
+          "body": [
+            "Chúng tôi không bán dữ liệu cá nhân của bạn.",
+            "Dữ liệu chỉ được chia sẻ với các nhà cung cấp phục vụ vận hành, trong phạm vi từng bên thật sự cần:",
+            "- Nhà cung cấp hạ tầng máy chủ và cơ sở dữ liệu.",
+            "- Resend — gửi email giao dịch (thông tin tài khoản, đặt lại mật khẩu, biên nhận thanh toán).",
+            "- SePay — nhận thông báo giao dịch từ ngân hàng để tự động đối soát khoản chuyển khoản của bạn với đơn thanh toán.",
+            "- Cloudflare R2 — lưu trữ và phân phối ảnh trên thiệp.",
+            "- Google và Facebook — chỉ khi bạn chọn đăng nhập bằng tài khoản của họ.",
+            "- Google reCAPTCHA — chống gửi biểu mẫu tự động.",
+            "- Google Analytics — đo lượng truy cập các trang giới thiệu, không áp dụng cho trang thiệp.",
+            "- Photon / OpenStreetMap hoặc Google Places — gợi ý địa chỉ khi nhập địa điểm sự kiện.",
+            "Tin nhắn bạn gửi cho chúng tôi qua Zalo hoặc Facebook Messenger đi qua nền tảng đó và chịu chính sách bảo mật riêng của họ.",
+            "Google Maps Embed chạy trong trình duyệt của khách mời khi thiệp có bản đồ. Trong trường hợp đó, trình duyệt của khách mời kết nối trực tiếp tới Google theo chính sách riêng của Google, không đi qua máy chủ của chúng tôi.",
+            "Chúng tôi có thể cung cấp dữ liệu khi có yêu cầu hợp pháp của cơ quan nhà nước có thẩm quyền."
+          ]
+        },
+        {
+          "heading": "6. Thiệp công khai, sổ lưu bút và xác nhận tham dự",
+          "body": [
+            "Bất kỳ ai có link thiệp đều xem được nội dung thiệp đó. Hãy cân nhắc trước khi đưa lên những thông tin nhạy cảm như địa chỉ nhà riêng hoặc số tài khoản cá nhân.",
+            "Tuỳ thiết kế, thiệp có thể có sổ lưu bút — nơi khách mời để lại tên và lời chúc — và phần xác nhận tham dự, nơi khách cho biết có đi hay không và đi mấy người.",
+            "Lời chúc gửi lên nằm ở trạng thái chờ duyệt và chỉ hiển thị trên thiệp sau khi chủ thiệp duyệt. Chủ thiệp xoá được bất kỳ lời chúc nào. Phản hồi xác nhận tham dự không bao giờ hiển thị công khai; chỉ chủ thiệp xem được.",
+            "Dữ liệu khách mời nhập là dữ liệu của chủ thiệp; chúng tôi lưu giúp và không dùng cho mục đích nào khác."
+          ]
+        },
+        {
+          "heading": "7. Ảnh trên thiệp",
+          "body": [
+            "Ảnh được nén lại trước khi lưu, và toàn bộ metadata bị loại bỏ trong quá trình đó — bao gồm toạ độ GPS mà điện thoại thường gắn vào ảnh.",
+            "Đây là điều có chủ đích: thiệp là một link công khai, và một tấm ảnh còn nguyên toạ độ sẽ tiết lộ vị trí chụp cho bất kỳ ai mở thiệp.",
+            "Ảnh đã tải lên được phục vụ qua đường dẫn khó đoán nhưng không yêu cầu đăng nhập. Ai có đường dẫn ảnh đều xem được ảnh.",
+            "Khi một thiệp bị xoá, tệp ảnh của thiệp đó bị xoá khỏi kho lưu trữ, không chỉ gỡ khỏi giao diện."
+          ]
+        },
+        {
+          "heading": "8. Bảo mật",
+          "body": [
+            "Kết nối tới dịch vụ được mã hoá bằng HTTPS. Mật khẩu được băm một chiều trước khi lưu.",
+            "Nhân sự Keemori xem nội dung thiệp của bạn trong quá trình thiết kế, chỉnh sửa và hỗ trợ. Quyền truy cập dữ liệu nội bộ được giới hạn theo vai trò và chỉ dùng cho các mục đích đó.",
+            "Không hệ thống nào an toàn tuyệt đối; hãy đổi mật khẩu ban đầu, dùng mật khẩu mạnh và không chia sẻ tài khoản."
+          ]
+        },
+        {
+          "heading": "9. Quyền của bạn",
+          "body": [
+            "Bạn có quyền xem, sửa hoặc yêu cầu xoá dữ liệu cá nhân của mình.",
+            "Bạn có quyền yêu cầu bản sao dữ liệu, bao gồm lịch sử chấp thuận các văn bản pháp lý, và rút lại sự đồng ý đã cấp trước đó.",
+            "Để thực hiện các quyền này, gửi yêu cầu qua kênh hỗ trợ ở trang Liên hệ; chúng tôi có thể cần xác minh danh tính trước khi xử lý."
+          ]
+        },
+        {
+          "heading": "10. Trẻ em",
+          "body": [
+            "Người đặt thiết kế và chủ tài khoản phải từ 18 tuổi trở lên. Chúng tôi không chủ động thu thập dữ liệu của trẻ em; nếu phát hiện, dữ liệu sẽ được xoá."
+          ]
+        },
+        {
+          "heading": "11. Thay đổi chính sách",
+          "body": [
+            "Chính sách có thể được cập nhật theo thay đổi của dịch vụ hoặc quy định pháp luật. Phiên bản và ngày cập nhật gần nhất luôn hiển thị ở đầu trang này."
+          ]
+        },
+        {
+          "heading": "12. Xoá tài khoản",
+          "body": [
+            "Bạn tự xoá tài khoản trong phần Tài khoản: dữ liệu tài khoản bị xoá thật, địa chỉ email được giải phóng và đăng ký lại được bằng email đó.",
+            "Chúng tôi vô hiệu hoá một tài khoản (ví dụ vì vi phạm điều khoản): tài khoản mất quyền đăng nhập, dữ liệu liên quan được giữ nguyên, và địa chỉ email đó không đăng ký lại được.",
+            "Trong cả hai trường hợp, đơn hàng và giao dịch thanh toán không bị xoá theo — pháp luật về kế toán buộc phải giữ lại chứng từ."
+          ]
+        },
+        {
+          "heading": "13. Thời gian lưu trữ",
+          "body": [
+            "Thiệp đã thanh toán và ảnh của nó được lưu chừng nào tài khoản của bạn còn tồn tại; không có cơ chế xoá tự động nào áp dụng cho chúng.",
+            "Tài khoản của bạn được giữ chừng nào bạn còn muốn dùng: chúng tôi không xoá tài khoản vì lý do không hoạt động.",
+            "Đơn hàng và chứng từ thanh toán không bị xoá theo thiệp hay tài khoản — xem mục 12.",
+            "Nhật ký thao tác quản trị được lưu 24 tháng kể từ ngày ghi, sau đó hệ thống tự xoá.",
+            "Bản sao lưu cơ sở dữ liệu được lưu tối đa 30 ngày rồi bị xoá. Vì bản sao lưu là ảnh chụp toàn bộ dữ liệu tại một thời điểm, nội dung bạn đã yêu cầu xoá có thể còn tồn tại trong các bản sao lưu chưa tới hạn — chậm nhất 30 ngày kể từ khi bạn xoá, nội dung đó không còn ở bất kỳ đâu trong hệ thống của chúng tôi. Chúng tôi không dùng bản sao lưu để khôi phục dữ liệu đã xoá theo yêu cầu."
+          ]
+        },
+        {
+          "heading": "14. Liên hệ",
+          "body": [
+            "Mọi câu hỏi và yêu cầu thực hiện quyền đối với dữ liệu cá nhân được tiếp nhận qua email hỗ trợ hoặc Facebook Messenger của Keemori."
+          ],
+          "contact": true
+        }
+      ]
+    },
+    "paymentRefund": {
+      "meta": {
+        "title": "Chính sách thanh toán & hoàn tiền",
+        "description": "Cách thanh toán một thiệp mời sự kiện thiết kế theo yêu cầu: giá, thanh toán trước 100%, chuyển khoản, xử lý chuyển sai và quy định hoàn tiền."
+      },
+      "title": "Chính sách thanh toán & hoàn tiền",
+      "subtitle": "Trang này mô tả cách một đơn thiết kế thiệp được báo giá, thanh toán và đối soát, cùng những gì xảy ra khi có sai sót.",
+      "sections": [
+        {
+          "heading": "1. Phạm vi",
+          "body": [
+            "Chính sách này áp dụng cho mọi khoản thanh toán cho dịch vụ thiết kế thiệp mời sự kiện theo yêu cầu (thiệp custom) của Keemori.",
+            "Chính sách này bổ sung cho Điều khoản sử dụng; khi có mâu thuẫn về nội dung thanh toán, trang này được ưu tiên áp dụng."
+          ]
+        },
+        {
+          "heading": "2. Giá",
+          "body": [
+            "Giá niêm yết tại trang Bảng giá, tính bằng Đồng Việt Nam (VND) và đã bao gồm các loại thuế áp dụng, nếu có. Khuyến mãi của gói và mã giảm giá (nếu bạn dùng) được trừ trực tiếp vào số tiền phải chuyển, và hiện rõ ở màn thanh toán trước khi bạn xác nhận.",
+            "Giá của một đơn được chốt khi bạn bấm Thanh toán và đơn được tạo trong website. Bảng giá thay đổi về sau không áp dụng ngược cho đơn đã tạo.",
+            "Bạn trả một lần cho mỗi thiệp: không có phí thuê bao định kỳ và không có gia hạn tự động.",
+            "Thiệp custom không có bản dùng thử và không có gói miễn phí."
+          ]
+        },
+        {
+          "heading": "3. Thanh toán trước",
+          "body": [
+            "Bạn thanh toán 100% giá trị đơn trước khi thiệp có link công khai. Bạn soạn và xem thử thiệp thoải mái trước đó; link chỉ được tạo khi tiền đã về tài khoản của chúng tôi.",
+            "Chỉnh sửa trong phạm vi yêu cầu đã thống nhất khi tư vấn không phát sinh thêm chi phí. Yêu cầu nằm ngoài phạm vi đó có thể được báo giá bổ sung, và chỉ thực hiện khi bạn đồng ý."
+          ]
+        },
+        {
+          "heading": "4. Hình thức thanh toán",
+          "body": [
+            "Hiện chỉ có một hình thức: chuyển khoản ngân hàng, thực hiện ngay trong website bằng mã VietQR. Chúng tôi không nhận thẻ tín dụng và không lưu bất kỳ thông tin thẻ nào.",
+            "Khi bạn bấm Thanh toán, website tạo một đơn và hiển thị số tiền, thông tin tài khoản nhận và nội dung chuyển khoản, kèm mã VietQR đã điền sẵn. Cách an toàn nhất là quét mã đó và không sửa gì.",
+            "Nếu bạn chuyển thủ công, hãy giữ nguyên nội dung chuyển khoản — đó là thứ để nhận ra khoản tiền vừa về là của đơn nào.",
+            "Khi tiền về, hệ thống đối soát tự động qua SePay (đơn vị báo giao dịch từ ngân hàng) ghép khoản tiền với đơn và tạo link cho thiệp, thường trong vài giây. Bạn không cần gửi ảnh chụp màn hình giao dịch."
+          ]
+        },
+        {
+          "heading": "5. Chuyển khoản sai hoặc thiếu",
+          "body": [
+            "Sai hoặc thiếu nội dung chuyển khoản: khoản tiền không tự ghép được vào đơn nào và rơi vào hàng đợi tra soát thủ công. Liên hệ kênh hỗ trợ kèm thời điểm chuyển và số tiền; chúng tôi ghép tay cho bạn.",
+            "Chuyển thiếu tiền: đơn được ghi nhận là trả thiếu và link thiệp chưa được tạo cho tới khi bạn chuyển bổ sung phần còn thiếu.",
+            "Chuyển thừa hoặc chuyển trùng: phần thừa không được tự động giữ lại. Liên hệ hỗ trợ để được trả lại.",
+            "Mọi giao dịch chuyển vào tài khoản của chúng tôi đều được ghi sổ, kể cả giao dịch chưa ghép được đơn — không có khoản nào biến mất."
+          ]
+        },
+        {
+          "heading": "6. Chứng từ",
+          "body": [
+            "Sau khi nhận được tiền, chúng tôi gửi email biên nhận kèm số tiền đã nhận tới địa chỉ email của tài khoản, và báo trong chuông thông báo của website.",
+            "Nếu bạn cần hoá đơn giá trị gia tăng, vui lòng liên hệ kênh hỗ trợ kèm thông tin xuất hoá đơn."
+          ]
+        },
+        {
+          "heading": "7. Hoàn tiền",
+          "body": [
+            "Mỗi thiệp được thiết kế riêng và link được tạo ngay khi nhận tiền, nên dịch vụ không hoàn tiền sau khi bạn đã thanh toán.",
+            "Ngoại lệ duy nhất là thiệp bị lỗi kỹ thuật do chúng tôi: thiệp không mở được, nội dung hiển thị sai hoặc bị mất, hoặc một tính năng đã thống nhất không hoạt động. Bạn gửi khiếu nại qua kênh hỗ trợ và chúng tôi khắc phục nhanh nhất có thể. Nếu quá 3 ngày làm việc kể từ khi nhận được khiếu nại mà lỗi vẫn chưa được khắc phục, chúng tôi hoàn lại toàn bộ số tiền bạn đã trả cho thiệp đó — bạn không phải yêu cầu thêm lần nữa.",
+            "Tiền hoàn được chuyển về chính tài khoản ngân hàng đã dùng để thanh toán, trong vòng 7 ngày làm việc kể từ khi chúng tôi kết luận hoàn tiền. Nếu tài khoản đó không nhận được, bạn cung cấp cho chúng tôi một tài khoản khác đứng tên bạn.",
+            "Các trường hợp không được hoàn tiền:",
+            "- Đổi ý hoặc không dùng thiệp nữa.",
+            "- Sự kiện bị huỷ, hoãn hoặc đổi lịch. Nếu sự kiện đổi thời gian hay địa điểm, bạn tự sửa các thông tin đó trong tài khoản.",
+            "- Thiết kế không đạt kỳ vọng về thẩm mỹ.",
+            "- Nội dung sai do bạn cung cấp hoặc tự nhập.",
+            "- Bạn không phản hồi để hoàn thiện thiệp.",
+            "- Sự cố nằm ngoài hệ thống của chúng tôi: đường truyền, trình duyệt hoặc thiết bị của bạn hay của khách mời.",
+            "Chuyển thừa hoặc chuyển trùng không nằm trong mục này. Đó không phải hoàn tiền mà là trả lại khoản tiền chúng tôi đã nhận thừa, và khoản đó luôn được trả lại — xem mục 5.",
+            "Hoàn tiền là chấm dứt giao dịch đối với thiệp đó: sau khi nhận lại tiền, bạn không tiếp tục sử dụng thiệp đã được hoàn.",
+            "Việc chúng tôi công bố quy trình này không hạn chế quyền của bạn theo pháp luật bảo vệ quyền lợi người tiêu dùng."
+          ]
+        },
+        {
+          "heading": "8. Tranh chấp giao dịch",
+          "body": [
+            "Nếu bạn cho rằng một khoản tiền bị tính sai, hãy liên hệ chúng tôi trước khi mở tranh chấp với ngân hàng — chúng tôi giữ đủ nhật ký giao dịch để đối chiếu và thường xử lý nhanh hơn.",
+            "Quy trình khiếu nại chính thức nằm ở mục Khiếu nại và giải quyết tranh chấp của Điều khoản sử dụng."
+          ]
+        },
+        {
+          "heading": "9. Liên hệ",
+          "body": [
+            "Mọi câu hỏi về thanh toán, đối soát hoặc hoàn tiền được tiếp nhận qua email hỗ trợ hoặc Facebook Messenger của Keemori."
+          ],
+          "contact": true
+        }
+      ]
+    },
+    "businessInfo": {
+      "meta": {
+        "title": "Thông tin doanh nghiệp",
+        "description": "Đơn vị chủ quản Keemori, dịch vụ và giá niêm yết, điều kiện giao dịch, cách giao nhận và phương thức thanh toán."
+      },
+      "title": "Thông tin doanh nghiệp",
+      "subtitle": "Ai đứng sau Keemori, Keemori bán gì và bán như thế nào — những điều bạn nên biết trước khi trả tiền cho một tấm thiệp.",
+      "owner": {
+        "eyebrow": "Chủ sở hữu website",
+        "fields": {
+          "businessName": "Tên thương mại",
+          "taxCode": "Mã số hộ kinh doanh / Mã số thuế",
+          "registeredAt": "Đăng ký lần đầu",
+          "registrationAuthority": "Nơi cấp",
+          "registeredAddress": "Địa chỉ",
+          "legalRepresentative": "Chủ hộ kinh doanh",
+          "email": "Email",
+          "zalo": "Zalo",
+          "paymentAccount": "Tài khoản nhận thanh toán"
+        },
+        "accountHolder": "Chủ tài khoản: {name}",
+        "moitBadge": "Đã thông báo với Bộ Công Thương"
+      },
+      "prices": {
+        "caption": "Giá niêm yết của dịch vụ",
+        "plan": "Dịch vụ",
+        "price": "Giá mỗi thiệp",
+        "item": "Thiệp mời thiết kế riêng",
+        "itemNote": "Trả một lần bằng chuyển khoản trước khi bắt đầu thiết kế. Link dùng vĩnh viễn, không giới hạn người xem.",
+        "seeFull": "Xem bảng giá"
+      },
+      "sections": [
+        {
+          "heading": "1. Chủ sở hữu website",
+          "body": [
+            "Website Keemori do hộ kinh doanh dưới đây sở hữu và trực tiếp vận hành để cung cấp dịch vụ của chính mình. Keemori không phải sàn giao dịch thương mại điện tử: chúng tôi không đăng bán hàng hoá hay dịch vụ của bên thứ ba, và mọi đơn hàng trên website là giao dịch trực tiếp giữa bạn và chúng tôi."
+          ],
+          "slot": "owner"
+        },
+        {
+          "heading": "2. Dịch vụ cung cấp",
+          "body": [
+            "Keemori thiết kế thiệp mời online theo yêu cầu cho sinh nhật, khai trương, hội nghị, tiệc và các sự kiện khác: chúng tôi dựng riêng một tấm thiệp theo nội dung và phong cách bạn muốn, rồi giao một đường dẫn và mã QR để bạn gửi cho khách mời. Thiệp mở được trên trình duyệt của mọi điện thoại và máy tính; khách mời không cần cài ứng dụng hay tạo tài khoản.",
+            "Một tấm thiệp gồm các khối nội dung bật tắt được: thông tin sự kiện, thời gian và địa điểm kèm bản đồ, lịch trình, đếm ngược và lịch, lời nhắn, album ảnh, hộp quà kèm QR chuyển khoản, sổ lưu bút, xác nhận tham dự, link mời riêng từng khách, lời cảm ơn và nhạc nền. Mọi tính năng đều có trong mọi thiệp, không chia gói.",
+            "Website chỉ bán một dịch vụ: thiệp mời thiết kế riêng, giá cố định cho mỗi thiệp như bảng dưới đây, trả một lần bằng chuyển khoản ngay trong website; link thiệp được tạo khi tiền về. Không có bản dùng thử. Link thiệp dùng vĩnh viễn và không giới hạn người xem.",
+            "Giá niêm yết bằng Đồng Việt Nam, đã gồm các loại thuế áp dụng nếu có, và trả một lần cho mỗi thiệp — không thuê bao, không gia hạn tự động."
+          ],
+          "slot": "prices"
+        },
+        {
+          "heading": "3. Điều kiện giao dịch chung",
+          "body": [
+            "Điều kiện này áp dụng cho mọi khách hàng đặt thiết kế trên Keemori, cả cá nhân lẫn doanh nghiệp (cửa hàng, nhà hàng, đơn vị tổ chức sự kiện…).",
+            "Một giao dịch đi qua bốn bước:",
+            "- Liên hệ tư vấn qua email, Zalo hoặc Messenger: mô tả sự kiện, nội dung và phong cách bạn muốn, rồi nhận báo giá.",
+            "- Thanh toán toàn bộ giá trị đơn bằng chuyển khoản (mã VietQR trong website) vào tài khoản nêu ở mục 1. Link thiệp chỉ được tạo sau khi nhận đủ tiền.",
+            "- Keemori thiết kế thiệp, tạo tài khoản Keemori cho bạn và gửi thông tin đăng nhập để bạn xem bản thiết kế.",
+            "- Bạn duyệt bản cuối, thiệp được xuất bản và bạn nhận đường dẫn cùng mã QR để gửi cho khách mời.",
+            "Chúng tôi cam kết: giữ link thiệp hoạt động lâu dài và không giới hạn người xem; trả lời mọi khiếu nại trong tối đa 3 ngày làm việc; hoàn toàn bộ số tiền của thiệp nếu thiệp lỗi do chúng tôi mà quá 3 ngày làm việc chưa khắc phục được.",
+            "Bạn có trách nhiệm: dùng nội dung và hình ảnh mà bạn có quyền sử dụng, không đăng nội dung vi phạm pháp luật hay xâm phạm quyền của người khác, và kiểm tra kỹ thiệp trước khi gửi link cho khách mời.",
+            "Bạn chấp thuận Điều khoản sử dụng và Chính sách bảo mật khi tạo tài khoản. Quyền và nghĩa vụ đầy đủ của hai bên, cùng quy trình khiếu nại và giải quyết tranh chấp, nằm trong các văn bản dưới đây."
+          ],
+          "slot": "transactionLinks"
+        },
+        {
+          "heading": "4. Giao nhận dịch vụ",
+          "body": [
+            "Keemori là dịch vụ số: không có hàng hoá vật lý, không giao hàng và không có phí vận chuyển.",
+            "Thiệp được giao dưới dạng đường dẫn và mã QR, có sẵn trong mục Thiệp của tôi sau khi bạn duyệt bản cuối. Bạn tự gửi đường dẫn cho khách mời qua Zalo, Messenger, tin nhắn, hoặc in mã QR lên thiệp giấy.",
+            "Thời gian hoàn thành phụ thuộc vào độ phức tạp của thiết kế và tốc độ phản hồi của hai bên; mốc dự kiến được báo khi tư vấn.",
+            "Nếu đã chuyển khoản mà chưa thấy chúng tôi bắt đầu thiết kế, hãy liên hệ kèm thời điểm và số tiền đã chuyển — chúng tôi đối chiếu với sao kê ngân hàng và xác nhận lại cho bạn."
+          ]
+        },
+        {
+          "heading": "5. Phương thức thanh toán",
+          "body": [
+            "Keemori nhận một hình thức thanh toán duy nhất: chuyển khoản ngân hàng, thực hiện ngay trong website bằng mã VietQR. Chúng tôi không thu tiền mặt, không nhận thẻ tín dụng và không lưu thông tin thẻ của bạn.",
+            "Khi bạn bấm Thanh toán cho một thiệp, website tạo đơn và hiển thị số tiền, thông tin tài khoản nhận (mục 1) cùng nội dung chuyển khoản. Hãy quét mã VietQR, hoặc giữ nguyên nội dung chuyển khoản nếu chuyển thủ công, để hệ thống nhận ra khoản tiền.",
+            "Hệ thống đối soát tự động qua SePay: khi ngân hàng báo có, khoản tiền được ghép với đơn và link thiệp được tạo, thường trong vài giây. Khoản chuyển sai nội dung được chúng tôi ghép tay khi bạn liên hệ.",
+            "Mọi khoản thanh toán chỉ chuyển vào tài khoản đứng tên hộ kinh doanh nêu ở mục 1. Nếu ứng dụng ngân hàng hiện tên người nhận khác, đừng chuyển và báo cho chúng tôi ngay."
+          ],
+          "slot": "paymentLinks"
+        },
+        {
+          "heading": "6. Liên hệ",
+          "body": [
+            "Mọi câu hỏi về dịch vụ, đơn hàng hoặc thông tin trên trang này được tiếp nhận qua email hỗ trợ, Zalo hoặc Facebook Messenger của Keemori. Chúng tôi trả lời trong tối đa 3 ngày làm việc."
+          ],
+          "contact": true
+        }
+      ]
+    }
+  },
+  "openingLab": {
+    "typographyTitle": "Font chữ",
+    "fontCombo": "Combo font",
+    "inheritFonts": "Kế thừa font của mẫu",
+    "regionFonts": "Font riêng cho từng vùng",
+    "regionFontsHint": "Chọn font trong danh sách hoặc nhập CSS font-family của font đã tải. Font riêng ưu tiên hơn combo; để trống để kế thừa.",
+    "clearRegionFonts": "Bỏ font riêng, dùng toàn bộ combo",
+    "inheritRegionFont": "Theo combo / mẫu",
+    "fontCombos": {
+      "reference-1": "01 · Hastegi / Beyond Perfection / Lora",
+      "reference-2": "02 · Beyond Perfection / Hastegi / Lora",
+      "reference-3": "03 · Cormorant / Great Vibes / EB Garamond",
+      "reference-4": "04 · UVN Hoa Tay / Hastegi / Be Vietnam Pro"
+    },
+    "textRegions": {
+      "firstName": "Tên chú rể",
+      "secondName": "Tên cô dâu",
+      "ampersand": "Dấu &",
+      "invitation": "Lời kính mời",
+      "date": "Ngày cưới",
+      "monogram": "Chữ viết tắt",
+      "heading": "Dòng THE DATE",
+      "headingAccent": "Chữ Save",
+      "action": "Nút mở thiệp"
+    },
+    "decorTitle": "Icon trang trí",
+    "decorSlots": {
+      "corner": "Hoạ tiết hai góc",
+      "divider": "Icon ngăn cách",
+      "ambient": "Hoạ tiết nền"
+    },
+    "motifs": {
+      "double-happiness": "Chữ Song Hỷ",
+      "flower": "Hoa",
+      "sprig": "Nhành lá",
+      "heart": "Trái tim",
+      "diamond": "Hình thoi",
+      "none": "Ẩn"
+    },
+    "kicker": "Keemori · Thư viện opening",
+    "title": "Một lời mời, chín cách mở.",
+    "description": "Ba concept từ thiệp hỷ, phong bì hoa và giấy linen. Chọn một thiết kế, phối màu theo ý bạn và chạm để xem chuyển động.",
+    "settings": "Tuỳ chỉnh opening",
+    "variantsTitle": "Chọn thiết kế",
+    "colorsTitle": "Bảng màu",
+    "contentTitle": "Nội dung xem thử",
+    "reset": "Màu mặc định",
+    "firstName": "Tên chú rể",
+    "secondName": "Tên cô dâu",
+    "date": "Ngày tổ chức",
+    "preview": "Xem thử opening",
+    "mobile": "Điện thoại",
+    "desktop": "Khung rộng",
+    "replay": "Mở lại",
+    "revealed": "Nội dung thiệp sẽ xuất hiện ở đây sau khi mở.",
+    "enabled": "Hiện màn opening",
+    "exportTitle": "Lấy cấu hình dùng lại",
+    "exportDescription": "Sao chép cấu hình này thành props của WeddingOpening. Dữ liệu, màu, font và decor đều có thể truyền động từ mẫu.",
+    "copy": "Sao chép cấu hình",
+    "copied": "Đã sao chép",
+    "copyError": "Chưa sao chép được. Bạn có thể chọn và sao chép nội dung bên dưới.",
+    "concepts": {
+      "ceremony": "Thiệp hỷ truyền thống",
+      "envelope": "Phong bì hoa & dấu sáp",
+      "linen": "Giấy linen & hoa ép"
+    },
+    "variants": {
+      "ceremony-classic": "Song Hỷ",
+      "ceremony-arch": "Vòm Son",
+      "ceremony-gate": "Cổng Hỷ",
+      "envelope-botanical": "Lá Thư",
+      "envelope-bouquet": "Hoa Hẹn",
+      "envelope-ribbon": "Dải Lụa",
+      "linen-fold": "Nếp Giấy",
+      "linen-vellum": "Giấy Mờ",
+      "linen-pressed": "Hoa Ép"
+    },
+    "colors": {
+      "background": "Nền",
+      "paper": "Giấy",
+      "ink": "Chữ",
+      "accent": "Điểm nhấn",
+      "seal": "Dấu sáp / nút",
+      "onSeal": "Chữ nút mở",
+      "botanical": "Lá & hoa"
+    },
+    "sample": {
+      "firstName": "Gia Khánh",
+      "secondName": "Quỳnh Anh"
+    },
+    "labels": {
+      "invitation": "Trân trọng kính mời",
+      "open": "Mở thiệp",
+      "opening": "Đang mở…",
+      "save": "Save",
+      "theDate": "THE DATE"
+    }
+  },
+  "tools": {
+    "eyebrow": "Công cụ miễn phí",
+    "breadcrumb": "Công cụ",
+    "open": "Dùng công cụ",
+    "howToTitle": "Cách dùng",
+    "faqTitle": "Câu hỏi thường gặp",
+    "relatedTitle": "Công cụ khác",
+    "cta": {
+      "title": "Đã có ngày, có số khách? Làm thiệp thôi.",
+      "body": "Đặt thiệp cưới online thiết kế riêng, nhận link và mã QR gửi khách qua Zalo, Messenger.",
+      "action": "Chọn mẫu thiệp"
+    },
+    "hub": {
+      "meta": {
+        "title": "Công cụ chuẩn bị đám cưới miễn phí",
+        "description": "Đổi ngày âm dương để ghi lên thiệp, tính số bàn tiệc cưới, tạo mã QR cho thiệp giấy — miễn phí, không cần đăng ký."
+      },
+      "title": "Công cụ chuẩn bị đám cưới",
+      "subtitle": "Những phép tính nhỏ mà ngày nào cũng có cặp đôi phải làm tay. Miễn phí, không cần tài khoản, chạy ngay trên trình duyệt."
+    },
+    "items": {
+      "lunar": {
+        "card": {
+          "title": "Đổi ngày âm dương",
+          "body": "Đổi ngày dương sang âm lịch và ngược lại, kèm sẵn dòng “tức ngày… năm…” để ghi lên thiệp."
+        },
+        "meta": {
+          "title": "Đổi ngày âm dương lịch, ghi ngày âm trên thiệp cưới",
+          "description": "Đổi ngày dương sang âm lịch và ngược lại, xem thứ trong tuần, năm can chi, tháng nhuận. Có sẵn dòng ghi ngày âm cho thiệp cưới để sao chép."
+        },
+        "title": "Đổi ngày âm dương lịch",
+        "subtitle": "Nhập ngày cưới theo dương lịch hoặc âm lịch để xem ngày tương ứng ở lịch kia, thứ trong tuần và năm can chi — kèm dòng ghi ngày âm sẵn để chép lên thiệp.",
+        "widget": {
+          "modeLabel": "Chiều đổi lịch",
+          "modeSolar": "Dương → Âm",
+          "modeLunar": "Âm → Dương",
+          "solarLabel": "Ngày dương lịch",
+          "lunarDay": "Ngày âm",
+          "lunarMonth": "Tháng âm",
+          "lunarYear": "Năm",
+          "leapLabel": "Tháng nhuận",
+          "leapSuffix": " nhuận",
+          "resultSolar": "Dương lịch",
+          "resultLunar": "Âm lịch",
+          "solarLine": "{weekday}, ngày {day} tháng {month} năm {year}",
+          "lunarLine": "Ngày {day} tháng {month}{leap} năm {canChi}",
+          "cardLineLabel": "Dòng ghi trên thiệp",
+          "cardLine": "(Tức ngày {day} tháng {month}{leap} năm {canChi})",
+          "weekdays": [
+            "Chủ nhật",
+            "Thứ Hai",
+            "Thứ Ba",
+            "Thứ Tư",
+            "Thứ Năm",
+            "Thứ Sáu",
+            "Thứ Bảy"
+          ],
+          "copy": "Sao chép",
+          "copied": "Đã sao chép",
+          "empty": "Nhập một ngày để xem kết quả.",
+          "invalid": "Ngày này không có trong năm âm lịch đã chọn: tháng thiếu không có ngày 30, hoặc năm đó không có tháng nhuận này."
+        },
+        "howTo": [
+          "Chọn chiều đổi: từ ngày dương sang âm lịch, hoặc từ ngày âm sang dương lịch.",
+          "Nhập ngày cưới. Với âm lịch, đánh dấu “Tháng nhuận” nếu ngày rơi vào tháng nhuận.",
+          "Đọc kết quả: thứ trong tuần, ngày âm và năm can chi. Bấm “Sao chép” để lấy dòng ghi ngày âm cho thiệp."
+        ],
+        "notes": {
+          "title": "Ghi ngày âm trên thiệp cưới",
+          "paragraphs": [
+            "Thiệp cưới Việt thường ghi ngày dương trước, ngày âm trong ngoặc: “Thứ Bảy, ngày 22 tháng 11 năm 2026 (tức ngày 14 tháng 10 năm Bính Ngọ)”. Ngày âm là ngày người lớn trong họ hay tra lại, nên sai một con số là điều đầu tiên bị nhắc.",
+            "Năm âm không đổi cùng ngày với năm dương. Mùng 1 Tết năm Đinh Mùi rơi vào ngày 6/2/2027, nên đám cưới tháng 1 năm 2027 dương lịch vẫn ghi năm Bính Ngọ.",
+            "Công cụ dùng cùng thuật toán thiên văn và múi giờ Việt Nam (UTC+7) mà Keemori dùng để in ngày âm trên thiệp, nên con số ở đây khớp với con số trên thiệp của bạn."
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Đổi ngày âm dương ở đây có chính xác không?",
+            "answer": "Công cụ dùng thuật toán của Hồ Ngọc Đức, tính theo múi giờ Việt Nam (UTC+7) — đây là cách lịch âm Việt Nam được tính phổ biến hiện nay. Với ngày quan trọng, gia đình vẫn nên đối chiếu thêm với lịch giấy hoặc người xem ngày."
+          },
+          {
+            "question": "Năm 2026 và 2027 là năm gì theo âm lịch?",
+            "answer": "Phần lớn năm 2026 là năm Bính Ngọ. Năm Đinh Mùi bắt đầu từ mùng 1 Tết, tức ngày 6/2/2027, nên những ngày trước đó của tháng 1 và đầu tháng 2 năm 2027 vẫn thuộc năm Bính Ngọ."
+          },
+          {
+            "question": "Tháng nhuận ghi thế nào trên thiệp cưới?",
+            "answer": "Ghi thêm chữ “nhuận” sau tháng, ví dụ “ngày 1 tháng 6 nhuận năm Ất Tỵ”. Năm 2025 có tháng 6 nhuận; công cụ tự nhận ra khi bạn đổi từ dương sang âm."
+          },
+          {
+            "question": "Công cụ có xem ngày tốt xấu không?",
+            "answer": "Không. Công cụ chỉ đổi lịch. Việc chọn ngày theo tuổi, nhiều gia đình nhờ người lớn hoặc người xem ngày — hai bạn nên hỏi sớm vì còn phải khớp với lịch trống của nhà hàng."
+          }
+        ]
+      },
+      "tables": {
+        "card": {
+          "title": "Tính số bàn tiệc cưới",
+          "body": "Từ số khách mời, số người đã xác nhận và tỉ lệ bạn tự ước tính, ra số bàn nên đặt với nhà hàng."
+        },
+        "meta": {
+          "title": "Tính số bàn tiệc cưới từ danh sách khách mời",
+          "description": "Nhập số khách mời, số người đã xác nhận, tỉ lệ ước tính sẽ đến và số ghế mỗi bàn để biết cần đặt bao nhiêu bàn tiệc cưới, còn dư bao nhiêu ghế."
+        },
+        "title": "Tính số bàn tiệc cưới",
+        "subtitle": "Đặt dư thì trả tiền cho mâm không ai ngồi, đặt thiếu thì khách đứng chờ kê thêm bàn. Nhập vài con số để có một ước tính có căn cứ trước khi chốt với nhà hàng.",
+        "widget": {
+          "guests": "Tổng số khách mời (người)",
+          "confirmed": "Đã xác nhận sẽ đến (người)",
+          "confirmedHint": "Bỏ trống nếu chưa có ai trả lời. Những người này được tính đủ.",
+          "rate": "Bao nhiêu % số còn lại sẽ đến",
+          "rateHint": "80% chỉ là số khởi điểm để bạn thấy cách tính — hãy chỉnh theo kinh nghiệm của gia đình và nhà hàng.",
+          "perTable": "Số ghế mỗi bàn",
+          "perTableHint": "Hỏi đúng sảnh bạn đặt: có nơi xếp 10, có nơi 8 hoặc 12.",
+          "reserve": "Bàn dự phòng",
+          "reserveHint": "Hỏi nhà hàng cách tính tiền bàn dự phòng nếu không dùng tới.",
+          "expected": "Khách dự kiến",
+          "tables": "Bàn nên đặt",
+          "seats": "Tổng số ghế",
+          "spare": "Ghế còn trống",
+          "note": "Đây là ước tính. Hỏi nhà hàng hạn chót báo số bàn và chính sách thêm, bớt bàn sát ngày, rồi đặt hạn xác nhận tham dự sớm hơn hạn đó."
+        },
+        "howTo": [
+          "Nhập tổng số khách mời — tính theo người, không theo thiệp (một thiệp “anh chị và các cháu” có thể là bốn người).",
+          "Nếu đã có xác nhận tham dự, nhập số người chắc chắn đến. Phần còn lại tính theo tỉ lệ bạn ước tính.",
+          "Chỉnh số ghế mỗi bàn và số bàn dự phòng theo nhà hàng, rồi đọc số bàn nên đặt."
+        ],
+        "notes": {
+          "title": "Làm sao để con số sát thực tế",
+          "paragraphs": [
+            "Cách chắc nhất là có câu trả lời thật thay vì đoán: xin khách xác nhận có đến không và đi mấy người, rồi nhắc riêng những người chưa trả lời trước hạn báo số bàn.",
+            "Tỉ lệ khách đến khác nhau theo từng đám cưới — khách ở xa, cưới ngày thường hay cuối tuần, mời bằng thiệp tận tay hay qua tin nhắn đều làm con số thay đổi. Vì vậy công cụ để bạn tự đặt tỉ lệ thay vì dùng một con số chung.",
+            "Trên thiệp Keemori, khách xác nhận tham dự ngay trên thiệp và hai bạn xem tổng hợp trong “Thiệp của tôi”, nên ô “đã xác nhận” ở đây lấy được số thật."
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Một bàn tiệc cưới thường bao nhiêu người?",
+            "answer": "Phổ biến là 10 người một bàn, nhưng có nhà hàng xếp 8 hoặc 12 tuỳ sảnh và kiểu bàn. Hãy hỏi đúng sảnh hai bạn đặt rồi nhập vào ô “Số ghế mỗi bàn”."
+          },
+          {
+            "question": "Nên đặt dư bao nhiêu bàn?",
+            "answer": "Tuỳ chính sách của nhà hàng. Hỏi xem họ có nhận bàn dự phòng chỉ tính tiền khi dùng tới không, và hạn cuối để báo thêm, bớt bàn là khi nào — rồi đặt số bàn dự phòng theo đó."
+          },
+          {
+            "question": "Tỉ lệ khách đến bao nhiêu là hợp lý?",
+            "answer": "Không có con số đúng cho mọi đám cưới. Dùng kinh nghiệm của gia đình làm điểm khởi đầu, và thu xác nhận tham dự càng sớm càng tốt để thay phần ước tính bằng số thật."
+          }
+        ]
+      },
+      "qr": {
+        "card": {
+          "title": "Tạo mã QR cho thiệp",
+          "body": "Dán link thiệp cưới, tải mã QR dạng PNG để in lên thiệp giấy, bảng đón khách hoặc gửi cho người khó mở link."
+        },
+        "meta": {
+          "title": "Tạo mã QR cho link thiệp cưới, tải PNG để in",
+          "description": "Dán link thiệp cưới online để tạo mã QR miễn phí, tải ảnh PNG nét để in lên thiệp giấy hoặc bảng đón khách. Mã tạo ngay trên trình duyệt."
+        },
+        "title": "Tạo mã QR cho thiệp cưới",
+        "subtitle": "In mã QR lên thiệp giấy để khách quét là mở được thiệp online — có bản đồ, đếm ngược và lời chúc mà tấm giấy không chứa được.",
+        "widget": {
+          "urlLabel": "Link thiệp cưới",
+          "urlPlaceholder": "https://keemori.com/vi/t/ten-co-dau-chu-re-xxxx",
+          "invalid": "Nhập một đường link đầy đủ, bắt đầu bằng https:// hoặc http://",
+          "privacy": "Mã được tạo ngay trên trình duyệt của bạn, link không gửi về máy chủ nào.",
+          "qrTitle": "Mã QR của link thiệp",
+          "empty": "Mã QR sẽ hiện ở đây",
+          "download": "Tải mã QR (PNG)",
+          "hint": "Quét thử bằng camera điện thoại trước khi in, và in thử một bản để chắc mã đủ lớn."
+        },
+        "howTo": [
+          "Mở thiệp cưới online của hai bạn, sao chép đường link.",
+          "Dán link vào ô bên trên. Mã QR hiện ngay khi link hợp lệ.",
+          "Bấm “Tải mã QR (PNG)” để lấy ảnh nền trắng có lề, đủ nét để in."
+        ],
+        "notes": {
+          "title": "In mã QR lên thiệp giấy",
+          "paragraphs": [
+            "Thiệp giấy vẫn là cách mời trang trọng với ông bà, cô chú. Thêm một mã QR nhỏ ở mặt sau hoặc góc dưới, kèm một dòng hướng dẫn ngắn như “Quét để xem bản đồ và thông tin tiệc”, là người nhận có cả hai.",
+            "Giữ mã màu đen trên nền trắng và chừa lề trắng quanh mã — mã in màu nhạt hoặc đặt sát hoạ tiết nhiều máy quét đọc không được. Quét thử trên vài điện thoại khác nhau trước khi in số lượng lớn.",
+            "Nếu thiệp làm trên Keemori, hộp “Lấy link & QR” trong “Thiệp của tôi” đã có sẵn nút tải mã QR. Công cụ này dành cho mọi đường link khác, hoặc khi bạn chỉ có link trong tay."
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Mã QR có hết hạn không?",
+            "answer": "Không. Mã QR chỉ chứa đúng đường link bạn nhập, nên nó dùng được chừng nào link còn mở được. Link thiệp Keemori không đổi, và link thiệp đã xuất bản là link vĩnh viễn."
+          },
+          {
+            "question": "Dùng được cho link không phải của Keemori không?",
+            "answer": "Được. Công cụ nhận mọi đường link bắt đầu bằng https:// hoặc http://."
+          },
+          {
+            "question": "Link của tôi có bị lưu lại không?",
+            "answer": "Không. Mã QR được vẽ ngay trong trình duyệt của bạn; đường link không được gửi đi hay lưu ở máy chủ nào."
+          },
+          {
+            "question": "Nên in mã QR ở đâu trên thiệp giấy?",
+            "answer": "Thường là mặt sau hoặc góc dưới của thiệp, kèm một dòng chữ cho biết quét để làm gì. Tránh đặt mã đè lên hoạ tiết hay trên nền màu đậm."
+          }
+        ]
+      }
+    }
+  },
+  "create": {
+    "meta": {
+      "title": "Tạo thiệp mời online theo dịp",
+      "description": "Chọn loại thiệp — cưới, sinh nhật, tốt nghiệp, sự kiện, kỷ niệm hay chúc mừng — rồi điền nội dung để nhận link và mã QR gửi khách."
+    },
+    "eyebrow": "Bước 1 · Chọn loại thiệp",
+    "title": "Bạn muốn tạo thiệp cho dịp gì?",
+    "subtitle": "Mỗi loại thiệp có một form riêng, chỉ hỏi đúng những gì dịp đó cần. Chọn một loại để bắt đầu.",
+    "start": "Bắt đầu",
+    "examplesLabel": "Phù hợp cho",
+    "note": "Chưa cần đăng nhập để bắt đầu — bạn chỉ cần đăng nhập khi lưu thiệp.",
+    "kinds": {
+      "wedding": {
+        "name": "Thiệp cưới",
+        "description": "Cô dâu chú rể, hai gia đình, nghi lễ và tiệc cưới.",
+        "examples": "Lễ cưới · Ăn hỏi · Vu quy"
+      },
+      "birthday": {
+        "name": "Thiệp sinh nhật",
+        "description": "Nhân vật chính, tuổi mới, thời gian và địa điểm buổi tiệc.",
+        "examples": "Sinh nhật · Thôi nôi · Mừng thọ"
+      },
+      "graduation": {
+        "name": "Thiệp tốt nghiệp",
+        "description": "Tân cử nhân, trường, ngành, khoá và lịch buổi lễ.",
+        "examples": "Lễ tốt nghiệp · Tiệc mừng ra trường"
+      },
+      "event": {
+        "name": "Thiệp sự kiện",
+        "description": "Tên sự kiện, đơn vị tổ chức, chương trình và xác nhận tham dự.",
+        "examples": "Hội thảo · Đêm nhạc · Gala · Họp lớp"
+      },
+      "anniversary": {
+        "name": "Thiệp kỷ niệm",
+        "description": "Mốc kỷ niệm, câu chuyện và buổi tiệc chung vui.",
+        "examples": "Kỷ niệm ngày cưới · Thành lập công ty"
+      },
+      "greeting": {
+        "name": "Thiệp chúc mừng",
+        "description": "Một lời chúc gửi riêng tới người nhận, không cần địa điểm.",
+        "examples": "Sinh nhật · Khai trương · Tân gia · Năm mới · 20/11"
+      }
+    }
+  },
+  "payment": {
+    "meta": {
+      "title": "Thanh toán thiệp",
+      "description": "Chuyển khoản để kích hoạt link vĩnh viễn cho thiệp của bạn."
+    },
+    "upgrade": {
+      "title": "Thanh toán thiệp",
+      "body": "“{title}” — thanh toán để tạo link chia sẻ vĩnh viễn, không giới hạn người xem.",
+      "loading": "Đang lấy báo giá…",
+      "packageName": "Thiệp custom",
+      "hint": "Chuyển khoản ngân hàng bằng mã VietQR. Link thiệp được tạo ngay khi tiền về, không cần chờ ai xác nhận.",
+      "rows": {
+        "list": "Giá niêm yết",
+        "packageDiscount": "Khuyến mãi",
+        "packageDiscountPercent": "Khuyến mãi {percent}%",
+        "voucher": "Mã {code}",
+        "total": "Cần thanh toán"
+      },
+      "submit": "Tiếp tục thanh toán",
+      "submitting": "Đang xử lý…",
+      "failed": "Không tạo được đơn, vui lòng thử lại.",
+      "quoteFailed": "Chưa lấy được báo giá.",
+      "consent": {
+        "label": "Tôi đã đọc và đồng ý với",
+        "terms": "Điều khoản sử dụng",
+        "and": "và",
+        "paymentPolicy": "Chính sách thanh toán & hoàn tiền"
+      },
+      "voucher": {
+        "label": "Mã giảm giá",
+        "placeholder": "Nhập mã giảm giá",
+        "apply": "Áp dụng",
+        "applying": "Đang kiểm tra…",
+        "applied": "− {amount}",
+        "failed": "Không kiểm tra được mã, vui lòng thử lại.",
+        "available": "Mã có thể áp dụng ({count})",
+        "loading": "Đang tìm mã phù hợp…",
+        "empty": "Chưa có mã phù hợp với đơn này. Bạn có thể nhập mã riêng ở trên.",
+        "listFailed": "Không tải được danh sách mã giảm giá.",
+        "retry": "Thử lại",
+        "save": "Giảm {amount}",
+        "expires": "Hết hạn {date}",
+        "pickerTitle": "Chọn mã giảm giá",
+        "back": "Quay lại",
+        "confirm": "Đồng ý",
+        "eligibleTitle": "Voucher có thể áp dụng",
+        "unavailableTitle": "Voucher không khả dụng",
+        "selectedCount": "{count} voucher được chọn",
+        "selectedSaving": "Tiết kiệm {amount}",
+        "noneSelected": "Chưa chọn mã giảm giá",
+        "clearSelection": "Không sử dụng mã giảm giá",
+        "selectCode": "Chọn mã {code}",
+        "reasons": {
+          "minimum": "Áp dụng cho đơn từ {amount}",
+          "userLimit": "Bạn đã dùng hết lượt của mã này",
+          "unavailable": "Mã này chưa dùng được cho đơn hiện tại"
+        }
+      }
+    },
+    "success": {
+      "title": "Thanh toán thành công!",
+      "body": "Thiệp của bạn đã có link vĩnh viễn. Giờ thì gửi link cho cả nhà thôi.",
+      "perks": {
+        "link": "Link thiệp dùng vĩnh viễn, không hết hạn và không giới hạn người xem.",
+        "share": "Lấy link và mã QR trong Thiệp của tôi để gửi khách mời."
+      },
+      "done": "Lấy link & QR"
+    },
+    "checkout": {
+      "title": "Chuyển khoản để hoàn tất",
+      "subtitle": "Quét mã hoặc chuyển thủ công. Trang này tự cập nhật khi tiền về, bạn không cần bấm gì thêm.",
+      "loading": "Đang tải thông tin thanh toán…",
+      "failed": {
+        "title": "Không mở được đơn này",
+        "body": "Đơn không tồn tại, đã bị huỷ, hoặc không thuộc tài khoản của bạn.",
+        "retry": "Thử lại"
+      },
+      "summary": {
+        "title": "Đơn hàng",
+        "package": "Gói",
+        "packageName": "Thiệp custom",
+        "amount": "Số tiền"
+      },
+      "qr": {
+        "title": "Quét mã VietQR",
+        "hint": "Mở app ngân hàng và quét — số tiền lẫn nội dung đã điền sẵn.",
+        "alt": "Mã VietQR cho đơn {code}",
+        "download": "Tải mã QR về máy",
+        "downloading": "Đang tải…"
+      },
+      "manual": {
+        "title": "Hoặc chuyển thủ công",
+        "bank": "Ngân hàng",
+        "account": "Số tài khoản",
+        "name": "Chủ tài khoản",
+        "amount": "Số tiền",
+        "content": "Nội dung chuyển khoản",
+        "contentHint": "Giữ nguyên mã này trong nội dung chuyển khoản — đó là thứ duy nhất cho biết tiền là của đơn nào."
+      },
+      "copy": "Chép",
+      "copied": "Đã chép",
+      "waiting": "Đang chờ xác nhận thanh toán…",
+      "waitingHint": "Hệ thống thường xác nhận trong vài giây sau khi bạn chuyển khoản. Bạn có thể đóng trang này, đơn hàng vẫn được ghi nhận.",
+      "countdown": "Vui lòng hoàn tất chuyển khoản trong {time}.",
+      "expired": {
+        "title": "Đã quá thời gian chờ",
+        "body": "Trang này ngừng tự kiểm tra sau 10 phút. Nếu bạn đã chuyển khoản rồi thì đừng lo — mã {code} vẫn còn hiệu lực, tiền về lúc nào thì đơn được ghi nhận lúc đó; bấm Kiểm tra lại để xem ngay. Còn nếu chưa chuyển, hãy huỷ đơn này rồi bấm Thanh toán lại từ danh sách thiệp.",
+        "recheck": "Kiểm tra lại",
+        "checking": "Đang kiểm tra…"
+      },
+      "paid": {
+        "title": "Đã nhận được tiền",
+        "body": "Link thiệp đã sẵn sàng: dùng vĩnh viễn và không giới hạn người xem.",
+        "cta": "Lấy link & QR",
+        "viewCard": "Xem thiệp"
+      },
+      "cancelled": {
+        "title": "Đơn đã huỷ",
+        "body": "Đơn này không còn nhận thanh toán. Bạn có thể tạo đơn mới từ danh sách thiệp.",
+        "cta": "Về thiệp của tôi"
+      },
+      "cancel": "Huỷ đơn",
+      "cancelling": "Đang huỷ…",
+      "cancelFailed": "Không huỷ được đơn, vui lòng thử lại.",
+      "back": "Về thiệp của tôi"
+    }
+  }
+}

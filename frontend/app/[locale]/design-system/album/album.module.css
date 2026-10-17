@@ -1,0 +1,138 @@
+.page {
+  padding-block: 3rem 6rem;
+}
+
+.intro {
+  max-width: 68ch;
+}
+
+.group {
+  margin-block-start: 3rem;
+}
+
+.groupHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-block-end: 0.75rem;
+  border-block-end: 1px solid var(--border);
+}
+
+.code {
+  margin-block-end: 0.35rem;
+  color: var(--muted-foreground);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.75rem;
+}
+
+.canvas {
+  container-type: inline-size;
+  width: min(100%, 640px);
+  margin: 1.5rem auto 0;
+  overflow: hidden;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: var(--radius-2xl, 1rem);
+}
+
+.hostCopy {
+  position: relative;
+  z-index: 1;
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: 2.5rem max(1.25rem, 6cqi) 2rem;
+  text-align: center;
+}
+
+.hostCopy h3 {
+  font-family: var(--template-font-display, Georgia, serif);
+  font-size: var(--tpl-h3);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.hostCopy p {
+  max-width: 42ch;
+  margin: 0.75rem auto 0;
+  font-size: var(--tpl-small);
+  line-height: 1.6;
+}
+
+.filmstrip {
+  padding: 0 max(1rem, 5cqi) max(2rem, 7cqi);
+  background: #681f18;
+  color: #fff7e7;
+  --ring: #d8c39b;
+}
+
+.filmstrip .hostCopy {
+  color: #d8c39b;
+}
+
+.mosaic {
+  padding: 0 max(1rem, 5cqi) max(2rem, 7cqi);
+  background: #606343;
+  color: #fffdf6;
+  --ring: #e7d9ad;
+}
+
+.swiper {
+  padding-block-end: max(2rem, 7cqi);
+  background: #f2ebdf;
+  color: #454336;
+  --foreground: #454336;
+  --background: #f2ebdf;
+  --ring: #656146;
+}
+
+/* Bảng màu mượn từ Đỏ Burgundy, nơi layout này ra đời: giấy ngà, chữ rượu
+   vang, nút giấy ngà viền đồng qua token `--album-control-*`. */
+.coverflow {
+  padding-block-end: max(2rem, 7cqi);
+  background: #f3ece2;
+  color: #3b2724;
+  --foreground: #3b2724;
+  --background: #f3ece2;
+  --ring: #6d1a24;
+  --album-control-surface: rgb(255 250 242 / 88%);
+  --album-control-surface-hover: #fffaf2;
+  --album-control-ink: #6d1a24;
+  --album-control-outline: rgb(138 91 63 / 42%);
+  --album-control-outline-hover: rgb(138 91 63 / 70%);
+}
+
+/* Tiêu đề kiểu Đỏ Burgundy: canh trái, có vạch đồng bên cạnh. */
+.hostCopyAside {
+  display: grid;
+  gap: 1rem;
+  margin: 2.5rem max(1.25rem, 8cqi) 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid #8a5b3f;
+  text-align: left;
+}
+
+.hostCopyAside h3 {
+  color: #6d1a24;
+  font-family: var(--template-font-display, Georgia, serif);
+  font-size: var(--tpl-h2);
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hostCopyAside p {
+  max-width: 26ch;
+  color: #6a5350;
+  font-family: var(--template-font-script, Georgia, serif);
+  font-size: var(--tpl-h4);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+@container (max-width: 419px) {
+  .hostCopy {
+    padding-block-start: 2rem;
+  }
+}

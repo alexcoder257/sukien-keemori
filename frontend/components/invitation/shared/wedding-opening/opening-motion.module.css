@@ -1,0 +1,93 @@
+/* Opening lifecycle and material motion only. Layout lives beside its JSX. */
+.cover[data-opening-phase="opening"] {
+  pointer-events: none;
+  animation: cover-fade var(--invitation-opening-duration) ease-in both;
+}
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]
+  :global([data-opening-surface]) {
+  animation: paper-lift var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"]
+  :global([data-opening-surface]) {
+  animation: paper-bloom var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.content[data-opening-phase="opening"] {
+  animation: content-reveal var(--invitation-opening-duration) ease-out both;
+}
+.gateLeft {
+  animation: gate-left var(--invitation-opening-duration, 1100ms) ease both;
+}
+.gateRight {
+  animation: gate-right var(--invitation-opening-duration, 1100ms) ease both;
+}
+.envelope {
+  animation: envelope-away var(--invitation-opening-duration, 1100ms) ease both;
+}
+@keyframes cover-fade {
+  0%,
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes paper-lift {
+  to {
+    transform: translateY(-12%) scale(1.03);
+    opacity: 0;
+  }
+}
+@keyframes paper-bloom {
+  to {
+    transform: scale(1.08);
+    opacity: 0;
+  }
+}
+@keyframes content-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes gate-left {
+  to {
+    transform: perspective(900px) rotateY(-85deg);
+    opacity: 0;
+  }
+}
+@keyframes gate-right {
+  to {
+    transform: perspective(900px) rotateY(85deg);
+    opacity: 0;
+  }
+}
+@keyframes envelope-away {
+  0%,
+  25% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(12%);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cover[data-opening-phase="opening"] {
+    animation: cover-fade 160ms ease both;
+  }
+  .cover[data-opening-phase="opening"] :global([data-opening-surface]) {
+    animation: none;
+  }
+  .content[data-opening-phase="opening"] {
+    animation-duration: 160ms;
+  }
+  .gateLeft,
+  .gateRight,
+  .envelope {
+    animation: none;
+  }
+}

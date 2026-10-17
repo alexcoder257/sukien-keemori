@@ -1,0 +1,175 @@
+/**
+ * Gợi ý cuộn dùng chung: một vệt sáng chạy lặp dọc theo đường kẻ và một luồng
+ * sáng quét ngang chữ. Toàn bộ bằng CSS animation nên component vẫn là Server
+ * Component và không tốn thêm JS trên đường render đầu tiên.
+ *
+ * Mọi màu lấy từ `currentColor` để cùng một khối đọc được trên cả `.theme-paper`
+ * lẫn `.theme-forest`; nơi dùng chỉ cần đặt màu chữ (mặc định `text-primary`).
+ */
+.cue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.track {
+  position: relative;
+  width: 1px;
+  height: 2.75rem;
+  flex: none;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in oklab, currentColor 35%, transparent)
+  );
+}
+
+/* Vệt sáng rơi từ trên xuống, lặp liên tục để đường kẻ luôn "sống". */
+.track::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: -55%;
+  height: 55%;
+  background: linear-gradient(to bottom, transparent, currentColor, transparent);
+  animation: fall 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.icon {
+  width: 1.125rem;
+  height: auto;
+  flex: none;
+  overflow: visible;
+  color: color-mix(in oklab, currentColor 70%, transparent);
+}
+
+/* Gốc xoay do GSAP đặt, không đặt ở đây: với SVG, GSAP tự tính ma trận
+   transform theo bbox và bỏ qua `transform-origin` của CSS. */
+.flap {
+  will-change: transform;
+}
+
+/* Chỉ bánh xe chuyển động nên tín hiệu có chủ đích và không làm cả hàng chữ
+   rung theo. */
+.wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: scroll-wheel 1.8s ease-out infinite;
+}
+
+/* Đáy của luồng sáng là 80% chứ không phải 60%: chữ ở đây là vàng thương hiệu,
+   mà Deep Gold trên nền giấy vốn chỉ còn 6.29:1 khi đặc — hạ xuống 60% thì phần
+   lớn thời gian dòng chữ nằm quanh 3:1 và đọc ra như đang bị tắt. Chênh lệch
+   giữa đáy và đỉnh vẫn đủ để thấy luồng sáng quét qua. */
+.label {
+  position: relative;
+  background: linear-gradient(
+    100deg,
+    color-mix(in oklab, currentColor 80%, transparent) 0%,
+    color-mix(in oklab, currentColor 80%, transparent) 35%,
+    currentColor 50%,
+    color-mix(in oklab, currentColor 80%, transparent) 65%,
+    color-mix(in oklab, currentColor 80%, transparent) 100%
+  );
+  background-size: 280% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: sweep 4.2s ease-in-out infinite;
+}
+
+/* Chỉ lớp trong mới trong suốt: nếu đặt `color: transparent` ngay trên `.label`
+   thì `currentColor` trong gradient cũng thành trong suốt và chữ biến mất. */
+.labelText {
+  color: transparent;
+}
+
+/* Đốm sáng nhỏ nảy nhẹ, đặt sau chữ như một mũi tên tối giản. */
+.dot {
+  width: 3px;
+  height: 3px;
+  flex: none;
+  border-radius: 9999px;
+  background: currentColor;
+  box-shadow: 0 0 6px 1px color-mix(in oklab, currentColor 70%, transparent);
+  animation: bob 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes fall {
+  0% {
+    top: -55%;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes sweep {
+  0%,
+  10% {
+    background-position: 140% 0;
+  }
+  55%,
+  100% {
+    background-position: -40% 0;
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(-2px);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-wheel {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  72% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track::after,
+  .label,
+  .dot,
+  .wheel {
+    animation: none;
+  }
+
+  .label {
+    background: none;
+  }
+
+  .labelText {
+    color: color-mix(in oklab, currentColor 88%, transparent);
+  }
+
+  .track::after {
+    display: none;
+  }
+}

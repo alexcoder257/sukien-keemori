@@ -1,0 +1,51 @@
+# Mỗi app (backend/, frontend/, dashboard/) có .gitignore riêng cho build
+# output của nó. File này chặn những thứ ở cấp repo.
+
+# ===== Secret =====
+# `.env` ở gốc là env production cho docker compose — chứa secret thật.
+# Chỉ commit các file `*.example`.
+.env
+.env.*
+!.env.example
+!.env.*.example
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+
+# ===== Dependencies / build output =====
+node_modules/
+.next/
+dist/
+coverage/
+*.tsbuildinfo
+
+# ===== Dữ liệu runtime =====
+# Ảnh khách tải lên khi STORAGE_DRIVER=local — không phải source.
+backend/uploads/
+backend/uploads-staging/
+
+# ===== OS / editor / công cụ =====
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.log
+.playwright-mcp/
+.wrangler/
+.claude/settings.local.json
+
+# ===== Nháp, ảnh chụp QA, file xuất ở gốc repo =====
+/tmp/
+/output/
+/exports/
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.avif
+
+# ===== Tư liệu thiết kế thiệp cưới (nặng, không dùng cho sukien) =====
+docs/inspiration/
+docs/anh-cuoi/

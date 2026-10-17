@@ -1,0 +1,274 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* `dark:` bám vào class do `next-themes` gắn, không bám
+   `prefers-color-scheme`: người vận hành phải tự chọn được chế độ, và mặc
+   định "theo hệ thống" vẫn chạy vì next-themes tự gắn class hộ. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =============================================================================
+   TOKEN — bản dùng cho CMS
+
+   CMS **không** dùng bảng màu thương hiệu của trang khách. Ant Design là hệ
+   thiết kế của app này, nên các token dưới đây chỉ là bản dịch của token antd
+   (seed `#1677ff` ở nền sáng, `#1668dc` ở nền tối) sang tên ngữ nghĩa để class
+   Tailwind rải rác trong `components/admin/` vẫn ăn khớp với component antd
+   đứng cạnh nó.
+
+   Quy tắc: không thêm hue mới ở đây. Cần màu gì thì lấy từ bảng preset của
+   antd, và ưu tiên để chính component antd tô màu thay vì phủ class Tailwind
+   lên nó.
+
+   **Hai chế độ.** `next-themes` gắn `.light`/`.dark` lên `<html>`; khối token
+   dưới đây có đủ hai bản, và `contexts/antd-config-provider.tsx` đổi thuật
+   toán của antd theo đúng chế độ đó. Hai bên phải khớp nhau bằng tay: token ở
+   đây tô cho class Tailwind, thuật toán antd tô cho component antd, và một
+   `Table` nền `#141414` nằm trên một thẻ nền `#1c1c1c` là lỗi thấy ngay.
+
+   **Ba bậc bề mặt, không phải hai.** Nền trang → thẻ → lớp nổi (popover,
+   modal, dropdown). Bản cũ chỉ có nền trang và thẻ, chênh nhau `#f5f5f5` với
+   `#ffffff` — 1.05:1, tức mắt không đọc ra ranh giới nào giữa hai khối đứng
+   cạnh nhau, và ở chế độ tối thì còn tệ hơn. Nay mỗi bậc cách bậc dưới đủ để
+   thấy, cộng một viền thật ở mọi thẻ.
+   ========================================================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* --- Typography -------------------------------------------------------- */
+  /* Cùng ngăn xếp font với antd (`--ant-font-family`), có Inter đứng đầu. */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Thang chữ của antd: 12 · 14 (mặc định) · 16 · 20 · 24 · 30 · 38. CMS đọc
+     bảng biểu là chính nên không cần cỡ tiêu đề khổ trang chủ. */
+  --text-caption: 0.75rem; /* 12 */
+  --text-caption--line-height: 1.5;
+  --text-small: 0.875rem; /* 14 — cỡ chữ mặc định của antd */
+  --text-small--line-height: 1.5715;
+  --text-body: 0.875rem; /* 14 */
+  --text-body--line-height: 1.5715;
+  --text-body-lg: 1rem; /* 16 */
+  --text-body-lg--line-height: 1.5;
+  --text-h4: 1.25rem; /* 20 */
+  --text-h4--line-height: 1.4;
+  --text-h3: 1.5rem; /* 24 */
+  --text-h3--line-height: 1.35;
+  --text-h2: 1.875rem; /* 30 */
+  --text-h2--line-height: 1.3;
+  --text-h1: 2.375rem; /* 38 */
+  --text-h1--line-height: 1.21;
+
+  /* --- Elevation --------------------------------------------------------- */
+  /* Sinh ra utility `shadow-card`; giá trị thật khai ở `:root`/`.dark`. */
+  --shadow-card: var(--shadow-card);
+
+  /* --- Layout ----------------------------------------------------------- */
+  --spacing-gutter: 1.5rem;
+  --container-desktop: 1200px;
+}
+
+@theme {
+  --spacing: 0.25rem;
+}
+
+/* Bảng màu antd ở chế độ sáng, viết dưới tên ngữ nghĩa. */
+:root {
+  /* Nền trang `#eef0f4` chứ không phải `#f5f5f5` của antd: thẻ trắng đặt lên
+     `#f5f5f5` chỉ chênh 1.05:1, tức một dải form và nền trang đọc ra như cùng
+     một mảng. `#eef0f4` vẫn là xám trung tính của antd, chỉ sâu hơn một bậc. */
+  --background: #eef0f4;
+  --foreground: rgba(0, 0, 0, 0.88);
+  --card: #ffffff;
+  --card-foreground: rgba(0, 0, 0, 0.88);
+  /* Lớp nổi trùng màu thẻ ở nền sáng — cả hai đã là trắng, và bóng đổ mới là
+     thứ tách modal khỏi trang, không phải màu nền. */
+  --popover: #ffffff;
+  --popover-foreground: rgba(0, 0, 0, 0.88);
+  --primary: #1677ff;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(0, 0, 0, 0.04);
+  --secondary-foreground: rgba(0, 0, 0, 0.88);
+  --muted: rgba(0, 0, 0, 0.03);
+  /* `rgba(0,0,0,.45)` của antd chỉ đạt ~4.0:1 trên nền trắng — trượt AA cho cỡ
+     chữ 12–14 mà CMS dùng cho toàn bộ dòng phụ và chú thích. `.56` cho ~5.7:1
+     và vẫn đọc ra là chữ phụ. */
+  --muted-foreground: rgba(0, 0, 0, 0.56);
+  --accent: #e6f4ff;
+  --accent-foreground: #0958d9;
+  --border: #d0d5dd;
+  --input: #d0d5dd;
+  --ring: #1677ff;
+
+  --destructive: #ff4d4f;
+  --destructive-foreground: #ffffff;
+  --success: #52c41a;
+  --success-foreground: #ffffff;
+  --warning: #faad14;
+  --warning-foreground: rgba(0, 0, 0, 0.88);
+
+  --chart-1: #1677ff;
+  --chart-2: #52c41a;
+  --chart-3: #faad14;
+  --chart-4: #722ed1;
+  --chart-5: #13c2c2;
+
+  /* Bóng đổ của bậc "thẻ". Nhẹ hơn hẳn bóng của modal: nó chỉ cần nói "khối
+     này nằm trên nền", không phải "khối này nổi hẳn lên trước trang". */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+/**
+ * Chế độ tối.
+ *
+ * Giá trị bám thuật toán tối của antd nhưng **giãn ba bậc nền ra**: antd để
+ * nền trang `#000` và thẻ `#141414` (1.11:1) — trên màn hình văn phòng thì hai
+ * bậc đó dính làm một. Ở đây nền trang `#141414`, thẻ `#1f1f1f`, lớp nổi
+ * `#2a2a2a`, và mỗi bậc còn có viền riêng.
+ *
+ * `.dark` là class do `next-themes` gắn; khai ở đây thì cả nút chuyển chế độ
+ * lẫn lựa chọn "theo hệ thống" đều chạy qua đúng một đường.
+ */
+.dark {
+  --background: #141414;
+  --foreground: rgba(255, 255, 255, 0.88);
+  --card: #1f1f1f;
+  --card-foreground: rgba(255, 255, 255, 0.88);
+  --popover: #2a2a2a;
+  --popover-foreground: rgba(255, 255, 255, 0.88);
+  /* Seed tối của antd. `#1677ff` giữ nguyên trên nền đen thì chói và ăn mất
+     chữ trắng đặt trên nó. */
+  --primary: #1668dc;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(255, 255, 255, 0.08);
+  --secondary-foreground: rgba(255, 255, 255, 0.88);
+  --muted: rgba(255, 255, 255, 0.04);
+  /* Cùng lý do như bản sáng: `rgba(255,255,255,.45)` trên `#1f1f1f` chỉ được
+     ~3.6:1. `.6` cho ~5.4:1. */
+  --muted-foreground: rgba(255, 255, 255, 0.6);
+  --accent: #111a2c;
+  --accent-foreground: #65a9f3;
+  --border: #3a3a3a;
+  --input: #434343;
+  --ring: #1668dc;
+
+  --destructive: #dc4446;
+  --destructive-foreground: #ffffff;
+  --success: #49aa19;
+  --success-foreground: #ffffff;
+  --warning: #d89614;
+  --warning-foreground: rgba(0, 0, 0, 0.88);
+
+  --chart-1: #1668dc;
+  --chart-2: #49aa19;
+  --chart-3: #d89614;
+  --chart-4: #642ab5;
+  --chart-5: #13a8a8;
+
+  /* Bóng đổ gần như vô hình trên nền tối — bậc nền và viền mới là thứ tách
+     khối ở đây. Giữ lại một chút để thẻ không phẳng lì. */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.32), 0 1px 6px -1px rgba(0, 0, 0, 0.24);
+}
+
+/* =============================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+    /* Thanh cuộn, ô chọn ngày và mọi widget gốc của trình duyệt đọc thuộc tính
+       này. Thiếu nó thì chế độ tối vẫn ra một thanh cuộn trắng chạy dọc màn. */
+    color-scheme: light;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-body text-foreground;
+  }
+
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Không đặt cỡ chữ cho h1–h4: antd tự lo phần đó cho `Typography`, còn
+     tiêu đề viết tay trong `components/admin/` chọn cỡ bằng class. Ép cỡ ở
+     đây thì mọi heading của component antd cũng bị kéo theo. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-balance;
+  }
+}
+
+/* =============================================================================
+   UTILITIES
+   ========================================================================== */
+
+@utility container-page {
+  width: 100%;
+  max-width: var(--container-desktop);
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+@utility grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--spacing-gutter);
+}
+
+@utility text-eyebrow {
+  font-size: var(--text-caption);
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --spacing-gutter: 1.25rem;
+  }
+}

@@ -1,0 +1,1086 @@
+/*
+ * Hình học và motion dùng chung của màn mở thiệp. Màu sắc, ảnh và kích thước
+ * tấm bìa nằm trong CSS Module từng mẫu để preset không biến mọi thiệp thành
+ * một giao diện đồng phục.
+ */
+.cover {
+  --invitation-opening-duration: 760ms;
+
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 50%;
+  display: grid;
+  width: calc(100vw + 32px);
+  min-height: 100svh;
+  margin-left: calc(-50vw - 16px);
+  padding: clamp(0.75rem, 2.5svh, 2rem) 1rem;
+  overflow-x: clip;
+  overflow-y: auto;
+  align-content: safe center;
+  justify-items: center;
+  isolation: isolate;
+  /* Chỉ chặn chuỗi cuộn dọc để bìa không kéo theo nội dung phía sau. Trục
+     ngang phải để `auto`: macOS dùng horizontal overscroll cho gesture vuốt
+     hai ngón Back/Forward, đặt shorthand `contain` sẽ khóa luôn gesture đó. */
+  overscroll-behavior-x: auto;
+  overscroll-behavior-y: contain;
+}
+
+/*
+ * Template cũ cũng khai hình học trên `.envelope`. Hai class cùng nằm trên một
+ * node, và CSS Module của template thường được nạp sau primitive nên có thể
+ * kéo bìa về đúng `100vw` tính theo content box — thiếu một scrollbar gutter ở
+ * mép phải. Lặp class có chủ đích để hợp đồng viewport luôn thắng mà không cần
+ * sửa 43 art direction riêng lẻ.
+ */
+.cover.cover {
+  left: 50%;
+  width: calc(100vw + 32px);
+  margin-left: calc(-50vw - 16px);
+  /*
+   * Bìa tự cuộn (`overflow-y: auto`), nên trên máy có thanh cuộn chiếm chỗ
+   * (Windows/Linux) nó ăn mất một rãnh ~15px ở mép phải của **content box**.
+   * `justify-items: center` căn theo content box đó, nên tấm thẻ bị đẩy lệch
+   * sang trái đúng nửa rãnh — đo được mép trái 22.5px so với mép phải 52.5px
+   * ở khung 390px. Phần tràn 32px chỉ đẩy thanh cuộn ra ngoài tầm nhìn chứ
+   * không sửa được độ lệch đó.
+   *
+   * Giấu hẳn thanh cuộn là cách duy nhất giữ content box đối xứng: bìa vẫn
+   * cuộn được bằng lăn chuột, bàn phím và chạm, còn thanh cuộn ở đây thì chưa
+   * bao giờ nhìn thấy — nó luôn nằm ngoài mép cửa sổ.
+   */
+  scrollbar-width: none;
+}
+
+.cover.cover::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/**
+ * Trần bề rộng của **tấm bìa** bên trong màn mở.
+ *
+ * Màn mở cố tình rộng `100vw + 32px` để phủ trọn cửa sổ, kể cả rãnh scrollbar.
+ * Nhưng `vw` đo theo cửa sổ, còn tấm thiệp có khi chỉ là một khung hẹp bên
+ * trong cửa sổ đó: preview Mobile của editor là khung 384px nằm giữa màn hình
+ * 1440px, và khung ấy **cắt biên**. Bìa vẫn rộng 1472px, tấm thẻ bên trong lấy
+ * `min(100%, 34rem)` = 544px, rồi khung xén còn 384px ở giữa — mất bo góc, mất
+ * bóng đổ, mất hai cụm hoạ tiết ở góc, và tấm thẻ đọc ra như một dải giấy tràn
+ * từ mép này sang mép kia.
+ *
+ * Trần theo `cqw` (bề rộng tấm thiệp) sửa đúng chỗ đó mà **không** đụng tới
+ * hợp đồng tràn màn: nền vẫn phủ hết cửa sổ, chỉ tấm thẻ là không rộng hơn cái
+ * khung đang chứa nó. Ở trang demo và trang thiệp công khai, khung rộng hơn
+ * 34rem nên trần này không bao giờ có hiệu lực. Mẫu nào không có ancestor
+ * container thì `cqw` tự rơi về bề rộng viewport — tức đúng hành vi cũ.
+ *
+ * `2rem` là hai lần padding ngang của `.cover`, để tấm thẻ còn chừa mép thở
+ * thay vì dán sát hai bên khung.
+ *
+ * Chọn `[data-opening-surface]` chứ không phải `.cover > *`: hoa rơi và confetti
+ * cũng là con trực tiếp của bìa, và chúng là phần tử `absolute` — kẹp bề rộng
+ * chúng là méo cả màn hiệu ứng. 49/50 mẫu đã gắn sẵn thuộc tính này.
+ */
+.cover :global([data-opening-surface]) {
+  max-width: min(100%, calc(100cqw - 2rem));
+}
+
+/*
+ * Trên điện thoại, tấm bìa **không tự đặt bề rộng**: nó rộng bằng khung trừ
+ * đúng 16px mép mỗi bên. Mỗi mẫu đang tự khai một con số riêng
+ * (`min(84vw, 372px)`, `min(74cqi, 340px)`, `min(84cqi, 360px, 46svh)`…), và ở
+ * khung 390px chúng ra 300–340px — tức hai dải trống 25–45px mỗi bên, đọc ra
+ * như tấm thẻ bị co lại chứ không phải như một màn bìa. Chữ trong thẻ vì thế
+ * cũng phải xuống dòng sớm hơn cần thiết.
+ *
+ * Chốt ở đây thay vì sửa 48 CSS Module: bề rộng khả dụng của màn hình không
+ * phải art direction của mẫu. Các trần theo `cqi`/`svh` vẫn còn nguyên tác dụng
+ * từ breakpoint này trở lên.
+ */
+@media (max-width: 480px) {
+  .cover.cover {
+    padding-inline: 1rem;
+  }
+
+  .cover.cover :global([data-opening-surface]) {
+    width: 100%;
+  }
+}
+
+/* Tên cặp đôi do `coupleShortNames` trả về có ba nhịp: tên thứ nhất, dấu nối,
+ * tên thứ hai. Chỉ màn mở giữ các dấu xuống dòng này; ở phần nội dung thiệp,
+ * white-space mặc định vẫn gộp chúng về cách trình bày trên một dòng. Selector
+ * đủ mạnh để thắng các mẫu cũ từng ép tên `nowrap` trên bìa. */
+.cover
+  :global([data-opening-surface])
+  :is(h1, p, strong) {
+  white-space: pre-line;
+}
+
+.content {
+  min-height: 100svh;
+}
+
+/* Section đầu tiên bên trong thiệp tiếp tục nhịp tên của màn mở: tên thứ nhất,
+ * dấu `&`, tên thứ hai. Các template đang có ba dạng gốc nội dung (section,
+ * main > section, div > section), nên hợp đồng chung chỉ nhắm đúng hero đầu
+ * tiên và không đổi cách trình bày tên ở các section phía sau. */
+.content.content
+  > :global(section):first-of-type
+  :is(h1, p, strong),
+.content.content
+  > :global(main)
+  > :global(section):first-of-type
+  :is(h1, p, strong),
+.content.content
+  > :global(div)
+  > :global(section):first-of-type
+  :is(h1, p, strong) {
+  white-space: pre-line;
+}
+
+/*
+ * Ẩn bằng `opacity`, **không** bằng `visibility` hay `height: 0`.
+ *
+ * Cả hai cách kia đều khiến trình duyệt bỏ qua bước vẽ, nên toàn bộ tấm thiệp —
+ * mấy chục ảnh phải giải mã — dồn vào đúng khung hình mà màn mở vừa bắt đầu
+ * chạy. Đo được một khung 161ms ở mốc 210ms sau cú bấm, và đó chính là cái giật.
+ *
+ * `opacity: 0` vẫn vẽ, nên chi phí đó trả lúc tải trang, khi chưa có gì chuyển
+ * động. Chiều cao khoá ở một màn hình để trang không cuộn được sau lớp bìa; nội
+ * dung vẫn `inert` và `aria-hidden` nên không ai chạm hay đọc nhầm vào nó.
+ */
+.content[data-opening-phase="closed"] {
+  height: 100svh;
+  min-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* Preset an toàn cho những mẫu chỉ cần đổi màn nhẹ. */
+.cover[data-opening-motion="fade"][data-opening-phase="opening"] {
+  animation: invitation-opening-cover-fade
+    var(--invitation-opening-duration) ease-in both;
+  pointer-events: none;
+}
+
+.content[data-opening-motion="fade"][data-opening-phase="opening"] {
+  animation: invitation-opening-content-fade
+    var(--invitation-opening-duration) ease-out both;
+}
+
+/*
+ * Paper lift giữ toàn bộ bố cục trên trục giữa: hạt trang trí bung trước, tấm
+ * card bay lên, sau đó lớp bìa rút từ trên xuống để lộ nội dung bên dưới.
+ */
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"] {
+  animation: invitation-opening-cover-lift
+    var(--invitation-opening-duration) cubic-bezier(0.4, 0, 0.2, 1) both;
+  pointer-events: none;
+  will-change: clip-path, opacity;
+}
+
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]
+  :global([data-opening-surface]) {
+  animation: invitation-opening-surface-lift
+    var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center 18%;
+  will-change: opacity, transform;
+}
+
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]
+  :global([data-opening-action]) {
+  animation: invitation-opening-action-lift
+    var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/*
+ * Quầng sáng lan ra khỏi tấm thiệp. Gợn tròn trên mặt giấy bị `overflow: hidden`
+ * cắt ở mép, nên một mình nó dừng lại đúng chỗ cần lan ra nhất; quầng này nối
+ * tiếp ra nền để nhịp sáng đi hết màn hình.
+ */
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 58%,
+    var(--invitation-opening-glow-color, rgb(255 255 255 / 22%)),
+    transparent 62%
+  );
+  animation: invitation-opening-glow
+    var(--invitation-opening-duration) ease-out both;
+  pointer-events: none;
+}
+
+/*
+ * Trái tim là **nguồn phát** của cả màn mở: nó đập một nhịp trước, rồi gợn sáng
+ * từ chính nó lan ra mặt giấy, rồi cánh hoa mới bung. Người xem thấy được cái gì
+ * gây ra cái gì — thứ mà một trận confetti xuất hiện từ hư không không có.
+ */
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]
+  :global([data-opening-emblem]) {
+  position: relative;
+  animation: invitation-opening-emblem-pulse
+    var(--invitation-opening-duration) cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  will-change: opacity, transform;
+}
+
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]
+  :global([data-opening-copy]) {
+  animation: invitation-opening-copy-lift
+    var(--invitation-opening-duration) cubic-bezier(0.4, 0, 1, 1) both;
+  will-change: opacity, transform;
+}
+
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"]
+  :global([data-opening-decor]) {
+  animation: invitation-opening-decor-lift
+    var(--invitation-opening-duration) ease-out both;
+}
+
+.content[data-opening-motion="paper-lift"][data-opening-phase="opening"] {
+  animation: invitation-opening-content-lift
+    var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+  will-change: opacity, transform;
+}
+
+/*
+ * Paper bloom: CTA chìm xuống trước, chữ và huy hiệu rời theo nhịp, sau đó tờ
+ * giấy tiến gần người xem trong khi nội dung thật hiện lên phía sau. Mọi keyframe
+ * chỉ dùng opacity/transform để không gây reflow hay giật trên mobile.
+ */
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"] {
+  animation: invitation-opening-cover-bloom
+    var(--invitation-opening-duration) cubic-bezier(0.4, 0, 0.2, 1) both;
+  pointer-events: none;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"]
+  :global([data-opening-surface]) {
+  animation: invitation-opening-surface-bloom
+    var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center center;
+  will-change: opacity, transform;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"]
+  :global([data-opening-emblem]) {
+  animation: invitation-opening-emblem-bloom
+    var(--invitation-opening-duration) ease-out both;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"]
+  :global([data-opening-copy]) {
+  animation: invitation-opening-copy-bloom
+    var(--invitation-opening-duration) cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"]
+  :global([data-opening-action]) {
+  animation: invitation-opening-action-bloom
+    var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+/*
+ * Neo bằng `left/top` do JS đo từ CTA, và nằm ở lớp phủ chứ không trong tấm
+ * thiệp — `overflow: hidden` của mặt giấy sẽ cắt cụt cánh hoa nếu để bên trong.
+ * z-index cao hơn tấm thiệp: hoa bay **trước mặt** giấy, không lẩn sau nó.
+ */
+.burstLayer {
+  position: absolute;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.petalBurst {
+  position: absolute;
+  overflow: visible;
+}
+
+.confettiBurst {
+  position: absolute;
+  overflow: visible;
+}
+
+/*
+ * Gợn sáng toả ra từ chỗ vừa bấm. Nó ở lớp phủ chứ không gắn vào hoạ tiết nào
+ * của mẫu, nên mẫu không có huy hiệu giữa bìa vẫn dùng được nguyên preset.
+ */
+.pulseRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 92px;
+  height: 92px;
+  margin: -46px 0 0 -46px;
+  border: 1px solid var(--invitation-opening-ring-color, currentcolor);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.cover[data-opening-motion="paper-lift"][data-opening-phase="opening"] .pulseRing {
+  animation: invitation-opening-pulse-ring
+    var(--invitation-opening-duration) cubic-bezier(0.16, 0.84, 0.34, 1) both;
+  will-change: opacity, transform;
+}
+
+.petal {
+  position: absolute;
+  top: -5px;
+  left: -4px;
+  width: var(--invitation-opening-petal-size, 9px);
+  height: calc(var(--invitation-opening-petal-size, 9px) * 1.45);
+  border-radius: 92% 8% 76% 24% / 78% 18% 82% 22%;
+  background: var(--invitation-opening-petal-color, currentColor);
+  box-shadow: inset -1px -1px 0 rgb(255 255 255 / 18%);
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(45deg) scale(0);
+  transform-origin: 65% 85%;
+}
+
+/*
+ * Thời lượng đến từ chính hạt, không phải hằng số: ba lớp chiều sâu bay ba tốc
+ * độ khác nhau, và trước đây con số 760ms cứng ở đây khiến cánh hoa tắt ngóm khi
+ * màn mở mới đi được nửa đường.
+ */
+.cover[data-opening-phase="opening"] .petal {
+  animation: invitation-opening-petal-flight
+    var(--opening-petal-duration, 760ms) cubic-bezier(0.22, 0.61, 0.36, 1)
+    var(--opening-petal-delay) both;
+  /*
+   * Bóng đổ là thứ giữ cánh hoa đọc được trên **cả hai** nền: màn hình rộng thì
+   * nó bay trên nền tối, còn điện thoại thì tấm thiệp chiếm gần hết khung nên
+   * phần lớn quỹ đạo nằm trên mặt giấy sáng.
+   */
+  filter: blur(var(--opening-petal-blur, 0))
+    drop-shadow(0 1px 2px rgb(60 12 22 / 32%));
+  will-change: opacity, transform;
+}
+
+/* Pháo giấy là các mảnh nhỏ độc lập, chỉ chạy opacity/transform để không tạo
+ * reflow. Ba màu lấy từ CSS Module của từng mẫu, primitive không áp art
+ * direction riêng lên thiệp. */
+.confettiParticle {
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  width: var(--invitation-opening-confetti-size, 7px);
+  height: calc(var(--invitation-opening-confetti-size, 7px) * 1.45);
+  border-radius: 1px;
+  background: var(--invitation-opening-confetti-color-a, currentColor);
+  box-shadow: 0 1px 2px rgb(35 0 0 / 24%);
+  opacity: 0;
+  transform: translate3d(0, 0, 0) rotate(0) scale(0);
+}
+
+.confettiParticle:nth-child(3n + 2) {
+  width: calc(var(--invitation-opening-confetti-size, 7px) * 0.72);
+  height: calc(var(--invitation-opening-confetti-size, 7px) * 0.72);
+  border-radius: 50%;
+  background: var(--invitation-opening-confetti-color-b, currentColor);
+}
+
+.confettiParticle:nth-child(3n) {
+  width: calc(var(--invitation-opening-confetti-size, 7px) * 0.82);
+  height: calc(var(--invitation-opening-confetti-size, 7px) * 1.8);
+  background: var(--invitation-opening-confetti-color-c, currentColor);
+}
+
+.cover[data-opening-phase="opening"] .confettiParticle {
+  animation: invitation-opening-confetti-flight
+    var(--opening-confetti-duration, 480ms) cubic-bezier(0.18, 0.72, 0.28, 1)
+    var(--opening-confetti-delay, 0ms) both;
+  will-change: opacity, transform;
+}
+
+/* Decor làm ngòi nổ biến mất ngay tại chỗ, để người xem đọc được nó đã vỡ
+ * thành những hạt đang bay chứ không phải có thêm một lớp confetti mới. */
+.cover[data-opening-phase="opening"]
+  :global([data-opening-burst-origin]) {
+  animation: invitation-opening-burst-origin-pop 190ms
+    cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-phase="opening"]
+  :global([data-opening-decor]) {
+  animation: invitation-opening-decor-bloom
+    var(--invitation-opening-duration) ease-out both;
+}
+
+.content[data-opening-motion="paper-bloom"][data-opening-phase="opening"] {
+  animation: invitation-opening-content-bloom
+    var(--invitation-opening-duration) cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: top center;
+  will-change: opacity, transform;
+}
+
+/*
+ * Khi có petal burst, chuyển cảnh chia thành hai hồi rõ ràng: cánh hoa hoàn tất
+ * quỹ đạo trước, rồi tờ giấy mới nở ra. Selector có `data-opening-burst` giữ
+ * nguyên nhịp paper-bloom gọn cho các mẫu không dùng hạt trang trí.
+ */
+.cover[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"] {
+  animation-name: invitation-opening-cover-bloom-after-burst;
+}
+
+/*
+ * Hai hồi cho paper-lift: cánh hoa bay trọn quỹ đạo trước, tấm thiệp nâng lên
+ * sau. Trước đây mọi selector hai hồi đều khoá cứng vào paper-bloom, nên ở
+ * paper-lift hoa và thiệp khởi động cùng một mốc và không ai kịp thấy hoa.
+ */
+.cover[data-opening-motion="paper-lift"][data-opening-burst][data-opening-phase="opening"] {
+  animation-name: invitation-opening-cover-lift-after-burst;
+}
+
+.cover[data-opening-motion="paper-lift"][data-opening-burst][data-opening-phase="opening"]
+  :global([data-opening-surface]) {
+  animation-name: invitation-opening-surface-lift-after-burst;
+}
+
+.content[data-opening-motion="paper-lift"][data-opening-burst][data-opening-phase="opening"] {
+  animation-name: invitation-opening-content-lift-after-burst;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"]
+  :global([data-opening-surface]) {
+  animation-name: invitation-opening-surface-bloom-after-burst;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"]
+  :global([data-opening-emblem]) {
+  animation-name: invitation-opening-emblem-bloom-after-burst;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"]
+  :global([data-opening-copy]) {
+  animation-name: invitation-opening-copy-bloom-after-burst;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"]
+  :global([data-opening-action]) {
+  animation-name: invitation-opening-action-bloom-after-burst;
+}
+
+.cover[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"]
+  :global([data-opening-decor]) {
+  animation-name: invitation-opening-decor-bloom-after-burst;
+}
+
+.content[data-opening-motion="paper-bloom"][data-opening-burst][data-opening-phase="opening"] {
+  animation-name: invitation-opening-content-bloom-after-burst;
+}
+
+@keyframes invitation-opening-cover-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes invitation-opening-content-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes invitation-opening-cover-lift {
+  0%,
+  55% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  99% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+}
+
+@keyframes invitation-opening-surface-lift {
+  0%,
+  50% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0) scale(1);
+  }
+  56% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0, -10px, 0) rotateX(2deg)
+      scale(1.01);
+  }
+  72% {
+    opacity: 0.94;
+    transform: perspective(1000px) translate3d(0, -22vh, 36px) rotateX(6deg)
+      scale(0.985);
+  }
+  88%,
+  100% {
+    opacity: 0;
+    transform: perspective(1000px) translate3d(0, -52vh, 72px) rotateX(10deg)
+      scale(0.94);
+  }
+}
+
+@keyframes invitation-opening-action-lift {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  5% {
+    opacity: 1;
+    transform: scale(0.97) rotate(0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.02) rotate(-2deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.995) rotate(1.6deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.005) rotate(-0.8deg);
+  }
+  26%,
+  58% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  /* Nút phải rời đi cùng phần chữ. Giữ nó rõ nét đến cuối thì tấm giấy trống
+     trơn còn mỗi cái nút, và màn mở kết lại bằng một mảnh giao diện. */
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-6px) rotate(0);
+  }
+}
+
+@keyframes invitation-opening-content-lift {
+  0%,
+  55% {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.992);
+  }
+  64%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes invitation-opening-cover-bloom {
+  0%,
+  38% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes invitation-opening-surface-bloom {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  34% {
+    opacity: 1;
+    transform: translateY(-0.5%) scale(1.012);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2.5%) scale(1.075);
+  }
+}
+
+@keyframes invitation-opening-emblem-bloom {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  22% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  58%,
+  100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes invitation-opening-copy-bloom {
+  0%,
+  14% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  54%,
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes invitation-opening-action-bloom {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  8% {
+    opacity: 1;
+    transform: scale(0.97) rotate(0);
+  }
+  17% {
+    opacity: 1;
+    transform: scale(1.02) rotate(-2deg);
+  }
+  26% {
+    opacity: 1;
+    transform: scale(0.995) rotate(1.6deg);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.005) rotate(-0.8deg);
+  }
+  46%,
+  58% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px);
+  }
+}
+
+@keyframes invitation-opening-petal-flight {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 2px, 0) rotate3d(0, 0, 1, 20deg)
+      scale(0);
+  }
+  10% {
+    opacity: var(--opening-petal-opacity, 0.92);
+    transform: translate3d(
+        calc(var(--opening-petal-x) * 0.28),
+        calc(var(--opening-petal-y) * 0.42),
+        0
+      )
+      rotate3d(1, 0.4, 0.2, calc(var(--opening-petal-spin) * 0.18))
+      scale(var(--opening-petal-scale));
+  }
+  /* Đỉnh parabol: cánh hoa hết đà bay lên, khựng lại một nhịp trước khi rơi. */
+  38% {
+    opacity: var(--opening-petal-opacity, 0.92);
+    transform: translate3d(var(--opening-petal-x), var(--opening-petal-y), 0)
+      rotate3d(1, 0.6, 0.2, calc(var(--opening-petal-spin) * 0.5))
+      scale(var(--opening-petal-scale));
+  }
+  78% {
+    opacity: calc(var(--opening-petal-opacity, 0.92) * 0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(
+        calc(var(--opening-petal-x) * 1.24),
+        calc(var(--opening-petal-y) + var(--opening-petal-fall)),
+        0
+      )
+      rotate3d(1, 0.8, 0.3, var(--opening-petal-spin))
+      rotate(var(--opening-petal-tilt))
+      scale(var(--opening-petal-scale));
+  }
+}
+
+@keyframes invitation-opening-confetti-flight {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(0) scale(0);
+  }
+  9% {
+    opacity: var(--opening-confetti-opacity, 0.92);
+    transform: translate3d(
+        calc(var(--opening-confetti-x) * 0.2),
+        calc(var(--opening-confetti-y) * 0.2),
+        0
+      )
+      rotate(calc(var(--opening-confetti-spin) * 0.16))
+      scale(var(--opening-confetti-scale, 1));
+  }
+  68% {
+    opacity: var(--opening-confetti-opacity, 0.92);
+    transform: translate3d(
+        var(--opening-confetti-x),
+        var(--opening-confetti-y),
+        0
+      )
+      rotate(calc(var(--opening-confetti-spin) * 0.72))
+      scale(var(--opening-confetti-scale, 1));
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(
+        calc(var(--opening-confetti-x) * 1.08),
+        calc(var(--opening-confetti-y) + var(--opening-confetti-drop)),
+        0
+      )
+      rotate(var(--opening-confetti-spin))
+      scale(calc(var(--opening-confetti-scale, 1) * 0.72));
+  }
+}
+
+@keyframes invitation-opening-burst-origin-pop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  34% {
+    opacity: 1;
+    transform: scale(1.09);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.08);
+  }
+}
+
+/* Nhịp đập của trái tim: nảy lên rồi lún xuống trước khi rời đi cùng tấm bìa. */
+@keyframes invitation-opening-emblem-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  8% {
+    opacity: 1;
+    transform: scale(1.22);
+  }
+  16% {
+    opacity: 1;
+    transform: scale(0.97);
+  }
+  24% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  34%,
+  52% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  74%,
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/*
+ * Gợn sáng lan ra từ chính trái tim. Nó chạy **sau** nhịp đập chứ không cùng
+ * lúc — cùng lúc thì hai chuyển động triệt nhau và chỉ còn cảm giác nhoè.
+ */
+@keyframes invitation-opening-pulse-ring {
+  0%,
+  7% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  13% {
+    opacity: 0.6;
+  }
+  48%,
+  100% {
+    opacity: 0;
+    transform: scale(11);
+  }
+}
+
+@keyframes invitation-opening-glow {
+  0%,
+  6% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  20% {
+    opacity: 1;
+  }
+  58%,
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes invitation-opening-copy-lift {
+  0%,
+  40% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  62%,
+  100% {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes invitation-opening-decor-lift {
+  0%,
+  34% {
+    opacity: var(--opening-decor-opacity, 1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--opening-decor-x, 0), var(--opening-decor-y, 0), 0)
+      scale(1.06);
+  }
+}
+
+/* Hồi hai của paper-lift: mọi mốc lùi lại để nhường sân cho cánh hoa. */
+@keyframes invitation-opening-cover-lift-after-burst {
+  0%,
+  74% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+  99% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+}
+
+@keyframes invitation-opening-surface-lift-after-burst {
+  0%,
+  56% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0) scale(1);
+  }
+  64% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0, -10px, 0) rotateX(2deg)
+      scale(1.01);
+  }
+  80% {
+    opacity: 0.94;
+    transform: perspective(1000px) translate3d(0, -24vh, 36px) rotateX(6deg)
+      scale(0.985);
+  }
+  94%,
+  100% {
+    opacity: 0;
+    transform: perspective(1000px) translate3d(0, -54vh, 72px) rotateX(10deg)
+      scale(0.94);
+  }
+}
+
+@keyframes invitation-opening-content-lift-after-burst {
+  0%,
+  72% {
+    opacity: 0;
+    transform: translateY(-22px) scale(0.992);
+  }
+  84%,
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes invitation-opening-decor-bloom {
+  0%,
+  18% {
+    opacity: var(--opening-decor-opacity, 1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--opening-decor-x, 0), var(--opening-decor-y, 0), 0)
+      scale(1.04);
+  }
+}
+
+@keyframes invitation-opening-content-bloom {
+  0%,
+  24% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.988);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes invitation-opening-cover-bloom-after-burst {
+  0%,
+  56% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes invitation-opening-surface-bloom-after-burst {
+  0%,
+  54% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  64% {
+    opacity: 1;
+    transform: translateY(-0.5%) scale(1.012);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2.5%) scale(1.075);
+  }
+}
+
+@keyframes invitation-opening-emblem-bloom-after-burst {
+  0%,
+  54% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  64% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  76%,
+  100% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes invitation-opening-copy-bloom-after-burst {
+  0%,
+  54% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  76%,
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes invitation-opening-action-bloom-after-burst {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  5% {
+    opacity: 1;
+    transform: scale(0.97) rotate(0);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1.02) rotate(-2deg);
+  }
+  15% {
+    opacity: 1;
+    transform: scale(0.995) rotate(1.6deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.005) rotate(-0.8deg);
+  }
+  26%,
+  52% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  59%,
+  100% {
+    opacity: 0;
+    transform: scale(0.96) translateY(-4px) rotate(0);
+  }
+}
+
+@keyframes invitation-opening-decor-bloom-after-burst {
+  0%,
+  54% {
+    opacity: var(--opening-decor-opacity, 1);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--opening-decor-x, 0), var(--opening-decor-y, 0), 0)
+      scale(1.04);
+  }
+}
+
+@keyframes invitation-opening-content-bloom-after-burst {
+  0%,
+  58% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.988);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover[data-opening-motion][data-opening-burst][data-opening-phase="opening"],
+  .cover[data-opening-phase="opening"] {
+    animation: invitation-opening-cover-fade 160ms ease-out both;
+  }
+
+  .cover[data-opening-motion][data-opening-burst][data-opening-phase="opening"]
+    :global([data-opening-surface]),
+  .cover[data-opening-motion][data-opening-burst][data-opening-phase="opening"]
+    :global([data-opening-emblem]),
+  .cover[data-opening-motion][data-opening-burst][data-opening-phase="opening"]
+    :global([data-opening-copy]),
+  .cover[data-opening-motion][data-opening-burst][data-opening-phase="opening"]
+    :global([data-opening-action]),
+  .cover[data-opening-motion][data-opening-burst][data-opening-phase="opening"]
+    :global([data-opening-decor]),
+  .cover[data-opening-phase="opening"] :global([data-opening-surface]),
+  .cover[data-opening-phase="opening"] :global([data-opening-emblem]),
+  .cover[data-opening-phase="opening"] :global([data-opening-copy]),
+  .cover[data-opening-phase="opening"] :global([data-opening-action]),
+  .cover[data-opening-phase="opening"] :global([data-opening-decor]) {
+    animation: none;
+  }
+
+  .petalBurst,
+  .confettiBurst {
+    display: none;
+  }
+
+  .cover[data-opening-phase="opening"]
+    :global([data-opening-burst-origin]) {
+    opacity: 0;
+  }
+
+  .content[data-opening-motion][data-opening-burst][data-opening-phase="opening"],
+  .content[data-opening-phase="opening"] {
+    animation: invitation-opening-content-fade 160ms ease-out both;
+  }
+}

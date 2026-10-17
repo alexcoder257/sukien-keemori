@@ -1,0 +1,72 @@
+/**
+ * Card mẫu thiệp: không viền, chỉ một lớp nền nhuộm rất nhạt theo gói dịch vụ.
+ *
+ * Điểm xuất phát của cả ba bậc là `--card` (ivory trên nền sáng) chứ không phải
+ * trong suốt. Nền trang là paper, tối hơn ivory một nấc — nên card tự tách khỏi
+ * trang bằng đúng cặp token mà design system đã dựng sẵn cho việc này, không cần
+ * đường kẻ nào gánh hộ. Trước đây card để trong suốt thì bậc Free chìm hẳn vào
+ * trang và cả lưới trông như ảnh rời rạc trôi trên nền.
+ *
+ * Trên nền đó mới pha thêm một chút màu gói: card đọc được tier từ xa mà không
+ * phải rà từng nhãn. Free không pha gì — nó là bậc nền, không cần tự giới thiệu.
+ *
+ * Pha vào `var(--card)` chứ không vào một màu cố định, nên đặt card lên
+ * `.theme-forest` là cả ba bậc tự lật theo bề mặt tối, giữ nguyên tương quan.
+ */
+
+.card {
+  /* Mặc định là gói Free: đúng mặt card của design system, không pha thêm gì. */
+  --surface: var(--card);
+
+  /* Vẽ viền vào bên trong thay vì dùng `border`: border từng chiếm 2px ngang,
+     làm khung card rộng hơn poster đúng 2px. Inset shadow giữ được nét đóng
+     khung mà mép card và mép poster dùng chung một bề rộng. */
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklab, var(--color-forest-ink) 10%, transparent);
+  border-radius: 12px;
+  /* Không khai `transition` ở đây: class `transition duration-300` trên chính
+     card đã phủ `background-color`, khai thêm chỉ tạo cơ hội đá nhau về thứ tự
+     stylesheet. */
+  background: var(--surface);
+  /* Card ngoài viewport vẫn giữ đúng chỗ trong lưới nhưng chưa cần layout và
+     paint nội dung. Với gần 50 mẫu, đây là phần chênh lệch lớn nhất sau ảnh. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 520px;
+}
+
+@media (min-width: 640px) and (max-width: 1279px) {
+  .card {
+    contain-intrinsic-size: auto 560px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .card {
+    contain-intrinsic-size: auto 460px;
+  }
+}
+
+.card[data-tier="gold"] {
+  /* 8% là ngưỡng vừa đủ để mắt thấy card ấm hơn card Free mà chữ phụ
+     (`text-muted-foreground`) chưa bắt đầu chìm. */
+  --surface: color-mix(in oklab, var(--color-deep-gold) 8%, var(--card));
+}
+
+.card[data-tier="diamond"] {
+  /* Forest tối hơn deep-gold nhiều nên cùng 8% sẽ ra xám nặng; 6% cho ra độ lệch
+     *nhìn* ngang với card gold. */
+  --surface: color-mix(in oklab, var(--color-forest) 6%, var(--card));
+}
+
+.card:hover {
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklab, var(--color-forest-ink) 20%, transparent);
+}
+
+.card[data-tier="gold"]:hover {
+  --surface: color-mix(in oklab, var(--color-deep-gold) 13%, var(--card));
+}
+
+.card[data-tier="diamond"]:hover {
+  --surface: color-mix(in oklab, var(--color-forest) 10%, var(--card));
+}

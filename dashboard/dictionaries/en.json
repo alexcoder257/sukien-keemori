@@ -1,0 +1,774 @@
+{
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "eyebrow": "Keemori · Admin",
+      "subtitle": "Sign in to manage Keemori invitations, content and operations. Admin accounts are kept apart from customer accounts.",
+      "email": "Email",
+      "password": "Password",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "securityNote": "Repeated failed attempts trigger a temporary lockout. Accounts are issued by an administrator; there is no public sign-up."
+    },
+    "errors": {
+      "invalid": "Incorrect email or password.",
+      "throttled": "Too many attempts. Please wait a few minutes and try again.",
+      "unavailable": "Cannot reach the server, please try again later.",
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "Invalid email address.",
+      "passwordRequired": "Please enter your password."
+    },
+    "notices": {
+      "password_changed": "Password changed. Please sign in again with your new password."
+    }
+  },
+  "common": {
+    "tier": {
+      "free": "Free",
+      "gold": "Gold",
+      "diamond": "Diamond"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "continue": "Continue",
+      "linkQr": "Link/QR",
+      "pay": "Pay now",
+      "viewAll": "View all",
+      "viewMore": "View more",
+      "save": "Save",
+      "cancel": "Cancel",
+      "back": "Back",
+      "prev": "Previous template",
+      "next": "Next template",
+      "backToTop": "Back to top",
+      "close": "Close"
+    }
+  },
+  "errors": {
+    "notFound": {
+      "meta": "Page not found",
+      "title": "This screen could not be found",
+      "body": "The address does not match any screen in the CMS. It may be a typo, or the screen has not been built yet — the sidebar on the left is the full map.",
+      "home": "Back to overview"
+    },
+    "runtime": {
+      "meta": "Something went wrong",
+      "title": "This screen ran into trouble",
+      "body": "The last action did not complete. Try again; if it keeps failing, send the error code below to engineering.",
+      "retry": "Try again",
+      "home": "Back to overview",
+      "digestLabel": "Error code"
+    },
+    "global": {
+      "title": "The page could not load",
+      "body": "The CMS hit a fatal error and cannot be displayed. Please reload the page.",
+      "retry": "Reload",
+      "digestLabel": "Error code"
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Admin"
+    },
+    "title": "Admin",
+    "nav": {
+      "label": "Admin navigation",
+      "comingSoon": "This screen is not built yet",
+      "menu": "Open admin menu",
+      "close": "Close menu",
+      "skipToContent": "Skip navigation and go to main content",
+      "groups": {
+        "overview": "Overview",
+        "operations": "Operations",
+        "content": "Content & display",
+        "homepage": "Homepage",
+        "configuration": "Configuration",
+        "commercial": "Commercial"
+      },
+      "items": {
+        "dashboard": "Overview",
+        "users": "Users",
+        "settings": "Link settings",
+        "faq": "FAQ",
+        "templateReviews": "Template reviews",
+        "templateTags": "Template tags",
+        "homepageHero": "Hero sample card",
+        "homepage": "Featured templates",
+        "coupleShowcase": "Couples who made a card",
+        "siteStats": "Published stats",
+        "cards": "Created cards",
+        "analytics": "Analytics",
+        "audit": "Audit log",
+        "weddings": "Wedding calendar",
+        "templateStats": "Most viewed templates",
+        "payments": "Payments",
+        "priceConfig": "Pricing",
+        "vouchers": "Discount codes"
+      }
+    },
+    "dashboardNote": "The revenue and Google Analytics dashboard lives in a separate design and is out of scope for this screen.",
+    "backendNote": "Every plan limit, ownership rule and payment check is enforced by the backend.",
+    "errors": {
+      "required": "This field is required.",
+      "emailInvalid": "Invalid email.",
+      "numberMin": "Value must be greater than 0.",
+      "failed": "Action failed, please try again.",
+      "urlInvalid": "Invalid URL.",
+      "numberMax": "That value is above the allowed maximum.",
+      "percentMax": "A percentage code cannot exceed 100%.",
+      "relativePath": "The path must start with / (an image hosted by this site).",
+      "phoneInvalid": "The phone number must have 10 digits and start with 0."
+    },
+    "loading": "Loading…",
+    "roles": {
+      "customer": "Customer"
+    },
+    "adminRoles": {
+      "super_admin": "Super admin",
+      "admin": "Administrator",
+      "editor": "Editor",
+      "support": "Customer support",
+      "accountant": "Accountant"
+    },
+    "permissions": {
+      "dashboard:view": "View overview",
+      "users:view": "View users",
+      "users:delete": "Disable accounts",
+      "cards:manage": "Manage invitations",
+      "content:manage": "Edit content",
+      "reviews:manage": "Moderate template reviews",
+      "templates:manage": "Manage templates",
+      "settings:manage": "Site settings",
+      "analytics:view": "Analytics",
+      "audit:view": "Audit log",
+      "payments:manage": "Reconcile payments",
+      "pricing:manage": "Pricing",
+      "vouchers:manage": "Vouchers"
+    },
+    "overview": {
+      "subtitle": "Track site traffic, users and invitation creation across the website.",
+      "operations": "Operations snapshot",
+      "operationsHint": "System-wide counts based on the latest available data.",
+      "totalUsers": "Total users",
+      "totalCards": "Invitations created",
+      "analyticsRestricted": "Regular admins can see operational counts. Website traffic and popular templates are limited to super admins."
+    },
+    "users": {
+      "title": "Users",
+      "subtitle": "Customer accounts that buy invitations.",
+      "searchPlaceholder": "Search by email or name",
+      "total": "{count} accounts",
+      "empty": "No accounts match.",
+      "columns": {
+        "name": "Account",
+        "role": "Role",
+        "createdAt": "Created",
+        "actions": "Actions"
+      },
+      "view": "View details",
+      "delete": "Delete account",
+      "deleteConfirmTitle": "Delete this account?",
+      "deleteConfirmBody": "{name} ({email}) can no longer sign in, and this email cannot be registered again. Invitations and orders stay as they are.",
+      "deleteConfirm": "Delete account",
+      "deleted": "Deleted {name}",
+      "detail": {
+        "cards": "Invitations",
+        "cardViews": "Card views",
+        "phone": "Phone",
+        "google": "Google sign-in",
+        "updatedAt": "Last updated",
+        "emailNotifications": "Email notifications",
+        "allowShowcase": "Allows showcase",
+        "yes": "Yes",
+        "no": "No",
+        "empty": "—",
+        "paymentHistory": "View payment history"
+      }
+    },
+    "settings": {
+      "title": "Link settings",
+      "save": "Save settings",
+      "saved": "Settings saved",
+      "homepageCount": "Homepage template slots",
+      "homepageCountHint": "Used by the homepage strip; which templates appear is set in “Homepage templates”.",
+      "messengerUrl": "Fanpage Messenger link",
+      "messengerUrlHint": "Floating chat button at the bottom right of the public site, and the Fanpage card on the Contact page. Leave empty to hide both.",
+      "socialTitle": "Social links",
+      "socialHint": "Used in two places: icons in the public site footer, and channel cards on the Contact page (Instagram, TikTok, Zalo). An empty field still shows its footer icon, dimmed and not clickable, but hides its Contact page card; an empty email falls back to the default support inbox.",
+      "facebookUrl": "Facebook",
+      "instagramUrl": "Instagram",
+      "tiktokUrl": "TikTok",
+      "zaloPhone": "Zalo number",
+      "contactEmail": "Contact email",
+      "contactEmailHint": "Only used for the mail icon in the footer. The email quoted in the legal documents does not change with this field.",
+      "zaloPhoneHint": "Shown as the Zalo icon in the footer, the Zalo card on the Contact page and on the Business information page; clicking it opens zalo.me/<number>. Enter 10 digits — spaces are fine.",
+      "subtitle": "Messenger link, social links and email shown on the public site."
+    },
+    "signOut": "Sign out",
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "Questions shown on the homepage. Every entry needs both Vietnamese and English.",
+      "add": "Add question",
+      "edit": "Edit question",
+      "questionVi": "Question (VI)",
+      "answerVi": "Answer (VI)",
+      "questionEn": "Question (EN)",
+      "answerEn": "Answer (EN)",
+      "sortOrder": "Order",
+      "published": "Visible",
+      "empty": "No questions yet.",
+      "created": "Question added",
+      "updated": "Question updated",
+      "deleted": "Question deleted",
+      "confirmDelete": "Delete this question?",
+      "columns": {
+        "question": "Question",
+        "order": "Order",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "templateReviews": {
+      "title": "Template reviews",
+      "subtitle": "Reviews users submitted for templates in the gallery. They appear immediately with no approval step; this screen is for reading them and removing anything inappropriate.",
+      "searchPlaceholder": "Search by comment, name or email",
+      "ratingFilter": "Filter by rating",
+      "allRatings": "All ratings",
+      "starLabel": "{count} stars",
+      "total": "{count} reviews",
+      "empty": "No reviews match.",
+      "noComment": "Rating only",
+      "edited": "edited",
+      "anonymous": "User",
+      "delete": "Delete review",
+      "confirmDelete": "Delete this review? This cannot be undone.",
+      "deleted": "Review deleted",
+      "columns": {
+        "template": "Template",
+        "author": "Author",
+        "rating": "Rating",
+        "comment": "Comment",
+        "actions": "Actions"
+      }
+    },
+    "templateTags": {
+      "title": "Template tags",
+      "subtitle": "Tier, style and marketing labels per template. The slug cannot change — it links to the UI and image folder.",
+      "tier": "Tier",
+      "searchLabel": "Find template",
+      "searchPlaceholder": "Enter template name...",
+      "tierFilter": "Filter by tier",
+      "allTiers": "All tiers",
+      "tags": "Labels",
+      "categories": "Styles",
+      "published": "In catalogue",
+      "tagLabels": {
+        "hot": "Hot",
+        "new": "New"
+      },
+      "colorsTitle": "Main colors (set when the template is built)",
+      "colorLabels": {
+        "red": "Red",
+        "pink": "Pink",
+        "orange": "Orange",
+        "yellow": "Yellow",
+        "green": "Green",
+        "blue": "Blue",
+        "purple": "Purple",
+        "brown": "Brown",
+        "black": "Black",
+        "white": "White / cream"
+      },
+      "categoryLabels": {
+        "luxury": "Luxury",
+        "modern": "Modern",
+        "classic": "Classic",
+        "minimal": "Minimal",
+        "traditional": "Traditional",
+        "formal": "Formal"
+      },
+      "save": "Save this template",
+      "saved": "Template saved",
+      "empty": "The catalogue is empty.",
+      "noSearchMatches": "No matching templates found.",
+      "noTierMatches": "No templates belong to this tier.",
+      "columns": {
+        "template": "Template",
+        "tier": "Tier",
+        "tags": "Labels",
+        "categories": "Styles",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "templateStats": {
+      "title": "Most viewed templates",
+      "subtitle": "Which catalogue templates guests click into the most, next to how many cards were made from them.",
+      "periodLabel": "Period",
+      "periods": {
+        "7": "7 days",
+        "30": "30 days",
+        "90": "90 days",
+        "0": "All time"
+      },
+      "trackingSince": "Template views recorded since {date}.",
+      "noTracking": "No template views recorded yet — counting starts from when this release is deployed.",
+      "countingNote": "Each browser counts at most once per template per day.",
+      "summary": {
+        "open": "Template opens",
+        "demo": "Demo opens",
+        "cards": "Cards created"
+      },
+      "columns": {
+        "template": "Template",
+        "open": "Opens",
+        "demo": "Demo opens",
+        "cards": "Cards created",
+        "conversion": "Card rate"
+      },
+      "columnHints": {
+        "open": "Clicked in the catalogue (quick-view dialog) or opened the template page.",
+        "demo": "Opened the full demo card.",
+        "conversion": "Cards created ÷ template opens in the same period."
+      },
+      "unpublished": "Removed from catalogue",
+      "empty": "The catalogue is empty.",
+      "total": "{count} templates"
+    },
+    "homepage": {
+      "title": "Featured templates",
+      "subtitle": "Pick the templates on the homepage and drag to order them. With nothing picked the homepage falls back to the first templates in the catalogue.",
+      "selected": "On the homepage · {count}",
+      "selectedHint": "Drag the handle under a card to reorder, press × to remove. The homepage shows every template here, in exactly this order.",
+      "emptySelected": "Nothing picked yet — the homepage is falling back to the first templates in the catalogue. Click a template in the catalogue to add it.",
+      "dragHandle": "Drag to reorder",
+      "remove": "Remove from homepage",
+      "unsaved": "Unsaved changes",
+      "discard": "Discard",
+      "library": "Catalogue · {count}",
+      "libraryHint": "Templates not on the homepage yet. Click one to add it to the end of the strip.",
+      "librarySearch": "Search by name or slug",
+      "libraryEmpty": "Every template in the catalogue is already on the homepage.",
+      "noMatches": "No templates match.",
+      "add": "Add to homepage",
+      "unpublished": "Unpublished",
+      "save": "Save homepage strip",
+      "saved": "Homepage strip saved",
+      "unpublishedHint": "Unpublished templates never show on the homepage, even when picked.",
+      "empty": "The catalogue is empty."
+    },
+    "homepageHero": {
+      "title": "Hero sample card",
+      "subtitle": "Which card the \"View a sample card\" button at the top of the homepage links to.",
+      "demoCard": "Sample card",
+      "demoCardHint": "Leave empty to use the built-in sample. The card artwork in the hero is read from this card too.",
+      "save": "Save sample card",
+      "saved": "Sample card saved"
+    },
+    "coupleShowcase": {
+      "title": "Couples on the homepage",
+      "subtitle": "The \"Couples who made a card\" strip: which cards appear on the homepage, with which image and in what order.",
+      "add": "Add a slot",
+      "edit": "Edit slot",
+      "card": "Card",
+      "names": "Display name",
+      "weddingDate": "Wedding date (label)",
+      "imageSrc": "Long screenshot (thumbnail)",
+      "imageSrcHint": "A top-to-bottom screenshot of the whole card; the homepage card scrolls through it on hover. Uploads keep a 960px width with no height crop.",
+      "posterSrc": "Cover image (poster)",
+      "posterSrcHint": "The cover shown on the card at rest, 0.78 ratio (e.g. 960×1231). Leave empty for catalog images to use the poster.avif next to the thumbnail.",
+      "removeImage": "Remove image",
+      "imagePosition": "Image anchor",
+      "imagePositionHint": "An object-position value, e.g. 50% 0% to show the top of the image.",
+      "published": "Visible",
+      "empty": "No slots in the strip yet.",
+      "created": "Slot added",
+      "updated": "Slot updated",
+      "deleted": "Slot deleted",
+      "confirmDelete": "Remove this slot from the homepage strip?",
+      "dragHandle": "Drag to reorder",
+      "reorderHint": "Drag the handle in the Order column to rearrange the strip. The order is saved as soon as you drop.",
+      "reordered": "New order saved",
+      "columns": {
+        "preview": "Preview",
+        "names": "Couple",
+        "order": "Order",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "picker": {
+        "choose": "Pick a card",
+        "change": "Change card",
+        "clear": "Clear",
+        "search": "Search by name or card path…",
+        "empty": "No card matches.",
+        "loading": "Loading cards…",
+        "title": "Pick a card",
+        "cancel": "Close",
+        "draftHint": "Only published cards are listed — drafts have no working link yet.",
+        "unknown": "Card no longer exists",
+        "failed": "Could not load the card list. Try again in a moment.",
+        "tabTemplate": "Template demos",
+        "tabCard": "Cards already made",
+        "templateHint": "Every template has a demo page. Picking one links to /mau-thiep/<template>/demo."
+      },
+      "cover": {
+        "upload": "Upload image",
+        "uploading": "Uploading…",
+        "uploadFailed": "Image upload failed",
+        "remove": "Remove cover",
+        "hint": "Upload an image or point at a path in the repo (e.g. /images/site/hero-editorial.avif)."
+      }
+    },
+    "siteStats": {
+      "title": "Published stats",
+      "subtitle": "The numbers shown in the stat strip on the home page. These are published figures set by operations, not counts from live data.",
+      "homeGroup": "Home page",
+      "fields": {
+        "home.invitations": "Invitations created",
+        "home.templates": "Templates",
+        "home.rating": "Average rating"
+      },
+      "cacheHint": "The public site is cached, so new numbers appear after a few minutes.",
+      "save": "Save stats",
+      "saved": "Stats saved"
+    },
+    "cards": {
+      "title": "Created cards",
+      "subtitle": "Every couple's card history. Pick showcase cards and unlock the couple's names when a customer asks; card content is the customer's private data.",
+      "searchPlaceholder": "Search by title, slug or email",
+      "statusFilter": "Filter by status",
+      "allStatuses": "All statuses",
+      "status": {
+        "draft": "Draft",
+        "paid": "Published"
+      },
+      "showcase": "Show on homepage",
+      "showcaseOn": "Card added to the homepage",
+      "showcaseOff": "Card removed from the homepage",
+      "coupleNames": {
+        "allowEdit": "Allow name edits",
+        "notPaid": "Not published",
+        "locked": "Locked",
+        "unlocked": "Open for the customer to edit",
+        "locksOn": "Locks at {date}",
+        "unlockedDone": "Couple's names unlocked",
+        "lockedDone": "Couple's names locked again"
+      },
+      "total": "{count} cards",
+      "empty": "No cards match.",
+      "views": "{count} views",
+      "copyLink": "Copy card link",
+      "linkCopied": "Card link copied",
+      "prev": "Previous",
+      "next": "Next",
+      "columns": {
+        "card": "Card",
+        "owner": "Owner",
+        "template": "Template",
+        "status": "Status",
+        "views": "Views",
+        "showcase": "Homepage",
+        "coupleNames": "Name on card",
+        "kind": "Type"
+      },
+      "kindFilter": "Filter by invitation type",
+      "allKinds": "All types",
+      "kinds": {
+        "wedding": "Wedding",
+        "birthday": "Birthday",
+        "graduation": "Graduation",
+        "event": "Event",
+        "anniversary": "Anniversary",
+        "greeting": "Greeting card"
+      }
+    },
+    "weddings": {
+      "title": "Wedding calendar",
+      "subtitle": "Cards ordered by wedding date, nearest first — so you can send wishes on the day. Only published cards with a wedding date.",
+      "scopes": {
+        "upcoming": "Upcoming",
+        "past": "Past"
+      },
+      "withinLabel": "Time range",
+      "within": {
+        "7": "Within 7 days",
+        "30": "Within 30 days",
+        "90": "Within 90 days",
+        "all": "All"
+      },
+      "columns": {
+        "date": "Wedding date",
+        "couple": "Couple",
+        "contact": "Contact",
+        "status": "Status",
+        "views": "Viewers"
+      },
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "yesterday": "Yesterday",
+      "inDays": "In {count} days",
+      "daysAgo": "{count} days ago",
+      "copyEmail": "Copy email",
+      "emailCopied": "Email copied",
+      "emptyUpcoming": "No upcoming weddings in this range.",
+      "emptyPast": "No past weddings in this range.",
+      "total": "{count} weddings"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "subtitle": "Site traffic, which templates are being picked and cards created.",
+      "snapshot": "Website health",
+      "visitors": "Visitors",
+      "pageViews": "Page views",
+      "cardViews": "Card views",
+      "totalCards": "Invitations created",
+      "rangeLabel": "Time range",
+      "range": {
+        "7": "7 days",
+        "30": "30 days",
+        "90": "90 days"
+      },
+      "byTemplate": "Cards per template",
+      "byStatus": "Cards per status",
+      "daily": "Daily traffic",
+      "dailyHint": "Compare visitors with total page views during the period.",
+      "statusHint": "All invitations grouped by their current lifecycle status.",
+      "templateHint": "The 8 most selected templates, ranked by invitations created.",
+      "dataTable": "View traffic data table",
+      "googleTitle": "Google Analytics",
+      "googleHint": "What our own counter cannot measure: where visitors come from, on which device, and which pages they read. Figures here run lower than the chart above because GA does not measure invitation pages and is blocked by ad-blockers.",
+      "googleNotConfigured": "Google Analytics is not connected. Set GA_PROPERTY_ID, GA_CLIENT_EMAIL and GA_PRIVATE_KEY on the backend to show figures here.",
+      "googleError": "Could not read Google Analytics data. The figures above are unaffected.",
+      "sessions": "Sessions",
+      "engagementRate": "Engagement rate",
+      "avgSessionDuration": "Avg. session duration",
+      "newUserRate": "New users",
+      "byChannel": "Where visitors come from",
+      "byDevice": "Devices",
+      "topPages": "Most viewed pages",
+      "channel": {
+        "organicSearch": "Organic search",
+        "direct": "Direct",
+        "referral": "Referral",
+        "organicSocial": "Social",
+        "paidSearch": "Paid search",
+        "email": "Email",
+        "unassigned": "Unassigned"
+      },
+      "device": {
+        "mobile": "Mobile",
+        "desktop": "Desktop",
+        "tablet": "Tablet"
+      },
+      "googleAnalytics": "Open Google Analytics",
+      "googleAnalyticsHint": "Google Analytics always reads lower than the chart here: it does not measure invitation pages and misses visitors who block trackers.",
+      "date": "Date",
+      "count": "Cards",
+      "empty": "No data yet.",
+      "retry": "Try again",
+      "visitorHint": "Visitors is an estimate the browser reports on its first visit each day; no identifying cookie is set."
+    },
+    "audit": {
+      "title": "Audit log",
+      "subtitle": "A trail of the things that cannot be undone: account deletions, role changes, manual payment matches.",
+      "empty": "No actions recorded yet.",
+      "systemActor": "System",
+      "columns": {
+        "time": "Time",
+        "action": "Action",
+        "actor": "Actor",
+        "target": "Target",
+        "details": "Details"
+      },
+      "filters": {
+        "action": "Action",
+        "allActions": "All actions",
+        "targetId": "Target ID",
+        "targetIdPlaceholder": "Paste a user or order ID…",
+        "reset": "Clear filters"
+      },
+      "actions": {
+        "user.self_deleted": "User deleted their account",
+        "user.disabled": "Account disabled",
+        "user.role_changed": "Role changed",
+        "partner.approved": "Partner application approved",
+        "partner.rejected": "Partner application rejected",
+        "partner.promoted": "Promoted to partner",
+        "partner.revoked": "Partner access revoked",
+        "order.matched_manually": "Transaction matched manually",
+        "template_review.deleted": "Template review deleted",
+        "card.couple_names_unlocked": "Couple's names unlocked",
+        "card.couple_names_locked": "Couple's names locked again"
+      }
+    },
+    "account": {
+      "navLabel": "Account",
+      "title": "Account",
+      "subtitle": "Your current session and password.",
+      "email": "Email",
+      "roles": "Role",
+      "permissions": "Permissions",
+      "none": "None assigned",
+      "rolesHint": "Roles are assigned by an administrator in the database. A role change applies from your next action; the permission list on this screen updates after the next session refresh (at most 15 minutes).",
+      "password": {
+        "title": "Change password",
+        "hint": "After changing it, every session — including this one — is signed out.",
+        "current": "Current password",
+        "next": "New password",
+        "confirm": "Confirm new password",
+        "submit": "Change password",
+        "done": "Password changed, signing out…",
+        "rules": "At least 8 characters, with upper-case, lower-case letters and a digit.",
+        "errors": {
+          "required": "This field is required.",
+          "weak": "Use at least 8 characters, with upper-case, lower-case letters and a digit.",
+          "mismatch": "The passwords do not match.",
+          "same": "The new password must differ from the current one."
+        }
+      }
+    },
+    "theme": {
+      "switchToDark": "Dark mode",
+      "switchToLight": "Light mode"
+    },
+    "pagination": {
+      "total": "{count} items in total"
+    },
+    "payments": {
+      "title": "Payments",
+      "subtitle": "Look up invitation orders and incoming payments.",
+      "tabs": {
+        "orders": "Invitation orders",
+        "unmatched": "Unmatched incoming"
+      },
+      "orders": {
+        "searchPlaceholder": "Order code, email, name, card link, voucher, bank reference…",
+        "allStatuses": "All statuses",
+        "total": "{count} orders",
+        "empty": "No orders yet.",
+        "emptySearch": "No orders match.",
+        "columns": {
+          "code": "Order code",
+          "customer": "Customer",
+          "card": "Invitation",
+          "amount": "Amount",
+          "status": "Status",
+          "payment": "Incoming"
+        },
+        "status": {
+          "pending": "Awaiting payment",
+          "paid": "Paid",
+          "cancelled": "Cancelled"
+        },
+        "createdAt": "Created {date}",
+        "paidAt": "Paid {date}",
+        "deletedUser": "Account deleted",
+        "deletedCard": "Invitation deleted",
+        "filterByUser": "Show all orders from this customer",
+        "copy": "Copy order code",
+        "copied": "Copied {code}",
+        "from": "From",
+        "to": "To",
+        "paidTotal": "Paid:",
+        "paidCount": "{count} orders"
+      },
+      "unmatched": {
+        "searchPlaceholder": "Transfer content, bank reference or amount",
+        "total": "{count} transfers",
+        "empty": "Nothing left to reconcile.",
+        "emptySearch": "No transfers match."
+      },
+      "noCode": "No order code in the content",
+      "match": "Match to order",
+      "matched": "Matched to order {code}",
+      "columns": {
+        "date": "Time",
+        "amount": "Amount",
+        "content": "Transfer content",
+        "status": "Status",
+        "actions": "Actions"
+      },
+      "status": {
+        "matched": "Auto-matched",
+        "manual": "Matched manually",
+        "unmatched": "Unmatched",
+        "underpaid": "Underpaid",
+        "ignored": "Outgoing"
+      },
+      "matchDialog": {
+        "title": "Match transfer to order",
+        "body": "This {amount} transfer will be recorded as payment for the order with the code below, and the invitation is published immediately.",
+        "orderLabel": "Order code",
+        "orderPlaceholder": "e.g. TC7F3K9A",
+        "hint": "The 8-character code the customer saw on the transfer screen. If they only remember their email, look it up in the Invitation orders tab. A wrong match must be refunded manually.",
+        "confirm": "Match and confirm payment"
+      }
+    },
+    "vouchers": {
+      "title": "Discount codes",
+      "subtitle": "Codes customers enter at checkout.",
+      "hint": "A code is applied after the package promotion: list price minus the promotion first, then minus the code. Codes apply to the single package.",
+      "create": "New code",
+      "editTitle": "Edit discount code",
+      "dialogHint": "A code's text cannot be changed once created — deactivate it and create a new one instead.",
+      "empty": "No discount codes yet.",
+      "save": "Save code",
+      "saved": "Discount code saved",
+      "deleteTitle": "Delete this discount code?",
+      "deleteBody": "Orders that used it keep their amount and the code text on the receipt. What is lost is the campaign's usage log.",
+      "deleted": "Discount code deleted",
+      "active": "Running",
+      "inactive": "Off",
+      "noExpiry": "No expiry",
+      "unlimited": "Unlimited",
+      "maxDiscountShort": "Max",
+      "publicShort": "Shown at checkout",
+      "privateShort": "Manual entry only",
+      "publicHint": "Eligible codes are available to select at checkout. Partner-exclusive codes are visible only to the store owner.",
+      "discountTypes": {
+        "percent": "Percentage off",
+        "amount": "Fixed amount off"
+      },
+      "columns": {
+        "actions": "Actions",
+        "code": "Code",
+        "discount": "Discount",
+        "scope": "Applies to",
+        "usage": "Used",
+        "window": "Expires",
+        "status": "Status"
+      },
+      "fields": {
+        "code": "Code",
+        "description": "Internal note",
+        "discountType": "Discount type",
+        "percentValue": "Discount (%)",
+        "amountValue": "Discount (VND)",
+        "maxDiscount": "Maximum discount (VND)",
+        "minAmount": "Minimum order value (VND)",
+        "startsAt": "Starts",
+        "expiresAt": "Expires",
+        "usageLimit": "Total uses",
+        "perUserLimit": "Uses per account",
+        "isPublic": "Show at checkout",
+        "isActive": "Running"
+      }
+    },
+    "priceConfig": {
+      "title": "Pricing",
+      "subtitle": "Price of the custom invitation package, for every customer.",
+      "money": "List price (VND)",
+      "discount": "Discount (%)",
+      "discountEmpty": "No discount",
+      "discountHint": "Leave empty to run no promotion.",
+      "save": "Save pricing",
+      "saved": "Pricing saved",
+      "hint": "The customer pays the list price minus the package promotion, then minus the voucher (if any). The result is rounded up to a multiple of 1,000 VND.",
+      "finalPrice": "Price after package promotion:"
+    }
+  }
+}

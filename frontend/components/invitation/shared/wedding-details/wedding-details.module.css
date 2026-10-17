@@ -1,0 +1,91 @@
+/**
+ * Phần CSS mà Tailwind không diễn đạt gọn được — cùng vai trò với
+ * `opening-motion.module.css` bên màn mở thiệp. Mọi thứ còn lại của khối này là
+ * Tailwind inline.
+ *
+ * Cỡ chữ ở đây chỉ gọi `--tpl-*`, không con số nào: đây là luật của thang chữ
+ * mẫu thiệp trong `globals.css`, và khối này nằm trong thiệp nên chịu chung luật.
+ */
+
+/**
+ * Gạch dọc giữa hai nhà ở bố cục `formal`, và nó **chỉ vẽ từ 30rem trở lên**.
+ *
+ * Việc hai nhà đứng cạnh nhau hay xuống hàng do flex quyết định theo *độ dài
+ * tên*, còn `@container` thì chỉ biết *bề rộng* — hai cơ chế khác nhau, nên một
+ * gạch dọc điều khiển bằng bề rộng sẽ có lúc còn nằm đó trong khi hai nhà đã xếp
+ * chồng. Đo thực tế: ở 480px với tên bốn chữ, gạch vẫn dọc bên cạnh hai khối đã
+ * chồng lên nhau.
+ *
+ * 30rem là bề rộng mà mỗi cột còn ~200px — đủ cho cả tên năm chữ có tiền tố —
+ * nên trong vùng vẽ gạch thì việc xuống hàng gần như không xảy ra. Dưới ngưỡng
+ * đó không có gạch nào cả: hai nhãn "NHÀ TRAI"/"NHÀ GÁI" đã tách hai khối rồi,
+ * và không có gạch tốt hơn một gạch nằm sai chỗ.
+ *
+ * Vẽ bằng pseudo-element chứ không phải `border` vì `border` kéo hết chiều cao
+ * cột, chạm mép trên của nhãn và mép dưới của địa chỉ — thành hai ô bảng. Ảnh
+ * gốc để gạch ngắn hơn cột, canh giữa: ngăn cách mà không đóng khung.
+ */
+@container (width >= 30rem) {
+  .formalSide + .formalSide::before {
+    content: "";
+    position: absolute;
+    inset-block: 12%;
+    inset-inline-start: 0;
+    width: 1px;
+    background: var(--details-rule, color-mix(in oklab, currentColor 28%, transparent));
+  }
+}
+
+/**
+ * Dải ngày của `classic`: gạch **trên và dưới** ôm lấy ô đơn vị, số ngày ở giữa
+ * vượt ra ngoài cả hai. Chính chỗ vượt đó tạo ra nhịp của dải — chỉ kẻ một gạch
+ * dưới thì ba ô nằm chung một đáy và dải phẳng lì.
+ *
+ * `padding-block` nhỏ là phần làm nên vẻ gọn: đo mẫu tham chiếu thì chữ chiếm
+ * **53%** chiều cao khung kẻ, còn bản để 0.4em chỉ đạt 36% — hai đường kẻ dạt ra
+ * xa làm "THÁNG 10" lọt thỏm ở giữa. Khung phải ôm lấy chữ, không phải ôm lấy
+ * con số.
+ */
+.classicUnit {
+  align-self: center;
+  width: 100%;
+  padding-block: 0.22em;
+  line-height: 1.2;
+  border-block: 1px solid
+    var(--details-rule, color-mix(in oklab, currentColor 28%, transparent));
+}
+
+/* Khung hẹp: hai gạch dọc trong dải ngày biến mất chứ không ép ba ô lại — ép thì
+   "THÁNG 12" xuống dòng giữa hai gạch và dải trông như bảng biểu. Ngưỡng 18rem
+   dành cho khung preview hẹp trong editor, không phải bề rộng điện thoại: bốn
+   ảnh tham chiếu đều là ảnh chụp màn hình dọc (~390px) và dải ngày ba ô ở đó vẫn
+   đọc tốt. */
+@container (width < 18rem) {
+  .dateRow {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.35em;
+  }
+
+  .classicUnit {
+    width: auto;
+    padding-block: 0;
+    border-block: none;
+  }
+
+  /* Phải bắt đúng cặp giả lớp đã vẽ gạch: chọn tử trơn thua specificity của
+     `:first-child`/`:last-child` nên gạch không tắt. */
+  .modernUnit:first-child,
+  .modernUnit:last-child {
+    border-inline: none;
+  }
+}
+
+.modernUnit:first-child {
+  border-inline-end: 1px solid
+    var(--details-rule, color-mix(in oklab, currentColor 28%, transparent));
+}
+
+.modernUnit:last-child {
+  border-inline-start: 1px solid
+    var(--details-rule, color-mix(in oklab, currentColor 28%, transparent));
+}

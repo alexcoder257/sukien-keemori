@@ -1,0 +1,20 @@
+/*
+ * Tag marketing nằm trực tiếp trên ảnh nên tự mang một bề mặt đủ đục, không
+ * phụ thuộc ảnh sáng hay tối phía sau. Hai tag giữ cùng hình học; màu là tín
+ * hiệu phân biệt vai trò: xanh sage cho nội dung mới, đỏ đất dịu cho mẫu hot.
+ */
+.marketingTag {
+  box-shadow: 0 2px 8px color-mix(in oklab, var(--color-forest-ink) 10%, transparent);
+}
+
+.marketingTag[data-template-tag="new"] {
+  border-color: color-mix(in oklab, var(--success) 36%, var(--color-ivory));
+  background: color-mix(in oklab, var(--success) 20%, var(--color-ivory));
+  color: color-mix(in oklab, var(--success) 58%, var(--color-forest-ink));
+}
+
+.marketingTag[data-template-tag="hot"] {
+  border-color: color-mix(in oklab, var(--destructive) 34%, var(--color-ivory));
+  background: color-mix(in oklab, var(--destructive) 17%, var(--color-ivory));
+  color: color-mix(in oklab, var(--destructive) 68%, var(--color-forest-ink));
+}

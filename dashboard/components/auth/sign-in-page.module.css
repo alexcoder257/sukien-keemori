@@ -1,0 +1,305 @@
+/*
+ * Trang đăng nhập CMS — diện mạo thương hiệu Keemori.
+ *
+ * Đây là **ngoại lệ có phạm vi** của quy tắc "CMS chạy theme mặc định antd"
+ * (CLAUDE.md mục 6): mọi màu thương hiệu khai ở `.root` của module này, không
+ * đưa vào `globals.css`, nên không rò sang màn làm việc nào. Trang luôn tối và
+ * không theo nút sáng/tối của CMS — nền đen là art direction của cửa vào, giống
+ * `.theme-reveal` bên trang khách.
+ *
+ * Giá trị chép từ 7 màu của `frontend/app/globals.css`; tương phản đã kiểm ở
+ * đó: chữ Forest Ink trên nút Champagne 11.33:1, Ivory trên Forest Ink ~17:1.
+ */
+
+.root {
+  --ink: #0b0d0b;
+  --forest: #10261d;
+  --champagne: #d8c39b;
+  --deep-gold: #b88a4a;
+  --ivory: #f5f0e6;
+  --ivory-muted: color-mix(in oklab, var(--ivory) 64%, transparent);
+  --hairline: color-mix(in oklab, var(--champagne) 22%, transparent);
+
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  color: var(--ivory);
+  color-scheme: dark;
+  /* Quầng sáng ấm ở đỉnh, giống `glow-surface` của trang khách: thứ duy nhất
+     phá được cảm giác một mảng đen phẳng. */
+  background:
+    radial-gradient(ellipse 60% 40% at 50% 0%, color-mix(in oklab, var(--champagne) 12%, transparent), transparent 70%),
+    var(--ink);
+}
+
+.logo {
+  display: block;
+  width: 88px;
+  height: auto;
+  /* Bản gốc có lề trong suốt lớn quanh chữ K; cắt bớt cho khỏi lệch nhịp. */
+  margin: -12px auto 8px;
+}
+
+/* ------------------------------------------------------------- khối form */
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 32px 32px;
+  border: 1px solid var(--hairline);
+  border-radius: 24px;
+  background: color-mix(in oklab, var(--forest) 35%, var(--ink));
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, var(--champagne) 18%, transparent),
+    0 32px 80px -32px #000;
+  text-align: center;
+}
+
+@media (max-width: 440px) {
+  .card {
+    padding: 32px 20px 24px;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  color: var(--champagne);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--champagne);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.subtitle {
+  margin: 12px 0 28px;
+  color: var(--ivory-muted);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.alert {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid color-mix(in oklab, #ff4d4f 45%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklab, #ff4d4f 12%, transparent);
+  color: #ffccc7;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.notice {
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid color-mix(in oklab, var(--champagne) 40%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--champagne) 10%, transparent);
+  color: var(--champagne);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* ------------------------------------------------------------------- form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.form .alert {
+  margin: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  color: var(--ivory-muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.inputWrap {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--ink) 70%, transparent);
+  color: var(--ivory);
+  font: inherit;
+  font-size: 0.9375rem;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.inputWrap .input {
+  padding-right: 48px;
+}
+
+.input:hover {
+  border-color: color-mix(in oklab, var(--champagne) 40%, transparent);
+}
+
+.input:focus-visible {
+  border-color: var(--champagne);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--champagne) 18%, transparent);
+}
+
+.input[aria-invalid="true"] {
+  border-color: color-mix(in oklab, #ff4d4f 70%, transparent);
+}
+
+/* Autofill của Chrome tô nền vàng nhạt, phá nền tối của thẻ. */
+.input:-webkit-autofill {
+  -webkit-text-fill-color: var(--ivory);
+  -webkit-box-shadow: 0 0 0 1000px color-mix(in oklab, var(--forest) 35%, var(--ink)) inset;
+  caret-color: var(--ivory);
+}
+
+.toggle {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ivory-muted);
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.toggle:hover {
+  color: var(--champagne);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 1px;
+}
+
+.fieldError {
+  margin: 0;
+  color: #ffccc7;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.button {
+  display: inline-flex;
+  width: 100%;
+  margin-top: 6px;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  background: var(--champagne);
+  box-shadow:
+    inset 0 1px 0 color-mix(in oklab, #ffffff 45%, transparent),
+    0 12px 32px -12px color-mix(in oklab, var(--champagne) 55%, transparent);
+  color: var(--ink);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.button:hover {
+  background: color-mix(in oklab, var(--champagne) 88%, #ffffff);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+  transform: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--champagne);
+  outline-offset: 3px;
+}
+
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  text-align: left;
+  border-top: 1px solid var(--hairline);
+  color: var(--ivory-muted);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--champagne);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .input {
+    transition: none;
+  }
+
+  .button:hover {
+    transform: none;
+  }
+}

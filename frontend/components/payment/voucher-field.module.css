@@ -1,0 +1,99 @@
+.ticket {
+  --ticket-edge: color-mix(in oklab, var(--primary) 30%, var(--border));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--ticket-edge);
+  border-radius: 8px;
+  background: var(--background);
+  mask-image:
+    radial-gradient(circle at 0 50%, transparent 6px, black 7px),
+    radial-gradient(circle at 100% 50%, transparent 6px, black 7px);
+  mask-composite: intersect;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.selected {
+  --ticket-edge: var(--primary);
+  background: color-mix(in oklab, var(--primary) 4%, var(--background));
+}
+
+.ticketChoice {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  min-height: 104px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.ticketChoice:has(input:disabled) {
+  cursor: default;
+}
+
+.ticket:has(input:focus-visible) {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.ticketOffer {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 10px;
+  border-right: 1px dashed var(--ticket-edge);
+  background: color-mix(in oklab, var(--primary) 14%, var(--background));
+  color: var(--primary);
+  text-align: center;
+}
+
+.ticketDetails {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px;
+}
+
+.radio {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--input);
+  border-radius: 50%;
+}
+
+.radioSelected {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.unavailable .ticketChoice {
+  opacity: 0.5;
+}
+
+@media (max-width: 440px) {
+  .ticketChoice {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .ticketDetails {
+    padding: 16px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticket {
+    transition: none;
+  }
+}

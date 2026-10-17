@@ -1,0 +1,193 @@
+.root {
+  container: wedding-timeline / inline-size;
+  width: 100%;
+  min-width: 0;
+}
+.surface {
+  --timeline-decor-size: 72px;
+  --timeline-gap: 28px;
+  display: grid;
+  gap: 32px;
+  color: var(--timeline-ink, currentColor);
+  background: var(--timeline-surface, transparent);
+}
+.surface .title {
+  margin: 0;
+  font-family: var(--timeline-font-title, var(--template-font-accent, inherit));
+  font-size: var(--tpl-h1);
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--timeline-accent, currentColor);
+  overflow-wrap: anywhere;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.item {
+  position: relative;
+  min-width: 0;
+}
+.decor {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--timeline-decor-size);
+  height: var(--timeline-decor-size);
+  max-width: 100%;
+  color: var(--timeline-accent, currentColor);
+  pointer-events: none;
+}
+.decor > svg {
+  width: 65%;
+  height: 65%;
+  stroke-width: 1.25;
+}
+.copy {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+.surface .time {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  align-items: baseline;
+  gap: 0 0.2em;
+  margin: 0;
+  font-family: var(--timeline-font-time, var(--template-font-body, inherit));
+  font-size: var(--tpl-lead);
+  font-weight: 400;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.4;
+  overflow-wrap: normal;
+}
+.surface .activity {
+  margin: 0;
+  font-family: var(
+    --timeline-font-activity,
+    var(--template-font-body, inherit)
+  );
+  font-size: var(--tpl-small);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--timeline-muted, currentColor);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+.horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--timeline-gap) 24px;
+}
+.horizontal .item {
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  gap: 16px;
+  text-align: center;
+}
+.horizontal .time {
+  justify-content: center;
+}
+.horizontal .item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc((100% - 24px) / 2);
+  justify-self: center;
+}
+.horizontal .item:only-child {
+  width: 100%;
+}
+.horizontal .item:nth-child(odd):not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--timeline-decor-size) / 2);
+  left: calc(50% + var(--timeline-decor-size) / 2 + 8px);
+  width: max(0px, calc(100% - var(--timeline-decor-size) + 8px));
+  height: 1px;
+  background: var(--timeline-rule, currentColor);
+}
+.vertical,
+.alternating {
+  display: grid;
+  gap: var(--timeline-gap);
+}
+.vertical .item,
+.alternating .item {
+  display: grid;
+  grid-template-columns: var(--timeline-decor-size) minmax(0, 1fr);
+  column-gap: 20px;
+  align-items: center;
+  text-align: start;
+}
+.vertical .item:not(:last-child)::after,
+.alternating .item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--timeline-decor-size) / 2);
+  top: calc(var(--timeline-decor-size) + 8px);
+  bottom: calc(-1 * var(--timeline-gap) + 8px);
+  width: 1px;
+  background: var(--timeline-rule, currentColor);
+}
+.vertical .decor,
+.alternating .decor {
+  align-self: start;
+}
+@container wedding-timeline (min-width: 320px) {
+  .alternating .item {
+    grid-template-columns: minmax(0, 1fr) var(--timeline-decor-size) minmax(
+        0,
+        1fr
+      );
+    column-gap: 8px;
+  }
+  .alternating .decor {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .alternating .copy {
+    container-type: inline-size;
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .alternating .time {
+    /* Keep a complete HH:mm range on one line within its own text column. */
+    font-size: clamp(var(--tpl-caption), 14cqi, var(--tpl-lead));
+  }
+  .alternating .item:nth-child(odd) .copy {
+    grid-column: 1;
+    text-align: end;
+  }
+  .alternating .item:nth-child(odd) .time {
+    justify-content: flex-end;
+  }
+  .alternating .item:not(:last-child)::after {
+    left: 50%;
+  }
+}
+@container wedding-timeline (min-width: 640px) {
+  .horizontal {
+    grid-template-columns: repeat(var(--timeline-columns), minmax(0, 1fr));
+  }
+  .horizontal .item:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
+  }
+  .horizontal .item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--timeline-decor-size) / 2);
+    left: calc(50% + var(--timeline-decor-size) / 2 + 8px);
+    width: max(0px, calc(100% - var(--timeline-decor-size) + 8px));
+    height: 1px;
+    background: var(--timeline-rule, currentColor);
+  }
+  .horizontal .item:nth-child(5n)::after {
+    display: none;
+  }
+}

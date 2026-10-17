@@ -1,0 +1,67 @@
+.root {
+  /* Red is a user-requested annotation ink, not a new application theme color. */
+  --guide-annotation: #cf2525;
+  --guide-annotation-paper: #fffaf3;
+}
+
+.chapter {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: var(--text-small);
+  color: var(--muted-foreground);
+  transition: background-color 160ms, color 160ms;
+}
+
+.chapter:hover,
+.chapter[aria-pressed="true"] {
+  color: var(--foreground);
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+}
+
+.chapter[aria-pressed="true"] { box-shadow: inset 2px 0 var(--primary); }
+
+.field {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: var(--text-small);
+  text-align: left;
+  transition: border-color 160ms, background-color 160ms;
+}
+
+.field:hover,
+.field[aria-pressed="true"] {
+  border-color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 8%, transparent);
+}
+
+.number {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--guide-annotation);
+  border-radius: 50%;
+  background: var(--guide-annotation-paper);
+  color: var(--guide-annotation);
+  font: 700 13px/1 Arial, sans-serif;
+}
+
+.shot { position: relative; margin-inline: auto; overflow: hidden; border-radius: 8px; }
+.annotations { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.zoom { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; color: var(--muted-foreground); font-size: var(--text-caption); }
+.zoom:hover { color: var(--foreground); }
+.chapter:focus-visible, .field:focus-visible, .zoom:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .chapter, .field { transition: none; } }

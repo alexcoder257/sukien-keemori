@@ -1,0 +1,21 @@
+node_modules
+.next
+out
+coverage
+.env
+.env.*
+!.env.example
+*.log
+.git
+.template-raw
+
+# Tệp QA/cache không tham gia build; không chặn ảnh trong public/ và app/.
+.playwright-mcp
+__pycache__
+*.pyc
+*.tsbuildinfo
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.avif

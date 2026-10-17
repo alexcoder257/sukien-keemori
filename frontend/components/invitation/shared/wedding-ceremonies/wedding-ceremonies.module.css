@@ -1,0 +1,125 @@
+/**
+ * Phần CSS mà Tailwind không diễn đạt gọn được — cùng vai trò với
+ * `wedding-details.module.css`. Mọi thứ còn lại của khối này là Tailwind inline.
+ *
+ * Cỡ chữ ở đây chỉ gọi `--tpl-*`, không con số nào: luật của thang chữ mẫu thiệp
+ * trong `globals.css`, và khối này nằm trong thiệp nên chịu chung luật.
+ */
+
+/* ============================================================
+   stack — hoạ tiết trám ngăn hai nghi lễ
+   ============================================================ */
+
+/**
+ * Ba khối chữ canh giữa liên tiếp mà chỉ cách nhau bằng khoảng trống thì đọc ra
+ * như một đoạn văn dài. Một nét kẻ ngắn với hạt trám ở giữa cắt nhịp mà không
+ * đóng khung — nhẹ hơn đường kẻ suốt, và không biến danh sách thành bảng.
+ *
+ * Vẽ trên `::before` của nghi lễ **từ thứ hai trở đi**: hoạ tiết là thứ *ngăn
+ * cách*, nên số hoạ tiết luôn ít hơn số mục đúng một. Đặt ở `::after` của mục
+ * trước thì mục cuối phải có ngoại lệ riêng.
+ */
+.stackList > * + *::before {
+  content: "";
+  display: block;
+  justify-self: center;
+  width: 4.5rem;
+  height: 0.3125rem;
+  margin-block-end: var(--ceremony-space-lg);
+  background:
+    linear-gradient(
+        to right,
+        transparent 0 0.75rem,
+        var(--ceremony-rule, currentColor) 0.75rem calc(50% - 0.5rem),
+        transparent calc(50% - 0.5rem) calc(50% + 0.5rem),
+        var(--ceremony-rule, currentColor) calc(50% + 0.5rem) calc(100% - 0.75rem),
+        transparent calc(100% - 0.75rem)
+      )
+      center / 100% 1px no-repeat,
+    /* Hạt trám: một hình vuông xoay 45°, dựng bằng conic-gradient để khỏi thêm
+       một phần tử nữa chỉ để trang trí. */
+    conic-gradient(
+        from 45deg at 50% 50%,
+        var(--ceremony-accent, currentColor) 0 100%
+      )
+      center / 0.3125rem 0.3125rem no-repeat;
+}
+
+/* ============================================================
+   timeline — trục dọc chung của hai cột
+   ============================================================ */
+
+/**
+ * Trục là **ô giữa của lưới**, không phải pseudo-element định vị tuyệt đối.
+ *
+ * Nhờ vậy chiều cao trục do chính lưới quyết định: mỗi nghi lễ cao bao nhiêu thì
+ * đoạn trục của nó cao bấy nhiêu, và khoảng `gap` giữa hai nghi lễ tự trở thành
+ * chỗ ngắt. Bản trước vẽ trục bằng `::after` với `height: calc(100% + gap)` —
+ * chạy đúng, nhưng phải tự cộng lại khoảng cách mà lưới đã biết.
+ *
+ * Nét mờ dần ở hai đầu để trục không cắt cụt: nó là dòng chảy thời gian, không
+ * phải một cạnh khung.
+ */
+.railAxis {
+  align-self: stretch;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--ceremony-rule, currentColor) 12%,
+    var(--ceremony-rule, currentColor) 88%,
+    transparent
+  );
+}
+
+/**
+ * Cột nội dung của `timeline` hẹp hơn hẳn hai bố cục canh giữa, nên giãn chữ ở
+ * mức của chúng làm mọi nhãn vỡ thành hai dòng vụn. Thu tracking lại là cách
+ * giữ nhịp mà không phải hạ cỡ chữ xuống dưới thang.
+ */
+.timelineCopy [data-ceremony-text="name"] {
+  letter-spacing: 0.14em;
+}
+
+.timelineCopy [data-ceremony-text="date"] {
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   card — bảng khắc
+   ============================================================ */
+
+/**
+ * Tên nghi lễ nằm giữa **hai nét kẻ tự co**, và một nét khép đáy khối.
+ *
+ * Bản đầu vẽ nét trên bằng `border-block-start` rồi kéo tên lên đè một mảng nền
+ * cùng màu để "ngắt" nét. Cách đó hỏng ngay khi mẫu không truyền `surface`:
+ * mảng nền thành trong suốt và nét kẻ chạy thẳng qua giữa chữ. Hai nét `flex: 1`
+ * thì tự chừa đúng chỗ của tên, không cần biết tên dài bao nhiêu và **không phụ
+ * thuộc vào việc có nền hay không** — kể cả tên xuống hai dòng, nét vẫn canh
+ * giữa theo chiều dọc.
+ */
+.plaque {
+  border-block-end: 1px solid var(--ceremony-rule, currentColor);
+  background: var(--ceremony-surface, transparent);
+}
+
+.plaqueName {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  width: 100%;
+}
+
+/* `flex: 1 0 1.25rem`, không phải `flex: 1`. Với `flex: 1` thì basis là 0 và
+   nét được phép co hết: tên nghi lễ dài tới mức xuống hai dòng sẽ chiếm trọn bề
+   ngang và hai nét biến mất — đúng ở mục ngắn, mất ở mục dài, tức khối trông
+   như vẽ sai chứ không phải một lựa chọn. Basis cố định và `flex-shrink: 0` giữ
+   nét luôn hiện diện. */
+.plaqueName::before,
+.plaqueName::after {
+  content: "";
+  flex: 1 0 1.25rem;
+  height: 1px;
+  background: var(--ceremony-rule, currentColor);
+}

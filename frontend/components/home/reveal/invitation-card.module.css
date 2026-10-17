@@ -1,0 +1,248 @@
+/**
+ * Tấm thiệp ivory — vật thể chính nối màn mở đầu, hero và cú cuộn đầu tiên.
+ *
+ * Dựng bằng DOM + CSS 3D chứ không phải WebGL: mặt thiệp gần như toàn chữ, mà
+ * chữ vẽ trong canvas thì mờ khi phóng to, không chọn/đọc được và phải nạp
+ * thêm texture. Ở đây chữ là DOM thật nên screen reader đọc được, nét chữ sắc ở
+ * mọi devicePixelRatio, và cảnh không tốn thêm byte nào ngoài CSS.
+ *
+ * Chỉ `transform` và `opacity` được animate. Vân giấy, viền dập nổi và bóng đổ
+ * đều là lớp tĩnh — không có blur hay box-shadow nào chạy theo từng frame.
+ *
+ * Tấm thiệp là một mặt giấy liền mạch. Phần trên vẫn giữ monogram/brand như
+ * một header in nổi, nhưng không còn gập ngang theo scroll — tránh cảm giác
+ * ảnh bị cắt thành hai mảnh khi người dùng bắt đầu cuộn.
+ */
+
+.card {
+  --fold: 31%;
+  --margin: 5.5%;
+  /* Vị trí ánh kim nhũ (0 → 1). Phải khai báo thật ở đây chứ không chỉ dùng
+     giá trị dự phòng trong `var()`, vì GSAP cần đọc được giá trị đầu để nội
+     suy khi con trỏ di chuyển. */
+  --foil-x: 0.5;
+
+  position: relative;
+  aspect-ratio: 0.7;
+  width: 100%;
+  transform-style: preserve-3d;
+  border-radius: 2px;
+  background:
+    /* Tác phẩm giấy dập nổi được tạo riêng cho cảnh. Chữ vẫn là DOM ở lớp
+       trên để sắc nét, dịch được và không bị đóng cứng vào ảnh. */
+    linear-gradient(rgb(255 253 247 / 0.08), rgb(228 215 189 / 0.08)),
+    url("/images/site/invitation-paper.avif") center / cover no-repeat,
+    var(--reveal-ivory);
+  /* Bóng tiếp xúc tách thiệp khỏi bức ảnh phía sau. Tĩnh, không animate. */
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.5) inset,
+    0 -1px 0 rgb(0 0 0 / 0.06) inset,
+    0 2px 6px rgb(8 8 6 / 0.35),
+    0 24px 50px -18px rgb(8 8 6 / 0.7),
+    0 60px 90px -40px rgb(8 8 6 / 0.85);
+}
+
+/* Bề dày giấy: một lát mỏng lệch sang phải/dưới, màu ngà tối hơn. */
+.thickness {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 2px;
+  background: linear-gradient(150deg, #d9caab, #b9a684);
+  transform: translate3d(3px, 3px, -1px);
+}
+
+/* Các hook cũ giữ lại trong markup để không phá tương thích loader; mặt giấy
+   giờ là một artwork liền mạch nên hai lớp này không còn vẽ gì. */
+.inner,
+.frame {
+  display: none;
+}
+
+.body {
+  position: absolute;
+  inset: var(--fold) var(--margin) var(--margin);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+  padding: 8% 9%;
+  text-align: center;
+  color: #3a2f1d;
+}
+
+/**
+ * Header tĩnh ở đầu mặt thiệp. Nó không còn xoay theo scroll.
+ */
+.flap {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 4;
+  height: var(--fold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 2px 2px 0 0;
+  border-bottom: 0;
+  box-shadow: none;
+  background:
+    linear-gradient(rgb(255 253 247 / 0.06), rgb(228 215 189 / 0.06)),
+    /* Nắp cao 31% thân thiệp: phóng artwork lên 322.58% để phần nền trên
+       nắp khớp liên tục với artwork toàn thân ở trạng thái đóng. */
+    url("/images/site/invitation-paper.avif") center top / 100% 322.58%
+      no-repeat,
+    var(--reveal-ivory);
+}
+
+/* Nửa trên của khung viền, hở mép dưới. `17.7%` = `--margin` quy về chiều cao
+   của nắp (5.5% chiều cao thiệp ÷ 31%), để hai nửa khung thẳng hàng nhau. */
+.flap::after {
+  content: none;
+}
+
+.brandLogo {
+  position: relative;
+  z-index: 1;
+  width: min(46%, 180px);
+  height: 88%;
+  transform: translateY(14%);
+}
+
+.greeting {
+  font-size: clamp(0.5rem, 0.62vw, 0.6rem);
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, #3a2f1d 62%, transparent);
+}
+
+.names {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.9vw, 1.8rem);
+  line-height: 1.14;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #2f2617;
+}
+
+.occasion {
+  font-family: var(--font-display);
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--reveal-gold);
+}
+
+.rule {
+  width: 34%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    color-mix(in oklab, var(--reveal-gold) 70%, transparent),
+    transparent
+  );
+}
+
+.date {
+  font-family: var(--font-display);
+  font-size: clamp(0.78rem, 1vw, 1rem);
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  color: #3a2f1d;
+}
+
+.venue {
+  font-size: clamp(0.46rem, 0.56vw, 0.56rem);
+  line-height: 1.7;
+  letter-spacing: 0.16em;
+  text-indent: 0.16em;
+  text-transform: uppercase;
+  color: color-mix(in oklab, #3a2f1d 58%, transparent);
+  text-wrap: balance;
+}
+
+/**
+ * Vân giấy cotton. `feTurbulence` cho hạt mịn không lặp mà không phải tải ảnh;
+ * `multiply` để hạt ăn vào màu giấy thay vì phủ một lớp xám lên trên.
+ */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border-radius: 2px;
+  /* Artwork đã có sợi cotton thật; chỉ giữ một lớp nhiễu rất nhẹ để các lớp
+     DOM phía trên hòa cùng mặt giấy khi ảnh được scale lớn trong loading. */
+  opacity: 0.12;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/**
+ * Ánh kim nhũ quét theo con trỏ. `--foil-x` do `heroPointerInteraction` đặt
+ * (0 → 1). `overlay` ở alpha thấp cho ra ánh phản chiếu trên giấy, khác hẳn
+ * một vệt gradient phát sáng chồng lên.
+ */
+.foil {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border-radius: 2px;
+  mix-blend-mode: overlay;
+  opacity: 0.75;
+  background-image: linear-gradient(
+    108deg,
+    transparent 38%,
+    rgb(255 244 214 / 0.55) 47%,
+    rgb(212 180 119 / 0.75) 50%,
+    rgb(255 244 214 / 0.55) 53%,
+    transparent 62%
+  );
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  background-position: calc((1 - var(--foil-x, 0.5)) * 160%) 0;
+}
+
+/* Trên màn hình hẹp thiệp nhỏ lại nhiều, bỏ dòng phụ cho đỡ chật. */
+@media (max-width: 640px) {
+  .venue {
+    display: none;
+  }
+}
+
+/**
+ * Kích thước tấm thiệp ở hero.
+ *
+ * Đặt ở đây chứ không phải bằng class tiện ích vì công thức của desktop cần
+ * `min()` lồng `clamp()` — một biểu thức có dấu phẩy, thứ không viết gọn được
+ * trong tên class. Bề rộng theo `clamp` nhưng bị chặn bởi 55vh chiều cao: viết
+ * cả hai ràng buộc thành một con số bề rộng thì tỉ lệ giấy luôn đúng và không
+ * mép nào bị cắt.
+ */
+/**
+ * Dưới `lg` tấm thiệp nằm trong dòng chảy ngay dưới cột chữ, nên bề rộng bị
+ * chặn trên bằng `px`: cả cụm chữ + thiệp phải vừa một khung hình 844px của
+ * điện thoại phổ thông mà không đẩy gợi ý cuộn xuống dưới mép màn. `vw` một
+ * mình thì máy rộng hơn cho ra tấm thiệp cao hơn, đúng lúc không còn chỗ.
+ */
+.heroSlot {
+  width: min(36vw, 175px);
+}
+
+@media (min-width: 640px) {
+  .heroSlot {
+    width: min(30vw, 230px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSlot {
+    width: min(clamp(230px, 19vw, 340px), 38.5vh);
+  }
+}

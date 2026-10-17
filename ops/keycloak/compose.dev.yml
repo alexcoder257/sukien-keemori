@@ -1,0 +1,33 @@
+# Keycloak cho máy dev — chạy riêng, cạnh backend/dashboard chạy bằng npm.
+#
+#   docker compose -f ops/keycloak/compose.dev.yml up -d
+#   # Admin Console: http://localhost:8080/admin  (admin / admin)
+#   # Tạo tài khoản CMS đầu tiên:
+#   ops/keycloak/create-cms-user.sh ban@email.com cms-super-admin
+#
+# `start-dev` dùng H2 lưu trong volume, không đụng Postgres của app. Xoá volume
+# (`down -v`) là nạp lại realm từ file.
+name: keemori-keycloak-dev
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.3
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_HEALTH_ENABLED: "true"
+      # Giá trị thế vào `${...}` trong file realm.
+      DASHBOARD_URL: http://localhost:3002
+      KEYCLOAK_DASHBOARD_CLIENT_SECRET: dev-dashboard-secret
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./realm-keemori-admin.json:/opt/keycloak/data/import/realm-keemori-admin.json:ro
+      # Gắn cả `data/` (không phải `data/h2/`): volume mới nhận quyền sở hữu từ
+      # thư mục có sẵn trong image (uid 1000); gắn thư mục con thì nó thuộc root
+      # và H2 không ghi được.
+      - keycloak-dev-data:/opt/keycloak/data
+
+volumes:
+  keycloak-dev-data:
