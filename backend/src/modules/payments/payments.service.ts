@@ -127,17 +127,28 @@ export class PaymentsService {
       throw new BadRequestException(ERROR_MESSAGES.PAYMENT.MISSING_CODE);
     }
 
-    const accountNumber = this.requireConfig('SEPAY_ACCOUNT_NUMBER');
-    const bankCode = this.requireConfig('SEPAY_BANK_CODE');
+    // Tài khoản nhận và mã QR chỉ cần khi đơn **còn chờ trả**. Đơn đã trả
+    // (kể cả đơn 0 ₫ của mã giảm 100%) hay đã huỷ thì màn này chỉ còn báo kết
+    // quả — đòi cấu hình SePay ở đó là để một máy chủ chưa khai tài khoản nhận
+    // biến "đã thanh toán" thành "không mở được đơn".
+    const pending = order.status === 'pending';
+    const accountNumber = pending
+      ? this.requireConfig('SEPAY_ACCOUNT_NUMBER')
+      : (this.configService.get<string>('SEPAY_ACCOUNT_NUMBER') ?? '');
+    const bankCode = pending
+      ? this.requireConfig('SEPAY_BANK_CODE')
+      : (this.configService.get<string>('SEPAY_BANK_CODE') ?? '');
     const accountName =
       this.configService.get<string>('SEPAY_ACCOUNT_NAME') ?? '';
 
-    const qrImageUrl = buildQrUrl({
-      accountNumber,
-      bankCode,
-      amount: order.amount,
-      description: order.paymentCode,
-    });
+    const qrImageUrl = pending
+      ? buildQrUrl({
+          accountNumber,
+          bankCode,
+          amount: order.amount,
+          description: order.paymentCode,
+        })
+      : '';
 
     // Slug chỉ lộ sau khi tiền về: trước đó thiệp chưa có link công khai.
     const cardSlug =

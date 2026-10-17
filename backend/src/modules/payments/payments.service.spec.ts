@@ -232,6 +232,33 @@ describe('PaymentsService.checkout', () => {
 
     await expect(service.checkout('user-1', 'order-1')).rejects.toThrow();
   });
+
+  it('đơn đã trả (kể cả 0 ₫) vẫn mở được khi chưa cấu hình tài khoản nhận', async () => {
+    // Màn này lúc đó chỉ báo kết quả và trả link thiệp — không có QR nào để
+    // dựng, nên thiếu cấu hình SePay không được biến "đã trả" thành lỗi.
+    const { service } = makeService(
+      {},
+      {
+        findOwnOrder: jest.fn().mockResolvedValue(
+          makeOrder({
+            amount: 0,
+            status: 'paid',
+            cardId: 'card-1',
+            paidAt: new Date('2026-08-15T07:01:00.000Z'),
+          }),
+        ),
+        findPaidCardSlug: jest.fn().mockResolvedValue('khai-ho-d167'),
+      },
+      {},
+    );
+
+    const info = await service.checkout('user-1', 'order-1');
+    expect(info).toMatchObject({
+      status: 'paid',
+      cardSlug: 'khai-ho-d167',
+      qrImageUrl: '',
+    });
+  });
 });
 
 describe('PaymentsService.receivingAccount', () => {

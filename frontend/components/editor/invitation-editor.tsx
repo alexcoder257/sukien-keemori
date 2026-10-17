@@ -49,12 +49,18 @@ import {
   hasUploadsInFlight,
   isUploading,
   photoUpload,
+  pickPhotos,
+  preparePhotos,
   releasePhoto,
   setRestoringPhotos,
   subscribePhotos,
   waitForPreparedPhotos,
 } from "@/lib/album-uploads";
 import { PhotoStagingError } from "@/lib/photo-staging";
+import {
+  fetchTemplateSamplePhoto,
+  isTemplateSamplePhoto,
+} from "@/lib/template-sample-photos";
 import { useSmoothScroll } from "@/contexts/smooth-scroll-provider";
 import {
   clearDraft,
@@ -326,6 +332,42 @@ export function InvitationEditor({
    * vào lượt bấm lưu. Xem `lib/photo-staging.ts` cho toàn bộ lý do.
    */
   const uploader = usePhotoUploader();
+
+  /**
+   * Biến ảnh mẫu của mẫu thiệp (đường dẫn tĩnh `/images/templates/…`) thành
+   * ảnh của chính thiệp: tải về rồi đi đúng luồng của một ảnh khách tự chọn
+   * (thu nhỏ → vùng tạm → nhận về thiệp lúc Lưu). Để nguyên đường dẫn tĩnh thì
+   * hộp "Chọn ảnh chia sẻ" không thấy nó và backend không dựng được ảnh xem
+   * trước — xem `lib/template-sample-photos.ts`.
+   *
+   * Người dùng đổi ô ảnh trong lúc đang tải thì bỏ kết quả, không ghi đè.
+   */
+  const adoptTemplatePhotos = async (photos: Record<string, string>) => {
+    for (const [slot, src] of Object.entries(photos)) {
+      if (!isTemplateSamplePhoto(src)) continue;
+      const file = await fetchTemplateSamplePhoto(src);
+      if (!file) continue;
+      const { accepted } = pickPhotos([file], 1);
+      await preparePhotos(accepted, (picked) => {
+        if (form.getValues(`photos.${slot}`) !== src) {
+          releasePhoto(picked);
+          return;
+        }
+        form.setValue(`photos.${slot}`, picked, { shouldDirty: true });
+        uploader.upload([picked], "photo");
+      });
+    }
+  };
+  // Thiệp đã lưu từ trước còn mang ảnh mẫu tĩnh (điền mẫu trước khi có bước
+  // này) thì nhận về ngay lúc mở editor; lượt Lưu kế tiếp chép nó vào thiệp.
+  const adoptedOnMount = useRef(false);
+  useEffect(() => {
+    if (adoptedOnMount.current) return;
+    adoptedOnMount.current = true;
+    void adoptTemplatePhotos(form.getValues("photos"));
+    // Chỉ chạy một lần với nội dung lúc mở editor.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   /**
    * Thiệp mới được tạo ở lượt lưu đầu tiên. Lượt đó hỏng sau bước tạo (mất mạng
@@ -859,6 +901,7 @@ export function InvitationEditor({
       { keepDefaultValues: true },
     );
     toast.success(dict.filledSample);
+    if (sampleHasOwnPhotos(template.slug)) void adoptTemplatePhotos(sample.photos);
   };
 
   const editorBlocks = KIND_EDITOR_BLOCKS[kind];

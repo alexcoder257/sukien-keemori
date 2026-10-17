@@ -6,6 +6,7 @@ import { GUEST_QUERY_PARAM } from "@/constants/invitation";
 import { invitationMetaCopy } from "@/components/invitation/shared/invitation-display-name";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
+import { fill } from "@/lib/format";
 import { getCanonicalSlug, getInvitationBySlug } from "@/lib/data/invitations";
 import { getTemplateBySlug } from "@/lib/data/templates";
 import { DEFAULT_OG_IMAGE, NO_INDEX, SITE_NAME, absoluteUrl } from "@/lib/seo";
@@ -33,10 +34,18 @@ export async function generateMetadata({
   const invitation = await getInvitationBySlug(slug, guestToken);
   if (!invitation) return {};
 
-  const { title, description } = invitationMetaCopy(
+  const { title, description: cardDescription } = invitationMetaCopy(
     dict.invitation,
     invitation.content,
   );
+  // Link mời riêng: dòng mô tả trong ô xem trước của Zalo/Messenger gọi đúng
+  // tên khách — chính là lời mời người đó nhìn thấy trước cả khi mở thiệp.
+  // `guestName` chỉ có khi mã khớp một khách thật; mã sai thì về mô tả chung.
+  const description = invitation.guestName
+    ? fill(dict.invitation.guestMetaDescription, {
+        guest: invitation.guestName,
+      })
+    : cardDescription;
   // Vắng lựa chọn/JPEG nghĩa là thiệp cũ: giữ nguyên ảnh Keemori.
   const template = invitation.content.sharePreview?.imageUrl
     ? await getTemplateBySlug(invitation.templateSlug)
@@ -69,7 +78,14 @@ export async function generateMetadata({
       locale: locale === "vi" ? "vi_VN" : "en_US",
       title,
       description,
-      url: absoluteUrl(`/${locale}/t/${slug}`),
+      // Link mời riêng giữ `?khach=` trong `og:url`: Facebook coi `og:url` là
+      // địa chỉ chuẩn và đọc lại thẻ từ đó — bỏ mã là ô xem trước quay về mô
+      // tả chung, mất tên khách.
+      url: absoluteUrl(
+        invitation.guestName && guestToken
+          ? `/${locale}/t/${slug}?${new URLSearchParams({ [GUEST_QUERY_PARAM]: guestToken })}`
+          : `/${locale}/t/${slug}`,
+      ),
       images: [
         {
           url: absoluteUrl(image),

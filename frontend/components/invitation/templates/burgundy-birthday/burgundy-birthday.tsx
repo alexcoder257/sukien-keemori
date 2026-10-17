@@ -352,11 +352,11 @@ function dressGroups(description: string, colors: string[]): DressGroup[] {
  * `content.occasion`.
  *
  * Mở đầu bằng màn giấy gấp cổng của Đỏ Burgundy (`shared/gate-fold-opening`):
- * nơ tuột, bốn cánh giấy lật, máy quay tiến vào đúng tấm thiệp nằm dưới. Màn đó
- * đã mang khối "Trân trọng kính mời: <tên khách>" của link mời riêng, nên khi
- * nó bật thì thiệp không lặp lại tên khách — chỉ một câu mời (`CLAUDE.md`,
- * ngoại lệ của màn giấy gấp cổng). Tắt khối phong bì thì thiệp mở thẳng và tên
- * khách quay về ngay dưới lời chào.
+ * nơ tuột, bốn cánh giấy lật, máy quay tiến vào đúng tấm thiệp nằm dưới. Ở link
+ * mời riêng, tên khách hiện ở **cả hai** chỗ — trên màn giấy và ngay dưới
+ * "Trân trọng kính mời" của thiệp. Đây là ngoại lệ có chủ ý của mẫu này so với
+ * luật "chỉ một câu mời" trong `CLAUDE.md`: chủ thiệp muốn tên khách nằm trên
+ * chính tấm thiệp, không chỉ trên màn mở đầu đã biến mất sau một lần chạm.
  */
 export function BurgundyBirthday({
   content,
@@ -444,9 +444,10 @@ export function BurgundyBirthday({
                   <p className={`${styles.label} ${styles.greeting}`}>
                     {content.envelope.greeting || copy.invitationLabel}
                   </p>
-                  {show.envelope ? null : (
-                    <BurgundyGuestName className={styles.guest} />
-                  )}
+                  {/* Tên khách luôn hiện ở link mời riêng, kể cả khi màn giấy
+                      gấp cổng đã ghi tên đó: khách cuộn lại đầu thiệp vẫn
+                      thấy lời mời gửi đích danh mình. */}
+                  <BurgundyGuestName className={styles.guest} />
                   <CandleOrnament className={styles.candle} />
                   <p className={styles.script}>{copy.birthday}</p>
                   <h1 className={styles.name}>{name}</h1>

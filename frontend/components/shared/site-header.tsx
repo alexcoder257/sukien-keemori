@@ -160,11 +160,17 @@ export function SiteHeader({
       icon: LayoutTemplate,
     },
     { key: "pricing", label: t.pricing, href: `/${locale}/bang-gia`, icon: Tag },
+    // "Thiệp của tôi" đứng trên thanh điều hướng chứ không chôn trong menu tài
+    // khoản: khách tự tạo và sửa thiệp, nên đây là màn họ quay lại nhiều nhất.
+    // Hiện cả khi chưa đăng nhập: `proxy.ts` gác route này và đẩy về trang
+    // đăng nhập kèm `?next=`, nên bấm vào là vào đúng chỗ rồi quay lại.
+    {
+      key: "myCards",
+      label: t.myCards,
+      href: `/${locale}/thiep-cua-toi`,
+      icon: MailOpen,
+    },
   ];
-  // "Thiệp của tôi" không đứng trên thanh điều hướng: site này bán thiệp
-  // custom, khách chưa có tài khoản cho tới khi Keemori tạo giúp. Nó nằm trong
-  // menu tài khoản — chỉ người đã đăng nhập mới thấy, và đó đúng là người cần.
-  const myCardsHref = `/${locale}/thiep-cua-toi`;
   // CTA chính dẫn sang tư vấn chứ không vào kho mẫu: thiệp custom bắt đầu bằng
   // một cuộc trò chuyện, không phải bằng việc tự chọn mẫu.
   const consultHref = `/${locale}/lien-he`;
@@ -312,21 +318,9 @@ export function SiteHeader({
                       </div>
                     </div>
                     <Separator />
+                    {/* Không lặp lại "Thiệp của tôi" ở đây: nó đã nằm trên thanh
+                      điều hướng. Menu này chỉ còn những mục về *tài khoản*. */}
                     <nav className="flex flex-col gap-1" aria-label={t.account}>
-                      <Link
-                        href={myCardsHref}
-                        onClick={() => setAccountOpen(false)}
-                        className={cn(
-                          buttonVariants({
-                            variant: "ghost",
-                            size: "sm",
-                            className: "justify-start gap-2 border-b-0!",
-                          }),
-                        )}
-                      >
-                        <MailOpen />
-                        {t.myCards}
-                      </Link>
                       <Link
                         href={`/${locale}/tai-khoan`}
                         onClick={() => setAccountOpen(false)}
@@ -488,17 +482,6 @@ export function SiteHeader({
                       {user?.email}
                     </p>
                   </div>
-                </Link>
-                <Link
-                  href={myCardsHref}
-                  onClick={() => setMenuOpen(false)}
-                  className={buttonVariants({
-                    variant: "outline",
-                    className: "gap-2",
-                  })}
-                >
-                  <MailOpen />
-                  {t.myCards}
                 </Link>
                 <Button
                   variant="outline"

@@ -1336,7 +1336,8 @@
       "viewMap": "Get directions",
       "dressCode": "Dress code",
       "openWrapper": "Tap to open the invitation"
-    }
+    },
+    "guestMetaDescription": "Cordially invited: {guest}"
   },
   "myCards": {
     "meta": {

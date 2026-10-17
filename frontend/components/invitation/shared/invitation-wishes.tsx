@@ -189,7 +189,10 @@ export function InvitationWishes({
                   dateTime={wish.createdAt}
                   className="text-caption text-muted-foreground"
                 >
-                  {formatDateTime(wish.createdAt, locale)}
+                  {/* Giờ Việt Nam cố định: server render theo UTC, trình duyệt
+                      theo múi giờ của khách — để mặc định là hai bên ra hai giờ
+                      khác nhau và React báo lệch hydration (#418). */}
+                  {formatDateTime(wish.createdAt, locale, "Asia/Ho_Chi_Minh")}
                 </time>
               </div>
               <p className="mt-2 whitespace-pre-line text-body text-foreground/85">

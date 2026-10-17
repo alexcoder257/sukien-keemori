@@ -63,7 +63,11 @@
  * đúng chỗ của nó. Màu, bóng và chữ của màn giấy dùng giá trị mặc định của
  * component — chính là bảng màu Đỏ Burgundy, nên không khai lại ở đây.
  */
-.opening.opening {
+/* Ba class (0,3,0), không phải hai: màn mở dùng chung có `.cover.cover
+   { padding-inline: 1rem }` dưới 480px — hoà độ ưu tiên thì bản build
+   production nạp nó sau và thắng, tấm giấy thụt vào 16px mỗi bên, lộ nền nhung
+   đỏ hai mép trên điện thoại. */
+.opening.opening.opening {
   padding: 0;
   height: 100svh;
   align-content: start;
@@ -81,11 +85,17 @@
   width: 100%;
   margin-left: 0;
 }
-.opening.opening[data-opening-phase="opening"],
-.openingContent.openingContent[data-opening-phase="opening"] {
+/* Tắt preset `fade` của màn mở dùng chung: màn giấy tự diễn cảnh mở, còn tấm
+   thiệp thật nằm ngay sau lớp giấy chờ "máy quay". Ba class + thuộc tính
+   (0,4,0) chứ không phải hai: preset kia là `.cover[motion][phase]` (0,3,0), hoà
+   nhau thì thứ tự nạp CSS quyết định — `next dev` nạp CSS của mẫu sau nên trông
+   đúng, bản build production thì ngược lại: giấy mờ dần trong suốt 7 giây và
+   thiệp lộ xuyên qua hai cánh cửa còn đóng. */
+.opening.opening.opening[data-opening-phase="opening"],
+.openingContent.openingContent.openingContent[data-opening-phase="opening"] {
   animation: none;
 }
-.openingContent.openingContent[data-opening-phase="opening"] {
+.openingContent.openingContent.openingContent[data-opening-phase="opening"] {
   opacity: 1;
   height: 100svh;
   overflow: hidden;
@@ -171,15 +181,17 @@
 
 .greeting { white-space: nowrap; letter-spacing: min(0.4em, 0.5cqi); padding-left: min(0.4em, 0.5cqi); }
 
+/* Tên khách theo thiết kế "Thiệp mời – Mobile": chữ có chân cỡ tiêu đề mục,
+   màu kem sáng, gạch chân vàng mảnh dài quá chữ hai bên. */
 .guest {
   max-width: 330px;
   margin-top: 18px;
-  padding: 0 14px 1px;
-  border-bottom: 0.4px solid var(--rule-dim);
-  font-size: var(--tpl-lead);
-  line-height: 1;
-  letter-spacing: 0.03em;
-  color: var(--cream-soft);
+  padding: 0 24px 6px;
+  border-bottom: 0.6px solid var(--rule);
+  font-size: var(--tpl-h4);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: var(--cream);
   overflow-wrap: anywhere;
 }
 

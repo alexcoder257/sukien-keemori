@@ -1336,7 +1336,8 @@
       "viewMap": "Xem đường đi",
       "dressCode": "Dress code",
       "openWrapper": "Chạm để mở thiệp"
-    }
+    },
+    "guestMetaDescription": "Trân trọng kính mời {guest}"
   },
   "myCards": {
     "meta": {
